@@ -1,0 +1,43 @@
+footer{
+    background-color: rgba(0,113,197,1);
+    color: honeydew;
+    font-family: raleway;
+    height: 200px;
+}
+
+footer ul{
+    list-style: none;
+    margin: 0;
+}
+
+footer a{
+    color: honeydew;
+}
+
+footer a:hover{
+    color: honeydew;
+}
+
+.navbar{
+    background-color: white;
+    height: 66px;
+}
+
+.navbar h3{
+    color: rgb(208,17,21);
+    margin-left: 10%;
+}
+
+.navbar h3 span{
+    color: rgb(0,113,197);
+}
+
+.nav-link span{
+    color: grey;
+    font-weight: bold;
+    margin: 0 12px;
+}
+
+.navbar button{
+    margin-right: 10%;
+}
