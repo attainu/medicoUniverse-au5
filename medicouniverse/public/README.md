@@ -1,0 +1,1 @@
+separate sub folders like js,css,img
