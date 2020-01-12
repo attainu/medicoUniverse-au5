@@ -1,0 +1,92 @@
+<body onload="initialize()">
+
+
+    <nav class="navbar">
+        <h3>Medico<span>Universe</span></h3>
+        <div class="nav-link">
+            <span>About Us</span>
+            <span>Mission</span>
+        </div>
+        <button class="btn btn-light">Login/Signup</button>
+    </nav>
+
+    <div class="container-flex mt-2">
+
+        <div class="row">
+            <div class="col-4">
+
+
+                <input id="start" class="validate" placeholder="Add a pickup Location" />
+                <input id="end" class="validate" placeholder="where you want to go?" />
+                <div id="error-msg"></div>
+
+                <div class="row">
+                    <button id="bookAmbulance" type="button" class="btn btn-info"
+                        onclick="ambulanceDetails()">Book</button>
+                    {{!-- <button id="ambulanceInfo" type="submit" class="btn btn-info"  > <a href=""></a> Add driver</button> --}}
+                    <a href="ambulanceInfo" class="btn btn-info">Add Ambulance</a>
+
+                </div>
+
+                <div id="ambulance_details" class="row">
+                    <div class="card" style="width: 18rem;">
+                        <img src="..." class="card-img-top" alt="...">
+                        <div class="card-body" style="background-color: honeydew;">
+                            <h5 class="card-title">Ambulance Details</h5>
+                            {{#each docs }}
+                            <table>
+                                <tr>
+                                    <td>Ambulance Number</td>
+                                    <td>{{this.ambulanceNumber}}</td>
+                                </tr>
+                                <tr>
+                                    <td>Driver Name</td>
+                                    <td>{{this.driverName}}</td>
+                                </tr>
+                                <tr>
+                                    <td>Expected Time</td>
+                                    <td>{{this.expectedTime}}</td>
+                                </tr>
+                                <tr>
+                                    <td>Driver Number</td>
+                                    <td>{{this.driverNumber}}</td>
+                                </tr>
+                            </table>
+                            {{/each}}
+                            <button id="confirmBooking" type="button" class="btn btn-info mt-2" value="Confirm Booking"
+                                onclick="setRoutes();">Confirm
+                                Booking</button>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-8">
+                <div id="map_canvas" style="height:600px;width:100%"></div>
+            </div>
+        </div>
+
+    </div>
+    <footer>
+        <div class="h-25"></div>
+        <div class="row">
+            <div class="col-3 ml-5">
+                <h4>Contact Us</h4>
+                <p>BHIVE Workspace, L-148, 5th Main Rd,<br> Sector 6, HSR Layout,<br> Bengaluru, Karnataka 560102
+                </p>
+            </div>
+            <div class="col-3">
+                <h5>For patients</h5>
+                <ul>
+                    <li><a href="#">Search for Doctors</a></li>
+                    <li><a href="#">Search for Hospitals</a></li>
+                    <li><a href="#">Order Medicine</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+
+
+</body>
