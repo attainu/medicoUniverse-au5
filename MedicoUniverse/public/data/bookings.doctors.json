@@ -1,0 +1,22 @@
+[
+    {
+        "name": "Dr. Anju Partap",
+        "address": "New Shimla",
+        "fees": 999,
+        "phone": 9459129470,
+        "experience": 17,
+        "specialization": "General Physician",
+        "gender" : "female",
+        "image": "https://res.cloudinary.com/dlc12m7ig/image/upload/v1578846351/iwtkljs7igxpcxqztu1b.png"
+    },
+    {
+        "name":"Dr. Yogesh Diwan",
+        "address": "Sanjauli,Shimla" ,
+        "fees": 600,
+        "phone": 	9418477132,
+        "experience": 13,
+        "specialization": "Ent specialist",
+        "gender" : "female",
+        "image": "https://res.cloudinary.com/dlc12m7ig/image/upload/v1578846396/yxryq1ueh27dxudfzws8.png" 
+    }   
+]

@@ -1,0 +1,302 @@
+body{
+    background-color: honeydew;
+}
+
+.jumbotron{
+    background-image: url("https://mares-med.com/profiles/recruiter/themes/cloudy/images/search-container-img.jpg");
+    background-repeat: no-repeat;
+    margin-bottom: 0;
+}
+ 
+#inputSearch, #inputDropdown {
+    border-radius: 20px;
+}
+
+h1 {
+    text-align: center;
+    font-size: 50px;
+}
+#resultDisplay{
+    margin: 0 200px 0 200px; ; 
+}
+  
+#filterBar {
+    text-align: center;
+    display: flex;
+    background-color:  #e3f2fd;
+    margin-top: 0px;
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 0;
+    box-shadow: 0 4px 2px -2px gray;
+    z-index: 9999;
+}
+#label{
+    margin-left: 230px;
+}
+
+.box select {
+    background-color:  #e3f2fd;
+    color: black;
+    padding: 12px;
+    width: 250px;
+    border: none;
+    font-size: 15px;
+    margin-left: 10px;
+    -webkit-appearance: button;
+    appearance: button;
+    outline: none;
+}
+
+.box select option {
+    padding: 30px;
+}
+
+.row{
+    display: flex;
+    justify-content: left;
+}
+
+.detailDiv{
+    background-color: #e3f2fd;
+    margin: 40px auto 40px auto;
+    border-top-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#flex1 {
+    flex: 1;
+    padding: 20px;
+}
+
+#flex2 {
+    flex: 2;
+    padding: 10px;
+}
+
+#flex3{
+    flex: 1;
+    padding: 10px;
+}
+
+ul {
+    list-style-type: none;
+}
+
+img{
+    border-radius: 50%;
+}
+
+@media (min-width: 900px) {
+  .detailDiv { 
+    display: flex;
+    justify-content: center;
+  }
+}
+
+span{
+    color: rgb(0,113,197);
+}
+
+#pName{
+    color: red;
+}
+
+h4{
+    margin-top: 15px;
+    text-align: center;
+}
+
+.form-inline {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+}
+
+.form-inline input {
+    vertical-align: middle;
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+}
+
+.form-inline button {
+    padding: 10px 20px;
+    background-color :whitesmoke;
+    border: 1px solid rgb(16, 182, 182) ;
+    color:teal;
+    margin-left: 10px ;
+}
+
+.form-inline button:hover {
+    background-color: royalblue;
+}
+sup{
+    font-size: 50px;
+    font-weight: 900;
+}
+
+@media (max-width: 800px) {
+    .form-inline input {
+        margin: 10px 10px 0 0;
+    
+    }
+    .form-inline {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .form-inline button {
+        padding: 10px 20px;
+        background-color: white;
+        border: 1px solid  teal;
+        color:  teal;
+        margin: 10px 10px 0 0;;
+    }
+    h1 {
+        text-align: center;
+        font-size: 30px;
+        margin-bottom: 50px;
+    }
+    sup{
+        font-size: 30px;
+        font-weight: 900;
+    }
+    #info{
+       font-size: 20px;
+    }
+
+    #label{
+        margin-left: 20px;
+    }
+    #resultDisplay{
+        margin: 10px ;
+        width: fit-content; 
+    }
+
+}
+
+/* styling for front page */
+
+#feature1{
+    display: flex;
+    justify-content: center;
+    background-color: #e3f2fd;
+    border-top-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding: 100px;
+    margin: 20px 100px 20px 100px;
+}
+#feature2{
+    display: flex;
+    justify-content: center; 
+    background-color: #e3f2fd;
+    border-top-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); 
+    padding: 100px;
+    margin: 20px 100px 20px 100px;
+}
+#feature3{
+    display: flex;
+    justify-content: center;
+    background-color: #e3f2fd;
+    border-top-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding: 100px;
+    margin: 20px 100px 20px 100px;
+
+}
+
+#imageDiv{
+    flex: 1;
+    padding: 10px;
+}
+
+#detailList{
+    flex: 2;
+    padding: 10px;
+}
+
+@media (max-width: 800px){
+   
+    #feature1{
+        flex-direction: column;
+        justify-content: center;
+        margin: 10px ;
+        padding: 10px;
+        width: fit-content;
+       
+    }
+    #feature2{
+        justify-content: center;
+        flex-direction: column;
+        margin: 10px ;
+        padding: 10px;
+        width: fit-content;
+    } 
+    #feature3{
+        justify-content: center;
+        flex-direction: column;
+        margin: 10px ;
+        padding: 10px;
+        width: fit-content;
+    } 
+    #imageDiv{
+        width: 50px;
+    }
+    #detailList {
+       width: fit-content;
+    }
+  
+}
+
+
+
+/*  */
+
+footer{
+    background-color: rgba(0,113,197,1);
+    color: honeydew;
+    font-family: raleway;
+    height: 200px;
+}
+
+footer ul{
+    list-style: none;
+    margin: 0;
+}
+
+footer a{
+    color: honeydew;
+}
+
+footer a:hover{
+    color: honeydew;
+}
+
+.navbar{
+    background-color: white;
+    height: 66px;
+}
+
+.navbar h3{
+    color: rgb(208,17,21);
+    margin-left: 10%;
+}
+
+.navbar h3 span{
+    color: rgb(0,113,197);
+}
+
+.nav-link span{
+    color: grey;
+    font-weight: bold;
+    margin: 0 12px;
+}
+
+.navbar button{
+    margin-right: 10%;
+}
