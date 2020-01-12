@@ -1,5 +1,9 @@
 const express = require("express");
-const NewsAPI = require('newsapi');
-const newsapi = new NewsAPI('5f1bb41330aa479192a8a88a0bbd785a');
+const hbs = require('hbs');
 const app = express();
-app.listen(3000);
+
+const homepageRoutes = require('./routes/homepage.route');
+app.use(express.static('public'));
+app.listen(6060);
+app.set("view engine","hbs")
+app.use(homepageRoutes);
