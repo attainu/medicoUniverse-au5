@@ -101,7 +101,8 @@ function initialize() {
 	});
 	var options = {
 		// max zoom
-		zoom: 25
+		zoom: 4,
+		disableDefaultUI: true
 	};
 	map = new google.maps.Map(document.getElementById('map_canvas'), options);
 	//

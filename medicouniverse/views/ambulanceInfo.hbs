@@ -1,15 +1,155 @@
-<div class="container">
-    <form action="/ambulanceInfo" method="POST">
-        <input type="text" class="validate" name="ambulanceNumber" placeholder="Enter Ambulance Numer">
-        <input type="text" class="validate" name="driverName" placeholder="Enter Driver Name">
-        {{!-- <input type="number" name="expectedTime" placeholder=""> --}}
-        <input type="text" class="validate" name="driverNumber" placeholder="Enter Drivers Contact number">
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-        <button class="btn waves-effect waves-light" type="submit" name="submit">Submit
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" type="text/css " href="./css/ambulanceAmbulance.css">
+</head>
 
-        </button>
+<body>
+    <div class="container-flex">
 
 
-    </form>
+        <div class="container-flex">
+            <div class="row">
+                <nav class="navbar">
+                    <h3>Medico<span>Universe</span></h3>
+                    <div class="nav-link">
+                        <span>About Us</span>
+                        <span>Mission</span>
+                    </div>
+                    <button class="btn btn-light">Login/Signup</button>
+                </nav>
+            </div>
+        </div>
 
-</div>
+
+        <div class="container mt-3">
+            <div class="row">
+                <div class="card mt-0">
+
+                    <h5 class="card-header black-text text-center" style="background-color: white;">
+                        <strong>Register Yourself </strong>
+                    </h5>
+
+                    <!--Card content-->
+                    <div class="card-body px-lg-5 pt-0">
+
+                        <!-- Form -->
+                        <form class="text-center" style="color: #757575;" action="#!">
+
+                            <div class="form-row">
+                                <div class="col">
+                                    <!-- First name -->
+                                    <div class="md-form">
+                                        <input type="text" id="materialRegisterFormFirstName" class="form-control">
+                                        <label for="materialRegisterFormFirstName">First Name</label>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <!-- Last name -->
+                                    <div class="md-form">
+                                        <input type="email" id="materialRegisterFormLastName" class="form-control">
+                                        <label for="materialRegisterFormLastName">Last name</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- E-mail -->
+                            <div class="md-form mt-0">
+                                <input type="email" id="materialRegisterFormEmail" class="form-control">
+                                <label for="materialRegisterFormEmail">E-mail</label>
+                            </div>
+
+                            <!-- Password -->
+                            <div class="md-form">
+                                <input type="password" id="materialRegisterFormPassword" class="form-control"
+                                    aria-describedby="materialRegisterFormPasswordHelpBlock">
+                                <label for="materialRegisterFormPassword">Ambulance Number</label>
+                                <small id="materialRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
+                                    Vehicle should to registered with RTO
+                                </small>
+                            </div>
+
+                            <!-- Phone number -->
+                            <div class="md-form">
+                                <input type="password" id="materialRegisterFormPhone" class="form-control"
+                                    aria-describedby="materialRegisterFormPhoneHelpBlock">
+                                <label for="materialRegisterFormPhone">Phone number</label>
+                                <small id="materialRegisterFormPhoneHelpBlock" class="form-text text-muted mb-4">
+                                    Optional - for two step authentication
+                                </small>
+                            </div>
+
+                            <!-- Newsletter -->
+                            <div class="form-check">
+                                <input type="checkbox" class="form-check-input" id="materialRegisterFormNewsletter">
+                                <label class="form-check-label" for="materialRegisterFormNewsletter">Subscribe to our
+                                    newsletter</label>
+                            </div>
+
+                        
+                            <button class="btn btn-outline-info btn-rounded btn-block my-4 waves-effect z-depth-0"
+                                type="submit">Register Now</button>
+
+                        
+
+                         
+                        </form>
+                        <!-- Form -->
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Material form register -->
+
+        <footer>
+            <div class="h-25"></div>
+            <div class="row">
+                <div class="col-3 ml-5">
+                    <h4>Contact Us</h4>
+                    <p>BHIVE Workspace, L-148, 5th Main Rd,<br> Sector 6, HSR Layout,<br> Bengaluru, Karnataka
+                        560102
+                    </p>
+                </div>
+                <div class="col-3">
+                    <h5>For patients</h5>
+                    <ul>
+                        <li><a href="#">Search for Doctors</a></li>
+                        <li><a href="#">Search for Hospitals</a></li>
+                        <li><a href="#">Order Medicine</a></li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+
+
+    </div>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script type="text/javascript"
+        src="https://maps.googleapis.com/maps/api/js?key={KEY}&libraries=places&callback=initMap"></script>
+    <script type="text/javascript" src="./js/scriptambulance.js"></script>
+    <script type="text/javascript" src="./js/scriptpolyline.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.10.1/js/mdb.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</body>
+
+</html>
