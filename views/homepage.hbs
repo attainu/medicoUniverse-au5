@@ -19,7 +19,7 @@
     <nav class="navbar navbar-expand-sm navbar-light">
         <a class="navbar-brand" href="/">Medico<span>Universe</span></a>
         
-        {{#if loggedin}}
+        {{#if user}}
         <div class="navbar-loggedin">
             <img src="{{user.image}}" width="36px" height="36px">
             <a href="/dashboard" class="ml-2">{{user.name}}</a>
