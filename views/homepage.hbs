@@ -18,10 +18,16 @@
 <body>
     <nav class="navbar navbar-expand-sm navbar-light">
         <a class="navbar-brand" href="#">Medico<span>Universe</span></a>
+        
+        {{#if loggedin}}
+        <div class="navbar-loggedin">
+            <img src="{{user.image}}" width="36px" height="36px">
+            <a href="/dashboard" >{{user.name}}</a>
+        </div>
+        {{else}}
         <button class="navbar-toggler float-right p-1" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-      
         <div class="collapse navbar-collapse nav-resp" id="navbarSupportedContent">
           <ul class="navbar-nav mx-auto">
             <li class="nav-item">
@@ -33,6 +39,7 @@
           </ul>
           <a class="nav-link login-signup " href="#">Login/SignUp</a>
         </div> 
+        {{/if}}
       </nav>
     <hr>
     <section class="row no-gutters">

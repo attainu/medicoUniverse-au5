@@ -86,3 +86,16 @@ footer a:hover{
         display: none;
     }
 }
+
+.navbar-loggedin {
+    float: right;
+    color: cornflowerblue;
+    font-weight: 700;
+    margin-left: auto;
+    margin-right: 6%;
+}
+
+.navbar-loggedin a:hover {
+    text-decoration: none;
+    color: grey;
+}
