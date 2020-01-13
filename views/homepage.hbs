@@ -22,7 +22,7 @@
         {{#if loggedin}}
         <div class="navbar-loggedin">
             <img src="{{user.image}}" width="36px" height="36px">
-            <a href="/dashboard" >{{user.name}}</a>
+            <a href="/dashboard" class="ml-2">{{user.name}}</a>
         </div>
         {{else}}
         <button class="navbar-toggler float-right p-1" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -51,7 +51,7 @@
                 </div>
                 <div class="search-main position-relative d-inline-block">
                     <img src="./image/search.svg" width="16px" height="16px" id="search-icon">
-                    <input type="text" placeholder="Search for Doctors" name="mainsearch" id="mainsearch" class="w-100">
+                    <input type="text" placeholder="Search for Doctors" name="mainsearch" id="mainsearch" class="w-100" autocomplete="off">
                 </div>
                 
                 <button type="submit">Search</button>

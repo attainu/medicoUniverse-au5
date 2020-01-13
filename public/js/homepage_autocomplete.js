@@ -67,8 +67,50 @@ function autocomplete(inp, arr) {
   });
 }
 
-var speciality = ["Ortho", "ENT", "orthop"];
+function datalist(inp, arr) {
+  
+  inp.addEventListener("mouseenter",function (e) {
+    var a, b, i, val = this.value;
+    
+    if (!val) {
+      currentFocus = -1;
+    a = document.createElement("DIV");
+    a.setAttribute("id", this.id + "autocomplete-list");
+    a.setAttribute("class", "autocomplete-items");
+    this.parentNode.appendChild(a);
+    for (i = 0; i < arr.length; i++) {
+      if (true) {
+        b = document.createElement("DIV");
+        b.innerHTML = "<span>" + arr[i] + "</span>";
+        b.innerHTML += "<input type='hidden' value='" + arr[i] + "'>";
+        
+        b.addEventListener("click", function (e) {
+          inp.value = this.getElementsByTagName("input")[0].value;
+          closeAllLists();
+        });
+  
+        a.appendChild(b);
+      }
+    }
+    }
+    
+  });
+  
+  function closeAllLists(elmnt) {
+    var x = document.getElementsByClassName("autocomplete-items");
+    for (var i = 0; i < x.length; i++) {
+      if (elmnt != x[i] && elmnt != inp) {
+        x[i].parentNode.removeChild(x[i]);
+      }
+    }
+  }
+}
+
+var speciality = ["Dentist", "General Physician", "ENT Specialist"];
 var cities = ["Chennai","Bangalore"];
 autocomplete(document.getElementById("mainsearch"), speciality);
-autocomplete(document.getElementById("cities"), cities)
+autocomplete(document.getElementById("cities"), cities);
+datalist(document.getElementById("mainsearch"),speciality);
+datalist(document.getElementById("cities"), cities);
+
 
