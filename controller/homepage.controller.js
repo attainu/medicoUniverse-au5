@@ -9,5 +9,13 @@ var getHomepage = function (req,res) {
     
 }
 
+var getAboutUs = function (req,res) {
+    res.render('aboutus');
+}
 
-module.exports = {getHomepage};
+var getMission = function (req,res) {
+    res.render('mission');
+}
+
+
+module.exports = {getHomepage,getAboutUs,getMission};

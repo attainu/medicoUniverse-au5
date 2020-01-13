@@ -1,3 +1,7 @@
+hr {
+    margin: 0;
+}
+
 footer{
     background-color: rgb(40,50,140);
     color: honeydew;
@@ -15,6 +19,12 @@ footer a{
 
 footer a:hover{
     color: honeydew;
+}
+
+.row {
+    max-width: 100%;
+    margin-right: 0;
+    margin-left: 0;
 }
 
 .navbar{
