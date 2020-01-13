@@ -1,4 +1,3 @@
-
 var map;
 var directionsService;
 var marker = [];
@@ -61,6 +60,20 @@ $(document).ready(function() {
 		var near_place = autocomplete.getPlace();
 	});
 });
+
+function toggleButton() {
+	document.getElementById('confirmBooking').addEventListener(
+		'click',
+		function(event) {
+			if (event.target.value === 'Confirm Booking') {
+				event.target.value = 'Please Wait';
+			} else {
+				event.target.value = 'Confirm Booking';
+			}
+		},
+		false
+	);
+}
 function ambulanceDetails() {
 	$('#bookAmbulance').click(function() {
 		toggleError('');
@@ -133,6 +146,7 @@ function setRoutes() {
 	map && initialize();
 	// empty out the error msg
 	toggleError('');
+	toggleButton();
 
 	// set the values and check if any is empty, and if yes, show error and return
 	var startVal = document.getElementById('start').value;
