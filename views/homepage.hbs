@@ -21,7 +21,7 @@
         
         {{#if user}}
         <div class="navbar-loggedin">
-            <img src="{{user.image}}" width="36px" height="36px">
+            <img src="{{user.image}}" onerror="this.src = './image/default_profile_pic.png'" width="36px" height="36px">
             <a href="/dashboard" class="ml-2">{{user.name}}</a>
         </div>
         {{else}}

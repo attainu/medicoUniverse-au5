@@ -1,6 +1,7 @@
 
 var getHomepage = function (req,res) {
-    //req.session.user = {name: "Saravanakumar T N", image: "https://accounts.practo.com/profile_picture/9936369/medium_thumbnail"};
+    //for test
+    //req.session.user = {name: "Saravanakumar T N"};
     if (req.session.user) {
         res.render('homepage',{user: req.session.user});
     } else{
