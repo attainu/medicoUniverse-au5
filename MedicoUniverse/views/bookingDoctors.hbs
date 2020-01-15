@@ -20,35 +20,29 @@
       <div class="jumbotron">
         <h1 id="pName"><strong>Medico<span>Universe</span><sup>+</sup></strong></h1>
           <h3 id="info"><strong>Book Your Appointments here</strong></h3>
-          <form action="/getData" method="POST" class="form-inline">
-                <input  list="places" name="city" placeholder="Select Cities"/>
+          <form action="/appointment" method="POST" class="form-inline">
+                <input class="form-control" list="places" name="city" placeholder="Select Cities" required>
                   <datalist id="places">
-                    <option value="Shimla">
-                    <option value="Delhi">
-                    <option value="Mumbai">
-                    <option value="Chennai">
-                    <option value="Kolkata">
-                    <option value="Chandigarh">
+                    <option value="Shimla">Shimla</option>
+                    <option value="Kota">Kota</option>
+                    <option value="Agra">Agra</option>
+                    <option value="Chennai">Chennai</option>
+                    <option value="Belgavi">Belgavi</option>
                   </datalist>
                   </button>
-               <input list="services" name="service" placeholder="Select Doctors,Therapists,Nurses and Babysitters"/>
+               <input id="service" class="form-control" list="requirements" name="service" placeholder="Select Doctors,Therapists,Nurses and Babysitters" onchange="changeValue()" required>
                 <datalist id="requirements">
-                  <option value="Doctors">
-                  <option value="Nurses">
-                  <option value="Babysitters">
-                  <option value="Therapists">
+                  <option value="Doctors">Doctors</option>
+                  <option value="Nurses">Nurses</option>
+                  <option value="Babysitters">Babysitters</option>
+                  <option value="Therapists">Therapists</option>
                 </datalist>
                 </button>
-              <input  list="specs" name="specializations" placeholder="Select Specialization"/>
+              <input id="specialization" class="form-control" list="specs" name="specialization" placeholder="Select Specialization" required>
                <datalist id="specs">
-                  <option value="Orthopedics">
-                  <option value="General Physian">
-                  <option value="ENT Specialist">
-                  <option value="Medicine">
-                  <option value="Gynecologist"></option>
                </datalist>
                </button>
-              <button id="findBtn"><strong>Find</strong></button>
+              <button type="submit" id="findBtn"><strong>Find</strong></button>
           </form>
       </div>
           <div id="filterBar">
@@ -88,13 +82,37 @@
             <div id="flex3" >
               <h4><strong>About</strong></h4>
               <p> {{this.name}} is working as a <strong>{{specialization}}</strong>  since {{experience}} years</p>
-              <button class="btn btn-outline-info">Book Appointment</button>
+              <button id="bookBtn" class="btn btn-outline-info book"  data-toggle="modal" data-target="#modalCenter">Book Appointment</button>
             </div>
           </div>
           <hr>
         </div>
       </section>
       {{/each}}
+      <section>
+        <div class="modal fade" id="modalCenter" tabindex="-1" role="dialog" aria-labelledby="modalCenterTitle" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="modalLongTitle"><strong>Booking Successfull !!!</strong></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <p>We have received your request. Hold on for a moment, we will get to you in sometime.</p>
+                <ul>
+                  <li><strong>On Date : </strong><span id="date"></span></li>
+                  <li><strong>On Time : </strong><span id="time"></span></li>
+                </ul>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-outline-dark" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
      <footer>
         <div class="h-25"></div>
@@ -116,6 +134,6 @@
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-    <script src="../public/scripts/booking.script.js"></script>
+    <script src="../public/javascript/bookingDoctors.script.js"></script>
   </body>
 </html>

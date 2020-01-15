@@ -4,9 +4,8 @@ const router = express.Router();
 
 
 router.get('/', bookingController.open)
-router.get('/showResults', bookingController.insert)
+// router.get('/showResults', bookingController.insert)
 router.get('/displayResults', bookingController.find)
-router.get('/booking_front', bookingController.show)
-router.post('/getData', bookingController.getInput )
+router.post('/appointment', bookingController.getInput )
 
 module.exports = router;

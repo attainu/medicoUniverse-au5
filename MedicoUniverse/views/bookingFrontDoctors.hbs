@@ -20,36 +20,35 @@
       <div class="jumbotron">
         <h1 id="pName"><strong>Medico<span>Universe</span><sup>+</sup></strong></h1>
           <h3 id="info"><strong>Book Your Appointments here</strong></h3>
-          <form class="form-inline">
-                <input  list="places" name="myPlaces" placeholder="Select Cities"/>
+          <form action="/appointment" method="POST" class="form-inline">
+                <input class="form-control" list="places" name="city" placeholder="Select City" required>
                   <datalist id="places">
-                    <option value="Shimla">
-                    <option value="Delhi">
-                    <option value="Mumbai">
-                    <option value="Chennai">
-                    <option value="Kolkata">
-                    <option value="Chandigarh">
+                    <option value="Shimla">Shimla</option>
+                    <option value="Kota">Kota</option>
+                    <option value="Agra">Agra</option>
+                    <option value="Chennai">Chennai</option>
+                    <option value="Belgavi">Belgavi</option>
                   </datalist>
                   </button>
-               <input list="requirements" name="myReq" placeholder="Select Doctors,Therapists,Nurses and Babysitters"/>
+               <input id="service" class="form-control" list="requirements" name="service" placeholder="Select Doctors,Therapists,Nurses and Babysitters" onchange="changeValue()" required>
                 <datalist id="requirements">
-                  <option value="Doctors">
-                  <option value="Nurses">
-                  <option value="Babysitters">
-                  <option value="Therapists">
+                   <option value="Doctors">Doctors</option>
+                  <option value="Nurses">Nurses</option>
+                  <option value="Babysitters">Babysitters</option>
+                  <option value="Therapists">Therapists</option>
                 </datalist>
                 </button>
-              <input  list="specs" name="mySpec" placeholder="Select Specialization"/>
+                <div id="specialization">
+              <input  class="form-control" list="specs" name="specialization" placeholder="Select Specialization" required>
                <datalist id="specs">
-                  <option value="Orthopedics">
-                  <option value="General Physian">
-                  <option value="ENT Specialist">
-                  <option value="Medicine">
-                  <option value="Gynecologist"></option>
+                 
                </datalist>
                </button>
-              <button id="findBtn"  onclick="getLocation()"><strong>Find</strong></button>
+               </div>
+                            
+              <button type="submit" id="findBtn" ><strong>Find</strong></button>
           </form>
+          
       </div>
       <section>
           <div  id="feature1">
@@ -57,12 +56,12 @@
                 <img src="https://www.m3india.in/assets/jima/survey-mr/survey_doctor-060dcedbc5d887666142d12d6bf05ceb89f03d66e66a245908f150c6710c611c.png"  width="225px" height="auto" alt="">
             </div>
             <div id="detailList" >
-                <h3>Book Doctors,Threapists,Nurses <br> and babysitters</h3>
+                <h3>Book Doctors,Therapists,Nurses <br> and babysitters</h3>
                 <ul class="mt-5">
-                     <li><img src="public/images/check-mark.svg" width="18px" height="auto" alt="">  100% Verified Doctors</li>
-                    <li><img src="public/images/check-mark.svg" width="18px" height="auto" alt="">  Bookings available anytime from everywhere.</li>
-                    <li><img src="public/images/check-mark.svg" width="18px" height="auto" alt="">   Appointments with the best doctors in your city</li>
-                    <li><img src="public/images/check-mark.svg" width="18px" height="auto" alt="">   All the services are available at affordable fees. </li>
+                     <li><img src="public/images/correct.svg" width="18px" height="auto" alt="">  100% Verified Doctors</li>
+                    <li><img src="public/images/correct.svg" width="18px" height="auto" alt="">  Bookings available anytime from everywhere.</li>
+                    <li><img src="public/images/correct.svg" width="18px" height="auto" alt="">   Appointments with the best doctors in your city</li>
+                    <li><img src="public/images/correct.svg" width="18px" height="auto" alt="">   All the services are available at affordable fees. </li>
                 </ul>
                 <button class="btn btn-info">Book an Appointment</button> 
             </div>
@@ -90,12 +89,11 @@
                 <img src="https://static.toiimg.com/thumb/msid-66127205,imgsize-865075,width-400,resizemode-4/66127205.jpg"  width="300px" height="250" alt="">
             </div>
             <div id="detailList">
-                <h2>Order Medicine</h2>
                <h2>Book Ambulance</h2>
                 <ul class="mt-5">
-                    <li><img src="public/images/check-mark.svg" width="18px" height="auto" alt="">  Book an ambulance and track it on its way.</li>
-                    <li><img src="public/images/check-mark.svg" width="18px" height="auto" alt="">   Real time location tracking.</li>
-                    <li><img src="public/images/check-mark.svg" width="18px" height="auto" alt="">   Always on time service.</li>
+                    <li><img src="public/images/correct.svg" width="18px" height="auto" alt="">  Book an ambulance and track it on its way.</li>
+                    <li><img src="public/images/correct.svg" width="18px" height="auto" alt="">   Real time location tracking.</li>
+                    <li><img src="public/images/correct.svg" width="18px" height="auto" alt="">   Always on time service.</li>
                 </ul>
                 <button class="btn btn-info"> Book Ambulance</button> 
           </div>
@@ -123,6 +121,6 @@
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-    <script src="script.js"></script>
+    <script src="../public/javascript/bookingDoctors.script.js"></script>
   </body>
 </html>

@@ -1,0 +1,503 @@
+[
+    {
+        "name": "Dr.Varun Shukla",
+        "address": "Shimla",
+        "fees": 200,
+        "experience": 5,
+        "phone":7155556593,
+        "specialization":"Physio Therapist",
+        "gender":"Male",
+        "image":"https://res.cloudinary.com/dlc12m7ig/image/upload/v1578846396/yxryq1ueh27dxudfzws8.png"
+    },
+    {
+        "name":"Dr.Nikhil Chandel" ,
+        "address": "Shimla",
+        "fees": 299,
+        "experience": 7,
+        "phone": 7755553604,
+        "specialization":"Child Therapist",
+        "gender":"Male",
+        "image":"https://res.cloudinary.com/dlc12m7ig/image/upload/v1578846396/yxryq1ueh27dxudfzws8.png"
+    },
+    {
+        "name": "Dr.Poras Thakur",
+        "address": "Shimla",
+        "fees": 350,
+        "experience": 9,
+        "phone": 7655568035,
+        "specialization":"Nutritional Therapist",
+        "gender":"Male",
+        "image":"https://res.cloudinary.com/dlc12m7ig/image/upload/v1578846396/yxryq1ueh27dxudfzws8.png"
+    },
+    {
+        "name": "Dr.Raman Gangta",
+        "address":"Shimla",
+        "fees": 399,
+        "experience": 10,
+        "phone": 7955590052,
+        "specialization":"Psychotherapist",
+        "gender":"Male",
+        "image":"https://res.cloudinary.com/dlc12m7ig/image/upload/v1578846396/yxryq1ueh27dxudfzws8.png"
+    },
+    {
+        "name": "Dr.Virender Sharma",
+        "address": "Shimla",
+        "fees": 500,
+        "experience": 11,
+        "phone": 7655528634,
+        "specialization":"Speech Therapist",
+        "gender":"Male",
+        "image":"https://res.cloudinary.com/dlc12m7ig/image/upload/v1578846396/yxryq1ueh27dxudfzws8.png"
+    },
+    {
+        "name": "Dr.Vimal Sharma",
+        "address": "Kota",
+        "fees": 250,
+        "experience": 5,
+        "phone": 7255562939,
+        "specialization":"Speech Therapist",
+        "gender":"Male",
+        "image":"https://res.cloudinary.com/dlc12m7ig/image/upload/v1578846396/yxryq1ueh27dxudfzws8.png"
+    },
+    {
+        "name": "Dr.Shubham Shukla",
+        "address": "Kota",
+        "fees": 300,
+        "experience": 6,
+        "phone": 7855583561,
+        "specialization":"Child Therapist",
+        "gender":"Male",
+        "image":"https://res.cloudinary.com/dlc12m7ig/image/upload/v1578846396/yxryq1ueh27dxudfzws8.png"
+    },
+    {
+        "name": "Dr.Arun Sharma",
+        "address": "Kota",
+        "fees": 350,
+        "experience": 8,
+        "phone": 7655574523,
+        "specialization":"Nutritional Therapist",
+        "gender":"Male",
+        "image":"https://res.cloudinary.com/dlc12m7ig/image/upload/v1578846396/yxryq1ueh27dxudfzws8.png"
+    },
+    {
+        "name": "Dr.Ankush Todyal",
+        "address": "Kota",
+        "fees": 400,
+        "experience": 6,
+        "phone": 7255521295,
+        "specialization":"Psychotherapist",
+        "gender":"Male",
+        "image":"https://res.cloudinary.com/dlc12m7ig/image/upload/v1578846396/yxryq1ueh27dxudfzws8.png"
+    },
+    {
+        "name": "Dr.Sonu Bijlwan",
+        "address": "Kota",
+        "fees": 500,
+        "experience": 12,
+        "phone":7355529133 ,
+        "specialization":"Physio Therapist",
+        "gender":"Male",
+        "image":"https://res.cloudinary.com/dlc12m7ig/image/upload/v1578846396/yxryq1ueh27dxudfzws8.png"
+    },
+    {
+        "name": "Dr.Rajiv Mohan",
+        "address": "Agra",
+        "fees": 200,
+        "experience": 3,
+        "phone": 7955534744,
+        "specialization":"Speech Therapist",
+        "gender":"Male",
+        "image":"https://res.cloudinary.com/dlc12m7ig/image/upload/v1578846396/yxryq1ueh27dxudfzws8.png"
+    },
+    {
+        "name": "Dr.Nirdosh Moudgil",
+        "address": "Agra",
+        "fees": 299,
+        "experience": 5,
+        "phone": 7355597549,
+        "specialization":"Child Therapist",
+        "gender":"Male",
+        "image":"https://res.cloudinary.com/dlc12m7ig/image/upload/v1578846396/yxryq1ueh27dxudfzws8.png"
+    },
+    {
+        "name": "Dr.Mukul Ramolta",
+        "address": "Agra",
+        "fees": 349,
+        "experience": 6,
+        "phone": 7755528694,
+        "specialization":"Nutritional Therapist",
+        "gender":"Male",
+        "image":"https://res.cloudinary.com/dlc12m7ig/image/upload/v1578846396/yxryq1ueh27dxudfzws8.png"
+    },
+    {
+        "name": "Dr.Akshay Singh Kanwar",
+        "address": "Agra",
+        "fees": 400,
+        "experience": 8,
+        "phone": 7855544682,
+        "specialization":"Physio Therapist",
+        "gender":"Male",
+        "image":"https://res.cloudinary.com/dlc12m7ig/image/upload/v1578846396/yxryq1ueh27dxudfzws8.png"
+    },
+    {
+        "name": "Dr.Atul Chauhan",
+        "address": "Agra",
+        "fees": 450,
+        "experience": 10,
+        "phone": 7855519649,
+        "specialization":"Psychotherapist",
+        "gender":"Male",
+        "image":"https://res.cloudinary.com/dlc12m7ig/image/upload/v1578846396/yxryq1ueh27dxudfzws8.png"
+    },
+    {
+        "name": "Dr.Ajay Thakur",
+        "address":"Chennai",
+        "fees": 250,
+        "experience": 4,
+        "phone": 7655533455,
+        "specialization":"Physio Therapist",
+        "gender":"Male",
+        "image":"https://res.cloudinary.com/dlc12m7ig/image/upload/v1578846396/yxryq1ueh27dxudfzws8.png"
+    },
+    {
+        "name": "Dr.Atul Puri",
+        "address": "Chennai",
+        "fees": 300,
+        "experience": 6,
+        "phone": 7055567368,
+        "specialization":"Speech Therapist",
+        "gender":"Male",
+        "image":"https://res.cloudinary.com/dlc12m7ig/image/upload/v1578846396/yxryq1ueh27dxudfzws8.png"
+    },
+    {
+        "name": "Dr.Pankaj Sharma",
+        "address": "Chennai",
+        "fees": 350,
+        "experience": 7,
+        "phone": 7855580822,
+        "specialization":"Child Therapist",
+        "gender":"Male",
+        "image":"https://res.cloudinary.com/dlc12m7ig/image/upload/v1578846396/yxryq1ueh27dxudfzws8.png"
+    },
+    {
+        "name": "Dr.Paramjeet Singh",
+        "address": "Chennai",
+        "fees": 400,
+        "experience": 9,
+        "phone": 7855594945,
+        "specialization":"Nutritional Therapist",
+        "gender":"Male",
+        "image":"https://res.cloudinary.com/dlc12m7ig/image/upload/v1578846396/yxryq1ueh27dxudfzws8.png"
+    },
+    {
+        "name": "Dr.Vishal Shukla",
+        "address": "Chennai",
+        "fees": 450,
+        "experience": 11,
+        "phone": 7255591109,
+        "specialization":"Psychotherapist",
+        "gender":"Male",
+        "image":"https://res.cloudinary.com/dlc12m7ig/image/upload/v1578846396/yxryq1ueh27dxudfzws8.png"
+    },
+    {
+        "name": "Dr.Surya Sharma",
+        "address": "Belgavi",
+        "fees": 250,
+        "experience": 5,
+        "phone": 7655525217,
+        "specialization":"Physio Therapist",
+        "gender":"Male",
+        "image":"https://res.cloudinary.com/dlc12m7ig/image/upload/v1578846396/yxryq1ueh27dxudfzws8.png"
+    },
+    {
+        "name": "Dr.Aarav Uppal",
+        "address": "Belgavi",
+        "fees": 299,
+        "experience": 6,
+        "phone": 7655521759,
+        "specialization":"Speech Therapist",
+        "gender":"Male",
+        "image":"https://res.cloudinary.com/dlc12m7ig/image/upload/v1578846396/yxryq1ueh27dxudfzws8.png"
+    },
+    {
+        "name": "Dr.Rajat Mohta",
+        "address": "Belgavi",
+        "fees": 349,
+        "experience": 7,
+        "phone": 7655596316,
+        "specialization":"Child Therapist",
+        "gender":"Male",
+        "image":"https://res.cloudinary.com/dlc12m7ig/image/upload/v1578846396/yxryq1ueh27dxudfzws8.png"
+    },
+    {
+        "name": "Dr.Sunil Kumar Chhabra",
+        "address": "Belgavi",
+        "fees": 399,
+        "experience": 10,
+        "phone": 7155526330,
+        "specialization":"Nutritional Therapist",
+        "gender":"Male",
+        "image":"https://res.cloudinary.com/dlc12m7ig/image/upload/v1578846396/yxryq1ueh27dxudfzws8.png"
+    },
+    {
+        "name": "Dr.Chinthala Sumanth",
+        "address": "Belgavi",
+        "fees": 500,
+        "experience": 13,
+        "phone": 7155555711,
+        "specialization":"Psychotherapist",
+        "gender":"Male",
+        "image":"https://res.cloudinary.com/dlc12m7ig/image/upload/v1578846396/yxryq1ueh27dxudfzws8.png"
+    },
+    {
+        "name": "Dr.Jyoti Pathania",
+        "address": "Shimla",
+        "fees": 250,
+        "experience": 6,
+        "phone":9418120659 ,
+        "specialization":"Physio Therapist",
+        "gender":"Female",
+        "image":"https://res.cloudinary.com/dlc12m7ig/image/upload/v1578846351/iwtkljs7igxpcxqztu1b.png"
+    },
+    {
+        "name": "Dr.Aprajita Dagar",
+        "address": "Shimla",
+        "fees": 299,
+        "experience": 7,
+        "phone": 7955512745,
+        "specialization":"Speech Therapist",
+        "gender":"Female",
+        "image":"https://res.cloudinary.com/dlc12m7ig/image/upload/v1578846351/iwtkljs7igxpcxqztu1b.png"
+    },
+    {
+        "name": "Dr.Enakshi Sharma",
+        "address": "Shimla",
+        "fees": 350,
+        "experience": 9,
+        "phone": 7655547629,
+        "specialization":"Child Therapist",
+        "gender":"Female",
+        "image":"https://res.cloudinary.com/dlc12m7ig/image/upload/v1578846351/iwtkljs7igxpcxqztu1b.png"
+    },
+    {
+        "name": "Dr.Aarushi Sharma Pathak",
+        "address": "Shimla",
+        "fees": 400,
+        "experience": 10,
+        "phone": 7555536487,
+        "specialization":"Nutritional Therapist",
+        "gender":"Female",
+        "image":"https://res.cloudinary.com/dlc12m7ig/image/upload/v1578846351/iwtkljs7igxpcxqztu1b.png"
+    },
+    {
+        "name": "Dr.Pooja Singh",
+        "address":"Shimla" ,
+        "fees": 450,
+        "experience": 11,
+        "phone": 7455582458,
+        "specialization":"Psychotherapist",
+        "gender":"Female",
+        "image":"https://res.cloudinary.com/dlc12m7ig/image/upload/v1578846351/iwtkljs7igxpcxqztu1b.png"
+    },
+    {
+        "name": "Dr.Himani Sharma",
+        "address": "Kota",
+        "fees": 249,
+        "experience": 4,
+        "phone": 7555593740,
+        "specialization":"Physio Therapist",
+        "gender":"Female",
+        "image":"https://res.cloudinary.com/dlc12m7ig/image/upload/v1578846351/iwtkljs7igxpcxqztu1b.png"
+    },
+    {
+        "name": "Dr.Aditi Sah",
+        "address": "Kota",
+        "fees": 350,
+        "experience": 6,
+        "phone": 7355588143,
+        "specialization":"Speech Therapist",
+        "gender":"Female",
+        "image":"https://res.cloudinary.com/dlc12m7ig/image/upload/v1578846351/iwtkljs7igxpcxqztu1b.png"
+    },
+    {
+        "name": "Dr.Eleena George",
+        "address": "Kota",
+        "fees": 400,
+        "experience": 8,
+        "phone": 7355514530,
+        "specialization":"Child Therapist",
+        "gender":"Female",
+        "image":"https://res.cloudinary.com/dlc12m7ig/image/upload/v1578846351/iwtkljs7igxpcxqztu1b.png"
+    },
+    {
+        "name": "Dr.Dhanika Sharma",
+        "address": "Kota",
+        "fees": 449,
+        "experience": 9,
+        "phone": 7055519394,
+        "specialization":"Nutritional Therapist",
+        "gender":"Female",
+        "image":"https://res.cloudinary.com/dlc12m7ig/image/upload/v1578846351/iwtkljs7igxpcxqztu1b.png"
+    },
+    {
+        "name": "Dr.Sharmila Joshi",
+        "address": "Kota",
+        "fees": 500,
+        "experience": 12,
+        "phone": 7755529517,
+        "specialization":"Psychotherapist",
+        "gender":"Female",
+        "image":"https://res.cloudinary.com/dlc12m7ig/image/upload/v1578846351/iwtkljs7igxpcxqztu1b.png"
+    },
+    {
+        "name": "Dr.Shweta Mahajan",
+        "address": "Agra",
+        "fees": 249,
+        "experience": 5,
+        "phone": 9418040187,
+        "specialization":"Physio Therapist",
+        "gender":"Female",
+        "image":"https://res.cloudinary.com/dlc12m7ig/image/upload/v1578846351/iwtkljs7igxpcxqztu1b.png"
+    },
+    {
+        "name": "Dr.Aparna Sharma",
+        "address": "Agra",
+        "fees": 300,
+        "experience": 7,
+        "phone": 9418083224,
+        "specialization":"Speech Therapist",
+        "gender":"Female",
+        "image":"https://res.cloudinary.com/dlc12m7ig/image/upload/v1578846351/iwtkljs7igxpcxqztu1b.png"
+    },
+    {
+        "name": "Dr.Arti Sharma",
+        "address": "Agra",
+        "fees": 350,
+        "experience": 9,
+        "phone": 9418299888,
+        "specialization":"Child Therapist",
+        "gender":"Female",
+        "image":"https://res.cloudinary.com/dlc12m7ig/image/upload/v1578846351/iwtkljs7igxpcxqztu1b.png"
+    },
+    {
+        "name": "Dr.Vaishali Joshi",
+        "address": "Agra",
+        "fees": 450,
+        "experience": 10,
+        "phone": 7755529517,
+        "specialization":"Nutritional Therapist",
+        "gender":"Female",
+        "image":"https://res.cloudinary.com/dlc12m7ig/image/upload/v1578846351/iwtkljs7igxpcxqztu1b.png"
+    },
+    {
+        "name": "Dr.Sonali Kaushal",
+        "address": "Agra",
+        "fees": 500,
+        "experience": 12,
+        "phone": 9888359167,
+        "specialization":"Psychotherapist",
+        "gender":"Female",
+        "image":"https://res.cloudinary.com/dlc12m7ig/image/upload/v1578846351/iwtkljs7igxpcxqztu1b.png"
+    },
+    {
+        "name": "Dr. Babita Thakur",
+        "address": "Chennai",
+        "fees": 200,
+        "experience": 3,
+        "phone": 7155535753,
+        "specialization":"Physio Therapist",
+        "gender":"Female",
+        "image":"https://res.cloudinary.com/dlc12m7ig/image/upload/v1578846351/iwtkljs7igxpcxqztu1b.png"
+    },
+    {
+        "name": " Dr.Arunima Singh" ,
+        "address": "Chennai" ,
+        "fees": 300,
+        "experience": 6 ,
+        "phone": 9418077565,
+        "specialization":"Speech Therapist",
+        "gender":"Female",
+        "image":"https://res.cloudinary.com/dlc12m7ig/image/upload/v1578846351/iwtkljs7igxpcxqztu1b.png"
+    },
+    {
+        "name": "Dr.Raveena Sood",
+        "address": "Chennai",
+        "fees": 350,
+        "experience": 7,
+        "phone": 9418028130,
+        "specialization":"Child Therapist",
+        "gender":"Female",
+        "image":"https://res.cloudinary.com/dlc12m7ig/image/upload/v1578846351/iwtkljs7igxpcxqztu1b.png"
+    },
+    {
+        "name": "Dr.Priyanshi Chauhan",
+        "address": "Chennai",
+        "fees": 400,
+        "experience": 8,
+        "phone": 9418570717,
+        "specialization":"Psychotherapist",
+        "gender":"Female",
+        "image":"https://res.cloudinary.com/dlc12m7ig/image/upload/v1578846351/iwtkljs7igxpcxqztu1b.png"
+    },
+    {
+        "name": "Dr.Preeti Singh",
+        "address": "Chennai",
+        "fees": 450,
+        "experience": 10,
+        "phone":9418059643,
+        "specialization":"Nutritional Therapist",
+        "gender":"Female",
+        "image":"https://res.cloudinary.com/dlc12m7ig/image/upload/v1578846351/iwtkljs7igxpcxqztu1b.png"
+    },
+    {
+        "name": "Dr.Deeksha Panwar",
+        "address": "Belgavi",
+        "fees": 300,
+        "experience": 7,
+        "phone": 9418086876,
+        "specialization":"Physio Therapist",
+        "gender":"Female",
+        "image":"https://res.cloudinary.com/dlc12m7ig/image/upload/v1578846351/iwtkljs7igxpcxqztu1b.png"
+    },
+    {
+        "name": "Dr.Bhanupriya Dogra",
+        "address": "Belgavi",
+        "fees": 350,
+        "experience": 8,
+        "phone": 9418465978,
+        "specialization":"Speech Therapist",
+        "gender":"Female",
+        "image":"https://res.cloudinary.com/dlc12m7ig/image/upload/v1578846351/iwtkljs7igxpcxqztu1b.png"
+    },
+    {
+        "name": "Dr.Manisha Sayal",
+        "address": "Belgavi",
+        "fees": 400,
+        "experience": 9,
+        "phone": 9418485155,
+        "specialization":"Child Therapist",
+        "gender":"Female",
+        "image":"https://res.cloudinary.com/dlc12m7ig/image/upload/v1578846351/iwtkljs7igxpcxqztu1b.png"
+    },
+    {
+        "name": "Dr.Simran Verma",
+        "address": "Belgavi",
+        "fees": 449,
+        "experience": 10,
+        "phone": 9418077248,
+        "specialization":"Nutritional Therapist",
+        "gender":"Female",
+        "image":"https://res.cloudinary.com/dlc12m7ig/image/upload/v1578846351/iwtkljs7igxpcxqztu1b.png"
+    },
+    {
+        "name": "Dr.Nisha Bhardwaj",
+        "address": "Belgavi",
+        "fees": 499,
+        "experience": 12,
+        "phone": 7655599924,
+        "specialization":"Psychotherapist",
+        "gender":"Female",
+        "image":"https://res.cloudinary.com/dlc12m7ig/image/upload/v1578846351/iwtkljs7igxpcxqztu1b.png"
+    }
+]
+  
