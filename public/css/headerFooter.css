@@ -95,10 +95,17 @@ footer a:hover{
     .carousel-c {
         display: none;
     }
+
+    .navbar-loggedin img{
+        display: none;
+    }
+
+    .navbar-brand{
+        margin: 0;
+    }
 }
 
 .navbar-loggedin {
-    float: right;
     color: cornflowerblue;
     font-weight: 700;
     margin-left: auto;

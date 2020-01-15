@@ -2,3 +2,40 @@
     background-color: grey;
     border-color: grey;
 }
+
+label{
+    font-size: 12px;
+    line-height: 20px;
+    color: #787887;
+    margin-bottom: 2px;
+}
+
+#list-profile input, #list-profile select{
+    padding: 6px 10px;
+    font-size: 14px;
+    font-family: Camphor;
+    line-height: 20px;
+    border: 1px solid #CACAD3;
+    color: #4a4a5a;
+    height: 34px;
+}
+
+.profile-header{
+    height: 64px;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 20px;
+}
+
+.profile-header button{
+    height: 32px;
+    background-color: #14BEF0;
+    color: white;
+    border-color: #14BEF0;
+    border-radius: 2px;
+    border-style: solid;
+    font-weight: bold;
+    font-size: 14px;
+    padding: 4px 20px;
+}
+
