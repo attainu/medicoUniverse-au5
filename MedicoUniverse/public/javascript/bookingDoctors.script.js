@@ -1,21 +1,22 @@
-$(document).ready(function(){
-    
-    $("#bookBtn").on("click" , function(){
-        dt = new Date().toDateString()
-        $("#date").html(dt)
+
+$("#bookBtn").on("click" , function(){
+
+    dt = new Date().toDateString()
+    $("#date").html(dt)
+
+    function formatAmPm(date) {
+        var hours = date.getHours();
+        var minutes = date.getMinutes();
+        var ampm = hours >= 12 ? 'pm' : 'am';
+        hours = hours % 12;
+        hours = hours ? hours : 12; 
+        minutes = minutes < 10 ? '0'+minutes : minutes;
+        var strTime = hours + ':' + minutes + ' ' + ampm;
         
-        function formatAmPm(date) {
-            var hours = date.getHours();
-            var minutes = date.getMinutes();
-            var ampm = hours >= 12 ? 'pm' : 'am';
-            hours = hours % 12;
-            hours = hours ? hours : 12; 
-            minutes = minutes < 10 ? '0'+minutes : minutes;
-            var strTime = hours + ':' + minutes + ' ' + ampm;
-            return strTime;
-          }
-        $("#time").html(formatAmPm(new Date))
-    })
+        return strTime;
+        }
+    $("#time").html(formatAmPm(new Date))
+
 })
 
 function changeValue(){
@@ -45,3 +46,4 @@ function changeValue(){
         $("#specs").html("<option value='Babysitter'>")   
     }
 }
+

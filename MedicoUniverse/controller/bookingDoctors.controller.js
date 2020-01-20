@@ -1,7 +1,8 @@
+const mongoose = require('mongoose')
+model= require("../model/BookingDoctors.model")
 modelTherapist= require('../model/BookingTherapists.model')
 modelNurses = require('../model/BookingNurses.model')
 modelBabysitters = require('../model/BookingBabysitters.model')
-const mongoose = require('mongoose')
 const bookingController = {};
 const doctors = require("../public/data/bookings.doctors.json")
 const therapists = require("../public/data/database_therapists.json")
