@@ -220,3 +220,41 @@
     top: 16%;
     left: 10%;
 }
+
+#slideout{
+    position: fixed;
+    top: 220px;
+    right: 0;
+    z-index: 5;
+}
+
+#ambIcon{
+    width: 200px;
+    transition: width 1s;
+    border: solid black 1px;
+    border-radius: 6px;
+    padding: 6px;
+    position: absolute;
+    right: -154px;
+    transition: 1s;
+}
+
+#ambIcon:hover{
+    width: 200px;
+    position: relative;
+    right: -10px;
+}
+
+
+
+
+#ambIcon button{
+    border: none;
+    background-color: rgb(9,165,222);
+    color: white;
+    font-weight: bold;
+    border-radius: 6px;
+    font-size: 14px;
+    padding: 0 12px;
+   
+}
