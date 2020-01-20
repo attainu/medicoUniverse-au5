@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" href="./css/hospitalstyle.css">
+    <title>hospitals</title>
+</head>
+
+<body>
+    <div class="container-flex">
+
+        <nav class="navbar navbar-expand-sm navbar-light">
+            <a class="navbar-brand" href="/medicoUniverse">Medico<span>Universe</span></a>
+
+            {{#if user}}
+            <div class="navbar-loggedin">
+                <img src="{{user.image}}" onerror="this.src = './image/default_profile_pic.png'" width="36px"
+                    height="36px">
+                <a href="/dashboard" class="ml-2">{{user.name}}</a>
+            </div>
+            {{else}}
+            <button class="navbar-toggler float-right p-1" type="button" data-toggle="collapse"
+                data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse nav-resp" id="navbarSupportedContent">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/medicoUniverse/about">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/medicoUniverse/mission">Mission</a>
+                    </li>
+                </ul>
+                <a class="nav-link login-signup " href="/login">Login/SignUp</a>
+            </div>
+            {{/if}}
+        </nav>
+
+
+        <div class="container-fluid pt-3">
+            <div class="row">
+                <div class="col-xl-4 col-md-4 col-sm-4">
+                    <form action="/storeddata" method="POST" class="form-inline">
+                        <input class="form-control mr-1" type="text" id="hospitalsearch" placeholder="Search hospitals"
+                            aria-label="Search" name="searchbox" required>
+                        <button class="btn" type="submit">
+                            <svg height='33px' width='40px' version="1.1" id="Layer_1"
+                                xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+                                y="0px" viewBox="0 0 497.8 497.8" style="enable-background:new 0 0 497.8 497.8;"
+                                xml:space="preserve">
+                                <circle style="fill:#08476B;" cx="156.8" cy="168.8" r="137.6" />
+                                <rect x="299.54" y="251.799"
+                                    transform="matrix(-0.7072 0.7071 -0.7071 -0.7072 768.4462 318.1378)"
+                                    style="fill:#960253;" width="37.602" height="132.808" />
+                                <polyline style="fill:#6D0041;" points="257.6,284 284,257.6 378.4,351.2 " />
+                                <path style="fill:#195F8E;" d="M488.8,446.4c12,12,12,30.4,0,42.4l0,0c-12,12-30.4,12-42.4,0L332.8,375.2c-12-12-12-30.4,0-42.4l0,0
+	c12-12,30.4-12,42.4,0L488.8,446.4z" />
+                                <path style="fill:#08476B;"
+                                    d="M332.8,332.8L332.8,332.8c12-12,30.4-12,42.4,0l113.6,113.6c12,12,12,30.4,0,42.4l0,0" />
+                                <path style="fill:#C61867;" d="M48,48c-64,64-64,168,0,232s168,64,232,0s64-168,0-232S112-16,48,48z M252,252
+	c-48,48-126.4,48-175.2,0c-48-48-48-126.4,0-175.2c48-48,126.4-48,175.2,0C300,124.8,300,203.2,252,252z" />
+                                <path style="fill:#EAEAEA;"
+                                    d="M284.8,160.8c-18.4-40-65.6-71.2-120.8-71.2S61.6,120.8,43.2,160.8H284.8z" />
+                                <path style="fill:#C4C4C4;"
+                                    d="M43.2,160.8c18.4,48,65.6,71.2,120.8,71.2s102.4-23.2,120.8-71.2H43.2z" />
+                                <circle style="fill:#0AA06E;" cx="164" cy="164" r="63.2" />
+                                <path style="fill:#007C56;"
+                                    d="M164,100.8c35.2,0,63.2,28,63.2,63.2s-28,63.2-63.2,63.2" />
+                                <circle style="fill:#5E6664;" cx="164" cy="164" r="28" />
+                                <path style="fill:#2F423F;"
+                                    d="M184,144c11.2,11.2,11.2,28.8,0,39.2c-11.2,11.2-28.8,11.2-39.2,0" />
+                                <g>
+                                    <circle style="fill:#FFFFFF;" cx="146.4" cy="144" r="14.4" />
+                                    <circle style="fill:#FFFFFF;" cx="184" cy="182.4" r="6.4" />
+                                </g>
+                            </svg>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            {{#if hname}}
+            <div class="conatiner">
+                <div class="card bg-dark text-white">
+                    <img src="https://bookinghealth.info/uploads/clinics/gallery/m/5880-patient-room-single-room-1280x780.jpg"
+                        class="card-img" alt="...">
+                    <div class="card-img-overlay">
+                        <h5 class="card-title display-3 font-italic" style="font-size:4rem"><b>{{hname}}</b></h5>
+                        <p class="card-text">
+                            <h2 style="">{{address}}</h2>
+                        </p>
+                        <p class="card-text">
+                            <h4 style="">{{phoneNumber}}</h4>
+                        </p>
+                        <button type="button" class="btn btn-primary mt-1" data-toggle="modal"
+                            data-target="#exampleModal" data-whatever="@mdo">Book
+                            appointment</button>
+                    </div>
+                </div>
+            </div>
+            {{/if}}
+            <hr>
+            <h3 class="text-dark">Top Hospitals</h3>
+            <div class="row p-3" style="background-color:f0fff0;">
+                <div class="col-xl-12 col-sm-12">
+                    <div id="inam" class="carousel slide" data-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="card mr-3 bg-dark text-white ml-5" style="width: 15rem;">
+                                            <img src="http://www.medwayindia.com/uploads/gallery_images/big_1487919599_indraprastha_apollo.jpg"
+                                                class="card-img-top" alt="...">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Indraprastha Apollo Hospital</h5>
+                                                <a href="#" class="card-link"><svg width=30px height=25px version="1.1"
+                                                        id="Capa_1" xmlns="http://www.w3.org/2000/svg"
+                                                        xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                                        viewBox="0 0 58 58" style="enable-background:new 0 0 58 58;"
+                                                        xml:space="preserve">
+                                                        <ellipse style="fill:#23A24D;" cx="29" cy="50" rx="29" ry="8" />
+                                                        <path style="fill:#03fff2;" d="M41.676,5.324L41.676,5.324c-7.098-7.098-18.607-7.098-25.706,0h0
+	                                                C9.574,11.72,8.855,23.763,14.282,31l14.541,21l14.541-21C48.792,23.763,48.072,11.72,41.676,5.324z M29,24c-3.314,0-6-2.686-6-6
+	                                                s2.686-6,6-6s6,2.686,6,6S32.314,24,29,24z" /></a><span>Mathura Rd,
+                                                    Pocket B, Sarita Vihar, New Delhi, Delhi 110076</span>
+                                                <button type="button" class="btn btn-block btn-primary mt-1"
+                                                    data-toggle="modal" data-target="#exampleModal">Book
+                                                    appointment</button>
+                                            </div>
+                                        </div>
+                                        <div class="card mr-3 bg-dark text-white ml-3" style="width: 15rem;">
+                                            <img src="https://i.ytimg.com/vi/hCB5tLaFYqs/hqdefault.jpg"
+                                                class="card-img-top" alt="...">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Lilavati Hospital and Research Center</h5>
+                                                <a href="#" class="card-link"><svg width=30px height=25px version="1.1"
+                                                        id="Capa_1" xmlns="http://www.w3.org/2000/svg"
+                                                        xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                                        viewBox="0 0 58 58" style="enable-background:new 0 0 58 58;"
+                                                        xml:space="preserve">
+                                                        <ellipse style="fill:#23A24D;" cx="29" cy="50" rx="29" ry="8" />
+                                                        <path style="fill:#03fff2;" d="M41.676,5.324L41.676,5.324c-7.098-7.098-18.607-7.098-25.706,0h0
+	                                                C9.574,11.72,8.855,23.763,14.282,31l14.541,21l14.541-21C48.792,23.763,48.072,11.72,41.676,5.324z M29,24c-3.314,0-6-2.686-6-6
+	                                                s2.686-6,6-6s6,2.686,6,6S32.314,24,29,24z" /></a><span>Lilavati
+                                                    Hospital, A-791, Bandra Reclamation Rd, Bandra West, Mumbai,
+                                                    Maharashtra 400050</span>
+                                                <button type="button" class="btn btn-block btn-primary mt-1"
+                                                    data-toggle="modal" data-target="#exampleModal">Book
+                                                    appointment</button>
+                                            </div>
+                                        </div>
+                                        <div class="card mr-3 bg-dark text-white ml-3" style="width: 15rem;">
+                                            <img src="http://medicaldialogues.in/wp-content/uploads/2016/06/fortis-gurgaon.jpg"
+                                                class="card-img-top" alt="...">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Fortis Hospital</h5>
+                                                <a href="#" class="card-link"><svg width=30px height=25px version="1.1"
+                                                        id="Capa_1" xmlns="http://www.w3.org/2000/svg"
+                                                        xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                                        viewBox="0 0 58 58" style="enable-background:new 0 0 58 58;"
+                                                        xml:space="preserve">
+                                                        <ellipse style="fill:#23A24D;" cx="29" cy="50" rx="29" ry="8" />
+                                                        <path style="fill:#03fff2;" d="M41.676,5.324L41.676,5.324c-7.098-7.098-18.607-7.098-25.706,0h0
+	                                                C9.574,11.72,8.855,23.763,14.282,31l14.541,21l14.541-21C48.792,23.763,48.072,11.72,41.676,5.324z M29,24c-3.314,0-6-2.686-6-6
+	                                                s2.686-6,6-6s6,2.686,6,6S32.314,24,29,24z" /></a><span>Mulund Goregaon
+                                                    Link Rd, Nahur West, Mulund West, Mumbai, Maharashtra 400078</span>
+                                                <button type="button" class="btn btn-block btn-primary mt-1"
+                                                    data-toggle="modal" data-target="#exampleModal">Book
+                                                    appointment</button>
+                                            </div>
+                                        </div>
+                                        <div class="card mr-3 bg-dark text-white ml-3" style="width: 15rem;">
+                                            <img src="http://healthtechnology.in/wp-content/uploads/2016/11/Jaslok-Hospital-Research-Centre.jpg"
+                                                class="card-img-top" alt="...">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Jaslok Hospital & Research Centre</h5>
+                                                <a href="#" class="card-link"><svg width=30px height=25px version="1.1"
+                                                        id="Capa_1" xmlns="http://www.w3.org/2000/svg"
+                                                        xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                                        viewBox="0 0 58 58" style="enable-background:new 0 0 58 58;"
+                                                        xml:space="preserve">
+                                                        <ellipse style="fill:#23A24D;" cx="29" cy="50" rx="29" ry="8" />
+                                                        <path style="fill:#03fff2;" d="M41.676,5.324L41.676,5.324c-7.098-7.098-18.607-7.098-25.706,0h0
+	                                                C9.574,11.72,8.855,23.763,14.282,31l14.541,21l14.541-21C48.792,23.763,48.072,11.72,41.676,5.324z M29,24c-3.314,0-6-2.686-6-6
+	                                                s2.686-6,6-6s6,2.686,6,6S32.314,24,29,24z" /></a><span>15, Pedder Rd,
+                                                    IT Colony, Cumballa Hill, Mumbai, Maharashtra 400026</span>
+                                                <button type="button" class="btn btn-block btn-primary mt-1"
+                                                    data-toggle="modal" data-target="#exampleModal">Book
+                                                    appointment</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="card mr-3 bg-dark text-white ml-5" style="width: 15rem;">
+                                            <img src="https://freeclues.com/blog/wp-content/uploads/2017/12/blk-super-speciality-hospital-pusa-road-delhi-dermatologists-47boko1.jpg"
+                                                class="card-img-top" alt="...">
+                                            <div class="card-body">
+                                                <h5 class="card-title">BLK Super Speciality Hospital</h5>
+                                                <a href="#" class="card-link"><svg width=30px height=25px version="1.1"
+                                                        id="Capa_1" xmlns="http://www.w3.org/2000/svg"
+                                                        xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                                        viewBox="0 0 58 58" style="enable-background:new 0 0 58 58;"
+                                                        xml:space="preserve">
+                                                        <ellipse style="fill:#23A24D;" cx="29" cy="50" rx="29" ry="8" />
+                                                        <path style="fill:#03fff2;" d="M41.676,5.324L41.676,5.324c-7.098-7.098-18.607-7.098-25.706,0h0
+	                                                C9.574,11.72,8.855,23.763,14.282,31l14.541,21l14.541-21C48.792,23.763,48.072,11.72,41.676,5.324z M29,24c-3.314,0-6-2.686-6-6
+	                                                s2.686-6,6-6s6,2.686,6,6S32.314,24,29,24z" /></a><span>Pusa Rd, Radha
+                                                    Soami Satsang, Rajendra Place, New Delhi, Delhi 110005</span>
+                                                <button type="button" class="btn btn-block btn-primary mt-1"
+                                                    data-toggle="modal" data-target="#exampleModal">Book
+                                                    appointment</button>
+                                            </div>
+                                        </div>
+                                        <div class="card mr-3 bg-dark text-white ml-3" style="width: 15rem;">
+                                            <img src="https://qph.fs.quoracdn.net/main-qimg-bff74851df3dc5ab2831dd0248cfff86"
+                                                class="card-img-top" alt="...">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Manipal Hospital</h5>
+                                                <a href="#" class="card-link"><svg width=30px height=25px version="1.1"
+                                                        id="Capa_1" xmlns="http://www.w3.org/2000/svg"
+                                                        xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                                        viewBox="0 0 58 58" style="enable-background:new 0 0 58 58;"
+                                                        xml:space="preserve">
+                                                        <ellipse style="fill:#23A24D;" cx="29" cy="50" rx="29" ry="8" />
+                                                        <path style="fill:#03fff2;" d="M41.676,5.324L41.676,5.324c-7.098-7.098-18.607-7.098-25.706,0h0
+	                                                C9.574,11.72,8.855,23.763,14.282,31l14.541,21l14.541-21C48.792,23.763,48.072,11.72,41.676,5.324z M29,24c-3.314,0-6-2.686-6-6
+	                                                s2.686-6,6-6s6,2.686,6,6S32.314,24,29,24z" /></a><span>105/106 D
+                                                    Building, Sryain Kanal, Agarwal Market, Agarwal Market, Mumbai,
+                                                    Maharashtra 400057</span>
+                                                <button type="button" class="btn btn-block btn-primary mt-1"
+                                                    data-toggle="modal" data-target="#exampleModal">Book
+                                                    appointment</button>
+                                            </div>
+                                        </div>
+                                        <div class="card mr-3 bg-dark text-white ml-3" style="width: 15rem;">
+                                            <img src="http://jobsdeer.com/wp-content/uploads/2017/06/rsz_all-indian-institute-of-medical-scince.jpg"
+                                                class="card-img-top" alt="...">
+                                            <div class="card-body">
+                                                <h5 class="card-title">AIIMS</h5>
+                                                <a href="#" class="card-link"><svg width=30px height=25px version="1.1"
+                                                        id="Capa_1" xmlns="http://www.w3.org/2000/svg"
+                                                        xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                                        viewBox="0 0 58 58" style="enable-background:new 0 0 58 58;"
+                                                        xml:space="preserve">
+                                                        <ellipse style="fill:#23A24D;" cx="29" cy="50" rx="29" ry="8" />
+                                                        <path style="fill:#03fff2;" d="M41.676,5.324L41.676,5.324c-7.098-7.098-18.607-7.098-25.706,0h0
+	                                                C9.574,11.72,8.855,23.763,14.282,31l14.541,21l14.541-21C48.792,23.763,48.072,11.72,41.676,5.324z M29,24c-3.314,0-6-2.686-6-6
+	                                                s2.686-6,6-6s6,2.686,6,6S32.314,24,29,24z" /></a><span>Sri Aurobindo
+                                                    Marg, Ansari Nagar, Ansari Nagar East, New Delhi, Delhi
+                                                    110029</span>
+                                                <button type="button" class="btn btn-block btn-primary mt-1"
+                                                    data-toggle="modal" data-target="#exampleModal">Book
+                                                    appointment</button>
+                                            </div>
+                                        </div>
+                                        <div class="card mr-3 bg-dark text-white ml-3" style="width: 15rem;">
+                                            <img src="https://i.ytimg.com/vi/TfM8OAjseqI/hqdefault.jpg"
+                                                class="card-img-top" alt="...">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Saifee Hospital</h5>
+                                                <a href="#" class="card-link"><svg width=30px height=25px version="1.1"
+                                                        id="Capa_1" xmlns="http://www.w3.org/2000/svg"
+                                                        xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                                        viewBox="0 0 58 58" style="enable-background:new 0 0 58 58;"
+                                                        xml:space="preserve">
+                                                        <ellipse style="fill:#23A24D;" cx="29" cy="50" rx="29" ry="8" />
+                                                        <path style="fill:#03fff2;" d="M41.676,5.324L41.676,5.324c-7.098-7.098-18.607-7.098-25.706,0h0
+	                                                C9.574,11.72,8.855,23.763,14.282,31l14.541,21l14.541-21C48.792,23.763,48.072,11.72,41.676,5.324z M29,24c-3.314,0-6-2.686-6-6
+	                                                s2.686-6,6-6s6,2.686,6,6S32.314,24,29,24z" /></a><span>15/17, Maharshi
+                                                    Karve Rd, Charni Road East, Opera House, Girgaon, Mumbai,
+                                                    Maharashtra 400004</span>
+                                                <button type="button" class="btn btn-block btn-primary mt-1"
+                                                    data-toggle="modal" data-target="#exampleModal">Book
+                                                    appointment</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#inam" class="carousel-control-prev text-info" data-slide="prev">
+                        <span class="carousel-control-prev-icon"></span>
+                    </a>
+                    <a href="#inam" class="carousel-control-next text-info" data-slide="next">
+                        <span class="carousel-control-next-icon"></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <section>
+            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img height="600rem"
+                            src="https://www.quotemaster.org/images/a9/a988a922e42af8d34811f67550f8d1f9.png"
+                            class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img height="600rem"
+                            src="https://cdn.shortpixel.ai/client/q_glossy,ret_img,w_700/https://discovercorps.com/wp-content/uploads/2017/03/Quotes-About-Volunteering-%E2%80%9CAs-you-grow-older-you-will-discover-that-you-have-two-hands-%E2%80%94-one-for-helping-yourself-the-other-for-helping-others.%E2%80%9D.png"
+                            class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img height="600rem"
+                            src="https://discovercorps.com/wp-content/uploads/2017/03/Quotes-About-Volunteering-%E2%80%9CLife%E2%80%99s-most-persistent-and-urgent-question-is-What-are-you-doing-for-others-%E2%80%9D.png"
+                            class="d-block w-100" alt="...">
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </section>
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Appointment Form</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form action="/patientdata" method="POST">
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col">
+                                        <label for="Name">Patient Name</label>
+                                        <input id="patientname" type="text" class="form-control" placeholder="Name"
+                                            name="patientname" required>
+                                    </div>
+                                    <div class="col">
+                                        <label for="Age">Patient Age</label>
+                                        <input id="patientage" type="number" class="form-control" placeholder="Age"
+                                            name="patientage" required>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="formGroupExampleInput2">Patient Problem</label>
+                                <textarea id="patientproblem" class="form-control" placeholder="Ex-Headaches"
+                                    name="patientproblem" required></textarea>
+                            </div>
+                            <label for="formGroupExampleInput2">Mobile Number</label>
+                            <div class="input-group flex-nowrap">
+
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="addon-wrapping">+91</span>
+                                </div>
+                                <input class="form-control" type="number" minlength="10" maxlength="10" name="no"
+                                    required>
+                            </div>
+                            <button type="submit" class="btn btn-primary mt-1">Get Appointment</button>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="mt-4">
+            <div style="height: 20px;"></div>
+            <div class="row">
+                <div class="col-lg-3 col-md-3 col-sm-12 ml-5">
+                    <h4>Contact Us</h4>
+                    <p>BHIVE Workspace, L-148, 5th Main Rd,
+                        <br> Sector 6, HSR Layout,<br> Bengaluru, Karnataka 560102</p>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-12 ml-5">
+                    <h5>For patients</h5>
+                    <ul>
+                        <li><a href="#">Search for Doctors</a></li>
+                        <li><a href="#">Search for Hospitals</a></li>
+                        <li><a href="#">Order Medicine</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div style="height: 20px;"></div>
+        </footer>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script src="./js/hospital.js"></script>
+</body>
+
+</html>

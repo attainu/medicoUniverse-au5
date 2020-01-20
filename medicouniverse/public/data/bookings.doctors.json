@@ -1,0 +1,510 @@
+[
+    {
+        "name": "Dr.Ankur Gupta" ,
+        "address": "Shimla",
+        "fees": 250,
+        "phone": 9816134889,
+        "experience": 5 ,
+        "specialization":"General Physician",
+        "gender": "Male",
+        "image":"https://res.cloudinary.com/dlc12m7ig/image/upload/v1578846396/yxryq1ueh27dxudfzws8.png" 
+    },
+    {
+        "name":"Dr.Yogesh Diwan",
+        "address": "Kota",
+        "fees": 600,
+        "phone": 	9418477132,
+        "experience": 13 ,
+        "specialization":"General Physician",
+        "gender":"Male",
+        "image":"https://res.cloudinary.com/dlc12m7ig/image/upload/v1578846396/yxryq1ueh27dxudfzws8.png" 
+    },
+    {
+        "name": "Dr.Rakesh Dhiman",
+        "address": "Chennai",
+        "fees": 299,
+        "phone": 9418039141,
+        "experience": 7,
+        "specialization":"General Physician",
+        "gender":"Male",
+        "image":"https://res.cloudinary.com/dlc12m7ig/image/upload/v1578846396/yxryq1ueh27dxudfzws8.png" 
+    },       
+    {
+        "name": "Dr.Kunal Chawla",
+        "address": "Agra",
+        "fees": 500,
+        "phone": 9914113291,
+        "experience": 12 ,
+        "specialization":"General Physician",
+        "gender":"Male",
+        "image":"https://res.cloudinary.com/dlc12m7ig/image/upload/v1578846396/yxryq1ueh27dxudfzws8.png" 
+    },
+    {
+        "name": "Dr.Sunder Chainta",
+        "address": "Belgavi",
+        "fees": 300,
+        "phone": 9418453931,
+        "experience": 6,
+        "specialization":"General Physician",
+        "gender":"Male",
+        "image":"https://res.cloudinary.com/dlc12m7ig/image/upload/v1578846396/yxryq1ueh27dxudfzws8.png" 
+    },
+    {
+            "name":"Dr.Vanita Sharma" ,
+            "address": "Kota",
+        "fees": 299,
+        "phone": 8974654809,
+        "experience": 6 ,
+        "specialization":"General Physician",
+        "gender":"Female",
+        "image":"https://res.cloudinary.com/dlc12m7ig/image/upload/v1578846351/iwtkljs7igxpcxqztu1b.png"
+    },
+    {
+        "name":"Dr.Anu Dogra" ,
+        "address": "Chennai",
+        "fees": 300,
+        "phone": 9418490333,
+        "experience": 7 ,
+        "specialization":"General Physician",
+        "gender":"Female",
+        "image":"https://res.cloudinary.com/dlc12m7ig/image/upload/v1578846351/iwtkljs7igxpcxqztu1b.png"
+    },
+    {
+        "name": "Dr.Anju Partap",
+        "address": "Agra",
+        "fees": 999,
+        "phone": 9459129470,
+        "experience": 17 ,
+        "specialization": "General Physician",
+        "gender" : "Female",
+        "image": "https://res.cloudinary.com/dlc12m7ig/image/upload/v1578846351/iwtkljs7igxpcxqztu1b.png"
+    },
+    {
+        "name": "Dr.Deepa Diwan",
+        "address": "Shimla",
+        "fees": 200,
+        "phone": 9418465674,
+        "experience": 4 ,
+        "specialization":"General Physician",
+        "gender":"Female",
+        "image":"https://res.cloudinary.com/dlc12m7ig/image/upload/v1578846351/iwtkljs7igxpcxqztu1b.png"
+    },
+    {
+        "name":"Dr.Garima Sharma" ,
+        "address":"Belgavi" ,
+        "fees": 150,
+        "phone": 9418530385,
+        "experience": 3,
+        "specialization":"General Physician",
+        "gender":"Female",
+        "image":"https://res.cloudinary.com/dlc12m7ig/image/upload/v1578846351/iwtkljs7igxpcxqztu1b.png"
+    },
+    {
+        "name":"Dr.Dalip Gupta",
+        "address": "Kota",
+        "fees": 900,
+        "phone":7555141021,
+        "experience": 19,
+        "specialization":"ENT Specialist",
+        "gender":"Male",
+        "image": "https://res.cloudinary.com/dlc12m7ig/image/upload/v1578846396/yxryq1ueh27dxudfzws8.png" 
+    },
+    {
+        "name":"Dr.Balbir Singh",
+        "address": "Shimla",
+        "fees": 750,
+        "phone":8555773625,
+        "experience": 16,
+        "specialization":"ENT Specialist",
+        "gender":"Male",
+        "image":"https://res.cloudinary.com/dlc12m7ig/image/upload/v1578846396/yxryq1ueh27dxudfzws8.png" 
+    },
+    {
+        "name":"Dr.Jitender Mokta",
+        "address": "Chennai",
+        "fees": 600,
+        "phone":7555809421,
+        "experience": 14,
+        "specialization":"ENT Specialist",
+        "gender":"Male",
+        "image":"https://res.cloudinary.com/dlc12m7ig/image/upload/v1578846396/yxryq1ueh27dxudfzws8.png" 
+    },
+    {
+        "name": "Dr.Madan Kaushik",
+        "address": "Belgavi",
+        "fees": 400,
+        "phone": 9418039141,
+        "experience": 11,
+        "specialization":"ENT Specialist",
+        "gender":"Male",
+        "image":"https://res.cloudinary.com/dlc12m7ig/image/upload/v1578846396/yxryq1ueh27dxudfzws8.png" 
+    },
+    {
+        "name": "Dr.Raman Kumar",
+        "address": "Agra",
+        "fees": 299,
+        "phone": 9417138156,
+        "experience": 8,
+        "specialization":"ENT Specialist",
+        "gender":"Male",
+        "image":"https://res.cloudinary.com/dlc12m7ig/image/upload/v1578846396/yxryq1ueh27dxudfzws8.png" 
+    },  
+    {
+        "name": "Dr.Kavita Negi" ,
+        "address": "Agra",
+        "fees": 700,
+        "phone": 9816353535,
+        "experience": 15 ,
+        "specialization":"ENT Specialist",
+        "gender":"Female",
+        "image":"https://res.cloudinary.com/dlc12m7ig/image/upload/v1578846351/iwtkljs7igxpcxqztu1b.png"
+    },
+    {
+        "name": "Dr.Namrata Guleri",
+        "address": "Kota",
+        "fees": 350,
+        "phone": 9418137360,
+        "experience": 9 ,
+        "specialization":"ENT Specialist",
+        "gender":"Female",
+        "image":"https://res.cloudinary.com/dlc12m7ig/image/upload/v1578846351/iwtkljs7igxpcxqztu1b.png"
+    },
+    {
+        "name": "Dr.Ruchika Maraina" ,
+        "address": "Belgavi",
+        "fees": 250,
+        "phone": 9418647559,
+        "experience": 5,
+        "specialization":"ENT Specialist",
+        "gender":"Female",
+        "image":"https://res.cloudinary.com/dlc12m7ig/image/upload/v1578846351/iwtkljs7igxpcxqztu1b.png"
+    },
+    {
+        "name":"Dr.Vineeta Aggarwal",
+        "address": "Shimla",
+        "fees": 599,
+        "phone": 9816150606,
+        "experience": 13,
+        "specialization":"ENT Specialist",
+        "gender":"Female",
+        "image":"https://res.cloudinary.com/dlc12m7ig/image/upload/v1578846351/iwtkljs7igxpcxqztu1b.png"
+
+    },
+    {
+        "name":"Dr.Ragini Sharma",
+        "address": "Chennai",
+        "fees": 150,
+        "phone":  8894874079,
+        "experience": 3,
+        "specialization":"ENT Specialist",
+        "gender":"Female",
+        "image":"https://res.cloudinary.com/dlc12m7ig/image/upload/v1578846351/iwtkljs7igxpcxqztu1b.png"
+    },
+    {
+        "name": "Dr.Manoj Thakur",
+        "address": "Chennai",
+        "fees": 1000,
+        "phone":8555717551,
+        "experience": 23,
+        "specialization":"Orthopedics Specialist",
+        "gender":"Male",
+        "image": "https://res.cloudinary.com/dlc12m7ig/image/upload/v1578846396/yxryq1ueh27dxudfzws8.png" 
+
+    },
+    {
+        "name":"Dr.Mukand Lal",
+        "address": "Shimla",
+        "fees": 750,
+        "phone": 9418223636,
+        "experience": 19,
+        "specialization":"Orthopedics Specialist",
+        "gender":"Male",
+        "image":"https://res.cloudinary.com/dlc12m7ig/image/upload/v1578846396/yxryq1ueh27dxudfzws8.png" 
+
+    },
+    {
+        "name":"Dr.Rishi Thakur" ,
+        "address": "Kota",
+        "fees": 200,
+        "phone": 8894562735,
+        "experience": 4,
+        "specialization":"Orthopedics Specialist",
+        "gender":"Male",
+        "image":"https://res.cloudinary.com/dlc12m7ig/image/upload/v1578846396/yxryq1ueh27dxudfzws8.png" 
+    },
+    {
+        "name": "Dr.Desh Raj Chandel",
+        "address": "Belgavi",
+        "fees": 500,
+        "phone":9418114426,
+        "experience": 16,
+        "specialization":"Orthopedics Specialist",
+        "gender":"Male",
+        "image":"https://res.cloudinary.com/dlc12m7ig/image/upload/v1578846396/yxryq1ueh27dxudfzws8.png" 
+
+    },
+    {
+        "name": "Dr.Rajesh Sood", 
+        "address": "Agra",
+        "fees": 600,
+        "phone": 9418477124,
+        "experience": 11,
+        "specialization":"Orthopedics Specialist",
+        "gender":"Male",
+        "image":"https://res.cloudinary.com/dlc12m7ig/image/upload/v1578846396/yxryq1ueh27dxudfzws8.png" 
+    },
+    {
+        "name": "Dr.Sandeepa Kashyap",
+        "address": "Chennai",
+        "fees": 299,
+        "phone": 9418020187,
+        "experience": 9,
+        "specialization":"Orthopedics Specialist",
+        "gender":"Female",
+        "image":"https://res.cloudinary.com/dlc12m7ig/image/upload/v1578846351/iwtkljs7igxpcxqztu1b.png"
+    },
+    {
+        "name": "Dr.Suhani Sood",
+        "address":"Shimla" ,
+        "fees": 300,
+        "phone": 9418148263,
+        "experience": 8,
+        "specialization":"Orthopedics Specialist",
+        "gender":"Female",
+        "image":"https://res.cloudinary.com/dlc12m7ig/image/upload/v1578846351/iwtkljs7igxpcxqztu1b.png"	
+    },
+    {
+        "name": "Dr.Sheenam Sharma" ,
+        "address": "Kota",
+        "fees": 250,
+        "phone": 9418066366,
+        "experience": 10,
+        "specialization":"Orthopedics Specialist",
+        "gender":"Female",
+        "image":"https://res.cloudinary.com/dlc12m7ig/image/upload/v1578846351/iwtkljs7igxpcxqztu1b.png"
+    },
+    {
+        "name":"Dr.Komal Verma" ,
+        "address": "Belgavi",
+        "fees": 200,
+        "phone": 9418028069,
+        "experience": 6,
+        "specialization":"Orthopedics Specialist",
+        "gender":"Female",
+        "image":"https://res.cloudinary.com/dlc12m7ig/image/upload/v1578846351/iwtkljs7igxpcxqztu1b.png"
+
+    },
+    {
+        "name":"Dr.Akanksha Jain",
+        "address": "Agra",
+        "fees": 150,
+        "phone": 7832021217,
+        "experience": 4,
+        "specialization":"Orthopedics Specialist",
+        "gender":"Female",
+        "image":"https://res.cloudinary.com/dlc12m7ig/image/upload/v1578846351/iwtkljs7igxpcxqztu1b.png"
+    },
+    {
+        "name": "Dr.Arun Kumar Gupta",
+        "address": "Belgavi",
+        "fees": 799,
+        "phone":7555854038,
+        "experience": 20,
+        "specialization":"Gynecologist",
+        "gender":"Male",
+        "image":"https://res.cloudinary.com/dlc12m7ig/image/upload/v1578846396/yxryq1ueh27dxudfzws8.png" 
+    },
+    {
+        "name":"Dr.D.K.Verma",
+        "address": "Shimla",
+        "fees": 650,
+        "phone":9755575031,
+        "experience": 16,
+        "specialization":"Gynecologist",
+        "gender":"Male",
+        "image":"https://res.cloudinary.com/dlc12m7ig/image/upload/v1578846396/yxryq1ueh27dxudfzws8.png" 
+    },
+    {
+        "name":"Dr.R.S.Jhobta",
+        "address": "Agra",
+        "fees": 500,
+        "phone": 7555119290,
+        "experience": 15,
+        "specialization":"Gynecologist",
+        "gender":"Male",
+        "image":"https://res.cloudinary.com/dlc12m7ig/image/upload/v1578846396/yxryq1ueh27dxudfzws8.png" 
+    },
+    {
+        "name":"Dr.U.K.Chandel",
+        "address": "Kota",
+        "fees": 450,
+        "phone": 8555445273,
+        "experience": 12,
+        "specialization":"Gynecologist",
+        "gender":"Male",
+        "image":"https://res.cloudinary.com/dlc12m7ig/image/upload/v1578846396/yxryq1ueh27dxudfzws8.png" 
+    },
+    {
+        "name":"Dr.Bhavesh Devkaran",
+        "address": "Chennai",
+        "fees": 399,
+        "phone":9655546860,
+        "experience": 10,
+        "specialization":"Gynecologist",
+        "gender":"Male",
+        "image":"https://res.cloudinary.com/dlc12m7ig/image/upload/v1578846396/yxryq1ueh27dxudfzws8.png" 
+    },
+    {
+        "name": "Dr.Purnima Mahajan",
+        "address": "Agra",
+        "fees": 299,
+        "phone":7555684431,
+        "experience": 7,
+        "specialization":"Gynecologist",
+        "gender":"Female",
+        "image":"https://res.cloudinary.com/dlc12m7ig/image/upload/v1578846351/iwtkljs7igxpcxqztu1b.png"
+    },
+    {
+        "name":"Dr.Deepika Gupta" ,
+        "address": "Belgavi",
+        "fees": 300,
+        "phone": 8555277127,
+        "experience": 5,
+        "specialization":"Gynecologist",
+        "gender":"Female",
+        "image":"https://res.cloudinary.com/dlc12m7ig/image/upload/v1578846351/iwtkljs7igxpcxqztu1b.png"
+    },
+    {
+        "name": "Dr.Dhruvi Sharma",
+        "address": "Kota",
+        "fees": 250,
+        "phone":9355567663,
+        "experience": 4,
+        "specialization":"Gynecologist",
+        "gender":"Female",
+        "image":"https://res.cloudinary.com/dlc12m7ig/image/upload/v1578846351/iwtkljs7igxpcxqztu1b.png"
+    },
+    {
+        "name":"Dr.Vedika Sharma",
+        "address": "Chennai",
+        "fees": 200,
+        "phone":8555348540,
+        "experience": 4,
+        "specialization":"Gynecologist",
+        "gender":"Female",
+        "image":"https://res.cloudinary.com/dlc12m7ig/image/upload/v1578846351/iwtkljs7igxpcxqztu1b.png"
+    },
+    {
+        "name":"Dr.Preeti Kaundal",
+        "address": "Shimla",
+        "fees": 150,
+        "phone": 9955598258,
+        "experience": 3,
+        "specialization":"Gynecologist",
+        "gender":"Female",
+        "image":"https://res.cloudinary.com/dlc12m7ig/image/upload/v1578846351/iwtkljs7igxpcxqztu1b.png"
+    },
+    {
+        "name": "Dr.D.D.Gupta",
+        "address": "Kota",
+        "fees": 900,
+        "phone": 9418455510,
+        "experience": 22,
+        "specialization":"Dentist",
+        "gender":"Male",
+        "image":"https://res.cloudinary.com/dlc12m7ig/image/upload/v1578846396/yxryq1ueh27dxudfzws8.png" 
+    },
+    {
+        "name": "Dr.P.K.Kaundal",
+        "address":"Shimla" ,
+        "fees": 850,
+        "phone": 9816120050,
+        "experience": 19,
+        "specialization":"Dentist",
+        "gender":"Male",
+        "image":"https://res.cloudinary.com/dlc12m7ig/image/upload/v1578846396/yxryq1ueh27dxudfzws8.png" 
+    },
+    {
+        "name":"Dr.Raj Kumar" ,
+        "address": "Chennai",
+        "fees": 150,
+        "phone":8555231037,
+        "experience": 2,
+        "specialization":"Dentist",
+        "gender":"Male",
+        "image":"https://res.cloudinary.com/dlc12m7ig/image/upload/v1578846396/yxryq1ueh27dxudfzws8.png" 
+    },
+    {
+        "name":"Dr.Saurabh Galodha",
+        "address": "Agra",
+        "fees": 200,
+        "phone":8555434720,
+        "experience": 4,
+        "specialization":"Dentist",
+        "gender":"Male",
+        "image":"https://res.cloudinary.com/dlc12m7ig/image/upload/v1578846396/yxryq1ueh27dxudfzws8.png" 
+
+    },
+    {
+        "name": "Dr.Ramesh",
+        "address": "Belgavi",
+        "fees": 350,
+        "phone": 9418270234,
+        "experience": 14,
+        "specialization":"Dentist",
+        "gender":"Male",
+        "image":"https://res.cloudinary.com/dlc12m7ig/image/upload/v1578846396/yxryq1ueh27dxudfzws8.png" 
+    },
+    {
+        "name": "Dr.Aruna Chauhan",
+        "address": "Belgavi",
+        "fees": 299,
+        "phone": 7555137996,
+        "experience": 11,
+        "specialization":"Dentist",
+        "gender":"Female",
+        "image":"https://res.cloudinary.com/dlc12m7ig/image/upload/v1578846351/iwtkljs7igxpcxqztu1b.png"
+
+    },
+    {
+        "name": "Dr.Kanika Gupta",
+        "address": "Chennai",
+        "fees": 300,
+        "phone":7555149218,
+        "experience": 8,
+        "specialization":"Dentist",
+        "gender":"Female",
+        "image":"https://res.cloudinary.com/dlc12m7ig/image/upload/v1578846351/iwtkljs7igxpcxqztu1b.png"
+
+    },
+    {
+        "name":"Dr.Sakshi Singh",
+        "address": "Shimla",
+        "fees": 250,
+        "phone": 7555584450,
+        "experience": 6,
+        "specialization":"Dentist",
+        "gender":"Female",
+        "image":"https://res.cloudinary.com/dlc12m7ig/image/upload/v1578846351/iwtkljs7igxpcxqztu1b.png"
+    },
+    {
+        "name": "Dr.Anamika Thakur",
+        "address": "Agra",
+        "fees": 600,
+        "phone": 9418477500,
+        "experience": 18,
+        "specialization":"Dentist",
+        "gender":"Female",
+        "image":"https://res.cloudinary.com/dlc12m7ig/image/upload/v1578846351/iwtkljs7igxpcxqztu1b.png"
+    },
+    {
+        "name":"Dr.Aanchal Rehalia" ,
+        "address": "Kota",
+        "fees": 550,
+        "phone": 9805193817,
+        "experience": 15,
+        "specialization":"Dentist",
+        "gender":"Female",
+        "image":"https://res.cloudinary.com/dlc12m7ig/image/upload/v1578846351/iwtkljs7igxpcxqztu1b.png"
+    }
+]

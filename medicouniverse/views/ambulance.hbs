@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.10.1/css/mdb.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="./css/ambulanceAmbulance.css">
+</head>
+
+<body onload="initialize()">
+    <div class="container-flex">
+
+
+        <nav class="navbar navbar-expand-sm navbar-light">
+            <a class="navbar-brand" href="/">Medico<span>Universe</span></a>
+
+            {{#if user}}
+            <div class="navbar-loggedin">
+                <img src="{{user.image}}" onerror="this.src = './image/default_profile_pic.png'" width="36px"
+                    height="36px">
+                <a href="/dashboard" class="ml-2">{{user.name}}</a>
+            </div>
+            {{else}}
+            <button class="navbar-toggler float-right p-1" type="button" data-toggle="collapse"
+                data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse nav-resp" id="navbarSupportedContent">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/about">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/mission">Mission</a>
+                    </li>
+                </ul>
+                <a class="nav-link login-signup " href="/login">Login/SignUp</a>
+            </div>
+            {{/if}}
+        </nav>
+
+
+
+
+
+        <div class="container-flex m-3">
+            <!-- Card Regular -->
+            <div class="card card-cascade">
+                <div class="row">
+                    <div class="col-4 card">
+                        <div class="card card-cascade narrower mt-3">
+
+                            <!-- Card image -->
+
+                            <div class="avatar mx-auto white">
+                                <img class="card-img-top"
+                                    src="https://res.cloudinary.com/dps7y8nd7/image/upload/v1579533608/ambulance_rygh5o.png"
+                                    alt="Card image cap">
+                                <a>
+                                    <div class="mask rgba-white-slight"></div>
+                                </a>
+                            </div>
+
+
+                            <!-- Card content -->
+                            <div class="card-body card-body-cascade">
+
+                                <!-- Label -->
+                                <h5 class="pink-text pb-2 pt-1"><i class="fas fa-ambulance"></i> Route Guide</h5>
+                                <!-- Title -->
+                                <h4 class=" card-title">Enter Origin and Destination</h4>
+                                <!-- Text -->
+                                <div class="card">
+                                    <div class="row">
+                                        <!-- Material input -->
+                                        <div class="md-form ml-5">
+                                            <i class="fas fa-search prefix"></i>
+                                            <input type="text" id="start" class="form-control validate">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <!-- Material input -->
+                                        <div class="md-form ml-5">
+                                            <i class="fas fa-search prefix"></i>
+                                            <input type="text" id="end" class="form-control validate">
+                                        </div>
+                                    </div>
+                                    <div id="error-msg"></div>
+                                </div>
+                                <!-- Button -->
+                                {{!-- <a class="btn btn-unique" id="bookAmbulance" onclick="ambulanceDetails()">Book</a> --}}
+                                <div class="text-center mt-3">
+                                    <a href="" class="btn btn-default btn-rounded" data-toggle="modal"
+                                        data-target="#modalLoginAvatar">Book Now
+                                    </a>
+
+                                </div>
+
+                            </div>
+
+
+
+                        </div>
+                    </div>
+                    <div class="col-8">
+                        <div class="card card-cascade narrower mt-3">
+
+                            <!-- Card image -->
+                            <div class="view view-cascade overlay">
+                                <div id="map_canvas" style="height:600px;width:100%"></div>
+                            </div>
+
+                            <!-- Card content -->
+
+
+                            <!-- Card footer -->
+                            <div class="card-footer text-muted text-center">
+                                2 days ago
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card image -->
+
+
+                <!-- Card content -->
+
+            </div>
+            <!-- Card Regular -->
+        </div>
+
+        <footer class="mt-4">
+            <div style="height: 20px;"></div>
+            <div class="row">
+                <div class="col-lg-3 col-md-3 col-sm-12 ml-5">
+                    <h4>Contact Us</h4>
+                    <p>BHIVE Workspace, L-148, 5th Main Rd,
+                        <br> Sector 6, HSR Layout,<br> Bengaluru, Karnataka 560102</p>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-12 ml-5">
+                    <h5>For patients</h5>
+                    <ul>
+                        <li><a href="#">Search for Doctors</a></li>
+                        <li><a href="#">Search for Hospitals</a></li>
+                        <li><a href="#">Order Medicine</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div style="height: 20px;"></div>
+        </footer>
+    </div>
+
+    <!--Modal: Login with Avatar Form-->
+    <div class="modal fade" id="modalLoginAvatar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog cascading-modal modal-avatar modal-sm" role="document">
+            <!--Content-->
+            <div class="modal-content">
+
+                <!--Header-->
+                <div class="modal-header">
+                    <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20%281%29.jpg" alt="avatar"
+                        class="rounded-circle img-responsive">
+                </div>
+                <!--Body-->
+                <div class="modal-body text-center mb-1">
+
+                    <h5 class="mt-1 mb-2">Maria Doe</h5>
+
+                    <div class="md-form ml-0 mr-0">
+                        <p> Ambulance No: RJ20 CA 2019</p>
+                        <p>Contact 7100685458</p>
+                    </div>
+
+                    <div class="text-center mt-4">
+                        <button class="btn btn-cyan mt-1" id="confirmBooking" onclick="setRoutes()">Confirm Booking <i
+                                class="fas fa-sign-in ml-1" data-dismiss="modal"></i></button>
+                    </div>
+                </div>
+
+            </div>
+            <!--/.Content-->
+        </div>
+    </div>
+    <!--Modal: Login with Avatar Form-->
+
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.10.1/js/mdb.min.js"></script>
+    <script type="text/javascript"
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC9oBu9YDzVLHG808Q786IxvdVzQ2LtqT8&libraries=places&callback=initMap"></script>
+    <script type="text/javascript" src="./js/scriptambulance.js"></script>
+    <script type="text/javascript" src="./js/scriptpolyline.js"></script>
+
+</body>
+
+</html>

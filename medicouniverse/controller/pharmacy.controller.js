@@ -216,12 +216,12 @@ pharmacyController.profileget = (req, res, next) => {
 // 	res.render('productCategory/baby_bath');
 // };
 
-pharmacyController.userdataget = (req, res, next) => {
-	medicineDb.insertMany(jsonData, (err, jsonData) => {
-		if (err) {
-			console.log('error in data');
-		}
-		res.send(jsonData);
-	});
-};
+// pharmacyController.userdataget = (req, res, next) => {
+// 	medicineDb.insertMany(jsonData, (err, jsonData) => {
+// 		if (err) {
+// 			console.log('error in data');
+// 		}
+// 		res.send(jsonData);
+// 	});
+// };
 module.exports = pharmacyController;

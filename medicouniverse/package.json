@@ -24,6 +24,7 @@
     "mongodb": "^3.4.1",
     "mongoose": "^5.8.7",
     "multiparty": "^4.2.1",
+    "nexmo": "^2.5.3",
     "node-fetch": "^2.6.0",
     "nodemon": "^2.0.2",
     "passport": "^0.4.1",

@@ -42,6 +42,6 @@ router.post('/placedOrder', pharmacyController.placedOrderpost);
 router.get('/profile', redirectLogin, pharmacyController.profileget);
 // router.get('/products/baby_bath',pharmacyController.babybathget)
 // router.post('/shoppingCart', pharmacyController.shoppingCartposts);
-router.get('/userdata',pharmacyController.userdataget)
+// router.get('/userdata', pharmacyController);
 
 module.exports = router;

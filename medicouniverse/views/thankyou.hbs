@@ -54,27 +54,10 @@
 
 
 
-        <div class="container mt-2 ">
-            <div class="row">
-                <div class="col">
-                    <form class="form-inline">
-                        <i class="fas fa-search mr-2" aria-hidden="true"></i>
-                        <input class=" form-control" type="text"
-                            placeholder="Search for medicines, health products and more" aria-label="Search">
-                    </form>
-                </div>
-                <div class="col">
-                    <a href="/shoppingCart" class="btn btn-default float-right"><span><i
-                                class="fas fa-shopping-cart"></i></span>
-                        VIEW CART <span class="badge">{{session.cart.totalQty}}</span></a>
-                </div>
-
-            </div>
-        </div>
         <div>
 
-            <div class="container">
-                <!-- Card Regular -->
+            <div class="container mt-5">
+                {{#if obj}}
                 <div class="card card-cascade">
 
                     <!-- Card image -->
@@ -84,27 +67,17 @@
                     <div class="card-body card-body-cascade text-center">
 
                         <!-- Title -->
-                        <h4 class="card-title"><strong>Thanky You for shopping with us.</strong></h4>
+                        <h4 class="card-title"><strong>SMS Sent to {{obj.no}}.</strong></h4>
                         <!-- Subtitle -->
-                        <h6 class="font-weight-bold indigo-text py-2">Hello {{result.cardName}}!!</h6>
+                        <h6 class="font-weight-bold indigo-text py-2">Booked On: &nbsp&nbsp<span id="datetime"></span>
+                        </h6>
+                        <h6 class="font-weight-bold indigo-text py-2">Name: {{obj.patient}}</h6>
+                        <h6 class="font-weight-bold indigo-text py-2">Age: {{obj.age}}</h6>
                         <!-- Text -->
-                        <p class="card-text">We have recieved your orders.Please check your email for tracking link.</p>
-                        <p class="card-text"></p>
-                        <span>
-                            <div class="row">
-                                <div class="col">
-                                    <h6 class="font-weight-bold indigo-text py-2">You have orderd
-                                        {{result.cart.totalQty}} items.</h6>
-
-                                </div>
-                                <div class="col">
-                                    <h6 class="font-weight-bold indigo-text py-2">We have recieved amount of ₹
-                                        {{result.cart.totalPrice}}</h6>
-
-                                </div>
-                            </div>
-                        </span>
-
+                        <p class="card-text font-weight-bold"> Appointment confirmed at 2 pm. Please
+                            contact us with any questions on 8005238745.</p>
+                        <a href="/hospitalsearch">Go back</a>
+                        <h6 class="font-weight-bold  py-2">Connect with us:</h6>
                         <!-- Facebook -->
                         <a type="button" class="btn-floating btn-small btn-fb"><i class="fab fa-facebook-f"></i></a>
                         <!-- Twitter -->
@@ -113,9 +86,11 @@
                         <a type="button" class="btn-floating btn-small btn-dribbble"><i class="fab fa-dribbble"></i></a>
 
                     </div>
-                </div>
+                </div {{/if}} <!-- Card Regular -->
+                >
                 <!-- Card Regular -->
             </div>
+
 
             <footer class="mt-4">
                 <div style="height: 20px;"></div>
@@ -147,7 +122,10 @@
             crossorigin="anonymous"></script>
         <script type="text/javascript"
             src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.10.1/js/mdb.min.js"></script>
-        <script src="./js/products.js"></script>
+        <script>
+            var dt = new Date();
+            document.getElementById("datetime").innerHTML = dt.toLocaleDateString();
+        </script>
 </body>
 
 </html>

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>MedicoUniverse | Bookings</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="./css/booking.doctors.css">
+</head>
+
+<body>
+  <nav class="navbar">
+    <h3>Medico<span>Universe</span></h3>
+    <div class="nav-link">
+      <span>About Us</span>
+      <span>Mission</span>
+    </div>
+    <button class="btn btn-light">Login/Signup</button>
+  </nav>
+  <div class="jumbotron">
+    <h1 id="pName"><strong>Medico<span>Universe</span><sup>+</sup></strong></h1>
+    <h3 id="info"><strong>Book Your Appointments here</strong></h3>
+    <form action="/appointment" method="POST" class="form-inline">
+      <input class="form-control" list="places" name="city" placeholder="Select Cities" required>
+      <datalist id="places">
+        <option value="Shimla">Shimla</option>
+        <option value="Kota">Kota</option>
+        <option value="Agra">Agra</option>
+        <option value="Chennai">Chennai</option>
+        <option value="Belgavi">Belgavi</option>
+      </datalist>
+      </button>
+      <input id="service" class="form-control" list="requirements" name="service"
+        placeholder="Select Doctors,Therapists,Nurses and Babysitters" onchange="changeValue()" required>
+      <datalist id="requirements">
+        <option value="Doctors">Doctors</option>
+        <option value="Nurses">Nurses</option>
+        <option value="Babysitters">Babysitters</option>
+        <option value="Therapists">Therapists</option>
+      </datalist>
+      </button>
+      <input id="specialization" class="form-control" list="specs" name="specialization"
+        placeholder="Select Specialization" required>
+      <datalist id="specs">
+      </datalist>
+      </button>
+      <button type="submit" id="findBtn"><strong>Find</strong></button>
+    </form>
+  </div>
+  <div id="filterBar">
+    <div class="box">
+      <label id="label" for="filter"><strong><img src="/images/funnel.svg" width="20px" height="20px" alt="">
+          Filter</strong></label>
+      <select placeholder="price">
+        <option>Fees </option>
+        <option>Fees ₹ 0-299</option>
+        <option>Fees ₹ 300-599 </option>
+        <option>Fees ₹ 600-999</option>
+      </select>
+    </div>
+  </div>
+  <h4><strong>Here are some results matching your requirements</strong></h4>
+  <div class="content">
+    {{#each doctors}}
+    <section>
+      <div id="resultDisplay">
+        <hr>
+        <div class="detailDiv">
+          <div id="flex1">
+            <img src={{this.image}} alt="" width="200px" height="auto">
+          </div>
+          <div id="flex2">
+            <ul>
+              <li style="color:green;">
+                <h3><img src="public/images/hospital.svg" width="22px" height="auto" alt=""><strong>
+                    {{this.name}}</strong></h3>
+              </li>
+              <hr>
+              <li> <img src="public/images/placeholder.svg" width="18px" height="auto" alt=""> <strong>
+                  {{this.address}}</strong> </li>
+              <li style="color: blue;">
+                <strong><img src="public/images/money.svg" width="18px" height="auto" alt=""> ₹ {{this.fees}}</strong>
+              </li>
+              <li>
+                <img src="public/images/telephone.svg" width="18px" height="auto" alt=""><strong>
+                  {{this.phone}}</strong> </li>
+              <li>
+                <img src="public/images/user-experience.svg" width="18px" height="auto" alt=""><strong>
+                  {{this.experience}} years experience</strong></li>
+            </ul>
+          </div>
+          <div id="flex3">
+            <h4><strong>About</strong></h4>
+            <p> {{this.name}} is working as a <strong>{{specialization}}</strong> since {{experience}} years</p>
+            <button id="bookBtn" class="btn btn-outline-info book" data-toggle="modal" data-target="#modalCenter">Book
+              Appointment</button>
+          </div>
+        </div>
+        <hr>
+      </div>
+    </section>
+    {{/each}}
+    <section>
+      <div class="modal fade" id="modalCenter" tabindex="-1" role="dialog" aria-labelledby="modalCenterTitle"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="modalLongTitle"><strong>Booking Successfull !!!</strong></h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <p>We have received your request. Hold on for a moment, we will get to you in sometime.</p>
+              <ul>
+                <li><strong>On Date : </strong><span id="date"></span></li>
+                <li><strong>On Time : </strong><span id="time"></span></li>
+              </ul>
+            </div>
+            <div class="modal-footer">
+              <button id="close" type="button" class="btn btn-outline-dark" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="modal fade" id="modalCenter2" tabindex="-1" role="dialog" aria-labelledby="modalCenterTitle"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="modalLongTitle"><strong>Booking Cancelled</strong></h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <p>We have received your request. Your booking has been cancelled.</p>
+            </div>
+            <div class="modal-footer">
+              <button id="close2" type="button" class="btn btn-outline-dark" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+  <footer>
+    <div class="h-25"></div>
+    <div class="row">
+      <div class="col-3 ml-5">
+        <h4>Contact Us</h4>
+        <p>BHIVE Workspace, L-148, 5th Main Rd,<br> Sector 6, HSR Layout,<br> Bengaluru, Karnataka 560102</p>
+      </div>
+      <div class="col-3">
+        <h5>For patients</h5>
+        <ul>
+          <li><a href="#">Search for Doctors</a></li>
+          <li><a href="#">Search for Hospitals</a></li>
+          <li><a href="#">Order Medicine</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
+  <script src="./js/bookingDoctors.script.js"></script>
+</body>
+
+</html>

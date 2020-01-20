@@ -14,8 +14,13 @@ const cloudinary = require('cloudinary').v2;
 const medicineDb = require('./model/pharmacy.model');
 const connectMedicineDb = require('./model/pharmacy.connection');
 // require('./config/passport');
+const connectDB = require('./model/db');
 const pharmacyRoute = require('./routes/pharmacy.route');
-
+const ambulanceRoute = require('./routes/ambulance_ambulance.route');
+const ambulanceDb = require('./model/ambulance.ambulance.model');
+const homepageRoutes = require('./routes/homepage.route');
+const bookingRoute = require('./routes/booking_doctors.router.js');
+const hospitalroute = require('./routes/hospitalroute');
 const objectId = mongodb.ObjectID;
 const PORT = 5050;
 
@@ -25,7 +30,7 @@ cloudinary.config({
 	api_secret: 'gVv49zXvVArE1dRCz3ipg7JTzqw'
 });
 connectMedicineDb();
-
+connectDB();
 app.set('view engine', 'hbs');
 
 app.use(express.static('uploads'));
@@ -58,6 +63,10 @@ app.use(
 );
 app.use(cookieParser());
 app.use(pharmacyRoute);
+app.use(homepageRoutes);
+app.use(bookingRoute);
+app.use(hospitalroute);
+app.use(ambulanceRoute);
 // app.use(flash());
 // app.use(passport.initialize());
 // app.use(passport.session());
