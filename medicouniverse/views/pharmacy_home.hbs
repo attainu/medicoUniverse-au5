@@ -1,0 +1,562 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.10.1/css/mdb.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="./css//homepage.css">
+</head>
+
+<body>
+    <div class="container-flex">
+
+
+        <nav class="navbar navbar-expand-sm navbar-light">
+            <a class="navbar-brand" href="/">Medico<span>Universe</span></a>
+
+            {{#if user}}
+            <div class="navbar-loggedin">
+                <img src="{{user.image}}" onerror="this.src = './image/default_profile_pic.png'" width="36px"
+                    height="36px">
+                <a href="/dashboard" class="ml-2">{{user.name}}</a>
+            </div>
+            {{else}}
+            <button class="navbar-toggler float-right p-1" type="button" data-toggle="collapse"
+                data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse nav-resp" id="navbarSupportedContent">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/about">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/mission">Mission</a>
+                    </li>
+                </ul>
+                <a class="nav-link login-signup " href="/login">Login/SignUp</a>
+            </div>
+            {{/if}}
+        </nav>
+
+        <div class="container mt-2 ">
+            <div class="row">
+                <div class="col">
+                    <form class="form-inline">
+                        <i class="fas fa-search mr-2" aria-hidden="true"></i>
+                        <input class=" form-control" type="text"
+                            placeholder="Search for medicines, health products and more" aria-label="Search">
+                    </form>
+                </div>
+                <div class="col">
+                    <a href="#" class="btn btn-default float-right"><span><i class="fas fa-shopping-cart"></i></span>
+                        VIEW CART</a>
+                </div>
+
+            </div>
+        </div>
+        <div class="container-flex m-3">
+            <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img class="d-block"
+                            src="https://res.cloudinary.com/dps7y8nd7/image/upload/v1578919266/Screenshot_135_wtiiwj.png"
+                            alt="First slide">
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block "
+                            src="https://res.cloudinary.com/dps7y8nd7/image/upload/v1578919266/Screenshot_136_ddmowy.png"
+                            alt="Second slide">
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block "
+                            src="https://res.cloudinary.com/dps7y8nd7/image/upload/v1578919266/Screenshot_134_soj0dn.png"
+                            alt="Third slide">
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+
+        </div>
+        <div class="container">
+            <span id="browseMedicines" class="font-weight-bold">Browse Medicines nag Health Products</span>
+        </div>
+        <div class="container">
+            <span id="categories" class="font-weight-bolder ml-2">Popular Categories</span>
+        </div>
+        <div class="container mt-3">
+            <!--Carousel Wrapper-->
+            <div id="popular-category" class="carousel slide carousel-multi-item v-2" data-ride="carousel">
+
+                <!--Controls-->
+                <a class="carousel-control-prev" href="#popular-category" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#popular-category" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+
+                <!--Slides-->
+                <div class="carousel-inner v-2" role="listbox">
+
+                    <!--First slide-->
+                    <div class="carousel-item active">
+                        <div class="row">
+
+                            <div class="col-md-4 ">
+                                <div class="card mb-2 bg-warning">
+                                    <img class="card-img-top "
+                                        src="https://res.cloudinary.com/dps7y8nd7/image/upload/v1579058218/baby_care_fajljk.png"
+                                        alt="Card image cap">
+
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="card mb-2">
+                                    <img class="card-img-top"
+                                        src="https://res.cloudinary.com/dps7y8nd7/image/upload/v1579058219/personal_x2cmow.png"
+                                        alt="Card image cap">
+
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="card mb-2">
+                                    <img class="card-img-top"
+                                        src="https://res.cloudinary.com/dps7y8nd7/image/upload/v1579058220/skin_care_wb03fh.png"
+                                        alt="Card image cap">
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!--/.First slide-->
+
+                    <!--Second slide-->
+                    <div class="carousel-item">
+                        <div class="row">
+
+
+                            <div class="col-md-4">
+                                <div class="card mb-2">
+                                    <img class="card-img-top"
+                                        src="https://res.cloudinary.com/dps7y8nd7/image/upload/v1579058220/ayurvedc_enuj96.png"
+                                        alt="Card image cap">
+
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="card mb-2">
+                                    <img class="card-img-top"
+                                        src="https://res.cloudinary.com/dps7y8nd7/image/upload/v1579058218/fitness_oup3hi.png"
+                                        alt="Card image cap">
+
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="card mb-2">
+                                    <img class="card-img-top"
+                                        src="https://res.cloudinary.com/dps7y8nd7/image/upload/v1579058217/instruments_uzclpt.png"
+                                        alt="Card image cap">
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <!--/.Second slide-->
+
+                    <!--Third slide-->
+                    <div class="carousel-item">
+                        <div class="row">
+
+                            <div class="col-md-4">
+                                <div class="card mb-2">
+                                    <img class="card-img-top"
+                                        src="https://mdbootstrap.com/img/Photos/Horizontal/Food/4-col/img%20(53).jpg"
+                                        alt="Card image cap">
+
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="card mb-2">
+                                    <img class="card-img-top"
+                                        src="https://mdbootstrap.com/img/Photos/Horizontal/Food/4-col/img%20(45).jpg"
+                                        alt="Card image cap">
+
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="card mb-2">
+                                    <img class="card-img-top"
+                                        src="https://mdbootstrap.com/img/Photos/Horizontal/Food/4-col/img%20(51).jpg"
+                                        alt="Card image cap">
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!--/.Third slide-->
+
+                </div>
+                <!--/.Slides-->
+
+            </div>
+            <!--/.Carousel Wrapper-->
+        </div>
+        <div class="container mt-3">
+            <span id="products" class="font-weight-bolder ml-2">Popular Products</span>
+        </div>
+        <div class="container mt-3">
+            <!--Carousel Wrapper-->
+            <div id="multi-item-example2" class="carousel slide carousel-multi-item v-2" data-ride="carousel"
+                data-interval=7000>
+
+                <div class="carousel-inner v-2" role="listbox">
+
+                    <!--First slide-->
+                    <div class="carousel-item active">
+                        <div class="row">
+
+                            <div class="col-md-4">
+                                <div class="card mb-2">
+                                    <div class="m-product-wrapper ">
+                                        <a class="u-a--disable-style"
+                                            href="/health-products/horlicks-oats-refill-1-kg-13677/p" target="_blank">
+                                            <div class="m-product__image-wrapper u-p-b--5 u-p-t--5 u-text--center"><img
+                                                    class="u-img-fit--height u-b-center ml-5"
+                                                    alt="GLAXOSMITHKLINE CONSUMER HEALTHCARE LTD HORLICKS OATS REFILL 1KG 1KG HEALTH FOODS"
+                                                    src="https://res.cloudinary.com/dps7y8nd7/image/upload/v1579087954/horlicks_mgdbcz.png">
+
+                                            </div>
+                                            <div class="u-p-t--10 u-position--relative ">
+                                                <div
+                                                    class="heading-epsilon m-product-details text-charcoal-grey-two u-p-l--10 u-p-r--10">
+                                                    <div class="m-product__title text-center ">HORLICKS OATS REFILL 1KG
+                                                    </div>
+                                                    <div class="u-p-t--10 ">
+                                                        <div
+                                                            class="u-display--inline-block heading-gamma-bold text-charcoal-grey-two text-center">
+                                                            <span><strong class="text-dark ml-2">₹ 199.00</strong>
+                                                            </span>
+                                                        </div>
+                                                        <span
+                                                            class="text-true-green u-p-l--5 heading-zeta u-text--bold"></span>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <div class="u-p--10"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                            <div class="col-md-4">
+                                <div class="card mb-2">
+                                    <div class="m-product-wrapper ">
+                                        <a class="u-a--disable-style"
+                                            href="/health-products/horlicks-oats-refill-1-kg-13677/p" target="_blank">
+                                            <div class="m-product__image-wrapper u-p-b--5 u-p-t--5 u-text--center"><img
+                                                    class="u-img-fit--height u-b-center ml-5"
+                                                    alt="GLAXOSMITHKLINE CONSUMER HEALTHCARE LTD HORLICKS OATS REFILL 1KG 1KG HEALTH FOODS"
+                                                    src="https://res.cloudinary.com/dps7y8nd7/image/upload/v1579088184/comb0002_l_om31vt.jpg">
+                                            </div>
+                                            <div class="u-p-t--10 u-position--relative">
+                                                <div class="heading-epsilon m-product-details u-p-l--10 u-p-r--10">
+                                                    <div class="m-product__title text-center">COMBIFLAME 500MG TABLET
+                                                    </div>
+                                                    <div class="u-p-t--10 ">
+                                                        <div
+                                                            class="u-display--inline-block heading-gamma-bold text-center ">
+                                                            <span
+                                                                class="text-dark ml-2 "><strong>₹20.00</strong></span><span
+                                                                class="ml-2"><strong><strike class="text-dark"
+                                                                        style="font-size: smaller;">₹28.00</strike></strong></span><span
+                                                                class="text-success ml-3" style="font-size: small;">28%
+                                                                off</span>
+                                                        </div><span
+                                                            class="text-true-green u-p-l--5 heading-zeta u-text--bold"></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <div class="u-p--10"></div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="card mb-2">
+                                    <div class="m-product-wrapper ">
+                                        <a class="u-a--disable-style"
+                                            href="/health-products/horlicks-oats-refill-1-kg-13677/p" target="_blank">
+                                            <div class="m-product__image-wrapper u-p-b--5 u-p-t--5 u-text--center"><img
+                                                    class="u-img-fit--height u-b-center ml-5"
+                                                    alt="GLAXOSMITHKLINE CONSUMER HEALTHCARE LTD HORLICKS OATS REFILL 1KG 1KG HEALTH FOODS"
+                                                    src="https://res.cloudinary.com/dps7y8nd7/image/upload/v1579070433/fb6d80aa28e4149a7b60f353231c549ed5731f951_cxo55b.jpg"
+                                                    style="margin-right:auto; margin-left:auto">
+                                            </div>
+                                            <div class="u-p-t--10 u-position--relative">
+                                                <div
+                                                    class="heading-epsilon m-product-details tHORLICKS OATS REFILL 1KGext-charcoal-grey-two u-p-l--10 u-p-r--10">
+                                                    <div class="m-product__title text-center">D-Protin Powder Chocolate
+                                                        500 g</div>
+                                                    <div class="u-p-t--10 ">
+                                                        <div
+                                                            class="u-display--inline-block heading-gamma-bold text-center ">
+                                                            <span
+                                                                class="text-dark ml-2 "><strong>₹462.00</strong></span><span
+                                                                class="ml-2"><strong><strike class="text-dark"
+                                                                        style="font-size: smaller;">₹578.00</strike></strong></span><span
+                                                                class="text-success ml-3" style="font-size: small;">28%
+                                                                off</span>
+                                                        </div><span
+                                                            class="text-true-green u-p-l--5 heading-zeta u-text--bold"></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <div class="u-p--10"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!--/.First slide-->
+
+                    <!--Second slide-->
+                    <div class="carousel-item">
+                        <div class="row">
+
+
+                            <div class="col-md-4">
+                                <div class="card mb-2">
+                                    <div class="m-product-wrapper ">
+                                        <a class="u-a--disable-style"
+                                            href="/health-products/horlicks-oats-refill-1-kg-13677/p" target="_blank">
+                                            <div class="m-product__image-wrapper u-p-b--5 u-p-t--5 u-text--center"><img
+                                                    class="u-img-fit--height u-b-center ml-5"
+                                                    alt="GLAXOSMITHKLINE CONSUMER HEALTHCARE LTD HORLICKS OATS REFILL 1KG 1KG HEALTH FOODS"
+                                                    src="https://res.cloudinary.com/dps7y8nd7/image/upload/v1579087954/melatonin_tmmww9.png"
+                                                    style="margin-right:auto; margin-left:auto">
+                                            </div>
+                                            <div class=" u-p-t--10 u-position--relative">
+                                                <div
+                                                    class="heading-epsilon m-product-details text-charcoal-grey-two u-p-l--10 u-p-r--10">
+                                                    <div class="m-product__title text-center">Melatonin sleeping pils
+                                                    </div>
+                                                    <div class="u-p-t--10 ">
+                                                        <div
+                                                            class="u-display--inline-block heading-gamma-bold text-center ">
+                                                            <span
+                                                                class="text-dark ml-2 "><strong>₹462.00</strong></span><span
+                                                                class="ml-2"><strong><strike class="text-dark"
+                                                                        style="font-size: smaller;">₹578.00</strike></strong></span><span
+                                                                class="text-success ml-3" style="font-size: small;">28%
+                                                                off</span>
+                                                        </div><span
+                                                            class="text-true-green u-p-l--5 heading-zeta u-text--bold"></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <div class="u-p--10"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="card mb-2">
+                                    <div class="m-product-wrapper ">
+                                        <a class="u-a--disable-style"
+                                            href="/health-products/horlicks-oats-refill-1-kg-13677/p" target="_blank">
+                                            <div class="m-product__image-wrapper u-p-b--5 u-p-t--5 u-text--center"><img
+                                                    class="u-img-fit--height u-b-center ml-5"
+                                                    alt="GLAXOSMITHKLINE CONSUMER HEALTHCARE LTD HORLICKS OATS REFILL 1KG 1KG HEALTH FOODS"
+                                                    src="https://res.cloudinary.com/dps7y8nd7/image/upload/v1579087954/paracetamol_nozneb.png"
+                                                    style="margin-right:auto; margin-left:auto">
+                                            </div>
+                                            <div class="u-p-t--10 u-position--relative">
+                                                <div
+                                                    class="heading-epsilon m-product-details text-charcoal-grey-two u-p-l--10 u-p-r--10">
+                                                    <div class="m-product__title text-center">PARACITAMOL TABLET 500MG
+                                                    </div>
+                                                    <div class="u-p-t--10 ">
+                                                        <div
+                                                            class="u-display--inline-block heading-gamma-bold text-center ">
+                                                            <span
+                                                                class="text-dark ml-2 "><strong>₹80.00</strong></span><span
+                                                                class="ml-2"><strong><strike class="text-dark"
+                                                                        style="font-size: smaller;">₹100.00</strike></strong></span><span
+                                                                class="text-success ml-3" style="font-size: small;">20%
+                                                                off</span>
+                                                        </div><span
+                                                            class="text-true-green u-p-l--5 heading-zeta u-text--bold"></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <div class="u-p--10"></div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="card mb-2">
+                                    <div class="m-product-wrapper ">
+                                        <a class="u-a--disable-style"
+                                            href="/health-products/horlicks-oats-refill-1-kg-13677/p" target="_blank">
+                                            <div class="m-product__image-wrapper u-p-b--5 u-p-t--5 u-text--center"><img
+                                                    class="u-img-fit--height u-b-center ml-5"
+                                                    alt="GLAXOSMITHKLINE CONSUMER HEALTHCARE LTD HORLICKS OATS REFILL 1KG 1KG HEALTH FOODS"
+                                                    src="https://res.cloudinary.com/dps7y8nd7/image/upload/v1579070433/8656a96b0c9d8acf8323004e727ff7721faad2441_dmccsr.jpg"
+                                                    style="margin-right:auto; margin-left:auto">
+                                            </div>
+                                            <div class="u-p-t--10 u-position--relative">
+                                                <div
+                                                    class="heading-epsilon m-product-details text-charcoal-grey-two u-p-l--10 u-p-r--10">
+                                                    <div class="m-product__title text-center">PARSLEY ANTI AGING CERAM
+                                                    </div>
+                                                    <div class="u-p-t--10 ">
+                                                        <div
+                                                            class="u-display--inline-block heading-gamma-bold text-center ">
+                                                            <span
+                                                                class="text-dark ml-2 "><strong>₹499.00</strong></span><span
+                                                                class="ml-2"><strong><strike class="text-dark"
+                                                                        style="font-size: smaller;">₹549.00</strike></strong></span><span
+                                                                class="text-success ml-3" style="font-size: small;">10%
+                                                                off</span>
+                                                        </div><span
+                                                            class="text-true-green u-p-l--5 heading-zeta u-text--bold"></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <div class="u-p--10"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+
+
+
+
+                    {{!-- ////////////--------- --}}
+                </div>
+                <a class="carousel-control-prev" href="#multi-item-example2" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#multi-item-example2" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+
+            </div>
+
+        </div>
+        <hr>
+        <div class="container mt-3">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="u-p-v--20">
+                        <h3 class="text-left  font-weight-bold" style="color: black;">INTRODUCING
+                            CONSULTATION DESK</h3>
+                        <div class="u-m-t--10 u-m-b--10 text-charcoal-grey-two text-alpha text-left"
+                            style="color: rgb(75, 56, 247);">Don’t self
+                            medicate. Talk to an expert. Consult a doctor within a 2 minutes.</div>
+                    </div>
+                    <img
+                        src="https://res.cloudinary.com/dps7y8nd7/image/upload/v1579151561/chat_with_doctors_bt6aum.png">
+                </div>
+                <div class="col-md-6">
+                    <div class="u-p-v--20">
+                        <h3 class="text-left font-weight-bold" style="color: black;">INTRODUCING FAST DELIVERY</h3>
+                        <div class="u-m-t--10 u-m-b--10 text-charcoal-grey-two text-alpha text-left"
+                            style="color: rgb(75, 56, 247);">Tired of waiting in
+                            a queue? Too weak to go down and buy medicines?</div>
+                    </div>
+                    <img src="https://res.cloudinary.com/dps7y8nd7/image/upload/v1579151561/home_delivery_psjgkw.png">
+                </div>
+            </div>
+        </div>
+
+        <hr size="30">
+
+        <footer class="mt-4">
+            <div style="height: 20px;"></div>
+            <div class="row">
+                <div class="col-lg-3 col-md-3 col-sm-12 ml-5">
+                    <h4>Contact Us</h4>
+                    <p>BHIVE Workspace, L-148, 5th Main Rd,
+                        <br> Sector 6, HSR Layout,<br> Bengaluru, Karnataka 560102</p>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-12 ml-5">
+                    <h5>For patients</h5>
+                    <ul>
+                        <li><a href="#">Search for Doctors</a></li>
+                        <li><a href="#">Search for Hospitals</a></li>
+                        <li><a href="#">Order Medicine</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div style="height: 20px;"></div>
+        </footer>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.10.1/js/mdb.min.js"></script>
+</body>
+
+</html>

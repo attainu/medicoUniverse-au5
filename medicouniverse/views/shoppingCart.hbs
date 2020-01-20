@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.10.1/css/mdb.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="./css/products.css">
+</head>
+
+<body>
+    <div class="container-flex">
+
+
+        <nav class="navbar navbar-expand-sm navbar-light">
+            <a class="navbar-brand" href="/">Medico<span>Universe</span></a>
+
+            {{#if user}}
+            <div class="navbar-loggedin">
+                <img src="{{user.image}}" onerror="this.src = './image/default_profile_pic.png'" width="36px"
+                    height="36px">
+                <a href="/dashboard" class="ml-2">{{user.name}}</a>
+            </div>
+            {{else}}
+            <button class="navbar-toggler float-right p-1" type="button" data-toggle="collapse"
+                data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse nav-resp" id="navbarSupportedContent">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/about">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/mission">Mission</a>
+                    </li>
+                </ul>
+                <a class="nav-link login-signup " href="/login">Login/SignUp</a>
+            </div>
+            {{/if}}
+        </nav>
+        <div class="container mt-2 ">
+            <div class="row">
+                <div class="col">
+                    <form class="form-inline">
+                        <i class="fas fa-search mr-2" aria-hidden="true"></i>
+                        <input class=" form-control" type="text"
+                            placeholder="Search for medicines, health products and more" aria-label="Search">
+                    </form>
+                </div>
+                <div class="col">
+                    <a href="/shoppingCart" class="btn btn-default float-right"><span><i
+                                class="fas fa-shopping-cart"></i></span>
+                        VIEW CART <span class="badge">{{session.cart.totalQty}}</span></a>
+                </div>
+
+            </div>
+        </div>
+        <div class="card-body card-body-cascade text-center">
+            <span class="display-1 font-weight-bold text-center" style="font-size: larger;">Shopping Cart</span>
+
+        </div>
+        <hr class="mt-3 font-weight-bold" size="40">
+        <div class="container-flex m-3">
+
+            <div class="card card-cascade">
+                {{#if products}}
+                <div class="row m-4 bg-white">
+                    <div class="col-9">
+                        {{#each products }}
+                        <div class="row mt-3">
+
+                            <div class="col-3">
+                                <div>
+                                    <img src="{{this.item.imgPath}}" alt="{{this.item.productName}}">
+                                </div>
+                            </div>
+                            <div class="col-7 ">
+                                <div class="row">
+                                    <div class="col-8">
+                                        <strong>{{this.item.productName}}</strong>
+                                    </div>
+                                    <div class="col-4">
+                                        {{this.qty}}
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="col-2 ">
+                                <span class="label label-success">₹{{this.item.productPrice}}</span>
+                            </div>
+                        </div>
+                        <hr>
+
+                        {{/each}}
+                    </div>
+                    <div class="col-3 ">
+
+
+                        <div class="card" style="height: 40rem;">
+                            <div class="card" style="background-color: rgb(241, 235, 235);">
+
+                                <span class="m-3"> Subtotal ({{session.cart.totalQty}} items): ₹{{totalPrice}}</span>
+
+                                <!-- Card content -->
+                                <div class="card-body">
+
+                                    <a href="/checkout" class="btn btn-info">Proceed to order</a>
+
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                    {{else}}
+                    <div class="container">
+                        <div class="card card-cascade mt-5">
+
+                            <!-- Card content -->
+                            <div class="card-body card-body-cascade text-center">
+
+                                <!-- Title -->
+                                <h4 class="card-title"><strong>Shopping Cart</strong></h4>
+                                <!-- Subtitle -->
+                                {{!-- <h6 class="font-weight-bold indigo-text py-2">Web developer</h6> --}}
+                                <!-- Text -->
+                                <p class="card-text">You do not have any items in cart. Please select atleast one
+                                    product.
+                                </p>
+
+                                <!-- Facebook -->
+                                <a type="button" class="btn-floating btn-small btn-fb"><i
+                                        class="fab fa-facebook-f"></i></a>
+                                <!-- Twitter -->
+                                <a type="button" class="btn-floating btn-small btn-tw"><i
+                                        class="fab fa-twitter"></i></a>
+                                <!-- Google + -->
+                                <a type="button" class="btn-floating btn-small btn-dribbble"><i
+                                        class="fab fa-dribbble"></i></a>
+
+                            </div>
+
+
+                        </div>
+                        <!-- Card Regular -->
+
+                    </div>
+                    {{/if}}
+                </div>
+
+
+            </div>
+        </div>
+
+
+
+
+        <footer class="mt-4">
+            <div style="height: 20px;"></div>
+            <div class="row">
+                <div class="col-lg-3 col-md-3 col-sm-12 ml-5">
+                    <h4>Contact Us</h4>
+                    <p>BHIVE Workspace, L-148, 5th Main Rd,
+                        <br> Sector 6, HSR Layout,<br> Bengaluru, Karnataka 560102</p>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-12 ml-5">
+                    <h5>For patients</h5>
+                    <ul>
+                        <li><a href="#">Search for Doctors</a></li>
+                        <li><a href="#">Search for Hospitals</a></li>
+                        <li><a href="#">Order Medicine</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div style="height: 20px;"></div>
+        </footer>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.10.1/js/mdb.min.js"></script>
+    <script src="./js/products.js"></script>
+</body>
+
+</html>
