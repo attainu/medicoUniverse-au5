@@ -25,9 +25,9 @@ app.use(session({
 }));
 
 cloudinary.config({
-    cloud_name: "dwnhmtuud",
-    api_key: "385626872363492",
-    api_secret: "33u7NrEq3n7pbq-XYiMdE_hi1Gw"
+    cloud_name: "dps7y8nd7",
+    api_key: "398696324368561",
+    api_secret: "gVv49zXvVArE1dRCz3i7JTzqw"
 });
 
 app.use(function (req,res,next) {

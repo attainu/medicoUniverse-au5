@@ -1,7 +1,7 @@
 var userDb = require('../model/user.model');
 const multiparty = require("multiparty");
 const cloudinary = require("cloudinary");
-var disc = require('../model/dbConnection');
+
 
 var getDashProfile = function (req, res) {
     userDb.findOne({ email: req.session.user.email },
@@ -11,7 +11,7 @@ var getDashProfile = function (req, res) {
 }
 
 var getDashAppointments = function (req, res) {
-    disc.disconnectDb();
+    
     res.render('dashboardAppointments', { user: req.session.user });
 }
 
