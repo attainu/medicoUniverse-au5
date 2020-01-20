@@ -1,16 +1,12 @@
-.list-group-item.active {
-    background-color: grey;
-    border-color: grey;
-}
 
-label{
+label, .edit, #passwordValidText, #phoneValidText{
     font-size: 12px;
     line-height: 20px;
     color: #787887;
     margin-bottom: 2px;
 }
 
-#list-profile input, #list-profile select{
+#list-profile input, #list-profile select, .modal-body input{
     padding: 6px 10px;
     font-size: 14px;
     font-family: Camphor;
@@ -27,7 +23,7 @@ label{
     line-height: 20px;
 }
 
-.profile-header button{
+.profile-header button, .modal-footer button{
     height: 32px;
     background-color: #14BEF0;
     color: white;
@@ -39,3 +35,21 @@ label{
     padding: 4px 20px;
 }
 
+.modal-footer button:nth-of-type(1){
+    background-color: grey;
+    border-color: grey;
+}
+
+.edit {
+    border: none;
+    background-color: none;
+    cursor: pointer;
+    position: absolute;
+    right: 6px;
+    color: #14BEF0;
+    font-weight: bold;
+}
+
+#passwordValidText, #phoneValidText{
+    color: red;
+}

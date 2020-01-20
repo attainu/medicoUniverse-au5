@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/headerFooter.css">
+    <link rel="stylesheet" href="../css/dashboardProfile.css">
+    <link rel="stylesheet" href="../css/dashboardCommon.css">
+    <title>Hello {{user.name}}</title>
+</head>
+
+<body style="background-color: rgb(240,240,245);">
+    <nav class="navbar navbar-expand-sm navbar-light">
+        <a class="navbar-brand" href="/">Medico<span>Universe</span></a>
+
+        {{#if user}}
+        <div class="navbar-loggedin">
+            <img src="{{user.image}}" onerror="this.src = '../image/default_profile_pic.png'" width="32px"
+                height="32px" id="nav-dp">
+            <a href="/dashboard/profile" class="ml-2">{{user.name}}</a>
+        </div>
+        {{else}}
+        <button class="navbar-toggler float-right p-1" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse nav-resp" id="navbarSupportedContent">
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/about">About Us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/mission">Mission</a>
+                </li>
+            </ul>
+            <a class="nav-link login-signup " href="/login">Login/SignUp</a>
+        </div>
+        {{/if}}
+    </nav>
+    <hr>
+    <section class="container" style="background-color: white;">
+        <div class="row w-100 mt-3">
+            <div class="col-3">
+                <h4 class="mt-3">Your Drive</h4>
+            </div>
+            <div class="col-8">
+                <div class="ml-2 mt-2" style="height: 56px; font-size: medium;">
+                    <div style="height: 20px; font-weight: 600;">{{user.name}}</div>
+                    <div style="height: 20px; font-size: small;">{{user.phone}},{{user.email}}</div>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-lg-3 col-sm-12 border-right side-menu">
+                <div class="list-group list-group-flush my-2">
+                    <a class="list-group-item list-group-item-action " href="/dashboard/appointments">My
+                        Appointments</a>
+                    <a class="list-group-item list-group-item-action" href="/dashboard/orders">My Medicine Orders</a>
+                    <a class="list-group-item list-group-item-action active" href="/dashboard/profile">View / Update
+                        Profile</a>
+                    <a class="list-group-item list-group-item-action" href="/dashboard/feddback">Feedback</a>
+                </div>
+            </div>
+            <div class="col-lg-8 col-sm-12">
+                <div id="list-profile">
+                    <form autocomplete="off" action="/dashboard/saveprofile" method="POST"
+                        enctype="multipart/form-data">
+                        <div class="row profile-header mt-3">
+                            <span class="px-3">Profile</span>
+                            <button type="submit" class="ml-auto">Save changes</button>
+                        </div>
+                        <div class="d-inline-block text-center border ml-3">
+                            <img src="{{user.image}}" width="120px" height="120px" class="d-block" id="dp">
+                            <input type="file" id="displaypicture" style="display: none;" name="image" />
+                            <label for="displaypicture">Change</label>
+                        </div>
+                        <div class="d-inline-block ml-3 mt-3" style="vertical-align: top;">
+                            <div class="form-group d-inline-block">
+                                <label for="name" class="d-block">Name:</label>
+                                <input type="text" value="{{user.name}}" name="name" id="name">
+                            </div>
+
+                        </div>
+                        <div class="my-3">
+                            <div class="form-group d-inline-block mx-3">
+                                <label for="email" class="d-block">Email:</label>
+                                <input type="text" value="{{user.email}}" name="email" id="email" disabled>
+                            </div>
+                            <div class="form-group d-inline-block mx-3 position-relative">
+                                 <!-- Button trigger modal -->
+                                <span role="button" data-toggle="modal" data-target="#exampleModal" class="edit">
+                                    Change
+                                </span>
+                                <label for="phone" class="d-block">Phone:</label>
+                               
+                                <input type="text" value="{{user.phone}}" name="phone" id="phone" disabled>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="form-group d-inline-block mx-3">
+                                <label for="gender" class="d-block">Gender:</label>
+                                <select id="gender" name="gender">
+                                    <option value="male" {{#eq user.gender "male"}} selected="selected" {{/eq}}>Male
+                                    </option>
+                                    <option value="female" {{#eq user.gender "female"}} selected="selected" {{/eq}}>
+                                        Female</option>
+                                </select>
+
+                            </div>
+                            <div class="form-group d-inline-block mx-3">
+                                <label for="bloodgroup" class="d-block">Blood group:</label>
+                                <select id="bloodgroup" name="bloodgroup">
+                                    <option value="O+" {{#eq user.bloodgroup "O+"}} selected="selected" {{/eq}}>O+
+                                    </option>
+                                    <option value="O-" {{#eq user.bloodgroup "O-"}} selected="selected" {{/eq}}>O-
+                                    </option>
+                                    <option value="A+" {{#eq user.bloodgroup "A+"}} selected="selected" {{/eq}}>A+
+                                    </option>
+                                    <option value="A-" {{#eq user.bloodgroup "A-"}} selected="selected" {{/eq}}>A-
+                                    </option>
+                                    <option value="B+" {{#eq user.bloodgroup "B+"}} selected="selected" {{/eq}}>B+
+                                    </option>
+                                    <option value="B-" {{#eq user.bloodgroup "B-"}} selected="selected" {{/eq}}>B-
+                                    </option>
+                                    <option value="AB+" {{#eq user.bloodgroup "AB+"}} selected="selected" {{/eq}}>AB+
+                                    </option>
+                                    <option value="AB-" {{#eq user.bloodgroup "AB-"}} selected="selected" {{/eq}}>AB-
+                                    </option>
+                                </select>
+                            </div>
+                            <div class="form-group d-inline-block mx-3">
+                                <label for="dob" class="d-block">Date of Birth:</label>
+                                <input type="date" id="dob" name="dob" value="{{user.dob}}">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="mx-3">Address</label>
+                            <div>
+                                <div class="form-group d-inline-block mx-3">
+                                    <label for="name" class="d-block">House No./ Street Name</label>
+                                    <input type="text" value="{{user.address.street}}" id="addressStreet"
+                                        name="addressStreet">
+                                </div>
+                                <div class="form-group d-inline-block mx-3">
+                                    <label for="name" class="d-block">Colony / Area</label>
+                                    <input type="text" value="{{user.address.area}}" id="addressArea"
+                                        name="addressArea">
+                                </div>
+                                <div class="form-group d-inline-block mx-3">
+                                    <label for="name" class="d-block">City</label>
+                                    <input type="text" value="{{user.address.city}}" id="addressCity"
+                                        name="addressCity">
+                                </div>
+                            </div>
+                            <div>
+                                <div class="form-group d-inline-block mx-3">
+                                    <label for="name" class="d-block">State</label>
+                                    <input type="text" value="{{user.address.state}}" id="addressState"
+                                        name="addressState">
+                                </div>
+                                <div class="form-group d-inline-block mx-3">
+                                    <label for="name" class="d-block">Country</label>
+                                    <input type="text" value="{{user.address.country}}" id="addressCountry"
+                                        name="addressCountry">
+                                </div>
+                                <div class="form-group d-inline-block mx-3">
+                                    <label for="name" class="d-block">Pincode</label>
+                                    <input type="text" value="{{user.address.pincode}}" id="addressPincode"
+                                        name="addressPincode">
+                                </div>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+                
+
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+                    aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Change Phone</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <form>
+                                    <div>
+                                        <input type="text" placeholder="Phone" id="chngPhone">
+                                        <span id="phoneValidText" style="display: none;">Invalid Phone</span>
+                                    </div>
+                                    <div class="mt-3">
+                                        <input type="password" placeholder="Password" id="chngPassword">
+                                        <span id="passwordValidText" style="display: none;">Invalid Password</span>
+                                    </div>
+                                </form>
+                                
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button"  data-dismiss="modal">Close</button>
+                                <button type="button" id="chngPhoneBtn">Save changes</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        </div>
+    </section>
+    <script
+        src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+        crossorigin="anonymous"></script>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <!--<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>-->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+   
+    <script src="../js/dashboard.js"></script>
+</body>
+
+</html>

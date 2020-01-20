@@ -67,6 +67,10 @@ footer a:hover{
     z-index: 1;
 }
 
+#nav-dp{
+    border-radius: 50%;
+}
+
 @media (max-width: 575px){
     .nav-link {
         border-bottom: 1px solid grey;
