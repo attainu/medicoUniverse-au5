@@ -5,18 +5,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {{!-- MDB --}}
+    <!-- Material Design Bootstrap -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.12.0/css/mdb.min.css" rel="stylesheet">
+    {{!-- Font Awesome --> --}}
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+
+    {{!-- default --}}
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
-    <link rel="stylesheet" href="./css/hospitalstyle.css">
+    <link rel="stylesheet" href="../css/hospitalstyle.css">
     <title>hospitals</title>
 </head>
 
 <body>
-    <div class="container-flex">
-
+    <header class="">
         <nav class="navbar navbar-expand-sm navbar-light">
-            <a class="navbar-brand" href="/medicoUniverse">Medico<span>Universe</span></a>
+            <a class="navbar-brand" href="/">Medico<span>Universe</span></a>
 
             {{#if user}}
             <div class="navbar-loggedin">
@@ -33,18 +39,18 @@
             <div class="collapse navbar-collapse nav-resp" id="navbarSupportedContent">
                 <ul class="navbar-nav mx-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="/medicoUniverse/about">About Us</a>
+                        <a class="nav-link" href="/about">About Us</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/medicoUniverse/mission">Mission</a>
+                        <a class="nav-link" href="/mission">Mission</a>
                     </li>
                 </ul>
                 <a class="nav-link login-signup " href="/login">Login/SignUp</a>
             </div>
             {{/if}}
         </nav>
-
-
+    </header>
+    <section>
         <div class="container-fluid pt-3">
             <div class="row">
                 <div class="col-xl-4 col-md-4 col-sm-4">
@@ -115,7 +121,7 @@
                             <div class="carousel-item active">
                                 <div class="container">
                                     <div class="row">
-                                        <div class="card mr-3 bg-dark text-white ml-5" style="width: 15rem;">
+                                        <div class="card mr-3 bg-dark text-white ml-5" style="width: 14.8rem;">
                                             <img src="http://www.medwayindia.com/uploads/gallery_images/big_1487919599_indraprastha_apollo.jpg"
                                                 class="card-img-top" alt="...">
                                             <div class="card-body">
@@ -135,7 +141,7 @@
                                                     appointment</button>
                                             </div>
                                         </div>
-                                        <div class="card mr-3 bg-dark text-white ml-3" style="width: 15rem;">
+                                        <div class="card mr-3 bg-dark text-white ml-3" style="width: 14.8rem;">
                                             <img src="https://i.ytimg.com/vi/hCB5tLaFYqs/hqdefault.jpg"
                                                 class="card-img-top" alt="...">
                                             <div class="card-body">
@@ -156,7 +162,7 @@
                                                     appointment</button>
                                             </div>
                                         </div>
-                                        <div class="card mr-3 bg-dark text-white ml-3" style="width: 15rem;">
+                                        <div class="card mr-3 bg-dark text-white ml-3" style="width: 14.8rem;">
                                             <img src="http://medicaldialogues.in/wp-content/uploads/2016/06/fortis-gurgaon.jpg"
                                                 class="card-img-top" alt="...">
                                             <div class="card-body">
@@ -176,7 +182,7 @@
                                                     appointment</button>
                                             </div>
                                         </div>
-                                        <div class="card mr-3 bg-dark text-white ml-3" style="width: 15rem;">
+                                        <div class="card mr-3 bg-dark text-white ml-3" style="width: 14.8rem;">
                                             <img src="http://healthtechnology.in/wp-content/uploads/2016/11/Jaslok-Hospital-Research-Centre.jpg"
                                                 class="card-img-top" alt="...">
                                             <div class="card-body">
@@ -202,7 +208,7 @@
                             <div class="carousel-item">
                                 <div class="container">
                                     <div class="row">
-                                        <div class="card mr-3 bg-dark text-white ml-5" style="width: 15rem;">
+                                        <div class="card mr-3 bg-dark text-white ml-5" style="width: 14.8rem;">
                                             <img src="https://freeclues.com/blog/wp-content/uploads/2017/12/blk-super-speciality-hospital-pusa-road-delhi-dermatologists-47boko1.jpg"
                                                 class="card-img-top" alt="...">
                                             <div class="card-body">
@@ -222,7 +228,7 @@
                                                     appointment</button>
                                             </div>
                                         </div>
-                                        <div class="card mr-3 bg-dark text-white ml-3" style="width: 15rem;">
+                                        <div class="card mr-3 bg-dark text-white ml-3" style="width: 14.8rem;">
                                             <img src="https://qph.fs.quoracdn.net/main-qimg-bff74851df3dc5ab2831dd0248cfff86"
                                                 class="card-img-top" alt="...">
                                             <div class="card-body">
@@ -243,7 +249,7 @@
                                                     appointment</button>
                                             </div>
                                         </div>
-                                        <div class="card mr-3 bg-dark text-white ml-3" style="width: 15rem;">
+                                        <div class="card mr-3 bg-dark text-white ml-3" style="width: 14.8rem;">
                                             <img src="http://jobsdeer.com/wp-content/uploads/2017/06/rsz_all-indian-institute-of-medical-scince.jpg"
                                                 class="card-img-top" alt="...">
                                             <div class="card-body">
@@ -264,7 +270,7 @@
                                                     appointment</button>
                                             </div>
                                         </div>
-                                        <div class="card mr-3 bg-dark text-white ml-3" style="width: 15rem;">
+                                        <div class="card mr-3 bg-dark text-white ml-3" style="width: 14.8rem;">
                                             <img src="https://i.ytimg.com/vi/TfM8OAjseqI/hqdefault.jpg"
                                                 class="card-img-top" alt="...">
                                             <div class="card-body">
@@ -299,8 +305,79 @@
                 </div>
             </div>
         </div>
-
-        <section>
+    </section>
+    <section class="randomCards">
+        <div class="card-columns">
+            <div class="card">
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Card title that wraps to a new line</h5>
+                    <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
+                        additional content. This content is a little bit longer.</p>
+                </div>
+            </div>
+            <div class="card p-3">
+                <blockquote class="blockquote mb-0 card-body">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+                    <footer class="blockquote-footer">
+                        <small class="text-muted">
+                            Someone famous in <cite title="Source Title">Source Title</cite>
+                        </small>
+                    </footer>
+                </blockquote>
+            </div>
+            <div class="card">
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">This card has supporting text below as a natural lead-in to additional content.
+                    </p>
+                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                </div>
+            </div>
+            <div class="card bg-primary text-white text-center p-3">
+                <blockquote class="blockquote mb-0">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat.</p>
+                    <footer class="blockquote-footer text-white">
+                        <small>
+                            Someone famous in <cite title="Source Title">Source Title</cite>
+                        </small>
+                    </footer>
+                </blockquote>
+            </div>
+            <div class="card text-center">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">This card has a regular title and short paragraphy of text below it.</p>
+                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="..." class="card-img-top" alt="...">
+            </div>
+            <div class="card p-3 text-right">
+                <blockquote class="blockquote mb-0">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+                    <footer class="blockquote-footer">
+                        <small class="text-muted">
+                            Someone famous in <cite title="Source Title">Source Title</cite>
+                        </small>
+                    </footer>
+                </blockquote>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">This is another card with title and supporting text below. This card has some
+                        additional content to make it slightly taller overall.</p>
+                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <article>
+        <div class="container-fluid">
+            <h2>News</h2>
             <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                 <ol class="carousel-indicators">
                     <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -333,76 +410,71 @@
                     <span class="sr-only">Next</span>
                 </a>
             </div>
-        </section>
-        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-            aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Appointment Form</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <form action="/patientdata" method="POST">
-                            <div class="form-group">
-                                <div class="row">
-                                    <div class="col">
-                                        <label for="Name">Patient Name</label>
-                                        <input id="patientname" type="text" class="form-control" placeholder="Name"
-                                            name="patientname" required>
-                                    </div>
-                                    <div class="col">
-                                        <label for="Age">Patient Age</label>
-                                        <input id="patientage" type="number" class="form-control" placeholder="Age"
-                                            name="patientage" required>
-                                    </div>
+        </div>
+    </article>
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Appointment Form</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form action="/patientdata" method="POST">
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col">
+                                    <label for="Name">Patient Name</label>
+                                    <input id="patientname" type="text" class="form-control" placeholder="Name"
+                                        name="patientname" required>
+                                </div>
+                                <div class="col">
+                                    <label for="Age">Patient Age</label>
+                                    <input id="patientage" type="number" class="form-control" placeholder="Age"
+                                        name="patientage" required>
                                 </div>
                             </div>
-                            <div class="form-group">
-                                <label for="formGroupExampleInput2">Patient Problem</label>
-                                <textarea id="patientproblem" class="form-control" placeholder="Ex-Headaches"
-                                    name="patientproblem" required></textarea>
-                            </div>
-                            <label for="formGroupExampleInput2">Mobile Number</label>
-                            <div class="input-group flex-nowrap">
-
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text" id="addon-wrapping">+91</span>
-                                </div>
-                                <input class="form-control" type="number" minlength="10" maxlength="10" name="no"
-                                    required>
-                            </div>
-                            <button type="submit" class="btn btn-primary mt-1">Get Appointment</button>
-                        </form>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="formGroupExampleInput2">Patient Problem</label>
+                            <textarea id="patientproblem" class="form-control" placeholder="Ex-Headaches"
+                                name="patientproblem" required></textarea>
+                        </div>
+                        <label for="formGroupExampleInput2">Mobile Number</label>
+                        <input class="form-control" type="number" placeholder="Please enter with your country code"
+                            name="no" required>
+                        <button type="submit" class="btn btn-primary mt-1">Get Appointment</button>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>
-        <footer class="mt-4">
-            <div style="height: 20px;"></div>
-            <div class="row">
-                <div class="col-lg-3 col-md-3 col-sm-12 ml-5">
-                    <h4>Contact Us</h4>
-                    <p>BHIVE Workspace, L-148, 5th Main Rd,
-                        <br> Sector 6, HSR Layout,<br> Bengaluru, Karnataka 560102</p>
-                </div>
-                <div class="col-lg-3 col-md-3 col-sm-12 ml-5">
-                    <h5>For patients</h5>
-                    <ul>
-                        <li><a href="#">Search for Doctors</a></li>
-                        <li><a href="#">Search for Hospitals</a></li>
-                        <li><a href="#">Order Medicine</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div style="height: 20px;"></div>
-        </footer>
     </div>
+    <footer class="mt-4">
+        <div style="height: 20px;"></div>
+        <div class="row">
+            <div class="col-lg-3 col-md-3 col-sm-12 ml-5">
+                <h4>Contact Us</h4>
+                <p>BHIVE Workspace, L-148, 5th Main Rd,
+                    <br> Sector 6, HSR Layout,<br> Bengaluru, Karnataka 560102</p>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-12 ml-5">
+                <h5>For patients</h5>
+                <ul>
+                    <li><a href="#">Search for Doctors</a></li>
+                    <li><a href="#">Search for Hospitals</a></li>
+                    <li><a href="#">Order Medicine</a></li>
+                </ul>
+            </div>
+        </div>
+        <div style="height: 20px;"></div>
+    </footer>
+    {{!-- default --}}
     <script src="https://code.jquery.com/jquery-3.4.1.js"
         integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
@@ -413,7 +485,15 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
-    <script src="./js/hospital.js"></script>
+    {{!-- MDB --}}
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.12.0/js/mdb.min.js"></script>
+
+    <script src="../js/hospital.js"></script>
 </body>
 
 </html>

@@ -62,10 +62,10 @@ app.use(
 	})
 );
 app.use(cookieParser());
+app.use(hospitalroute);
 app.use(pharmacyRoute);
 app.use(homepageRoutes);
 app.use(bookingRoute);
-app.use(hospitalroute);
 app.use(ambulanceRoute);
 // app.use(flash());
 // app.use(passport.initialize());

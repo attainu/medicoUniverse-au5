@@ -12,9 +12,11 @@ const nexmo = new Nexmo({
 
 var hospitalcontroller = {};
 hospitalcontroller.hospital = function (req, res) {
-    // hospitalmodel.news.find().then(function (err, data) {
+    var newsData;
+    // hospitalmodel.news.find({}).then(function (err, data) {
     //     res.send(data)
     // });
+    // console.log(newsData)
     res.render('./hospital.hbs');
 }
 hospitalcontroller.db = function (req, res) {
@@ -71,7 +73,17 @@ hospitalcontroller.patientdata = function (req, res) {
     const from = 'MedicoUniverse';
     const to = obj.no;
     const text = 'Your '+obj.problem+' problem is noted please visit our hospital we are here to help';
-    nexmo.message.sendSms(from, to, text);
+    nexmo.message.sendSms(from, to, text, (err, responseData) => {
+        if (err) {
+            console.log(err);
+        } else {
+            if (responseData.messages[0]['status'] === "0") {
+                console.log("Message sent successfully.");
+            } else {
+                console.log(`Message failed with error: ${responseData.messages[0]['error-text']}`);
+            }
+        }
+    })
     res.render('thankyou.hbs', {
         obj: obj
     })
