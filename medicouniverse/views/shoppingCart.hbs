@@ -48,7 +48,7 @@
                         <a class="nav-link" href="/mission">Mission</a>
                     </li>
                 </ul>
-                <a class="nav-link login-signup " href="/login">Login/SignUp</a>
+                <a class="nav-link login-signup " href="/user/login">Login/SignUp</a>
             </div>
             {{/if}}
         </nav>
@@ -74,96 +74,108 @@
 
         </div>
         <hr class="mt-3 font-weight-bold" size="40">
-        <div class="container-flex m-3">
+        <div class="container my-5 py-3 z-depth-1 rounded">
 
-            <div class="card card-cascade">
-                {{#if products}}
-                <div class="row m-4 bg-white">
-                    <div class="col-9">
-                        {{#each products }}
-                        <div class="row mt-3">
 
-                            <div class="col-3">
-                                <div>
+            <!--Section: Content-->
+            <section class="dark-grey-text">
+
+                <!-- Shopping Cart table -->
+                <div class="table-responsive">
+
+                    <table class="table product-table mb-0">
+
+                        <!-- Table head -->
+                        <thead class="mdb-color lighten-5">
+                            <tr>
+                                <th></th>
+                                <th class="font-weight-bold">
+                                    <strong>Product</strong>
+                                </th>
+                                <th class="font-weight-bold">
+                                    <strong>Color</strong>
+                                </th>
+                                <th></th>
+                                <th class="font-weight-bold">
+                                    <strong>Price</strong>
+                                </th>
+                                <th class="font-weight-bold">
+                                    <strong>QTY</strong>
+                                </th>
+                                <th class="font-weight-bold">
+                                    <strong>Amount</strong>
+                                </th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <!-- /.Table head -->
+
+                        <!-- Table body -->
+                        <tbody>
+
+                            <!-- First row -->
+                            {{#if products}}
+                            {{#each products }}
+                            <tr>
+                                <th scope="row">
                                     <img src="{{this.item.imgPath}}" alt="{{this.item.productName}}">
-                                </div>
-                            </div>
-                            <div class="col-7 ">
-                                <div class="row">
-                                    <div class="col-8">
+
+                                </th>
+                                <td>
+                                    <h5 class="mt-3">
                                         <strong>{{this.item.productName}}</strong>
-                                    </div>
-                                    <div class="col-4">
-                                        {{this.qty}}
-                                    </div>
-                                </div>
-
-                            </div>
-                            <div class="col-2 ">
-                                <span class="label label-success">₹{{this.item.productPrice}}</span>
-                            </div>
-                        </div>
-                        <hr>
-
-                        {{/each}}
-                    </div>
-                    <div class="col-3 ">
-
-
-                        <div class="card" style="height: 40rem;">
-                            <div class="card" style="background-color: rgb(241, 235, 235);">
-
-                                <span class="m-3"> Subtotal ({{session.cart.totalQty}} items): ₹{{totalPrice}}</span>
-
-                                <!-- Card content -->
-                                <div class="card-body">
-
+                                    </h5>
+                                    <p class="text-muted">{{this.item.subCategory}}</p>
+                                </td>
+                                <td>White</td>
+                                <td></td>
+                                <td>₹{{this.item.productPrice}}</td>
+                                <td>
+                                    <input type="number" value="{{this.qty}}" aria-label="Search" class="form-control"
+                                        style="width: 100px">
+                                </td>
+                                <td class="font-weight-bold">
+                                    <strong>₹{{this.item.productPrice}}</strong>
+                                </td>
+                                <td>
+                                    <button type="button" class="btn btn-sm btn-primary" data-toggle="tooltip"
+                                        data-placement="top" title="Remove item">X
+                                    </button>
+                                </td>
+                            </tr>
+                            {{/each}}
+                            <tr>
+                                <td colspan="3"></td>
+                                <td>
+                                    <h4 class="mt-2">
+                                        <strong>Total</strong>
+                                    </h4>
+                                </td>
+                                <td class="text-right">
+                                    <h4 class="mt-2">
+                                        <strong>₹{{totalPrice}}</strong>
+                                    </h4>
+                                </td>
+                                <td colspan="3" class="text-right">
                                     <a href="/checkout" class="btn btn-info">Proceed to order</a>
+                                </td>
+                            </tr>
+                            <!-- /.First row -->
 
-                                </div>
+                            {{/if}}
 
-                            </div>
-                        </div>
+                        </tbody>
+                        <!-- /.Table body -->
 
-                    </div>
-                    {{else}}
-                    <div class="container">
-                        <div class="card card-cascade mt-5">
+                    </table>
 
-                            <!-- Card content -->
-                            <div class="card-body card-body-cascade text-center">
-
-                                <!-- Title -->
-                                <h4 class="card-title"><strong>Shopping Cart</strong></h4>
-                                <!-- Subtitle -->
-                                {{!-- <h6 class="font-weight-bold indigo-text py-2">Web developer</h6> --}}
-                                <!-- Text -->
-                                <p class="card-text">You do not have any items in cart. Please select atleast one
-                                    product.
-                                </p>
-
-                                <!-- Facebook -->
-                                <a type="button" class="btn-floating btn-small btn-fb"><i
-                                        class="fab fa-facebook-f"></i></a>
-                                <!-- Twitter -->
-                                <a type="button" class="btn-floating btn-small btn-tw"><i
-                                        class="fab fa-twitter"></i></a>
-                                <!-- Google + -->
-                                <a type="button" class="btn-floating btn-small btn-dribbble"><i
-                                        class="fab fa-dribbble"></i></a>
-
-                            </div>
-
-
-                        </div>
-                        <!-- Card Regular -->
-
-                    </div>
-                    {{/if}}
                 </div>
+                <!-- /.Shopping Cart table -->
+
+            </section>
+            <!--Section: Content-->
 
 
-            </div>
         </div>
 
 

@@ -47,7 +47,7 @@
                         <a class="nav-link" href="/mission">Mission</a>
                     </li>
                 </ul>
-                <a class="nav-link login-signup " href="/login">Login/SignUp</a>
+                <a class="nav-link login-signup " href="/user/login">Login/SignUp</a>
             </div>
             {{/if}}
         </nav>
@@ -68,16 +68,16 @@
 
             </div>
         </div>
-        <div class="m-navbar-list card mt-3" style="background-color: honeydew;">
-            <div class="container">
+        <div class="m-navbar-list card mt-3" style="background-color: honeydew; ">
+            <div class="u-content-wrapper">
                 <div class="row">
                     <div class="col-2 ">
                         <div class="dropdown">
                             <button class="dropbtn" style="background-color: honeydew;">Baby Care <span><i
                                         class="fas fa-angle-down"></i></span></button>
                             <div class="dropdown-content" style="background-color: honeydew;">
-                                <a href="#">Baby Bath</a>
-                                <a href="#">Diapers and wipes</a>
+                                <a href="#" class="babybath">Baby Bath</a>
+                                <a href="#" class="babyDipers">Diapers and wipes</a>
 
                             </div>
                         </div>
@@ -87,8 +87,8 @@
                             <button class="dropbtn" style="background-color: honeydew;">Personal Care <span><i
                                         class="fas fa-angle-down"></i></span></button>
                             <div class="dropdown-content" style="background-color: honeydew;">
-                                <a href="#">Hair care</a>
-                                <a href="#">Lip care</a>
+                                <a href="#" class="hairCare">Hair care</a>
+                                <a href="#" class="lipcare">Lip care</a>
                             </div>
                         </div>
                     </div>
@@ -97,9 +97,9 @@
                             <button class="dropbtn" style="background-color: honeydew;">Skin Care <span><i
                                         class="fas fa-angle-down"></i></span></button>
                             <div class="dropdown-content" style="background-color: honeydew;">
-                                <a href="#">Body and Bath</a>
-                                <a href="#">Face wash and cleansers</a>
-                                <a href="#">Skin care Suppliments</a>
+                                <a href="#" class="bodybath">Body and Bath</a>
+                                <a href="#" class="fashwash">Face wash and cleansers</a>
+                                <a href="#" class="skinsuppliments">Skin care Suppliments</a>
                             </div>
                         </div>
                     </div>
@@ -108,8 +108,8 @@
                             <button class="dropbtn" style="background-color: honeydew;">Ayurvedic <span><i
                                         class="fas fa-angle-down"></i></span></button>
                             <div class="dropdown-content" style="background-color: honeydew;">
-                                <a href="#">Dabur</a>
-                                <a href="#">Patangali</a>
+                                <a href="#" class="dabur">Dabur</a>
+                                <a href="#" class="patangali">Patangali</a>
                             </div>
                         </div>
                     </div>
@@ -118,9 +118,9 @@
                             <button class="dropbtn" style="background-color: honeydew;">Fitness <span><i
                                         class="fas fa-angle-down"></i></span></button>
                             <div class="dropdown-content" style="background-color: honeydew;">
-                                <a href="#">Protien and Suppliments</a>
+                                <a href="#" class="massgainer">Protien and Suppliments</a>
                                 <a href="#">Mass Gainers</a>
-                                <a href="#">Link 3</a>
+
                             </div>
                         </div>
                     </div>
@@ -130,7 +130,7 @@
                                         class="fas fa-angle-down"></i></span></button>
                             <div class="dropdown-content" style="background-color: honeydew;">
                                 <a href="#">Health Care</a>
-                                <a href="#">Exercise</a>
+                                <a href="#" class="exercise">Exercise</a>
                             </div>
                         </div>
                     </div>
@@ -140,82 +140,85 @@
         </div>
         <div class="container">
             <div class="row">
-                home
+
             </div>
-            <div class="row">
+            <div class="row mt-5">
                 <div class="col-3">
-                    <div class="sidenav">
+                    <div class="container" >
+                        <div class="sidenav">
 
-                        <button class="dropdown-btn"><span><i class="fa fa-angle-right"></i></span>Baby care
+                            <button class="dropdown-btn"><span><i class="fa fa-angle-right"></i></span>Baby care
 
-                        </button>
-                        <div class="dropdown-container ml-2">
-                            <a href="/products/baby_bath">Baby Bath</a>
-                            <a href="#">Diapers and wipes</a>
+                            </button>
+                            <div class="dropdown-container ml-2">
+                                <a href="#" class="babybath">Baby Bath</a>
+                                <a href="#" class="babyDipers">Diapers and wipes</a>
 
-                        </div>
-
-                    </div>
-                    <div class="sidenav">
-
-                        <button class="dropdown-btn"><span><i class="fa fa-angle-right"></i></span>Personal Care
-
-                        </button>
-                        <div class="dropdown-container">
-
-                            <a href="#">Hair care</a>
-                            <a href="#">Lip care</a>
-                        </div>
-
-                    </div>
-                    <div class="sidenav">
-
-                        <button class="dropdown-btn"><span><i class="fa fa-angle-right"></i></span>Skin care
-
-                        </button>
-                        <div class="dropdown-container">
-                            <a href="#">Body and Bath</a>
-                            <a href="#">Face wash and cleansers</a>
-                            <a href="#">Skin care Suppliments</a>
-                        </div>
-
-                    </div>
-                    <div class="sidenav">
-
-                        <button class="dropdown-btn"><span><i class="fa fa-angle-right"></i></span>Ayurvedic
-
-                        </button>
-                        <div class="dropdown-container">
-                            <a href="#">Dabur</a>
-                            <a href="#">Patangali</a>
+                            </div>
 
                         </div>
+                        <div class="sidenav">
 
-                    </div>
-                    <div class="sidenav">
-                        <button class="dropdown-btn"><span><i class="fa fa-angle-right"></i></span>Fitness
+                            <button class="dropdown-btn"><span><i class="fa fa-angle-right"></i></span>Personal Care
 
-                        </button>
-                        <div class="dropdown-container">
-                            <a href="#">Protien and Suppliments</a>
-                            <a href="#">Mass Gainers</a>
-                            <a href="#">Link 3</a>
-                        </div>
-                    </div>
-                    <div class="sidenav">
+                            </button>
+                            <div class="dropdown-container">
 
-                        <button class="dropdown-btn"><span><i class="fa fa-angle-right"></i></span>Devices
-
-                        </button>
-                        <div class="dropdown-container">
-                            <a href="#">Health Care</a>
-                            <a href="#">Exercise</a>
+                                <a href="#" class="hairCare">Hair care</a>
+                                <a href="#" class="lipcare">Lip care</a>
+                            </div>
 
                         </div>
+                        <div class="sidenav">
 
+                            <button class="dropdown-btn"><span><i class="fa fa-angle-right"></i></span>Skin care
+
+                            </button>
+                            <div class="dropdown-container">
+                                <a href="#" class="bodybath">Body and Bath</a>
+                                <a href="#" class="fashwash">Face wash and cleansers</a>
+                                <a href="#" class="skinsuppliments">Skin care Suppliments</a>
+                            </div>
+
+                        </div>
+                        <div class="sidenav">
+
+                            <button class="dropdown-btn"><span><i class="fa fa-angle-right"></i></span>Ayurvedic
+
+                            </button>
+                            <div class="dropdown-container">
+                                <a href="#" class="dabur">Dabur</a>
+                                <a href="#" class="patangali">Patangali</a>
+
+                            </div>
+
+                        </div>
+                        <div class="sidenav">
+                            <button class="dropdown-btn"><span><i class="fa fa-angle-right"></i></span>Fitness
+
+                            </button>
+                            <div class="dropdown-container">
+                                <a href="#">Protien and Suppliments</a>
+                                <a href="#" class="massgainer">Mass Gainers</a>
+
+                            </div>
+                        </div>
+                        <div class="sidenav">
+
+                            <button class="dropdown-btn"><span><i class="fa fa-angle-right"></i></span>Devices
+
+                            </button>
+                            <div class="dropdown-container">
+                                <a href="#">Health Care</a>
+                                <a href="#" class="exercise">Exercise</a>
+
+                            </div>
+
+                        </div>
                     </div>
                 </div>
-                <div class="col-9">
+
+                <div class="col-9 " id="products">
 
                     <div class="row">
                         {{#each products }}
@@ -236,7 +239,7 @@
                                 <div class="card-body">
 
                                     <!-- Title -->
-                                    <h4 class="card-title m-sm-2" style="font-size: large;">{{this.productName}} </h4>
+                                    <h4 class="card-title m-sm-2" style="font-size: small;">{{this.productName}} </h4>
                                     <!-- Text -->
                                     <div class="row">
                                         <div class="col">
@@ -293,6 +296,10 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script type="text/javascript"
         src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.10.1/js/mdb.min.js"></script>
     <script src="./js/products.js"></script>

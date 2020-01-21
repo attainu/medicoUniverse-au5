@@ -35,6 +35,7 @@ app.set('view engine', 'hbs');
 
 app.use(express.static('uploads'));
 app.use(express.static('public'));
+app.use(express.static('.'));
 app.use(
 	session({
 		secret: 'my pharmacy',

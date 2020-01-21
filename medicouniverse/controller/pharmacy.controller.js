@@ -3,13 +3,18 @@ const app = express();
 const multiparty = require('multiparty');
 const cloudinary = require('cloudinary').v2;
 const session = require('express-session');
+const Nexmo = require('nexmo');
 const Cart = require('../model/cart');
 const MongoStore = require('connect-mongo')(session);
 var medicineDb = require('../model/pharmacy.model');
+// var babybath = require('../model/babybath.model');
 var userDb = require('../model/user');
 var Order = require('../model/order');
 const jsonData = require('../public/data/medicines.json');
-
+const nexmo = new Nexmo({
+	apiKey: 'd61633c6',
+	apiSecret: '7kfNTn9ZkKnNf5Pi'
+});
 var pharmacyController = {};
 
 pharmacyController.userSigninget = (req, res) => {
@@ -39,7 +44,7 @@ pharmacyController.userSigninpost = (req, res) => {
 
 //----------------------------
 pharmacyController.userSignupget = function(req, res, next) {
-	res.render('user/signup', { csrfToken: req.csrfToken() });
+	res.render('user/signup');
 };
 
 pharmacyController.userSignuppost = (req, res, next) => {
@@ -138,6 +143,24 @@ pharmacyController.shoppingCartget = (req, res, next) => {
 		return res.render('shoppingCart', { products: null });
 	}
 	var cart = new Cart(req.session.cart);
+	const from = 'MedicoUniverse';
+	const to = 917011675429;
+	const text = 'your order has been placed and will reach to you soon.';
+
+	nexmo.message.sendSms(from, to, text, (err, responseData) => {
+		if (err) {
+			console.log(err);
+		} else {
+			if (responseData.messages[0]['status'] === '0') {
+				console.log('Message sent successfully.');
+			} else {
+				console.log(
+					`Message failed with error: ${responseData.messages[0]['error-text']}`
+				);
+			}
+		}
+	});
+
 	res.render('shoppingCart', {
 		products: cart.generateArray(),
 		totalPrice: cart.totalPrice
@@ -213,7 +236,18 @@ pharmacyController.profileget = (req, res, next) => {
 };
 
 // pharmacyController.babybathget = (req, res, next) => {
-// 	res.render('productCategory/baby_bath');
+// 	var data = {};
+// 	babybath.find({}, (err, result) => {
+// 		if (err) {
+// 			console.log('Error in finding data');
+// 		} else {
+// 			data.result = result;
+// 		}
+// 		console.log(result);
+// 		res.render('babybath', {
+// 			baby: data.result
+// 		});
+// 	});
 // };
 
 // pharmacyController.userdataget = (req, res, next) => {

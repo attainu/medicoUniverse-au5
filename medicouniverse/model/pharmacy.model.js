@@ -10,5 +10,7 @@ const medicineSchema = new Schema({
 });
 
 const medicineDb = mongoose.model('medicineDb', medicineSchema);
+// const babybath = mongoose.model('babybath', medicineSchema);
 
 module.exports = medicineDb;
+// module.exports = babybath;
