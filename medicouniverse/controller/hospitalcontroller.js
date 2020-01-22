@@ -68,8 +68,13 @@ hospitalcontroller.patientdata = function (req, res) {
         patient: req.body.patientname,
         age: req.body.patientage,
         problem: req.body.patientproblem,
-        no: req.body.no
+        no: req.body.no,
+        session: req.session.user
     }
+    hospitalmodel.patient.create(obj, function (err, small) {
+        if (err) return handleError(err);
+        // saved!
+      });
     const from = 'MedicoUniverse';
     const to = obj.no;
     const text = 'Your '+obj.problem+' problem is noted please visit our hospital we are here to help';
