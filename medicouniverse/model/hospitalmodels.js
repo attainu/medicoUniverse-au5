@@ -8,19 +8,11 @@ const hospitalSchema = new mongoose.Schema({
   pincode: Number,
   phoneNumber: Number
 });
-const newsSchema = new mongoose.Schema({
-  source: {
-    id: String,
-    name: String
-  },
-  author: String,
-  title: String,
-  description: String,
-  url: String,
-  urlToImage: String,
-  publishedAt: String,
-  content: String
-
+const patientSchema = new mongoose.Schema({
+  patient: String,
+  age: Number,
+  problem: String,
+  no: Number
 });
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
@@ -32,5 +24,5 @@ hospitalmodel.mysuru = mongoose.model('mysuru', hospitalSchema, 'mysuru');
 hospitalmodel.banglore = mongoose.model('banglore', hospitalSchema, 'banglore');
 hospitalmodel.belagavi = mongoose.model('belagavi', hospitalSchema, 'belagavi');
 hospitalmodel.dharwad = mongoose.model('dharwad', hospitalSchema, 'dharwad');
-hospitalmodel.news = mongoose.model('news', newsSchema, 'news');
+hospitalmodel.patient = mongoose.model('patient', patientSchema, 'patient');
 module.exports = hospitalmodel;
