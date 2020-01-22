@@ -184,7 +184,11 @@ pharmacyController.shoppingCartget = (req, res, next) => {
 	});
 };
 pharmacyController.checkoutget = (req, res, next) => {
-	res.render('checkout');
+	if (!req.session.cart) {
+		return res.render('shoppingCart', { products: null });
+	}
+	var cart = new Cart(req.session.cart);
+	res.render('checkout', { total: cart.totalPrice });
 };
 pharmacyController.checkoutpost = (req, res, next) => {
 	var cart = new Cart(req.session.cart);
@@ -205,13 +209,17 @@ pharmacyController.checkoutpost = (req, res, next) => {
 			} else {
 				console.log('order Saved Successfully');
 			}
+
 			res.redirect('placedOrder');
 		});
+		// req.session.cart = null;
 	});
 };
 pharmacyController.placedOrderget = (req, res, next) => {
+	var cart = new Cart(req.session.cart);
+	cart = null;
 	var orderByUser = {
-		cardName: session.cardName
+		cardName: req.session.user
 	};
 	// console.log(orderByUser);
 	Order.findOne(orderByUser, (err, result) => {

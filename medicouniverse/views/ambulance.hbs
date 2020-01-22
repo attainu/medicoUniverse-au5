@@ -66,7 +66,7 @@
                             <!-- Card image -->
 
                             <div class="avatar mx-auto white">
-                                <img class="card-img-top"
+                                <img class="card-img-top mt-2"
                                     src="https://res.cloudinary.com/dps7y8nd7/image/upload/v1579533608/ambulance_rygh5o.png"
                                     alt="Card image cap">
                                 <a>
@@ -81,7 +81,7 @@
                                 <!-- Label -->
                                 <h5 class="pink-text pb-2 pt-1"><i class="fas fa-ambulance"></i> Route Guide</h5>
                                 <!-- Title -->
-                                <h4 class=" card-title">Enter Origin and Destination</h4>
+                                <h6 class=" card-title">Enter Origin and Destination</h6>
                                 <!-- Text -->
                                 <div class="card">
                                     <div class="row">
@@ -174,12 +174,14 @@
                 <!--Body-->
                 <div class="modal-body text-center mb-1">
 
-                    <h5 class="mt-1 mb-2">Maria Doe</h5>
+                    <h5 class="mt-1 mb-2">{{ambulance.driverName}}</h5>
 
                     <div class="md-form ml-0 mr-0">
-                        <p> Ambulance No: RJ20 CA 2019</p>
+                        <p> Ambulance No: {{ambulance.ambulanceNumber}}</p>
                         <p>Contact 7100685458</p>
                     </div>
+
+
 
                     <div class="text-center mt-4">
                         <button class="btn btn-cyan mt-1" id="confirmBooking" onclick="setRoutes()">Confirm Booking <i

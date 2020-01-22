@@ -107,7 +107,7 @@ function datalist(inp, arr) {
 }
 
 var speciality = ["Dentist", "General Physician", "ENT Specialist"];
-var cities = ["Chennai","Bangalore"];
+var cities = ["Shimla","Kota","Agra","Chennai","Belgavi"];
 autocomplete(document.getElementById("mainsearch"), speciality);
 autocomplete(document.getElementById("cities"), cities);
 datalist(document.getElementById("mainsearch"),speciality);

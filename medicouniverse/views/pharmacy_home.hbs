@@ -28,9 +28,8 @@
 
             {{#if userDb}}
             <div class="navbar-loggedin">
-                <img src="{{userDb.image}}" onerror="this.src = './image/default_profile_pic.png'" width="36px"
-                    height="36px">
-                <a href="/dashboard" class="ml-2">{{userDb.email}}</a>
+                
+                <a href="/dashboard" class="ml-2">{{user.name}}</a>
             </div>
             {{else}}
             <button class="navbar-toggler float-right p-1" type="button" data-toggle="collapse"
@@ -47,7 +46,7 @@
                         <a class="nav-link" href="/medicoUniverse/mission">Mission</a>
                     </li>
                 </ul>
-                <a class="nav-link login-signup " href="/user/signin">Login/SignUp</a>
+                {{!-- <a class="nav-link login-signup " href="/user/signin">Login/SignUp</a> --}}
             </div>
             {{/if}}
         </nav>
