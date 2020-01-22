@@ -16,7 +16,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
     <!-- Material Design Bootstrap -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.10.1/css/mdb.min.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="./css/products.css">
+    <link rel="stylesheet" type="text/css" href="/css/products.css">
 </head>
 
 <body>
@@ -219,61 +219,45 @@
                 <div class="col-9 " id="products">
 
                     <div class="row">
-                        {{#each products }}
-                        <div class="col-4">
-                            <!-- Card -->
-                            <div class="card mb-3">
 
-                                <!-- Card image -->
-                                <div class="view overlay">
-                                    <img class="card-img-top" src="{{this.imgPath}}" alt="{{this.productName}}"
-                                        style="width: auto; height:auto">
-                                    <a href="#!">
-                                        <div class="mask rgba-white-slight"></div>
-                                    </a>
-                                </div>
-                                <hr>
-                                <!-- Card content -->
-                                <div class="card-body">
+                        <!-- Card -->
+                        <div class="card mb-3">
 
-                                    <!-- Title -->
-                                    <h4 class="card-title m-sm-2" style="font-size: small;">{{this.productName}} </h4>
-                                    <!-- Text -->
-                                    <div class="row">
-                                        <div class="col">
-                                            <span><strike style="font-size: smaller;">₹{{this.productPrice}}</strike>
-                                            </span>
-                                        </div>
-                                        <div class="col">
-                                            <span class="text-success font-weight-bold">₹{{this.discountedPrice}}</span>
-                                        </div>
+                            <!-- Card image -->
+                            <div class="view overlay">
+                                <img class="card-img-top" src="{{this.imgPath}}" alt="{{this.productName}}"
+                                    style="width: auto; height:auto">
+                                <a href="#!">
+                                    <div class="mask rgba-white-slight"></div>
+                                </a>
+                            </div>
+                            <hr>
+                            <!-- Card content -->
+                            <div class="card-body">
 
-                                        <div class="row">
-                                            <div class="col">
-                                                <a href="/addToCart/{{this._id}}" class="btn btn-primary btn-sm"
-                                                    style="margin-left: 25%;">Add</a>
-
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col">
-                                                <span class="text-muted">{{this.subCategory}}</span>
-
-                                            </div>
-                                        </div>
+                                <!-- Title -->
+                                <h4 class="card-title m-sm-2" style="font-size: small;">{{this.productName}} </h4>
+                                <!-- Text -->
+                                <div class="row">
+                                    <div class="col">
+                                        <span>₹{{this.productPrice}}</span>
+                                    </div>
+                                    <div class="col">
+                                        <a href="/addToCart/{{this._id}}" class="btn btn-primary btn-sm"
+                                            style="margin-left: 25%;">Add</a>
 
                                     </div>
-
-                                    <!-- Button -->
-
                                 </div>
 
+                                <!-- Button -->
+
                             </div>
-                            <!-- Card -->
+
                         </div>
+                        <!-- Card -->
 
 
-                        {{/each}}
+
                     </div>
                 </div>
 

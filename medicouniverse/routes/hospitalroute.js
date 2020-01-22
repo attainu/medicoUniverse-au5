@@ -12,7 +12,7 @@ const redirectLogin = (req, res, next) => {
 };
 const redirectHomepage = (req, res, next) => {
 	if (req.session.user) {
-		res.redirect('/pharmacy_home');
+		res.redirect('/');
 	} else {
 		next();
 	}
@@ -21,6 +21,6 @@ const redirectHomepage = (req, res, next) => {
 route.get('/hospitalsearch', hospitalcontroller.hospital);
 route.get('/json', hospitalcontroller.db);
 route.post('/storeddata', hospitalcontroller.storeddata);
-route.post('/patientdata', hospitalcontroller.patientdata);
+route.post('/patientdata',redirectLogin, hospitalcontroller.patientdata);
 // route.get('/mongodbatlas',hospitalcontroller.atlas)
 module.exports = route;

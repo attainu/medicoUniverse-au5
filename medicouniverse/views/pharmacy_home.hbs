@@ -26,10 +26,9 @@
         <nav class="navbar navbar-expand-sm navbar-light">
             <a class="navbar-brand" href="/medicoUniverse">Medico<span>Universe</span></a>
 
-            {{#if user}}
+            {{#if userDb}}
             <div class="navbar-loggedin">
-                <img src="{{user.image}}" onerror="this.src = './image/default_profile_pic.png'" width="36px"
-                    height="36px">
+                
                 <a href="/dashboard" class="ml-2">{{user.name}}</a>
             </div>
             {{else}}
@@ -47,7 +46,7 @@
                         <a class="nav-link" href="/medicoUniverse/mission">Mission</a>
                     </li>
                 </ul>
-                <a class="nav-link login-signup " href="/user/login">Login/SignUp</a>
+                {{!-- <a class="nav-link login-signup " href="/user/signin">Login/SignUp</a> --}}
             </div>
             {{/if}}
         </nav>
@@ -142,16 +141,19 @@
 
                                 </div>
                             </div>
-
                             <div class="col-md-4">
+
+
                                 <div class="card mb-2">
+
                                     <img class="card-img-top"
                                         src="https://res.cloudinary.com/dps7y8nd7/image/upload/v1579058220/skin_care_wb03fh.png"
                                         alt="Card image cap">
 
                                 </div>
-                            </div>
 
+
+                            </div>
                         </div>
                     </div>
 
@@ -193,41 +195,7 @@
                     </div>
                     <!--/.Second slide-->
 
-                    <!--Third slide-->
-                    <div class="carousel-item">
-                        <div class="row">
 
-                            <div class="col-md-4">
-                                <div class="card mb-2">
-                                    <img class="card-img-top"
-                                        src="https://mdbootstrap.com/img/Photos/Horizontal/Food/4-col/img%20(53).jpg"
-                                        alt="Card image cap">
-
-                                </div>
-                            </div>
-
-                            <div class="col-md-4">
-                                <div class="card mb-2">
-                                    <img class="card-img-top"
-                                        src="https://mdbootstrap.com/img/Photos/Horizontal/Food/4-col/img%20(45).jpg"
-                                        alt="Card image cap">
-
-                                </div>
-                            </div>
-
-                            <div class="col-md-4">
-                                <div class="card mb-2">
-                                    <img class="card-img-top"
-                                        src="https://mdbootstrap.com/img/Photos/Horizontal/Food/4-col/img%20(51).jpg"
-                                        alt="Card image cap">
-
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <!--/.Third slide-->
 
                 </div>
                 <!--/.Slides-->
@@ -252,12 +220,11 @@
                             <div class="col-md-4">
                                 <div class="card mb-2">
                                     <div class="m-product-wrapper ">
-                                        <a class="u-a--disable-style"
-                                            href="/health-products/horlicks-oats-refill-1-kg-13677/p" target="_blank">
+                                        <a class="u-a--disable-style" id="horlicks" href="/products" target="">
                                             <div class="m-product__image-wrapper u-p-b--5 u-p-t--5 u-text--center"><img
                                                     class="u-img-fit--height u-b-center ml-5"
                                                     alt="GLAXOSMITHKLINE CONSUMER HEALTHCARE LTD HORLICKS OATS REFILL 1KG 1KG HEALTH FOODS"
-                                                    src="https://res.cloudinary.com/dps7y8nd7/image/upload/v1579087954/horlicks_mgdbcz.png">
+                                                    src="https://res.cloudinary.com/dps7y8nd7/image/upload/v1579544125/ihb0bgsullkr02bogklh.jpg">
 
                                             </div>
                                             <div class="u-p-t--10 u-position--relative ">
@@ -288,12 +255,11 @@
                             <div class="col-md-4">
                                 <div class="card mb-2">
                                     <div class="m-product-wrapper ">
-                                        <a class="u-a--disable-style"
-                                            href="/health-products/horlicks-oats-refill-1-kg-13677/p" target="_blank">
+                                        <a class="u-a--disable-style" href="/products" target="_blank">
                                             <div class="m-product__image-wrapper u-p-b--5 u-p-t--5 u-text--center"><img
                                                     class="u-img-fit--height u-b-center ml-5"
                                                     alt="GLAXOSMITHKLINE CONSUMER HEALTHCARE LTD HORLICKS OATS REFILL 1KG 1KG HEALTH FOODS"
-                                                    src="https://res.cloudinary.com/dps7y8nd7/image/upload/v1579088184/comb0002_l_om31vt.jpg">
+                                                    src="https://res.cloudinary.com/dps7y8nd7/image/upload/v1579544243/c9svgv2f4o3hv7ihdnfy.jpg">
                                             </div>
                                             <div class="u-p-t--10 u-position--relative">
                                                 <div class="heading-epsilon m-product-details u-p-l--10 u-p-r--10">
@@ -323,12 +289,11 @@
                             <div class="col-md-4">
                                 <div class="card mb-2">
                                     <div class="m-product-wrapper ">
-                                        <a class="u-a--disable-style"
-                                            href="/health-products/horlicks-oats-refill-1-kg-13677/p" target="_blank">
+                                        <a class="u-a--disable-style" href="/products" target="_blank">
                                             <div class="m-product__image-wrapper u-p-b--5 u-p-t--5 u-text--center"><img
                                                     class="u-img-fit--height u-b-center ml-5"
                                                     alt="GLAXOSMITHKLINE CONSUMER HEALTHCARE LTD HORLICKS OATS REFILL 1KG 1KG HEALTH FOODS"
-                                                    src="https://res.cloudinary.com/dps7y8nd7/image/upload/v1579070433/fb6d80aa28e4149a7b60f353231c549ed5731f951_cxo55b.jpg"
+                                                    src="https://res.cloudinary.com/dps7y8nd7/image/upload/v1579544288/b3r8lriep7nfdxrxuyef.jpg"
                                                     style="margin-right:auto; margin-left:auto">
                                             </div>
                                             <div class="u-p-t--10 u-position--relative">
@@ -374,7 +339,7 @@
                                             <div class="m-product__image-wrapper u-p-b--5 u-p-t--5 u-text--center"><img
                                                     class="u-img-fit--height u-b-center ml-5"
                                                     alt="GLAXOSMITHKLINE CONSUMER HEALTHCARE LTD HORLICKS OATS REFILL 1KG 1KG HEALTH FOODS"
-                                                    src="https://res.cloudinary.com/dps7y8nd7/image/upload/v1579087954/melatonin_tmmww9.png"
+                                                    src="https://res.cloudinary.com/dps7y8nd7/image/upload/v1579595696/b8c6rpudhagutg0zv9ad.jpg"
                                                     style="margin-right:auto; margin-left:auto">
                                             </div>
                                             <div class=" u-p-t--10 u-position--relative">
@@ -410,7 +375,7 @@
                                             <div class="m-product__image-wrapper u-p-b--5 u-p-t--5 u-text--center"><img
                                                     class="u-img-fit--height u-b-center ml-5"
                                                     alt="GLAXOSMITHKLINE CONSUMER HEALTHCARE LTD HORLICKS OATS REFILL 1KG 1KG HEALTH FOODS"
-                                                    src="https://res.cloudinary.com/dps7y8nd7/image/upload/v1579087954/paracetamol_nozneb.png"
+                                                    src="https://res.cloudinary.com/dps7y8nd7/image/upload/v1579544354/fzo8w7i61amju3p42kl1.jpg"
                                                     style="margin-right:auto; margin-left:auto">
                                             </div>
                                             <div class="u-p-t--10 u-position--relative">
@@ -447,7 +412,7 @@
                                             <div class="m-product__image-wrapper u-p-b--5 u-p-t--5 u-text--center"><img
                                                     class="u-img-fit--height u-b-center ml-5"
                                                     alt="GLAXOSMITHKLINE CONSUMER HEALTHCARE LTD HORLICKS OATS REFILL 1KG 1KG HEALTH FOODS"
-                                                    src="https://res.cloudinary.com/dps7y8nd7/image/upload/v1579070433/8656a96b0c9d8acf8323004e727ff7721faad2441_dmccsr.jpg"
+                                                    src="https://res.cloudinary.com/dps7y8nd7/image/upload/v1579544549/qfjjepzxjk3be5krwdde.jpg"
                                                     style="margin-right:auto; margin-left:auto">
                                             </div>
                                             <div class="u-p-t--10 u-position--relative">

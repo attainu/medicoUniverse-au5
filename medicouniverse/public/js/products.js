@@ -222,3 +222,28 @@ $(document).ready(function() {
 		return false;
 	});
 });
+$(document).ready(function() {
+	$(window).scroll(function() {
+		if ($('products').scrollTop() > 100) {
+			$('.scrollup').fadeIn();
+		} else {
+			$('.scrollup').fadeOut();
+		}
+	});
+
+	$('.horlicks').click(function() {
+		$('html, body').animate(
+			{
+				scrollTop: 2500
+			},
+			600
+		);
+		return false;
+	});
+});
+
+// $('#deleteCookie').click(function(e) {
+// 	e.preventDefault();
+// 	$.removeCookie('connect.sid');
+// 	location.reload();
+// });

@@ -63,8 +63,9 @@ $(document).ready(function() {
 
 $(document).ready(function() {
 	$('#confirmBooking').click(function() {
-		document.getElementById('start').value === 0;
-		document.getElementById('end').value === 0;
+		$('#start').val('');
+		$('#end').val('');
+		$('#modalLoginAvatar').modal('hide');
 	});
 });
 function toggleButton() {
@@ -131,7 +132,7 @@ function createMarker(latlng, label, html) {
 		map: map,
 		title: label,
 		icon: image,
-		zIndex: 10
+		zIndex: 50
 	});
 	marker.myname = label;
 	// adding click listener to open up info window when marker is clicked
@@ -180,7 +181,8 @@ function setRoutes() {
 		var rendererOptions = {
 			map: map,
 			suppressMarkers: true,
-			preserveViewport: true
+			preserveViewport: true,
+			zoom: 50
 		};
 		directionsService = new google.maps.DirectionsService();
 		var travelMode = google.maps.DirectionsTravelMode.DRIVING;

@@ -43,7 +43,7 @@ app.use(
 		saveUninitialized: true,
 		store: new MongoStore({ mongooseConnection: mongoose.connection }),
 		cookie: {
-			maxAge: 180 * 60 * 1000,
+			maxAge: 60 * 60 * 1000,
 			path: '/',
 			httpOnly: true
 		}
@@ -65,9 +65,9 @@ app.use(
 app.use(cookieParser());
 app.use(hospitalroute);
 app.use(pharmacyRoute);
+app.use(ambulanceRoute);
 app.use(homepageRoutes);
 app.use(bookingRoute);
-app.use(ambulanceRoute);
 // app.use(flash());
 // app.use(passport.initialize());
 // app.use(passport.session());

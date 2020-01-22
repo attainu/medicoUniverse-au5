@@ -68,68 +68,82 @@
 
             </div>
         </div>
-        <div class="container">
-            <!-- Card Regular -->
-            <div class="card card-cascade">
+        <div class="container-flex">
+            <div class="row">
+                <div class="col">
+                    <!-- Card Regular -->
+                    <div class="card card-cascade">
 
-                <!-- Card image -->
+                        <!-- Card image -->
 
 
-                <!-- Card content -->
-                <div class="card-body card-body-cascade text-center">
+                        <!-- Card content -->
+                        <div class="card-body card-body-cascade text-center">
 
-                    <!-- Title -->
-                    <h4 class="card-title"><strong>My Orders</strong></h4>
-                    <!-- Subtitle -->
-                    <h6 class="font-weight-bold indigo-text py-2">Hello {{orders.item.cardName}}!! Here is your order
-                        history</h6>
-                    {{#each orders }}
-                    <div class="card-body card-body-cascade">
-                        <div class="card-body">
-                            <div class="card-body ">
-                                {{#each this.items}}
+                            <!-- Title -->
+                            <h4 class="card-title"><strong>My Orders</strong></h4>
+                            <!-- Subtitle -->
+                            <h6 class="font-weight-bold indigo-text py-2">Hello {{orders.item.cardName}}!! Here is your
+                                order
+                                history</h6>
+                            {{#each orders }}
+                            <div class="card-body card-body-cascade">
+                                <div class="card-body">
+                                    <div class="card-body ">
+                                        {{#each this.items}}
 
-                                <li class="list-group-item border-0 " style="background-color:honeydew">
-                                    <div class="row">
-                                        <div class="col">
-                                            {{this.item.productName}}
-                                        </div>
-                                        <div class="col">
-                                            <span class="badge badge-primary">{{this.qty}}</span>
-                                        </div>
-                                        <div class="col">
-                                            <span class="card-body">₹{{this.price}}</span>
-                                        </div>
+                                        <li class="list-group-item border-0 " style="background-color:honeydew">
+                                            <div class="row">
+                                                <div class="col">
+                                                    {{this.item.productName}}
+                                                </div>
+                                                <div class="col">
+                                                    <span class="badge badge-primary">{{this.qty}}</span>
+                                                </div>
+                                                <div class="col">
+                                                    <span class="card-body">₹{{this.price}}</span>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        {{/each}}
                                     </div>
-                                </li>
-                                {{/each}}
+
+                                </div>
+                                <hr>
+                                <div class="row">
+                                    <div class="col">
+
+                                    </div>
+                                    <div class="col">
+                                        <div class="panel-footer"><strong>Total Price:
+                                                ₹{{this.cart.totalPrice}}</strong> </div>
+                                    </div>
+                                </div>
+
                             </div>
+                            {{/each}}
+
+
+                            <!-- Facebook -->
+                            <a type="button" class="btn-floating btn-small btn-fb"><i class="fab fa-facebook-f"></i></a>
+                            <!-- Twitter -->
+                            <a type="button" class="btn-floating btn-small btn-tw"><i class="fab fa-twitter"></i></a>
+                            <!-- Google + -->
+                            <a type="button" class="btn-floating btn-small btn-dribbble"><i
+                                    class="fab fa-dribbble"></i></a>
 
                         </div>
-                        <hr>
-                        <div class="row">
-                            <div class="col">
-
-                            </div>
-                            <div class="col">
-                                <div class="panel-footer"><strong>Total Price: ₹{{this.cart.totalPrice}}</strong> </div>
-                            </div>
-                        </div>
-
                     </div>
-                    {{/each}}
-
-
-                    <!-- Facebook -->
-                    <a type="button" class="btn-floating btn-small btn-fb"><i class="fab fa-facebook-f"></i></a>
-                    <!-- Twitter -->
-                    <a type="button" class="btn-floating btn-small btn-tw"><i class="fab fa-twitter"></i></a>
-                    <!-- Google + -->
-                    <a type="button" class="btn-floating btn-small btn-dribbble"><i class="fab fa-dribbble"></i></a>
-
+                    <!-- Card Regular -->
+                </div>
+                <div class="col">
+                    xvfxf
+                </div>
+                <div class="col">
+                    dfcd
                 </div>
             </div>
-            <!-- Card Regular -->
+
         </div>
 
         <footer class="mt-4">

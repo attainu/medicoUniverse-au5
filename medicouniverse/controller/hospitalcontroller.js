@@ -1,10 +1,12 @@
 const mongoose = require('mongoose');
 const hospitalmodel = require('../model/hospitalmodels');
+// var Order = require('../model/order');
+// const Cart = require('../model/cart');
 const bodyParser = require('body-parser');
 const Nexmo = require('nexmo');
 const nexmo = new Nexmo({
-    apiKey: 'f18fac96',
-    apiSecret: 'lQWUWc5wcKjXvT7M',
+	apiKey: 'f18fac96',
+	apiSecret: 'lQWUWc5wcKjXvT7M'
 });
 
 // const news = require('../data/news.json');
@@ -99,4 +101,4 @@ hospitalcontroller.patientdata = function (req, res) {
 //         res.send(news);
 //     });
 // }
-module.exports = hospitalcontroller
+module.exports = hospitalcontroller;

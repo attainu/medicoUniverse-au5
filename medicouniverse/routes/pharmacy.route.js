@@ -19,7 +19,7 @@ const redirectLogin = (req, res, next) => {
 };
 const redirectHomepage = (req, res, next) => {
 	if (req.session.user) {
-		res.redirect('/pharmacy_home');
+		res.redirect('/');
 	} else {
 		next();
 	}
@@ -35,11 +35,12 @@ router.post('/addProducts', pharmacyController.postAddProducts);
 router.post('/user/signup', pharmacyController.userSignuppost);
 router.post('/user/signin', pharmacyController.userSigninpost);
 router.get('/shoppingCart', pharmacyController.shoppingCartget);
-router.get('/checkout', pharmacyController.checkoutget);
-router.post('/checkout', pharmacyController.checkoutpost);
-router.get('/placedOrder', pharmacyController.placedOrderget);
-router.post('/placedOrder', pharmacyController.placedOrderpost);
-router.get('/profile', pharmacyController.profileget);
+router.get('/checkout', redirectLogin, pharmacyController.checkoutget);
+router.post('/checkout', redirectLogin, pharmacyController.checkoutpost);
+router.get('/placedOrder', redirectLogin, pharmacyController.placedOrderget);
+router.post('/placedOrder', redirectLogin, pharmacyController.placedOrderpost);
+router.get('/profile', redirectLogin, pharmacyController.profileget);
+// router.get('/products/horlicks-oats-refill',pharmacyController.horlicksget)
 // router.get('/productCategory/babybath',pharmacyController.babybathget)
 
 module.exports = router;

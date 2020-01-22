@@ -24,7 +24,7 @@
         <a class="navbar-brand" href="/">Medico<span>Universe</span></a>
         {{#if user}}
         <div class="navbar-loggedin">
-            <img src="{{user.image}}" onerror="this.src = './image/default_profile_pic.png'" width="36px" height="36px">
+            
             <a href="/dashboard" class="ml-2">{{user.name}}</a>
         </div>
         {{else}}
@@ -42,7 +42,7 @@
                     <a class="nav-link" href="/mission">Mission</a>
                 </li>
             </ul>
-            <a class="nav-link login-signup " href="/user/signin">Login/SignUp</a>
+            <a class="nav-link login-signup " href="/user/signin">Hello {{session.user.email}}</a>
         </div>
         {{/if}}
     </nav>
