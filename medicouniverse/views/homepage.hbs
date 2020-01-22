@@ -22,7 +22,7 @@
         {{#if user}}
         <div class="navbar-loggedin">
             <img src="{{user.image}}" onerror="this.src = './image/default_profile_pic.png'" width="32px" height="32px">
-            <a href="/dashboard" class="ml-2">{{user.name}}</a>
+            <a href="/dashboard" class="ml-2">{{session.user.email}}</a>
         </div>
         {{else}}
         <button class="navbar-toggler float-right p-1" type="button" data-toggle="collapse"
@@ -39,32 +39,18 @@
                     <a class="nav-link" href="/medicoUniverse/mission">Mission</a>
                 </li>
             </ul>
-            <a class="nav-link login-signup " href="/user/signin">Login/SignUp</a>
+            <a class="nav-link login-signup " href="/user/signin">Hello {{session.user.email}}!</a>
         </div>
         {{/if}}
     </nav>
     <hr>
     <section class="row no-gutters">
-        <div class="search col-lg-8 col-md-8 col-sm-12 col-10 my-3">
-            <form>
-                <div class="search-city position-relative d-inline-block">
-                    <img src="./image/location.svg" width="16px" height="16px" id="loc-icon">
-                    <input type="text" placeholder="City" name="pincode" id="cities" class="w-100">
-                </div>
-                <div class="search-main position-relative d-inline-block">
-                    <img src="./image/search.svg" width="16px" height="16px" id="search-icon">
-                    <input type="text" placeholder="Search for Doctors" name="mainsearch" id="mainsearch" class="w-100"
-                        autocomplete="off">
-                </div>
 
-                <button type="submit">Search</button>
-            </form>
-        </div>
         <div id="slideout">
             <div class="d-inline-block" id="ambIcon">
                 <img src="./image/ambulance_icon.png" width="36px" height="36px">
                 <a href="/ambulance_booking" class="ml-2 btn peach-gradient"> Book Ambulance</a>
-                {{!-- <button type="button" class="ml-2">Book ambulance</button> --}}
+
 
             </div>
         </div>

@@ -13,14 +13,7 @@ const bookingController = {};
 bookingController.open = function(req,res){
    res.render("bookingFrontDoctors.hbs")
 }
-// bookingController.insert = function(req,res){
-  
-//    mongoose.model('doctors').insertMany(doctors, function(err, results){
-//       console.log('Data Saved successfully into the database')
-//       res.send(doctors);
-//    });
-   
-// };
+
 
 bookingController.find = function(req,res){
   

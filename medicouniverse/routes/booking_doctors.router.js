@@ -12,7 +12,7 @@ const redirectLogin = (req, res, next) => {
 };
 const redirectHomepage = (req, res, next) => {
 	if (req.session.user) {
-		res.redirect('/pharmacy_home');
+		res.redirect('/');
 	} else {
 		next();
 	}

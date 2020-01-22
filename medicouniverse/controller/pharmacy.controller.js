@@ -11,10 +11,10 @@ var medicineDb = require('../model/pharmacy.model');
 var userDb = require('../model/user');
 var Order = require('../model/order');
 const jsonData = require('../public/data/medicines.json');
-const nexmo = new Nexmo({
-	apiKey: 'd61633c6',
-	apiSecret: '7kfNTn9ZkKnNf5Pi'
-});
+// const nexmo = new Nexmo({
+// 	apiKey: 'd61633c6',
+// 	apiSecret: '7kfNTn9ZkKnNf5Pi'
+// });
 var pharmacyController = {};
 
 pharmacyController.userSigninget = (req, res) => {
@@ -27,7 +27,9 @@ pharmacyController.userSigninpost = (req, res) => {
 		// console.log('Files: ', files, 'Fields: ', fields);
 
 		var userr = {
+			// name: fields.username[0],
 			email: fields.email[0],
+			// mobile: fields.mobile[0],
 			password: fields.password[0]
 		};
 		// console.log('userr : ', userr);
@@ -36,7 +38,7 @@ pharmacyController.userSigninpost = (req, res) => {
 				console.log('invalid User');
 			}
 			req.session.user = data;
-
+			console.log(req.session.user);
 			res.redirect('/products');
 		});
 	});
@@ -54,7 +56,9 @@ pharmacyController.userSignuppost = (req, res, next) => {
 		// console.log('Files: ', files, 'Fields: ', fields);
 
 		var newUser = {
+			name: fields.username[0],
 			email: fields.email[0],
+			mobile: fields.mobile[0],
 			password: fields.password[0]
 		};
 		// console.log(newUser);
@@ -80,6 +84,7 @@ pharmacyController.products = (req, res) => {
 			console.log('Error in finding data');
 		} else {
 			data.result = result;
+			console.log(req.session.user);
 		}
 
 		res.render('products', {
@@ -137,29 +142,41 @@ pharmacyController.addToCart = function(req, res) {
 pharmacyController.addProducts = (req, res) => {
 	res.render('addProducts');
 };
-
+// pharmacyController.horlicksget = (req, res) => {
+// 	var productId = req.params.id;
+// 	var cart = new Cart(req.session.cart ? req.session.cart : {});
+// 	medicineDb.findById(productId, function(err, product) {
+// 		if (err) {
+// 			return res.redirect('/');
+// 		}
+// 		cart.add(product, product.id);
+// 		req.session.cart = cart;
+// 		// console.log('cart session: ', req.session.cart);
+// 		res.redirect('/horlicks');
+// 	});
+// };
 pharmacyController.shoppingCartget = (req, res, next) => {
 	if (!req.session.cart) {
 		return res.render('shoppingCart', { products: null });
 	}
 	var cart = new Cart(req.session.cart);
-	const from = 'MedicoUniverse';
-	const to = 917011675429;
-	const text = 'your order has been placed and will reach to you soon.';
+	// const from = 'MedicoUniverse';
+	// const to = 917011675429;
+	// const text = 'your order has been placed and will reach to you soon.';
 
-	nexmo.message.sendSms(from, to, text, (err, responseData) => {
-		if (err) {
-			console.log(err);
-		} else {
-			if (responseData.messages[0]['status'] === '0') {
-				console.log('Message sent successfully.');
-			} else {
-				console.log(
-					`Message failed with error: ${responseData.messages[0]['error-text']}`
-				);
-			}
-		}
-	});
+	// nexmo.message.sendSms(from, to, text, (err, responseData) => {
+	// 	if (err) {
+	// 		console.log(err);
+	// 	} else {
+	// 		if (responseData.messages[0]['status'] === '0') {
+	// 			console.log('Message sent successfully.');
+	// 		} else {
+	// 			console.log(
+	// 				`Message failed with error: ${responseData.messages[0]['error-text']}`
+	// 			);
+	// 		}
+	// 	}
+	// });
 
 	res.render('shoppingCart', {
 		products: cart.generateArray(),
@@ -194,7 +211,7 @@ pharmacyController.checkoutpost = (req, res, next) => {
 };
 pharmacyController.placedOrderget = (req, res, next) => {
 	var orderByUser = {
-		cardName: 'Bill Gates'
+		cardName: session.cardName
 	};
 	// console.log(orderByUser);
 	Order.findOne(orderByUser, (err, result) => {
