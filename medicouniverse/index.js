@@ -22,7 +22,7 @@ const homepageRoutes = require('./routes/homepage.route');
 const bookingRoute = require('./routes/booking_doctors.router.js');
 const hospitalroute = require('./routes/hospitalroute');
 const objectId = mongodb.ObjectID;
-const PORT = 5050;
+const port = 5050;
 
 cloudinary.config({
 	cloud_name: 'dps7y8nd7',
@@ -72,4 +72,4 @@ app.use(bookingRoute);
 // app.use(passport.initialize());
 // app.use(passport.session());
 // app.use(csrfProtection);
-app.listen(PORT, () => console.log(`http://localhost:${PORT}`));
+app.listen( process.env.PORT || port, () => console.log(`http://localhost:${port}`));
