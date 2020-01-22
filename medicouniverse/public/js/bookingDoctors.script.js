@@ -19,6 +19,8 @@ $("#bookBtn").on("click" , function(){
 
 })
 
+
+
 function changeValue(){
     var selection = $("#service").val()
 

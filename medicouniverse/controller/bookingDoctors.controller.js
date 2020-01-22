@@ -11,7 +11,12 @@ const bookingController = {};
 
 
 bookingController.open = function(req,res){
-   res.render("bookingFrontDoctors.hbs")
+   var searchKeys = {};
+   searchKeys.city = req.query.city;
+   searchKeys.type = req.query.type;
+   searchKeys.speciality = req.query.mainsearch;
+   //console.log(searchKeys)
+   res.render("bookingFrontDoctors.hbs", searchKeys)
 }
 // bookingController.insert = function(req,res){
   

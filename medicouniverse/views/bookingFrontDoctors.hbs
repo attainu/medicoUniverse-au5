@@ -44,7 +44,7 @@
         <h1 id="pName"><strong>Medico<span>Universe</span><sup>+</sup></strong></h1>
         <h3 id="info"><strong>Book Your Appointments here</strong></h3>
         <form action="/appointment" method="POST" class="form-inline">
-            <input class="form-control" list="places" name="city" placeholder="Select City" required>
+            <input class="form-control" list="places" name="city" placeholder="Select City" value="{{city}}" required>
             <datalist id="places">
                 <option value="Shimla">Shimla</option>
                 <option value="Kota">Kota</option>
@@ -54,7 +54,7 @@
             </datalist>
             </button>
             <input id="service" class="form-control" list="requirements" name="service"
-                placeholder="Select Doctors,Therapists,Nurses and Babysitters" onchange="changeValue()" required>
+                placeholder="Select Doctors,Therapists,Nurses and Babysitters" onchange="changeValue()" value="{{type}}" required>
             <datalist id="requirements">
                 <option value="Doctors">Doctors</option>
                 <option value="Nurses">Nurses</option>
@@ -64,9 +64,9 @@
             </button>
             <div id="specialization">
                 <input class="form-control" list="specs" name="specialization" placeholder="Select Specialization"
-                    required>
+                   value="{{speciality}}" required>
                 <datalist id="specs">
-
+                
                 </datalist>
                 </button>
             </div>
