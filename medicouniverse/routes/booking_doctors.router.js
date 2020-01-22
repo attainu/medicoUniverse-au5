@@ -22,5 +22,6 @@ router.get('/booking_doctors', bookingController.open);
 // router.get('/showResults', bookingController.insert)
 router.get('/displayResults', bookingController.find);
 router.post('/appointment', redirectLogin, bookingController.getInput);
+router.post('/bookNow' , bookingController.bookNow)
 
 module.exports = router;

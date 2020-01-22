@@ -39,7 +39,7 @@ pharmacyController.userSigninpost = (req, res) => {
 			}
 			req.session.user = data;
 			console.log(req.session.user);
-			res.redirect('/products');
+			res.redirect('/');
 		});
 	});
 };
