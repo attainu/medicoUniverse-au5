@@ -12,7 +12,8 @@ const patientSchema = new mongoose.Schema({
   patient: String,
   age: Number,
   problem: String,
-  no: Number
+  no: Number,
+  store: String
 });
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));

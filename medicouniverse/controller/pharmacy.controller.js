@@ -256,11 +256,15 @@ pharmacyController.profileget = (req, res, next) => {
 			order.items = cart.generateArray();
 		});
 		console.log(orders);
-		hospitalmodel.patient.find(req.session.user, function (err, result) {
-			if (err) return handleError(err);
+		hospitalmodel.patient.find({store : req.session.user.email}, function (err, result) {
+			if (err) throw err
 			// saved!
 			console.log(result)
-			res.render('user/profile', { orders: orders });
+			res.render('user/profile', 
+			{ 
+				orders: orders,
+				patient : result[0]
+			});
 		});
 	});
 };

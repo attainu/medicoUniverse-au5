@@ -140,7 +140,82 @@
                     xvfxf
                 </div>
                 <div class="col">
-                    dfcd
+                    <div class="card card-cascade">
+
+                        <!-- Card image -->
+
+
+                        <!-- Card content -->
+                        <div class="card-body card-body-cascade text-center">
+
+                            <!-- Title -->
+                            <h4 class="card-title"><strong>Hospital appoitments</strong></h4>
+                            <!-- Subtitle -->
+                            {{!-- {{#each orders }} --}}
+                            <div class="card-body card-body-cascade">
+                                <div class="card-body">
+                                    <div class="card-body ">
+                                        {{#if patient}}
+
+                                        <li class="list-group-item border-0 " style="background-color:honeydew">
+                                            <div class="row">
+                                                <div class="col">
+                                                   <strong>Name</strong>
+                                                </div>
+                                                <div class="col">
+                                                    <span class="card-body"><strong>Problem</strong></span>
+                                                </div>
+                                                <div class="col">
+                                                    <span class="card-body"><strong>Age</strong></span>
+                                                </div>
+                                                <div class="col">
+                                                    <span class="card-body"><strong>Ph.no</strong></span>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col">
+                                                    {{patient.patient}}
+                                                </div>
+                                                <div class="col">
+                                                    <span class="card-body">{{patient.problem}}</span>
+                                                </div>
+                                                <div class="col">
+                                                    <span class="card-body">{{patient.age}}</span>
+                                                </div>
+                                                <div class="col">
+                                                    <span class="card-body">{{patient.no}}</span>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        {{/if}}
+                                    </div>
+
+                                </div>
+                                <hr>
+                                <div class="row">
+                                    <div class="col">
+
+                                    </div>
+                                    <div class="col">
+                                        <div class="panel-footer"><strong>Total Price:
+                                                ₹{{this.cart.totalPrice}}</strong> </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            {{!-- {{/each}} --}}
+
+
+                            <!-- Facebook -->
+                            <a type="button" class="btn-floating btn-small btn-fb"><i class="fab fa-facebook-f"></i></a>
+                            <!-- Twitter -->
+                            <a type="button" class="btn-floating btn-small btn-tw"><i class="fab fa-twitter"></i></a>
+                            <!-- Google + -->
+                            <a type="button" class="btn-floating btn-small btn-dribbble"><i
+                                    class="fab fa-dribbble"></i></a>
+
+                        </div>
+                    </div>
                 </div>
             </div>
 
