@@ -246,11 +246,6 @@ pharmacyController.placedOrderpost = (req, res, next) => {
 };
 
 pharmacyController.profileget = (req, res, next) => {
-	hospitalmodel.patient.find({ user: req.session.user }, function (err, result) {
-		if (err) return handleError(err);
-		// saved!
-		console.log(result)
-	});
 	Order.find({ user: req.session.user }, function(err, orders) {
 		if (err) {
 			return res.write('Error!');
@@ -261,7 +256,12 @@ pharmacyController.profileget = (req, res, next) => {
 			order.items = cart.generateArray();
 		});
 		console.log(orders);
-		res.render('user/profile', { orders: orders });
+		hospitalmodel.patient.find(req.session.user, function (err, result) {
+			if (err) return handleError(err);
+			// saved!
+			console.log(result)
+			res.render('user/profile', { orders: orders });
+		});
 	});
 };
 
