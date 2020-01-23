@@ -156,8 +156,6 @@
                             <div class="card-body card-body-cascade">
                                 <div class="card-body">
                                     <div class="card-body ">
-                                        {{#if patient}}
-
                                         <li class="list-group-item border-0 " style="background-color:honeydew">
                                             <div class="row">
                                                 <div class="col">
@@ -173,22 +171,23 @@
                                                     <span class="card-body"><strong>Ph.no</strong></span>
                                                 </div>
                                             </div>
+                                            {{#each patient}}
                                             <div class="row">
                                                 <div class="col">
-                                                    {{patient.patient}}
+                                                    {{this.patient}}
                                                 </div>
                                                 <div class="col">
-                                                    <span class="card-body">{{patient.problem}}</span>
+                                                    <span class="card-body">{{this.problem}}</span>
                                                 </div>
                                                 <div class="col">
-                                                    <span class="card-body">{{patient.age}}</span>
+                                                    <span class="card-body">{{this.age}}</span>
                                                 </div>
                                                 <div class="col">
-                                                    <span class="card-body">{{patient.no}}</span>
+                                                    <span class="card-body">{{this.no}}</span>
                                                 </div>
                                             </div>
+                                            {{/each}}
                                         </li>
-                                        {{/if}}
                                     </div>
 
                                 </div>
@@ -198,8 +197,9 @@
 
                                     </div>
                                     <div class="col">
-                                        <div class="panel-footer"><strong>Total Price:
-                                                ₹{{this.cart.totalPrice}}</strong> </div>
+                                        {{#if pricehospital}}
+                                        <div class="panel-footer"><strong>Total Price:{{pricehospital}}</strong></div>
+                                        {{/if}}
                                     </div>
                                 </div>
 

@@ -238,10 +238,11 @@ pharmacyController.profileget = (req, res, next) => {
 		) {
 			if (err) throw err;
 			// saved!
-			console.log(result);
-			res.render('user/profile', {
+			res.render('user/profile', 
+			{ 
 				orders: orders,
-				patient: result[0]
+				patient : result,
+				pricehospital : Number(result.length*200)
 			});
 		});
 	});
