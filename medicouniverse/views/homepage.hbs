@@ -18,7 +18,6 @@
 <body>
     <nav class="navbar navbar-expand-sm navbar-light">
         <a class="navbar-brand" href="/">Medico<span>Universe</span></a>
-
         {{#if user}}
         <div class="navbar-loggedin">
             <img src="{{user.image}}" onerror="this.src = './image/default_profile_pic.png'" width="32px" height="32px">
@@ -39,7 +38,11 @@
                     <a class="nav-link" href="/medicoUniverse/mission">Mission</a>
                 </li>
             </ul>
-            <a class="nav-link login-signup " href="/user/signin">Hello {{session.user.email}}!</a>
+            {{#if session.user.eamil}}
+            <a class="nav-link login-signup " href="/user/signin">Login/Signup</a>
+            {{else}}
+            <a class="nav-link login-signup " href="#">Hello {{session.user.email}}!</a>
+            {{/if}}
         </div>
         {{/if}}
     </nav>

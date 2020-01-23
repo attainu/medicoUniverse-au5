@@ -71,7 +71,7 @@ hospitalcontroller.patientdata = function (req, res) {
         age: req.body.patientage,
         problem: req.body.patientproblem,
         no: req.body.no,
-        session: req.session.user
+        store : req.session.user.email
     }
     hospitalmodel.patient.create(obj, function (err, small) {
         if (err) return handleError(err);
