@@ -17,55 +17,210 @@
     <!-- Material Design Bootstrap -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.10.1/css/mdb.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="./css/products.css">
+    <link rel="stylesheet" type="text/css" href="./css/plus.css">
 </head>
 
 <body>
-    <div class="container-flex">
 
 
-        <nav class="navbar navbar-expand-sm navbar-light">
-            <a class="navbar-brand" href="/">Medico<span>Universe</span></a>
+    <nav class="navbar fixed-top navbar-expand-lg navbar-light white scrolling-navbar">
+        <a class="navbar-brand" href="/">Medico<span>Universe</span></a>
 
 
-            <button class="navbar-toggler float-right p-1" type="button" data-toggle="collapse"
-                data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse nav-resp" id="navbarSupportedContent">
+        <button class="navbar-toggler float-right p-1" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse nav-resp" id="navbarSupportedContent">
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/medicoUniverse/about">About Us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/medicoUniverse/mission">Mission</a>
+                </li>
+
+            </ul>
+            <span class="nav-link login-signup "><a href="/user/signin">Hello
+                    <strong>{{session.user.email}}</strong>
+                </a>
+            </span>
+
+
+
+            <span>
                 <ul class="navbar-nav mx-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="/medicoUniverse/about">About Us</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/medicoUniverse/mission">Mission</a>
+                        <a class="nav-link waves-effect" href="/shoppingCart">
+                            <span class="badge red z-depth-1 mr-1"> {{session.cart.totalQty}} </span>
+                            <i class="fas fa-shopping-cart"></i>
+                            <span class="clearfix d-none d-sm-inline-block"> Cart </span>
+                        </a>
                     </li>
                 </ul>
-                <span class="nav-link login-signup " href="/user/signin">Hello <span>
-                        <strong>{{session.user.email}}</strong>!!</span></a>
+            </span>
 
-            </div>
 
-        </nav>
-        <div class="container mt-2 ">
-            <div class="row">
-                <div class="col">
-                    <form class="form-inline">
-                        <i class="fas fa-search mr-2" aria-hidden="true"></i>
-                        <input class=" form-control" type="text"
-                            placeholder="Search for medicines, health products and more" aria-label="Search">
-                    </form>
-                </div>
-                <div class="col">
-                    <a href="/shoppingCart" class="btn btn-default float-right"><span><i
-                                class="fas fa-shopping-cart"></i></span>
-                        VIEW CART <span class="badge">{{session.cart.totalQty}}</span></a>
-                </div>
-
-            </div>
         </div>
-        <div class=" container">
-            <div class="m-navbar-list mt-3" style="background-color: honeydew; ">
+
+    </nav>
+
+
+
+    <!--Carousel Wrapper-->
+    <div id="carousel-example-1z" class="carousel slide carousel-fade pt-4 " data-ride="carousel">
+
+        <!--Indicators-->
+        <ol class="carousel-indicators">
+            <li data-target="#carousel-example-1z" data-slide-to="0" class="active"></li>
+            <li data-target="#carousel-example-1z" data-slide-to="1"></li>
+            <li data-target="#carousel-example-1z" data-slide-to="2"></li>
+        </ol>
+        <!--/.Indicators-->
+
+        <!--Slides-->
+        <div class="carousel-inner mt-4" role="listbox">
+
+            <!--First slide-->
+            <div class="carousel-item active">
+                <div class="view"
+                    style="background-image: url('https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/8-col/img%282%29.jpg'); background-repeat: no-repeat; background-size: cover;">
+
+                    <!-- Mask & flexbox options-->
+                    <div class="mask rgba-black-strong d-flex justify-content-center align-items-center">
+
+                        <!-- Content -->
+                        <div class="text-center white-text mx-5 wow fadeIn">
+                            <h1 class="mb-4">
+                                <strong>India's Largest Medical Assistance</strong>
+                            </h1>
+
+                            <p>
+                                <strong>Everything is now on your fingers</strong>
+                            </p>
+
+                            <p class="mb-4 d-none d-md-block">
+                                <strong>India's best Specialist|Top Hospital|pahrmacy </strong>
+                            </p>
+
+                            <a target="_blank" href="/" class="btn btn-outline-white btn-lg">Start using now
+                                <i class="fas fa-graduation-cap ml-2"></i>
+                            </a>
+                        </div>
+                        <!-- Content -->
+
+                    </div>
+                    <!-- Mask & flexbox options-->
+
+                </div>
+            </div>
+            <!--/First slide-->
+
+            <!--Second slide-->
+            <div class="carousel-item">
+                <div class="view"
+                    style="background-image: url('https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/8-col/img%283%29.jpg'); background-repeat: no-repeat; background-size: cover;">
+
+                    <!-- Mask & flexbox options-->
+                    <div class="mask rgba-black-strong d-flex justify-content-center align-items-center">
+
+                        <!-- Content -->
+                        <div class="text-center white-text mx-5 wow fadeIn">
+                            <h1 class="mb-4">
+                                <strong>Learn Bootstrap 4 with MDB</strong>
+                            </h1>
+
+                            <p>
+                                <strong>Best & free guide of responsive web design</strong>
+                            </p>
+
+                            <p class="mb-4 d-none d-md-block">
+                                <strong>The most comprehensive tutorial for the Bootstrap 4. Loved by over 500 000
+                                    users.
+                                    Video and written versions
+                                    available. Create your own, stunning website.</strong>
+                            </p>
+
+                            <a target="_blank" href="https://mdbootstrap.com/education/bootstrap/"
+                                class="btn btn-outline-white btn-lg">Start free tutorial
+                                <i class="fas fa-graduation-cap ml-2"></i>
+                            </a>
+                        </div>
+                        <!-- Content -->
+
+                    </div>
+                    <!-- Mask & flexbox options-->
+
+                </div>
+            </div>
+            <!--/Second slide-->
+
+            <!--Third slide-->
+            <div class="carousel-item">
+                <div class="view"
+                    style="background-image: url('https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/8-col/img%285%29.jpg'); background-repeat: no-repeat; background-size: cover;">
+
+                    <!-- Mask & flexbox options-->
+                    <div class="mask rgba-black-strong d-flex justify-content-center align-items-center">
+
+                        <!-- Content -->
+                        <div class="text-center white-text mx-5 wow fadeIn">
+                            <h1 class="mb-4">
+                                <strong>Learn Bootstrap 4 with MDB</strong>
+                            </h1>
+
+                            <p>
+                                <strong>Best & free guide of responsive web design</strong>
+                            </p>
+
+                            <p class="mb-4 d-none d-md-block">
+                                <strong>The most comprehensive tutorial for the Bootstrap 4. Loved by over 500 000
+                                    users.
+                                    Video and written versions
+                                    available. Create your own, stunning website.</strong>
+                            </p>
+
+                            <a target="_blank" href="https://mdbootstrap.com/education/bootstrap/"
+                                class="btn btn-outline-white btn-lg">Start free tutorial
+                                <i class="fas fa-graduation-cap ml-2"></i>
+                            </a>
+                        </div>
+                        <!-- Content -->
+
+                    </div>
+                    <!-- Mask & flexbox options-->
+
+                </div>
+            </div>
+            <!--/Third slide-->
+
+        </div>
+        <!--/.Slides-->
+
+        <!--Controls-->
+        <a class="carousel-control-prev" href="#carousel-example-1z" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carousel-example-1z" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+        <!--/.Controls-->
+
+    </div>
+    <!--/.Carousel Wrapper-->
+
+    <!--Main layout-->
+    <main>
+        <div class="container">
+            {{!-- ////// --}}
+
+
+            {{!-- -------- --}}
+            <div class="m-navbar-list mt-5">
                 <div class="u-content-wrapper">
                     <div class="row">
                         <div class="col-2 ">
@@ -126,7 +281,7 @@
                                 <button class="dropbtn" style="background-color: honeydew;">Devices <span><i
                                             class="fas fa-angle-down"></i></span></button>
                                 <div class="dropdown-content" style="background-color: honeydew;">
-                                    <a href="#">Health Care</a>
+                                    <a href="#" class="devices">Health Care</a>
                                     <a href="#" class="exercise">Exercise</a>
                                 </div>
                             </div>
@@ -135,171 +290,493 @@
                 </div>
 
             </div>
-        </div>
-        <div class="container">
-            <div class="row">
+            <!--/.Navbar-->
 
-            </div>
-            <div class="row mt-5">
-                <div class="col-3 mt-2">
-                    <div class="container">
-                        <div class="sidenav">
+            <!--Section: Products v.3-->
+            <section class="text-center mb-4 mt-5">
 
-                            <button class="dropdown-btn"><span><i class="fa fa-angle-right"></i></span>Baby care
+                <!--Grid row-->
+                <div class="row wow fadeIn">
+                    <!--Grid column-->
+                    {{#each products }}
+                    <div class="col-lg-3 col-md-6 mb-4">
 
-                            </button>
-                            <div class="dropdown-container ml-2">
-                                <a href="#" class="babybath">Baby Bath</a>
-                                <a href="#" class="babyDipers">Diapers and wipes</a>
+                        <!--Card-->
+                        <div class="card">
 
+                            <!--Card image-->
+                            <div class="view overlay">
+                                <img src="{{this.imgPath}}" class="card-img-top" alt="">
+                                <a>
+                                    <div class="mask rgba-white-slight"></div>
+                                </a>
                             </div>
+                            <!--Card image-->
 
-                        </div>
-                        <div class="sidenav">
+                            <!--Card content-->
+                            <div class="card-body text-center">
+                                <!--Category & Title-->
+                                <a href="" class="grey-text">
+                                    <h5>{{this.subCategory}}</h5>
+                                </a>
+                                <h5>
+                                    <strong>
+                                        <a href="" class="dark-grey-text">{{this.productName}}
+                                            <span class="badge badge-pill danger-color">NEW</span>
+                                        </a>
+                                    </strong>
+                                </h5>
 
-                            <button class="dropdown-btn"><span><i class="fa fa-angle-right"></i></span>Personal Care
-
-                            </button>
-                            <div class="dropdown-container">
-
-                                <a href="#" class="hairCare">Hair care</a>
-                                <a href="#" class="lipcare">Lip care</a>
-                            </div>
-
-                        </div>
-                        <div class="sidenav">
-
-                            <button class="dropdown-btn"><span><i class="fa fa-angle-right"></i></span>Skin care
-
-                            </button>
-                            <div class="dropdown-container">
-                                <a href="#" class="bodybath">Body and Bath</a>
-                                <a href="#" class="fashwash">Face wash and cleansers</a>
-                                <a href="#" class="skinsuppliments">Skin care Suppliments</a>
-                            </div>
-
-                        </div>
-                        <div class="sidenav">
-
-                            <button class="dropdown-btn"><span><i class="fa fa-angle-right"></i></span>Ayurvedic
-
-                            </button>
-                            <div class="dropdown-container">
-                                <a href="#" class="dabur">Dabur</a>
-                                <a href="#" class="patangali">Patangali</a>
-
-                            </div>
-
-                        </div>
-                        <div class="sidenav">
-                            <button class="dropdown-btn"><span><i class="fa fa-angle-right"></i></span>Fitness
-
-                            </button>
-                            <div class="dropdown-container">
-                                <a href="#">Protien and Suppliments</a>
-                                <a href="#" class="massgainer">Mass Gainers</a>
-
-                            </div>
-                        </div>
-                        <div class="sidenav">
-
-                            <button class="dropdown-btn"><span><i class="fa fa-angle-right"></i></span>Devices
-
-                            </button>
-                            <div class="dropdown-container">
-                                <a href="#">Health Care</a>
-                                <a href="#" class="exercise">Exercise</a>
-
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-9 " id="products">
-
-                    <div class="row">
-                        {{#each products }}
-                        <div class="col-4">
-                            <!-- Card -->
-                            <div class="card mb-3">
-
-                                <!-- Card image -->
-                                <div class="view overlay">
-                                    <img class="card-img-top" src="{{this.imgPath}}" alt="{{this.productName}}"
-                                        style="width: auto; height:auto">
-                                    <a href="#!">
-                                        <div class="mask rgba-white-slight"></div>
-                                    </a>
-                                </div>
-                                <hr>
-                                <!-- Card content -->
-                                <div class="card-body">
-
-                                    <!-- Title -->
-                                    <h4 class="card-title m-sm-2" style="font-size: small;">{{this.productName}} </h4>
-                                    <!-- Text -->
-                                    <div class="row">
-                                        <div class="col">
-                                            <span><strike style="font-size: smaller;">₹{{this.productPrice}}</strike>
-                                            </span>
-                                        </div>
-                                        <div class="col">
-                                            <span class="text-success font-weight-bold">₹{{this.discountedPrice}}</span>
-                                        </div>
-
-                                        <div class="row">
-                                            <div class="col">
-                                                <a href="/addToCart/{{this._id}}" class="btn btn-primary btn-sm"
-                                                    style="margin-left: 25%;">Add</a>
-
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col">
-                                                <span class="text-muted">{{this.subCategory}}</span>
-
-                                            </div>
-                                        </div>
-
-                                    </div>
-
-                                    <!-- Button -->
-
+                                <h4 class="font-weight-bold blue-text">
+                                    <strong>₹{{this.productPrice}}</strong>
+                                </h4>
+                                <div class="row">
+                                    <h4 class="font-weight-bold blue-text">
+                                        <a href="/addToCart/{{this._id}}" class="btn btn-primary btn-sm"
+                                            style="margin-left: 25%;">Add</a>
+                                    </h4>
                                 </div>
 
+
                             </div>
-                            <!-- Card -->
+                            <!--Card content-->
+
                         </div>
-
-
-                        {{/each}}
+                        <!--Card-->
                     </div>
-                </div>
+                    {{/each}}
+                    <!--Grid column-->
 
-            </div>
+                    {{!-- <!--Grid column-->
+                    <div class="col-lg-3 col-md-6 mb-4">
+
+                        <!--Card-->
+                        <div class="card">
+
+                            <!--Card image-->
+                            <div class="view overlay">
+                                <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/13.jpg"
+                                    class="card-img-top" alt="">
+                                <a>
+                                    <div class="mask rgba-white-slight"></div>
+                                </a>
+                            </div>
+                            <!--Card image-->
+
+                            <!--Card content-->
+                            <div class="card-body text-center">
+                                <!--Category & Title-->
+                                <a href="" class="grey-text">
+                                    <h5>Sport wear</h5>
+                                </a>
+                                <h5>
+                                    <strong>
+                                        <a href="" class="dark-grey-text">Sweatshirt</a>
+                                    </strong>
+                                </h5>
+
+                                <h4 class="font-weight-bold blue-text">
+                                    <strong>139$</strong>
+                                </h4>
+
+                            </div>
+                            <!--Card content-->
+
+                        </div>
+                        <!--Card-->
+
+                    </div>
+                    <!--Grid column-->
+
+                    <!--Grid column-->
+                    <div class="col-lg-3 col-md-6 mb-4">
+
+                        <!--Card-->
+                        <div class="card">
+
+                            <!--Card image-->
+                            <div class="view overlay">
+                                <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/14.jpg"
+                                    class="card-img-top" alt="">
+                                <a>
+                                    <div class="mask rgba-white-slight"></div>
+                                </a>
+                            </div>
+                            <!--Card image-->
+
+                            <!--Card content-->
+                            <div class="card-body text-center">
+                                <!--Category & Title-->
+                                <a href="" class="grey-text">
+                                    <h5>Sport wear</h5>
+                                </a>
+                                <h5>
+                                    <strong>
+                                        <a href="" class="dark-grey-text">Grey blouse
+                                            <span class="badge badge-pill primary-color">bestseller</span>
+                                        </a>
+                                    </strong>
+                                </h5>
+
+                                <h4 class="font-weight-bold blue-text">
+                                    <strong>99$</strong>
+                                </h4>
+
+                            </div>
+                            <!--Card content-->
+
+                        </div>
+                        <!--Card-->
+
+                    </div>
+                    <!--Grid column-->
+
+                    <!--Fourth column-->
+                    <div class="col-lg-3 col-md-6 mb-4">
+
+                        <!--Card-->
+                        <div class="card">
+
+                            <!--Card image-->
+                            <div class="view overlay">
+                                <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/15.jpg"
+                                    class="card-img-top" alt="">
+                                <a>
+                                    <div class="mask rgba-white-slight"></div>
+                                </a>
+                            </div>
+                            <!--Card image-->
+
+                            <!--Card content-->
+                            <div class="card-body text-center">
+                                <!--Category & Title-->
+                                <a href="" class="grey-text">
+                                    <h5>Outwear</h5>
+                                </a>
+                                <h5>
+                                    <strong>
+                                        <a href="" class="dark-grey-text">Black jacket</a>
+                                    </strong>
+                                </h5>
+
+                                <h4 class="font-weight-bold blue-text">
+                                    <strong>219$</strong>
+                                </h4>
+
+                            </div>
+                            <!--Card content-->
+
+                        </div>
+                        <!--Card-->
+
+                    </div>
+                    <!--Fourth column-->
+
+                </div>
+                <!--Grid row-->
+
+                <!--Grid row-->
+                <div class="row wow fadeIn">
+
+                    <!--Grid column-->
+                    <div class="col-lg-3 col-md-6 mb-4">
+
+                        <!--Card-->
+                        <div class="card">
+
+                            <!--Card image-->
+                            <div class="view overlay">
+                                <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/13.jpg"
+                                    class="card-img-top" alt="">
+                                <a>
+                                    <div class="mask rgba-white-slight"></div>
+                                </a>
+                            </div>
+                            <!--Card image-->
+
+                            <!--Card content-->
+                            <div class="card-body text-center">
+                                <!--Category & Title-->
+                                <a href="" class="grey-text">
+                                    <h5>Shirt</h5>
+                                </a>
+                                <h5>
+                                    <strong>
+                                        <a href="" class="dark-grey-text">Denim shirt
+                                            <span class="badge badge-pill danger-color">NEW</span>
+                                        </a>
+                                    </strong>
+                                </h5>
+
+                                <h4 class="font-weight-bold blue-text">
+                                    <strong>120$</strong>
+                                </h4>
+
+                            </div>
+                            <!--Card content-->
+
+                        </div>
+                        <!--Card-->
+
+                    </div>
+                    <!--Grid column-->
+
+                    <!--Grid column-->
+                    <div class="col-lg-3 col-md-6 mb-4">
+
+                        <!--Card-->
+                        <div class="card">
+
+                            <!--Card image-->
+                            <div class="view overlay">
+                                <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/14.jpg"
+                                    class="card-img-top" alt="">
+                                <a>
+                                    <div class="mask rgba-white-slight"></div>
+                                </a>
+                            </div>
+                            <!--Card image-->
+
+                            <!--Card content-->
+                            <div class="card-body text-center">
+                                <!--Category & Title-->
+                                <a href="" class="grey-text">
+                                    <h5>Sport wear</h5>
+                                </a>
+                                <h5>
+                                    <strong>
+                                        <a href="" class="dark-grey-text">Sweatshirt</a>
+                                    </strong>
+                                </h5>
+
+                                <h4 class="font-weight-bold blue-text">
+                                    <strong>139$</strong>
+                                </h4>
+
+                            </div>
+                            <!--Card content-->
+
+                        </div>
+                        <!--Card-->
+
+                    </div>
+                    <!--Grid column-->
+
+                    <!--Grid column-->
+                    <div class="col-lg-3 col-md-6 mb-4">
+
+                        <!--Card-->
+                        <div class="card">
+
+                            <!--Card image-->
+                            <div class="view overlay">
+                                <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/15.jpg"
+                                    class="card-img-top" alt="">
+                                <a>
+                                    <div class="mask rgba-white-slight"></div>
+                                </a>
+                            </div>
+                            <!--Card image-->
+
+                            <!--Card content-->
+                            <div class="card-body text-center">
+                                <!--Category & Title-->
+                                <a href="" class="grey-text">
+                                    <h5>Sport wear</h5>
+                                </a>
+                                <h5>
+                                    <strong>
+                                        <a href="" class="dark-grey-text">Grey blouse
+                                            <span class="badge badge-pill primary-color">bestseller</span>
+                                        </a>
+                                    </strong>
+                                </h5>
+
+                                <h4 class="font-weight-bold blue-text">
+                                    <strong>99$</strong>
+                                </h4>
+
+                            </div>
+                            <!--Card content-->
+
+                        </div>
+                        <!--Card-->
+
+                    </div>
+                    <!--Grid column-->
+
+                    <!--Fourth column-->
+                    <div class="col-lg-3 col-md-6 mb-4">
+
+                        <!--Card-->
+                        <div class="card">
+
+                            <!--Card image-->
+                            <div class="view overlay">
+                                <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/12.jpg"
+                                    class="card-img-top" alt="">
+                                <a>
+                                    <div class="mask rgba-white-slight"></div>
+                                </a>
+                            </div>
+                            <!--Card image-->
+
+                            <!--Card content-->
+                            <div class="card-body text-center">
+                                <!--Category & Title-->
+                                <a href="" class="grey-text">
+                                    <h5>Outwear</h5>
+                                </a>
+                                <h5>
+                                    <strong>
+                                        <a href="" class="dark-grey-text">Black jacket</a>
+                                    </strong>
+                                </h5>
+
+                                <h4 class="font-weight-bold blue-text">
+                                    <strong>219$</strong>
+                                </h4>
+
+                            </div>
+                            <!--Card content-->
+
+                        </div>
+                        <!--Card-->
+
+                    </div>
+                    <!--Fourth column-->
+
+                </div> --}}
+                    <!--Grid row-->
+
+            </section>
+            <!--Section: Products v.3-->
+
+            <!--Pagination-->
+            <nav class="d-flex justify-content-center wow fadeIn">
+                <ul class="pagination pg-blue">
+
+                    <!--Arrow left-->
+                    <li class="page-item disabled">
+                        <a class="page-link" href="#" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                    </li>
+
+                    <li class="page-item active">
+                        <a class="babybath" href="#">1
+                            <span class="sr-only">(current)</span>
+                        </a>
+                    </li>
+                    <li class="page-item">
+                        <a class="babyDipers" href="#">2</a>
+                    </li>
+                    <li class="page-item">
+                        <a class="hairCare" href="#">3</a>
+                    </li>
+                    <li class="page-item">
+                        <a class="lipcare" href="#">4</a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link" href="#">5</a>
+                    </li>
+
+                    <li class="page-item">
+                        <a class="page-link" href="#" aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <!--Pagination-->
+
         </div>
+    </main>
+    <!--Main layout-->
 
-        <footer class="mt-4">
-            <div style="height: 20px;"></div>
-            <div class="row">
-                <div class="col-lg-3 col-md-3 col-sm-12 ml-5">
-                    <h4>Contact Us</h4>
-                    <p>BHIVE Workspace, L-148, 5th Main Rd,
-                        <br> Sector 6, HSR Layout,<br> Bengaluru, Karnataka 560102</p>
-                </div>
-                <div class="col-lg-3 col-md-3 col-sm-12 ml-5">
-                    <h5>For patients</h5>
-                    <ul>
-                        <li><a href="#">Search for Doctors</a></li>
-                        <li><a href="#">Search for Hospitals</a></li>
-                        <li><a href="#">Order Medicine</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div style="height: 20px;"></div>
-        </footer>
-    </div>
+    <!--Footer-->
+    <footer class="page-footer text-center font-small mt-4 wow fadeIn">
+
+        <!--Call to action-->
+        <div class="pt-4">
+            <a class="btn btn-outline-white" href="https://mdbootstrap.com/docs/jquery/getting-started/download/"
+                target="_blank" role="button">Download MDB
+                <i class="fas fa-download ml-2"></i>
+            </a>
+            <a class="btn btn-outline-white" href="https://mdbootstrap.com/education/bootstrap/" target="_blank"
+                role="button">Start free tutorial
+                <i class="fas fa-graduation-cap ml-2"></i>
+            </a>
+        </div>
+        <!--/.Call to action-->
+
+        <hr class="my-4">
+
+        <!-- Social icons -->
+        <div class="pb-4">
+            <a href="https://www.facebook.com/mdbootstrap" target="_blank">
+                <i class="fab fa-facebook-f mr-3"></i>
+            </a>
+
+            <a href="https://twitter.com/MDBootstrap" target="_blank">
+                <i class="fab fa-twitter mr-3"></i>
+            </a>
+
+            <a href="https://www.youtube.com/watch?v=7MUISDJ5ZZ4" target="_blank">
+                <i class="fab fa-youtube mr-3"></i>
+            </a>
+
+            <a href="https://plus.google.com/u/0/b/107863090883699620484" target="_blank">
+                <i class="fab fa-google-plus-g mr-3"></i>
+            </a>
+
+            <a href="https://dribbble.com/mdbootstrap" target="_blank">
+                <i class="fab fa-dribbble mr-3"></i>
+            </a>
+
+            <a href="https://pinterest.com/mdbootstrap" target="_blank">
+                <i class="fab fa-pinterest mr-3"></i>
+            </a>
+
+            <a href="https://github.com/mdbootstrap/bootstrap-material-design" target="_blank">
+                <i class="fab fa-github mr-3"></i>
+            </a>
+
+            <a href="http://codepen.io/mdbootstrap/" target="_blank">
+                <i class="fab fa-codepen mr-3"></i>
+            </a>
+        </div>
+        <!-- Social icons -->
+
+        <!--Copyright-->
+        <div class="footer-copyright py-3">
+            © 2018 Copyright:
+            <a href="https://mdbootstrap.com/education/bootstrap/" target="_blank"> MDBootstrap.com </a>
+        </div>
+        <!--/.Copyright-->
+
+    </footer>
+    <a href="#" class="float ca" id="menu-share">
+        <i class="fa fa-share my-float"></i>
+    </a>
+    <ul class="cul">
+        <li class="cli"><a class="ca" href="/hospitalsearch">
+                <i class="fas fa-clinic-medical my-float "></i>
+            </a></li>
+        <li class="cli"><a class="ca" href="/bookingDoctors">
+                <i class="fas fa-user-md my-float"></i>
+                <i class="fas fa-user-nurse my-float"></i>
+            </a></li>
+        <li class="cli"><a class="ca" href="/pharmacy">
+                <i class="fas fa-prescription-bottle-alt my-float "></i>
+            </a></li>
+        <li class="cli"><a class="ca" href="/ambulance_booking">
+                <i class="fas fa-ambulance my-float "></i>
+            </a></li>
+    </ul>
+    <!--/.Footer-->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"

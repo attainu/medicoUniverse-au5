@@ -17,6 +17,7 @@
     <!-- Material Design Bootstrap -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.10.1/css/mdb.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="./css/ambulanceAmbulance.css">
+    <link rel="stylesheet" type="text/css" href="./css/plus.css">
 </head>
 
 <body onload="initialize()">
@@ -43,99 +44,193 @@
                     <li class="nav-item">
                         <a class="nav-link" href="/medicoUniverse/about">About Us</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item ">
                         <a class="nav-link" href="//medicoUniverse/mission">Mission</a>
                     </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link " href="/user/signin">Login/SignUp</a>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <!--Dropdown primary-->
+                        <div class="dropdown" >
+                            <!--Trigger-->
+                            <a class="nav-link font-weight-bold" id="dropdownMenu1-1" data-toggle="dropdown" href="">
+                                User Management
+                            </a>
+                            {{!-- <button class="btn-white dropdown-toggle" type="button" id="dropdownMenu1-1"
+                                data-toggle="dropdown">User Management
+                            </button> --}}
+
+                            <!--Menu-->
+                            <div class="dropdown-menu dropdown-primary" id="your-custom-id">
+
+
+                                <a class="dropdown-item mdb-dropdownLink-1  " href="/profile">Profile</a>
+                                <a class="dropdown-item mdb-dropdownLink-1 " href="/logout">Logout</a>
+
+
+                            </div>
+                        </div>
+                        <!--/Dropdown primary-->
                 </ul>
-                <a class="nav-link login-signup " href="/user/signin">Login/SignUp</a>
+
+
+
             </div>
             {{/if}}
         </nav>
+        {{!-- 
+        <div class=" nav navbar-expand-sm  card-intro blue-gradient">
+
+            <div class="card-body white-text rgba-black-light text-center">
+
+                <!--Grid row-->
+                <div class="row d-flex ">
+
+                    <!--Grid column-->
+                    <div class="col">
+
+                        <a class="mb-2 text-white" href="/booking_doctors">
+                            Doctors
+                        </a>
 
 
 
+                    </div>
+                    <div class="col">
+                        <div class="card"></div>
+                        <a class="mb-2 text-white" href="/pharmacy">
+                            Pharmacy
+                        </a>
+
+
+
+                    </div>
+                    <div class="col">
+
+                        <a class="mb-2 text-white" href="/hospitalsearch">
+                            Hospitals
+                        </a>
+
+
+
+                    </div>
+                    <div class="col">
+
+                        <a class="mb-2 text-white" href="/ambulance_booking">
+                            Ambulance
+                        </a>
+
+
+
+                    </div>
+                    <!--Grid column-->
+
+                </div>
+                <!--Grid row-->
+
+            </div>
+
+        </div>
+        <!-- Intro --> --}}
+        {{!-- <nav class="navbar navbar-expand-lg card-intro blue-gradient">
+            <button class="navbar-toggler text-white" type="button" data-toggle="collapse"
+                data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <a class="navbar-brand" href="#">Sections</a>
+
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                    <li class="nav-item active m-5">
+                        <a class="nav-link" href="#">Doctors <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item m-5">
+                        <a class="nav-link" href="#">Hospital</a>
+                    </li>
+                    <li class="nav-item m-5">
+                        <a class="nav-link" href="#">Pharmacy</a>
+                    </li>
+                    <li class="nav-item m-5">
+                        <a class="nav-link " href="#" tabindex="-1" aria-disabled="true">Ambulance</a>
+                    </li>
+                </ul>
+
+            </div>
+        </nav> --}}
 
 
         <div class="container-flex m-3">
-            <!-- Card Regular -->
-            <div class="card card-cascade">
-                <div class="row">
-                    <div class="col-4 card">
-                        <div class="card card-cascade narrower mt-3">
 
-                            <!-- Card image -->
+            <div class="row">
 
-                            <div class="avatar mx-auto white">
-                                <img class="card-img-top mt-2"
-                                    src="https://res.cloudinary.com/dps7y8nd7/image/upload/v1579533608/ambulance_rygh5o.png"
-                                    alt="Card image cap">
-                                <a>
-                                    <div class="mask rgba-white-slight"></div>
+                <!-- Grid column -->
+                <div class="col-md-6 col-lg-4 mb-4">
+
+                    <!--Card-->
+                    <div class="card" style="background-color: #2E2E2E;">
+
+                        <!-- Material input -->
+
+                        <div class="image-overlay">
+                            <img src="https://res.cloudinary.com/dps7y8nd7/image/upload/v1579794519/Untitled_v3ooxv.jpg"
+                                class="card-img-top" alt="photo">
+                            <a href="#">
+                                <div class="mask rgba-white-slight"></div>
+                            </a>
+                        </div>
+                        <!--Card content-->
+                        <div class="card-body ">
+                            <!--Title-->
+                            <div class="md-form ml-2">
+                                <i class="fas fa-search prefix"></i>
+                                <input type="text" id="start" class="form-control">
+                                <label for="inputIconEx2" class="text-white"></label>
+                            </div>
+                            <div class="md-form ml-2">
+                                <i class="fas fa-map-marker prefix"></i>
+                                <input type="text" id="end" class="form-control">
+                                <label for="inputIconEx2" class="text-white"></label>
+                            </div>
+                            <div id="error-msg"></div>
+                            <div class="md-form ml-2">
+                                <a href="" class="btn btn-default btn-rounded" data-toggle="modal"
+                                    data-target="#modalLoginAvatar">Book Now
                                 </a>
+                                <button type="button" class="btn btn-primary" data-toggle="modal"
+                                    data-target="#fullHeightModalRight">
+                                    Launch demo modal
+                                </button>
                             </div>
-
-
-                            <!-- Card content -->
-                            <div class="card-body card-body-cascade">
-
-                                <!-- Label -->
-                                <h5 class="pink-text pb-2 pt-1"><i class="fas fa-ambulance"></i> Route Guide</h5>
-                                <!-- Title -->
-                                <h6 class=" card-title">Enter Origin and Destination</h6>
-                                <!-- Text -->
-                                <div class="card">
-                                    <div class="row">
-                                        <!-- Material input -->
-                                        <div class="md-form ml-5">
-                                            <i class="fas fa-search prefix"></i>
-                                            <input type="text" id="start" class="form-control validate">
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <!-- Material input -->
-                                        <div class="md-form ml-5">
-                                            <i class="fas fa-search prefix"></i>
-                                            <input type="text" id="end" class="form-control validate">
-                                        </div>
-                                    </div>
-                                    <div id="error-msg"></div>
-                                </div>
-                                <!-- Button -->
-                                {{!-- <a class="btn btn-unique" id="bookAmbulance" onclick="ambulanceDetails()">Book</a> --}}
-                                <div class="text-center mt-3">
-                                    <a href="" class="btn btn-default btn-rounded" data-toggle="modal"
-                                        data-target="#modalLoginAvatar">Book Now
-                                    </a>
-
-                                </div>
-
-                            </div>
-
-
-
                         </div>
+
                     </div>
-                    <div class="col-8">
-                        <div class="card card-cascade narrower mt-3">
+                    <!--/.Card-->
 
-                            <!-- Card image -->
-                            <div class="view view-cascade overlay">
-                                <div id="map_canvas" style="height:600px;width:100%"></div>
-                            </div>
-
-
-
-                        </div>
-                    </div>
                 </div>
+                <!-- Grid column -->
 
-                <!-- Card image -->
+                <!-- Grid column -->
+                <div class="col-md-6 col-lg-8">
 
+                    <!--Card-->
+                    <div class="card">
 
-                <!-- Card content -->
+                        <div id="map_canvas" style="height:600px;width:100%"></div>
+
+                    </div>
+                    <!--/.Card-->
+
+                </div>
+                <!-- Grid column -->
 
             </div>
-            <!-- Card Regular -->
+            <!-- Grid row -->
+            {{!-- -------- --}}
+
         </div>
 
         <footer class="mt-4">
@@ -168,8 +263,8 @@
 
                 <!--Header-->
                 <div class="modal-header">
-                    <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20%281%29.jpg" alt="avatar"
-                        class="rounded-circle img-responsive">
+                    <img src="https://res.cloudinary.com/dps7y8nd7/image/upload/v1579798959/Untitled1_kte8hz.jpg"
+                        alt="avatar" class="rounded-circle img-responsive">
                 </div>
                 <!--Body-->
                 <div class="modal-body text-center mb-1">
@@ -177,8 +272,10 @@
                     <h5 class="mt-1 mb-2">{{ambulance.driverName}}</h5>
 
                     <div class="md-form ml-0 mr-0">
+                        <p>Contact No: {{ambulance.driverNumber}}</p>
                         <p> Ambulance No: {{ambulance.ambulanceNumber}}</p>
-                        <p>Contact 7100685458</p>
+                        <p>Contact No: {{ambulance.gender}}</p>
+                        <p>Contact No: {{ambulance.age}}</p>
                     </div>
 
 
@@ -193,8 +290,53 @@
             <!--/.Content-->
         </div>
     </div>
-    <!--Modal: Login with Avatar Form-->
 
+    <!--Modal: Login with Avatar Form-->
+    <!-- Full Height Modal Right -->
+    <div class="modal fade right" id="fullHeightModalRight" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+        aria-hidden="true">
+
+        <!-- Add class .modal-full-height and then add class .modal-right (or other classes from list above) to set a position to the modal -->
+        <div class="modal-dialog modal-full-height modal-right" role="document">
+
+
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title w-100" id="myModalLabel">Modal title</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    ...
+                </div>
+                <div class="modal-footer justify-content-center">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Full Height Modal Right -->
+    {{!-- ---- --}}
+    <a href="#" class="float ca" id="menu-share">
+        <i class="fa fa-share my-float"></i>
+    </a>
+    <ul class="cul">
+        <li class="cli"><a class="ca" href="/hospitalsearch">
+                <i class="fas fa-clinic-medical my-float "></i>
+            </a></li>
+        <li class="cli"><a class="ca" href="/bookingDoctors">
+                <i class="fas fa-user-md my-float"></i>
+                <i class="fas fa-user-nurse my-float"></i>
+            </a></li>
+        <li class="cli"><a class="ca" href="/pharmacy">
+                <i class="fas fa-prescription-bottle-alt my-float "></i>
+            </a></li>
+        <li class="cli"><a class="ca" href="/ambulance_booking">
+                <i class="fas fa-ambulance my-float "></i>
+            </a></li>
+    </ul>
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
