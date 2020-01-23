@@ -259,11 +259,11 @@ pharmacyController.profileget = (req, res, next) => {
 		hospitalmodel.patient.find({store : req.session.user.email}, function (err, result) {
 			if (err) throw err
 			// saved!
-			console.log(result)
 			res.render('user/profile', 
 			{ 
 				orders: orders,
-				patient : result[0]
+				patient : result,
+				pricehospital : Number(result.length*200)
 			});
 		});
 	});
