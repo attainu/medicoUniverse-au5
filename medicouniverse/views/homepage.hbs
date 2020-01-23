@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="/css/products.css">
+    <link rel="stylesheet" href="./css/plus.css">
     {{!-- <link rel="stylesheet" href="./css/headerFooter.css">
     <link rel="stylesheet" href="./css/homepage_autocomplete.css"> --}}
     <title>MedicoUniverse | Book Doctor Appointment Online</title>
@@ -22,12 +23,7 @@
 <body>
     <nav class="navbar navbar-expand-sm navbar-light">
         <a class="navbar-brand" href="/">Medico<span>Universe</span></a>
-        {{#if user}}
-        <div class="navbar-loggedin">
-            <img src="{{user.image}}" onerror="this.src = './image/default_profile_pic.png'" width="32px" height="32px">
-            <a href="/dashboard" class="ml-2">{{session.user.email}}</a>
-        </div>
-        {{else}}
+
         <button class="navbar-toggler float-right p-1" type="button" data-toggle="collapse"
             data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
             aria-label="Toggle navigation">
@@ -42,13 +38,13 @@
                     <a class="nav-link" href="/medicoUniverse/mission">Mission</a>
                 </li>
             </ul>
-            {{#if session.user.eamil}}
-            <a class="nav-link login-signup " href="/user/signin">Login/Signup</a>
+            {{#if req.session.user}}
+            <a class="nav-link login-signup " href="#">Hello {{session.user.email}}</a>
             {{else}}
-            <a class="nav-link login-signup " href="#">Hello {{session.user.email}}!</a>
+            <a class="nav-link login-signup " href="/user/signin">Hello Guest</a>
             {{/if}}
         </div>
-        {{/if}}
+
     </nav>
     <hr>
     <section class="row no-gutters">
@@ -56,7 +52,8 @@
             <form action="/booking_doctors" method="GET">
                 <div class="search-city position-relative d-inline-block">
                     <img src="./image/location.svg" width="16px" height="16px" id="loc-icon">
-                    <input type="text" placeholder="City" name="city" id="cities" class="w-100" autocomplete="off" required>
+                    <input type="text" placeholder="City" name="city" id="cities" class="w-100" autocomplete="off"
+                        required>
                     <input type="hidden" name="type" value="Doctors">
                 </div>
                 <div class="search-main position-relative d-inline-block">
@@ -65,14 +62,14 @@
                         autocomplete="off" required>
                 </div>
 
-        <div id="slideout">
-            <div class="d-inline-block" id="ambIcon">
-                <img src="./image/ambulance_icon.png" width="36px" height="36px">
-                <a href="/ambulance_booking" class="ml-2 btn peach-gradient"> Book Ambulance</a>
+                <div id="slideout">
+                    <div class="d-inline-block" id="ambIcon">
+                        <img src="./image/ambulance_icon.png" width="36px" height="36px">
+                        <a href="/ambulance_booking" class="ml-2 btn peach-gradient"> Book Ambulance</a>
 
 
-            </div>
-        </div>
+                    </div>
+                </div>
     </section>
     <section class="container carousel-c">
         <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
@@ -148,6 +145,7 @@
             </div>
         </section>
     </section>
+
     <footer>
         <div style="height: 20px;"></div>
         <div class="row">
@@ -166,7 +164,27 @@
             </div>
         </div>
         <div style="height: 20px;"></div>
+
     </footer>
+
+    <a href="#" class="float ca" id="menu-share">
+        <i class="fa fa-share my-float"></i>
+    </a>
+    <ul class="cul">
+        <li class="cli"><a class="ca" href="/hospitalsearch">
+                <i class="fas fa-clinic-medical my-float "></i>
+            </a></li>
+        <li class="cli"><a class="ca" href="/bookingDoctors">
+                <i class="fas fa-user-md my-float"></i>
+                <i class="fas fa-user-nurse my-float"></i>
+            </a></li>
+        <li class="cli"><a class="ca" href="/pharmacy">
+                <i class="fas fa-prescription-bottle-alt my-float "></i>
+            </a></li>
+        <li class="cli"><a class="ca" href="/ambulance_booking">
+                <i class="fas fa-ambulance my-float "></i>
+            </a></li>
+    </ul>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

@@ -319,3 +319,5 @@ function startAnimation(index) {
 	});
 	timerHandle[index] = setTimeout('animate(' + index + ',50)', 2000); // Allow time for the initial map display
 }
+
+$('#your-custom-id').mdbDropSearch();

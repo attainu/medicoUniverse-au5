@@ -18,190 +18,229 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.10.1/css/mdb.min.css" rel="stylesheet">
 
     <link rel="stylesheet" type="text/css" href="./css/products.css">
+    <link rel="stylesheet" type="text/css" href="./css/plus.css">
 </head>
 
 <body>
-    <div class="container-flex">
 
 
-        <nav class="navbar navbar-expand-sm navbar-light">
-            <a class="navbar-brand" href="/">Medico<span>Universe</span></a>
 
-            {{#if user}}
-            <div class="navbar-loggedin">
-                <img src="{{user.image}}" onerror="this.src = './image/default_profile_pic.png'" width="36px"
-                    height="36px">
-                <a href="/dashboard" class="ml-2">{{user.name}}</a>
-            </div>
+    <nav class="navbar fixed-top navbar-expand-lg navbar-light white scrolling-navbar">
+        <a class="navbar-brand" href="/">Medico<span>Universe</span></a>
+        <button class="navbar-toggler float-right p-1" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse nav-resp" id="navbarSupportedContent">
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/medicoUniverse/about">About Us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/medicoUniverse/mission">Mission</a>
+                </li>
+
+            </ul>
+            {{#if req.sesion.user}}
+
+            <a class="nav-link login-signup " href="/user/signin">Hello Guest</a>
+
             {{else}}
-            <button class="navbar-toggler float-right p-1" type="button" data-toggle="collapse"
-                data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse nav-resp" id="navbarSupportedContent">
+            <span class="nav-link login-signup "><a href="#">Hello
+                    <strong>{{session.user.email}}!</strong>
+                </a>
+            </span>
+            {{/if}}
+
+
+
+            <span>
                 <ul class="navbar-nav mx-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="/about">About Us</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/mission">Mission</a>
+                        <a class="nav-link waves-effect" href="/shoppingCart">
+                            <span class="badge z-depth-1 mr-1"> {{session.cart.totalQty}} </span>
+                            <i class="fas fa-shopping-cart"></i>
+                            <span class="clearfix d-none d-sm-inline-block"> Cart </span>
+                        </a>
                     </li>
                 </ul>
-                <a class="nav-link login-signup " href="/user/login">Hello <span>
-                        <strong>{{session.user.email}}</strong>!!</span></a>
-            </div>
-            {{/if}}
-        </nav>
-        <div class="container mt-2 ">
-            <div class="row">
-                <div class="col">
-                    <form class="form-inline">
-                        <i class="fas fa-search mr-2" aria-hidden="true"></i>
-                        <input class=" form-control" type="text"
-                            placeholder="Search for medicines, health products and more" aria-label="Search">
-                    </form>
-                </div>
-                <div class="col">
-                    <a href="/shoppingCart" class="btn btn-default float-right"><span><i
-                                class="fas fa-shopping-cart"></i></span>
-                        VIEW CART <span class="badge">{{session.cart.totalQty}}</span></a>
-                </div>
-
-            </div>
-        </div>
-        <div class="card-body card-body-cascade text-center">
-            <span class="display-1 font-weight-bold text-center" style="font-size: larger;">Shopping Cart</span>
-
-        </div>
-        <hr class="mt-3 font-weight-bold" size="40">
-        <div class="container my-5 py-3 z-depth-1 rounded">
-
-
-            <!--Section: Content-->
-            <section class="dark-grey-text">
-
-                <!-- Shopping Cart table -->
-                <div class="table-responsive">
-
-                    <table class="table product-table mb-0">
-
-                        <!-- Table head -->
-                        <thead class="mdb-color lighten-5">
-                            <tr>
-                                <th></th>
-                                <th class="font-weight-bold">
-                                    <strong>Product</strong>
-                                </th>
-                                <th class="font-weight-bold">
-                                    <strong>Color</strong>
-                                </th>
-                                <th></th>
-                                <th class="font-weight-bold">
-                                    <strong>Price</strong>
-                                </th>
-                                <th class="font-weight-bold">
-                                    <strong>QTY</strong>
-                                </th>
-                                <th class="font-weight-bold">
-                                    <strong>Amount</strong>
-                                </th>
-                                <th></th>
-                            </tr>
-                        </thead>
-                        <!-- /.Table head -->
-
-                        <!-- Table body -->
-                        <tbody>
-
-                            <!-- First row -->
-                            {{#if products}}
-                            {{#each products }}
-                            <tr>
-                                <th scope="row">
-                                    <img src="{{this.item.imgPath}}" alt="{{this.item.productName}}">
-
-                                </th>
-                                <td>
-                                    <h5 class="mt-3">
-                                        <strong>{{this.item.productName}}</strong>
-                                    </h5>
-                                    <p class="text-muted">{{this.item.subCategory}}</p>
-                                </td>
-                                <td>White</td>
-                                <td></td>
-                                <td>₹{{this.item.productPrice}}</td>
-                                <td>
-                                    <input type="number" value="{{this.qty}}" aria-label="Search" class="form-control"
-                                        style="width: 100px">
-                                </td>
-                                <td class="font-weight-bold">
-                                    <strong>₹{{this.item.productPrice}}</strong>
-                                </td>
-                                <td>
-                                    <button type="button" class="btn btn-sm btn-primary" data-toggle="tooltip"
-                                        data-placement="top" title="Remove item">X
-                                    </button>
-                                </td>
-                            </tr>
-                            {{/each}}
-                            <tr>
-                                <td colspan="3"></td>
-                                <td>
-                                    <h4 class="mt-2">
-                                        <strong>Total</strong>
-                                    </h4>
-                                </td>
-                                <td class="text-right">
-                                    <h4 class="mt-2">
-                                        <strong>₹{{totalPrice}}</strong>
-                                    </h4>
-                                </td>
-                                <td colspan="3" class="text-right">
-                                    <a href="/checkout" class="btn btn-info">Proceed to order</a>
-                                </td>
-                            </tr>
-                            <!-- /.First row -->
-
-                            {{/if}}
-
-                        </tbody>
-                        <!-- /.Table body -->
-
-                    </table>
-
-                </div>
-                <!-- /.Shopping Cart table -->
-
-            </section>
-            <!--Section: Content-->
+            </span>
 
 
         </div>
 
-
-
-
-        <footer class="mt-4">
-            <div style="height: 20px;"></div>
-            <div class="row">
-                <div class="col-lg-3 col-md-3 col-sm-12 ml-5">
-                    <h4>Contact Us</h4>
-                    <p>BHIVE Workspace, L-148, 5th Main Rd,
-                        <br> Sector 6, HSR Layout,<br> Bengaluru, Karnataka 560102</p>
-                </div>
-                <div class="col-lg-3 col-md-3 col-sm-12 ml-5">
-                    <h5>For patients</h5>
-                    <ul>
-                        <li><a href="#">Search for Doctors</a></li>
-                        <li><a href="#">Search for Hospitals</a></li>
-                        <li><a href="#">Order Medicine</a></li>
-                    </ul>
-                </div>
+    </nav>
+    <div class="container mt-2 ">
+        <div class="row">
+            <div class="col">
+                <form class="form-inline">
+                    <i class="fas fa-search mr-2" aria-hidden="true"></i>
+                    <input class=" form-control" type="text"
+                        placeholder="Search for medicines, health products and more" aria-label="Search">
+                </form>
             </div>
-            <div style="height: 20px;"></div>
-        </footer>
+            <div class="col">
+                <a href="/shoppingCart" class="btn btn-default float-right"><span><i
+                            class="fas fa-shopping-cart"></i></span>
+                    VIEW CART <span class="badge">{{session.cart.totalQty}}</span></a>
+            </div>
+
+        </div>
     </div>
+    <div class="card-body card-body-cascade text-center">
+        <span class="display-1 font-weight-bold text-center" style="font-size: larger;">Shopping Cart</span>
+
+    </div>
+    <hr class="mt-3 font-weight-bold" size="40">
+    <div class="container my-5 py-3 z-depth-1 rounded">
+
+        {{#if products}}
+        <!--Section: Content-->
+        <section class="dark-grey-text">
+
+            <!-- Shopping Cart table -->
+            <div class="table-responsive">
+
+                <table class="table product-table mb-0">
+
+                    <!-- Table head -->
+                    <thead class="mdb-color lighten-5">
+                        <tr>
+                            <th></th>
+                            <th class="font-weight-bold">
+                                <strong>Product</strong>
+                            </th>
+                            <th class="font-weight-bold">
+                                <strong>Color</strong>
+                            </th>
+                            <th></th>
+                            <th class="font-weight-bold">
+                                <strong>Price</strong>
+                            </th>
+                            <th class="font-weight-bold">
+                                <strong>QTY</strong>
+                            </th>
+                            <th class="font-weight-bold">
+                                <strong>Amount</strong>
+                            </th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <!-- /.Table head -->
+
+                    <!-- Table body -->
+                    <tbody>
+
+                        <!-- First row -->
+
+                        {{#each products }}
+                        <tr>
+                            <th scope="row">
+                                <img src="{{this.item.imgPath}}" alt="{{this.item.productName}}">
+
+                            </th>
+                            <td>
+                                <h5 class="mt-3">
+                                    <strong>{{this.item.productName}}</strong>
+                                </h5>
+                                <p class="text-muted">{{this.item.subCategory}}</p>
+                            </td>
+                            <td>White</td>
+                            <td></td>
+                            <td>₹{{this.item.productPrice}}</td>
+                            <td>
+                                <input type="number" value="{{this.qty}}" aria-label="Search" class="form-control"
+                                    style="width: 100px">
+                            </td>
+                            <td class="font-weight-bold">
+                                <strong>₹{{this.item.productPrice}}</strong>
+                            </td>
+                            <td>
+                                <button type="button" class="btn btn-sm btn-primary" data-toggle="tooltip"
+                                    data-placement="top" title="Remove item">X
+                                </button>
+                            </td>
+                        </tr>
+                        {{/each}}
+                        <tr>
+                            <td colspan="3"></td>
+                            <td>
+                                <h4 class="mt-2">
+                                    <strong>Total</strong>
+                                </h4>
+                            </td>
+                            <td class="text-right">
+                                <h4 class="mt-2">
+                                    <strong>₹{{totalPrice}}</strong>
+                                </h4>
+                            </td>
+                            <td colspan="3" class="text-right">
+                                <a href="/checkout" class="btn btn-info">Proceed to order</a>
+                            </td>
+                        </tr>
+                        <!-- /.First row -->
+                        {{else}}
+                        <div class="card-body card-body-cascade text-center">
+                            <span class="font-weight-bold text-center">No Items</span>
+                        </div>
+                        {{/if}}
+
+                    </tbody>
+                    <!-- /.Table body -->
+
+                </table>
+
+            </div>
+            <!-- /.Shopping Cart table -->
+
+        </section>
+        <!--Section: Content-->
+
+
+    </div>
+
+
+
+
+    <footer class="mt-4">
+        <div style="height: 20px;"></div>
+        <div class="row">
+            <div class="col-lg-3 col-md-3 col-sm-12 ml-5">
+                <h4>Contact Us</h4>
+                <p>BHIVE Workspace, L-148, 5th Main Rd,
+                    <br> Sector 6, HSR Layout,<br> Bengaluru, Karnataka 560102</p>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-12 ml-5">
+                <h5>For patients</h5>
+                <ul>
+                    <li><a href="#">Search for Doctors</a></li>
+                    <li><a href="#">Search for Hospitals</a></li>
+                    <li><a href="#">Order Medicine</a></li>
+                </ul>
+            </div>
+        </div>
+        <div style="height: 20px;"></div>
+    </footer>
+ <a href="#" class="float ca" id="menu-share">
+        <i class="fa fa-share my-float"></i>
+    </a>
+    <ul class="cul">
+        <li class="cli"><a class="ca" href="/hospitalsearch">
+                <i class="fas fa-clinic-medical my-float "></i>
+            </a></li>
+        <li class="cli"><a class="ca" href="/bookingDoctors">
+                <i class="fas fa-user-md my-float"></i>
+                <i class="fas fa-user-nurse my-float"></i>
+            </a></li>
+        <li class="cli"><a class="ca" href="/pharmacy">
+                <i class="fas fa-prescription-bottle-alt my-float "></i>
+            </a></li>
+        <li class="cli"><a class="ca" href="/ambulance_booking">
+                <i class="fas fa-ambulance my-float "></i>
+            </a></li>
+    </ul>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
