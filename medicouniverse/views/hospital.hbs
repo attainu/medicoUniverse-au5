@@ -437,7 +437,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form action="/patientdata" method="POST">
+                    <form action="/patientdata" method="POST" name="register">
                         <div class="form-group">
                             <div class="row">
                                 <div class="col">
@@ -458,9 +458,9 @@
                                 name="patientproblem" required></textarea>
                         </div>
                         <label for="formGroupExampleInput2">Mobile Number</label>
-                        <input class="form-control" type="number" placeholder="Please enter with your country code"
-                            name="no" min="10" max="12" required>
-                        <button type="submit" class="btn btn-primary mt-1">Get Appointment</button>
+                        <input class="form-control" type="tel" placeholder="Please enter with your country code"
+                            name="no" minlength=12 maxlength=12 id="telnumber" required>
+                        <button id="validmodal" type="submit" class="btn btn-primary mt-1">Get Appointment</button>
                     </form>
                 </div>
                 <div class="modal-footer">
@@ -609,7 +609,7 @@
     <!-- MDB core JavaScript -->
     <script type="text/javascript"
         src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.12.0/js/mdb.min.js"></script>
-
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.15.1/jquery.valid"></script>
     <script src="../js/hospital.js"></script>
 </body>
 
