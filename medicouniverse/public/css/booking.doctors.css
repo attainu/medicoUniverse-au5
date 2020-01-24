@@ -107,12 +107,14 @@ span {
 h4 {
 	margin-top: 15px;
 	text-align: center;
+	
 }
 
 .form-inline {
 	display: flex;
 	flex-flow: row wrap;
 	align-items: center;
+	
 }
 
 .form-inline input {
@@ -325,6 +327,16 @@ footer a:hover {
 	z-index: 1;
 }
 
+#alertBN2{
+	padding: 60px 60px 60px 60px;
+	;
+}
+#alertBN{
+	padding: 60px;
+	margin-left: 20%;
+	margin-right: 20%;
+}
+
 @media (max-width: 575px) {
 	.nav-link {
 		border-bottom: 1px solid grey;
@@ -353,6 +365,16 @@ footer a:hover {
 	.carousel-c {
 		display: none;
 	}
+
+    #alertBN2{
+		padding: 5px 5px 5px 5px;
+		
+	}
+	#alertBN{
+		padding: 6px;
+		margin:5px 5px 5px 5px;
+	}
+
 }
 
 .navbar-loggedin {

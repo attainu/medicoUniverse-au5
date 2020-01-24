@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express();
+const mongoose = require('mongoose')
 const multiparty = require('multiparty');
 const cloudinary = require('cloudinary').v2;
 const session = require('express-session');
@@ -12,6 +13,11 @@ var userDb = require('../model/user');
 var Order = require('../model/order');
 const jsonData = require('../public/data/medicines.json');
 const hospitalmodel =require('../model/hospitalmodels')
+const bcrypt = require("bcryptjs")
+const passport = require("passport")
+const flash = require('connect-flash');
+require("../config/passport")(passport);
+patients = require("../model/booked.patients.model")
 const nexmo = new Nexmo({
 	apiKey: 'd61633c6',
 	apiSecret: '7kfNTn9ZkKnNf5Pi'
@@ -19,13 +25,35 @@ const nexmo = new Nexmo({
 var pharmacyController = {};
 
 pharmacyController.userSigninget = (req, res) => {
-	res.render('user/signin');
+	res.render('user/signin',{
+		invalidUser: req.query.invalidUser,
+		incorrectPsd: req.query.incorrectPsd
+	});
 };
-pharmacyController.userSigninpost = (req, res) => {
+
+
+
+
+
+
+
+pharmacyController.userSigninpost = (req, res,next) => {
+	
+	// passport.authenticate("local", {
+
+	// 	successRedirect: '/',
+	// 	failureRedirect: '/user/signin',
+	// 	failureFlash: true,
+		
+	//   })(req,res,next);
+ 
 	var form = new multiparty.Form({});
 
 	form.parse(req, function(err, fields, files) {
 		// console.log('Files: ', files, 'Fields: ', fields);
+
+		var email = fields.email[0];
+		var password = fields.password[0]; 
 
 		var userr = {
 			// name: fields.username[0],
@@ -33,21 +61,58 @@ pharmacyController.userSigninpost = (req, res) => {
 			// mobile: fields.mobile[0],
 			password: fields.password[0]
 		};
-		// console.log('userr : ', userr);
+		console.log('userr : ', userr);
 		userDb.findOne(userr, (err, data) => {
-			if (err || !data) {
+			if (err || !data){
 				console.log('invalid User');
+				res.redirect("/user/signin?invalidUser=true")
 			}
-			req.session.user = data;
-			console.log(req.session.user);
-			res.redirect('/');
+			else{
+				req.session.user = data;
+				console.log(req.session.user);
+				res.redirect('/profile');
+			}
+			
 		});
+
+        // userDb.findOne({email :email},(err, data) => {
+
+		// 	.then(user => {
+		// 		if(!password){
+		// 		   console.log("Email already Registered");
+		// 		   res.redirect("/user/signin?incorrectPsd=true")
+		// 		}
+		// 		if(err || !data) {
+		// 				   console.log('invalid User');
+		// 				   res.redirect("/user/signin?invalidUser=true")
+		// 			   }
+		// 		else{
+		// 		   req.session.user = data;
+		// 			   console.log(req.session.user);
+		// 			   res.redirect('/profile');
+				   
+		// 		}
+		// 	})
+
+
+		// })
+         
+
+
 	});
+	
+	  
 };
 
 //----------------------------
 pharmacyController.userSignupget = function(req, res, next) {
-	res.render('user/signup');
+	res.render('user/signup',{
+		mismatch: req.query.mismatch,
+		invalidlength: req.query.invalidlength,
+		invalidPasslength: req.query.invalidPasslength,
+		invalidEmail: req.query.invalidEmail,
+		success: req.query.success
+	});
 };
 
 pharmacyController.userSignuppost = (req, res, next) => {
@@ -56,21 +121,78 @@ pharmacyController.userSignuppost = (req, res, next) => {
 	form.parse(req, function(err, fields, files) {
 		// console.log('Files: ', files, 'Fields: ', fields);
 
-		var newUser = {
-			name: fields.username[0],
-			email: fields.email[0],
-			mobile: fields.mobile[0],
-			password: fields.password[0]
-		};
-		// console.log(newUser);
-		userDb.create(newUser, (err, result) => {
+	
+            var name = fields.username.toString()
+			var email = fields.email.toString()
+			var mobile = fields.mobile.toString()
+			var password = fields.password.toString()
+			var confirm_password = fields.confirm_password.toString()
+			 
+			var user = {
+				name : name,
+				email : email ,
+				mobile : mobile ,
+				password : password ,
+				confirm_password : confirm_password
+			}
+
+			var newUser = {
+				name: fields.username[0],
+				email: fields.email[0],
+				mobile: fields.mobile[0],
+				password: fields.password[0]
+			};
+	
+		console.log(user)
+
+		// var user = {
+		// 	name: fields.username[0],
+		// 	email: fields.email[0],
+		// 	mobile: fields.mobile[0],
+		// 	password: fields.password[0]
+		// };
+		console.log(user);
+
+		if(password !== confirm_password){
+			console.log("Hey, your password and confirm password are mismatching");
+			res.redirect("/user/signup?mismatch=true")
+		}
+		else if(mobile.length != 10 ){
+			console.log("Hey, All fields are mandatory");
+			res.redirect("/user/signup?invalidlength=true")
+		}
+		else if (password.length < 8) {
+			console.log("Hey, All fields are mandatory");
+			res.redirect("/user/signup?invalidPasslength=true")
+		}
+		else{
+		// userDb.create(newUser, (err, result) => {
+		// 	if (err) {
+		// 		console.log('error in saving user to database>>', err);
+		// 	} else {
+		// 		console.log('Signup Saved Successfully');
+		// 		res.redirect('signin');
+		// 	}
+		// });
+
+		userDb.findOne({email :email})
+         .then(user => {
+             if(user){
+                console.log("Email already Registered");
+                res.redirect("/user/signup?invalidEmail=true")
+             }
+             else{
+                 userDb.create(newUser, (err, result) => {
 			if (err) {
 				console.log('error in saving user to database>>', err);
 			} else {
 				console.log('Signup Saved Successfully');
-				res.redirect('signin');
+				res.redirect('/user/signup?success=true');
 			}
-		});
+			});
+             }
+         })
+	}
 	});
 };
 //-----------------------------
@@ -256,15 +378,32 @@ pharmacyController.profileget = (req, res, next) => {
 			order.items = cart.generateArray();
 		});
 		console.log(orders);
+
+		// patientsDB.patients.find({person: req.session.user.email},function (err, docs){
+		// 	if (err) throw err
+		// 	console.log(docs)
+
+			
+		// })
+
 		hospitalmodel.patient.find({store : req.session.user.email}, function (err, result) {
 			if (err) throw err
+
 			// saved!
-			console.log(result)
-			res.render('user/profile', 
+			mongoose.model('patients').find({person: req.session.user.email}, function (err, docs) {
+				if (err) throw err
+				console.log("data in db : " , docs)
+				res.render('user/profile', 
 			{ 
 				orders: orders,
-				patient : result[0]
+				patient : result[0],
+				patients : docs[0]
+				
 			});
+				
+			 });
+			
+			
 		});
 	});
 };

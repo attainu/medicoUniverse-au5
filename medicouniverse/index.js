@@ -3,17 +3,17 @@ const app = express();
 const bodyParser = require('body-parser');
 const hbs = require('hbs');
 const cookieParser = require('cookie-parser');
+const flash = require('connect-flash');
 const session = require('express-session');
 const mongodb = require('mongodb');
 const MongoStore = require('connect-mongo')(session);
 const mongoose = require('mongoose');
 const multiparty = require('multiparty');
 const passport = require('passport');
-const flash = require('connect-flash');
 const cloudinary = require('cloudinary').v2;
 const medicineDb = require('./model/pharmacy.model');
 const connectMedicineDb = require('./model/pharmacy.connection');
-// require('./config/passport');
+require('./config/passport');
 const connectDB = require('./model/db');
 const pharmacyRoute = require('./routes/pharmacy.route');
 const ambulanceRoute = require('./routes/ambulance_ambulance.route');
@@ -64,12 +64,26 @@ app.use(
 );
 app.use(cookieParser());
 app.use(hospitalroute);
-app.use(pharmacyRoute);
+// app.use(pharmacyRoute);
 app.use(ambulanceRoute);
 app.use(homepageRoutes);
 app.use(bookingRoute);
-// app.use(flash());
-// app.use(passport.initialize());
-// app.use(passport.session());
+
+
+app.use(passport.initialize());
+app.use(passport.session());
+
+app.use(flash());
+
+app.use(function(req, res, next) {
+  res.locals.success_msg = req.flash('success_msg');
+  res.locals.error_msg = req.flash('error_msg');
+  res.locals.error = req.flash('error');
+  next();
+});
+
+
+app.use(pharmacyRoute)
+
 // app.use(csrfProtection);
 app.listen( process.env.PORT || port, () => console.log(`http://localhost:${port}`));

@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const Cart = require('../model/cart');
+const flash = require('connect-flash')
 
 var medicineDb = require('../model/pharmacy.model');
 var userDb = require('../model/user');
@@ -24,6 +25,7 @@ const redirectHomepage = (req, res, next) => {
 		next();
 	}
 };
+
 
 router.get('/user/signup', pharmacyController.userSignupget);
 router.get('/user/signin', pharmacyController.userSigninget);
