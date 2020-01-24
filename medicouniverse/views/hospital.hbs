@@ -23,33 +23,39 @@
 <body>
     <header class="">
         <nav class="navbar navbar-expand-sm navbar-light">
-            <a class="navbar-brand" href="/">Medico<span>Universe</span></a>
-
-            {{#if user}}
-            <div class="navbar-loggedin">
-                <img src="{{user.image}}" onerror="this.src = './image/default_profile_pic.png'" width="36px"
-                    height="36px">
-                <a href="/dashboard" class="ml-2">{{user.name}}</a>
+        <a class="navbar-brand" href="/">Medico<span>Universe</span></a>
+        <button class="navbar-toggler float-right p-1" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse nav-resp" id="navbarSupportedContent">
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/medicoUniverse/about">About Us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/medicoUniverse/mission">Mission</a>
+                </li>
+            </ul>
+            {{#if session.user}}
+            <div class="dropdown">
+                <a class="nav-link font-weight-bold login-signup w-100" id="dropdownMenu1-1" data-toggle="dropdown" href="">
+                    Hello {{session.user.email}}
+                </a>
+                <div class="dropdown-menu dropdown-primary" id="your-custom-id">
+                    <a class="dropdown-item mdb-dropdownLink-1  " href="/profile">Profile</a>
+                    <a class="dropdown-item mdb-dropdownLink-1 " href="/logout">Logout</a>
+                </div>
             </div>
             {{else}}
-            <button class="navbar-toggler float-right p-1" type="button" data-toggle="collapse"
-                data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse nav-resp" id="navbarSupportedContent">
-                <ul class="navbar-nav mx-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="/about">About Us</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/mission">Mission</a>
-                    </li>
-                </ul>
-                <a class="nav-link login-signup " href="/user/login">Hello {{session.user.email}}</a>
+            <div>
+                <a class="nav-link login-signup w-100" href="/user/signin">Hello Guest</a>
             </div>
             {{/if}}
-        </nav>
+        </div>
+    </nav>
+    <hr>
     </header>
     <section>
         <div class="container-fluid pt-3">

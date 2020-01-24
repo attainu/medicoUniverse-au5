@@ -30,7 +30,21 @@
                     <a class="nav-link" href="/medicoUniverse/mission">Mission</a>
                 </li>
             </ul>
-            <a class="nav-link login-signup " href="/user/signin">Login/SignUp</a>
+            {{#if session.user}}
+            <div class="dropdown">
+                <a class="nav-link font-weight-bold login-signup" id="dropdownMenu1-1" data-toggle="dropdown" href="">
+                    Hello {{session.user.email}}
+                </a>
+                <div class="dropdown-menu dropdown-primary" id="your-custom-id">
+                    <a class="dropdown-item mdb-dropdownLink-1  " href="/profile">Profile</a>
+                    <a class="dropdown-item mdb-dropdownLink-1 " href="/logout">Logout</a>
+                </div>
+            </div>
+            {{else}}
+            <div>
+                <a class="nav-link login-signup " href="/user/signin">Hello Guest</a>
+            </div>
+            {{/if}}
         </div>
     </nav>
     <hr>

@@ -43,16 +43,21 @@
                         <a class="nav-link" href="/mission">Mission</a>
                     </li>
                 </ul>
-                {{#if req.sesion.user}}
-
-
+                 {{#if session.user}}
+            <div class="dropdown">
+                <a class="nav-link font-weight-bold login-signup" id="dropdownMenu1-1" data-toggle="dropdown" href="">
+                    Hello {{session.user.email}}
+                </a>
+                <div class="dropdown-menu dropdown-primary" id="your-custom-id">
+                    <a class="dropdown-item mdb-dropdownLink-1  " href="/profile">Profile</a>
+                    <a class="dropdown-item mdb-dropdownLink-1 " href="/logout">Logout</a>
+                </div>
+            </div>
+            {{else}}
+            <div>
                 <a class="nav-link login-signup " href="/user/signin">Hello Guest</a>
-                {{else}}
-                <span class="nav-link login-signup "><a href="#">Hello
-                        <strong>{{session.user.email}}</strong>
-                    </a>
-                </span>
-                {{/if}}
+            </div>
+            {{/if}}
 
                 <span>
                     <ul class="navbar-nav mx-auto">

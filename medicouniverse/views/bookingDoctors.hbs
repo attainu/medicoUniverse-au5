@@ -16,32 +16,39 @@
 
 <body>
   <nav class="navbar navbar-expand-sm navbar-light">
-    <a class="navbar-brand" href="/">Medico<span>Universe</span></a>
-
-    {{#if user}}
-    <div class="navbar-loggedin">
-      <img src="{{user.image}}" onerror="this.src = './image/default_profile_pic.png'" width="32px" height="32px">
-      <a href="/dashboard" class="ml-2">{{session.user.email}}</a>
-    </div>
-    {{else}}
-    <button class="navbar-toggler float-right p-1" type="button" data-toggle="collapse"
-      data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-      aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse nav-resp" id="navbarSupportedContent">
-      <ul class="navbar-nav mx-auto">
-        <li class="nav-item">
-          <a class="nav-link" href="/medicoUniverse/about">About Us</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/medicoUniverse/mission">Mission</a>
-        </li>
-      </ul>
-      <a class="nav-link login-signup " href="/user/signin">Hello {{session.user.email}}!</a>
-    </div>
-    {{/if}}
-  </nav>
+        <a class="navbar-brand" href="/">Medico<span>Universe</span></a>
+        <button class="navbar-toggler float-right p-1" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse nav-resp" id="navbarSupportedContent">
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/medicoUniverse/about">About Us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/medicoUniverse/mission">Mission</a>
+                </li>
+            </ul>
+            {{#if session.user}}
+            <div class="dropdown">
+                <a class="nav-link font-weight-bold login-signup w-100" id="dropdownMenu1-1" data-toggle="dropdown" href="">
+                    Hello {{session.user.email}}
+                </a>
+                <div class="dropdown-menu dropdown-primary" id="your-custom-id">
+                    <a class="dropdown-item mdb-dropdownLink-1  " href="/profile">Profile</a>
+                    <a class="dropdown-item mdb-dropdownLink-1 " href="/logout">Logout</a>
+                </div>
+            </div>
+            {{else}}
+            <div>
+                <a class="nav-link login-signup w-100" href="/user/signin">Hello Guest</a>
+            </div>
+            {{/if}}
+        </div>
+    </nav>
+    <hr>
   <div class="jumbotron">
     <h1 id="pName"><strong>Medico<span>Universe</span><sup>+</sup></strong></h1>
     <h3 id="info"><strong>Book Your Appointments here</strong></h3>
@@ -74,7 +81,7 @@
   </div>
 
   <h4><strong>Here are some results matching your requirements</strong></h4>
-  <div class="content">
+  <div class="content" style="min-height: 340px;">
     {{#each doctors}}
     <section>
       <div id="resultDisplay">
