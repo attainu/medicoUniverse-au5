@@ -42,7 +42,6 @@ router.post('/checkout', redirectLogin, pharmacyController.checkoutpost);
 router.get('/placedOrder', redirectLogin, pharmacyController.placedOrderget);
 router.post('/placedOrder', redirectLogin, pharmacyController.placedOrderpost);
 router.get('/profile', redirectLogin, pharmacyController.profileget);
-// router.get('/products/horlicks-oats-refill',pharmacyController.horlicksget)
-// router.get('/productCategory/babybath',pharmacyController.babybathget)
+router.get('/logout', redirectLogin , pharmacyController.logout);
 
 module.exports = router;

@@ -12,16 +12,8 @@ var medicineDb = require('../model/pharmacy.model');
 var userDb = require('../model/user');
 var Order = require('../model/order');
 const jsonData = require('../public/data/medicines.json');
-<<<<<<< HEAD
-const hospitalmodel =require('../model/hospitalmodels')
-const bcrypt = require("bcryptjs")
-const passport = require("passport")
-const flash = require('connect-flash');
-require("../config/passport")(passport);
-patients = require("../model/booked.patients.model")
-=======
 const hospitalmodel = require('../model/hospitalmodels');
->>>>>>> f70228970fd0eff7a080250c47cd5f2aba3429b9
+patients = require("../model/booked.patients.model")
 const nexmo = new Nexmo({
 	apiKey: 'd61633c6',
 	apiSecret: '7kfNTn9ZkKnNf5Pi'
@@ -358,71 +350,39 @@ pharmacyController.profileget = (req, res, next) => {
 			order.items = cart.generateArray();
 		});
 		console.log(orders);
-<<<<<<< HEAD
 
-		// patientsDB.patients.find({person: req.session.user.email},function (err, docs){
-		// 	if (err) throw err
-		// 	console.log(docs)
-
-			
-		// })
-
-		hospitalmodel.patient.find({store : req.session.user.email}, function (err, result) {
-			if (err) throw err
-
+		hospitalmodel.patient.find({ store: req.session.user.email }, function(err,result) {
+			if (err) throw err;
 			// saved!
+
 			mongoose.model('patients').find({person: req.session.user.email}, function (err, docs) {
 				if (err) throw err
 				console.log("data in db : " , docs)
-				res.render('user/profile', 
-			{ 
-				orders: orders,
-				patient : result[0],
-				patients : docs[0]
-				
-=======
-		hospitalmodel.patient.find({ store: req.session.user.email }, function(
-			err,
-			result
-		) {
-			if (err) throw err;
-			// saved!
+			
 			res.render('user/profile', 
 			{ 
 				orders: orders,
 				patient : result,
-				pricehospital : Number(result.length*200)
->>>>>>> f70228970fd0eff7a080250c47cd5f2aba3429b9
+				pricehospital : Number(result.length*200),
+				patients : patients
+
 			});
 				
-			 });
-			
-			
 		});
+			
+			
+	
 	});
-};
+});
+}
 
-// pharmacyController.babybathget = (req, res, next) => {
-// 	var data = {};
-// 	babybath.find({}, (err, result) => {
-// 		if (err) {
-// 			console.log('Error in finding data');
-// 		} else {
-// 			data.result = result;
-// 		}
-// 		console.log(result);
-// 		res.render('babybath', {
-// 			baby: data.result
-// 		});
-// 	});
-// };
+pharmacyController.logout = (req, res, next) => {
 
-// pharmacyController.userdataget = (req, res, next) => {
-// 	medicineDb.insertMany(jsonData, (err, jsonData) => {
-// 		if (err) {
-// 			console.log('error in data');
-// 		}
-// 		res.send(jsonData);
-// 	});
-// };
+	req.session.destroy(function(err){
+		console.log("Session Destroyed !!")
+		res.redirect("/")
+	})
+}
+
+
 module.exports = pharmacyController;
