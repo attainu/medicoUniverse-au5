@@ -13,7 +13,7 @@ const passport = require('passport');
 const cloudinary = require('cloudinary').v2;
 const medicineDb = require('./model/pharmacy.model');
 const connectMedicineDb = require('./model/pharmacy.connection');
-require('./config/passport');
+// require('./config/passport');
 const connectDB = require('./model/db');
 const pharmacyRoute = require('./routes/pharmacy.route');
 const ambulanceRoute = require('./routes/ambulance_ambulance.route');

@@ -138,7 +138,7 @@
                     <!-- Card Regular -->
                 </div>
                 <div class="col">
-                   <div class="card card-cascade">
+                    <div class="card card-cascade">
 
                         <!-- Card image -->
 
@@ -154,13 +154,12 @@
                             <div class="card-body card-body-cascade">
                                 <div class="card-body">
                                     <div class="card-body ">
-                                        {{#if patients}}
 
                                         <li class="list-group-item border-0 " style="background-color:honeydew">
                                             <div class="row">
                                                 <div class="col">
-                                                   <strong>Name</strong>
-                                                   <hr>
+                                                    <strong>Name</strong>
+                                                    <hr>
                                                 </div>
                                                 <div class="col">
                                                     <span class="card-body"><strong>Contact</strong></span>
@@ -179,7 +178,8 @@
                                                     <hr>
                                                 </div>
                                             </div>
-                                            
+
+                                            {{#each patients}}
                                             <div class="row">
                                                 <div class="col">
                                                     {{patients.patientsName}}
@@ -196,9 +196,9 @@
                                                 <div class="col">
                                                     <span class="card-body">{{patients.bookingDate}}</span>
                                                 </div>
+                                                {{/each}}
                                             </div>
                                         </li>
-                                        {{/if}}
                                     </div>
 
                                 </div>
