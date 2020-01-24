@@ -43,6 +43,8 @@ router.post('/checkout', redirectLogin, pharmacyController.checkoutpost);
 router.get('/placedOrder', redirectLogin, pharmacyController.placedOrderget);
 router.post('/placedOrder', redirectLogin, pharmacyController.placedOrderpost);
 router.get('/profile', redirectLogin, pharmacyController.profileget);
-router.get('/logout', redirectLogin, pharmacyController.logout);
+router.get('/logout', redirectLogin , pharmacyController.logout);
+router.get('/profile/cancel' , pharmacyController.cancel)
 
+router.post('/deleteAppoitment',redirectLogin,pharmacyController.deleteAppoitmnet);
 module.exports = router;

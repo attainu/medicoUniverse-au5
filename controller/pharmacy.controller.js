@@ -351,7 +351,7 @@ pharmacyController.profileget = (req, res, next) => {
 			result
 		) {
 			if (err) throw err;
-
+			console.log(result)
 			// saved!
 			mongoose
 				.model('patients')
@@ -368,6 +368,28 @@ pharmacyController.profileget = (req, res, next) => {
 		});
 	});
 };
+pharmacyController.deleteAppoitmnet = (req,res,next) =>{
+	hospitalmodel.patient.findOneAndRemove({_id:req.query.id}, function(err,daa){
+		if(err) throw err
+		res.redirect("/profile")
+  });
+} 
+
+
+
+pharmacyController.cancel = (req,res) => {
+ 
+	var id = req.body.id
+	
+	mongoose.model('patients').findOneAndRemove(id, function(err){
+		console.log(id)
+		 res.redirect("/profile")
+		 
+	});
+
+}
+
+
 
 pharmacyController.logout = (req, res) => {
 	req.session.destroy(function(err) {

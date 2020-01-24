@@ -92,6 +92,10 @@ footer a:hover{
 
     
 }
+label{
+    display: flex;
+    justify-content: center;
+}
 
 .navbar-loggedin {
     float: right;
@@ -124,7 +128,7 @@ footer a:hover{
 #signupDiv{
     padding: 50px;
     background-color: #bce4ff;
-    background-image: linear-gradient(315deg, #bce4ff 0%, #83eaf1 74%);
+    /* background-image: linear-gradient(315deg, #bce4ff 0%, #83eaf1 74%); */
     border-top-right-radius: 20px;
 }
 img{
@@ -176,7 +180,7 @@ img{
     justify-content: center;
     flex-direction: column;
     background-color: #bce4ff;
-    background-image: linear-gradient(315deg, #bce4ff 0%, #83eaf1 74%);
+    /* background-image: linear-gradient(315deg, #bce4ff 0%, #83eaf1 74%); */
 }
 #mainImg{
      border-bottom-left-radius: 20px;

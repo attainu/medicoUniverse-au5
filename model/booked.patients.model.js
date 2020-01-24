@@ -7,7 +7,6 @@ const patientsSchema = new Schema({
     "preferredTime": { type: String, required: true },
     "patientsAddress": { type: String, required: true },
     "person" :  { type: String, required: true },
-    "bookingDate":{type: Date,Default: Date.now}
     
 });
 
