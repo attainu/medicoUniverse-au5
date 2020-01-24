@@ -1,0 +1,536 @@
+body {
+	margin: 0;
+	padding: 0;
+}
+hr {
+	margin: 0;
+}
+
+footer {
+	background-color: rgb(40, 50, 140);
+	color: honeydew;
+	font-family: raleway;
+}
+
+footer ul {
+	list-style: none;
+	margin: 0;
+}
+
+footer a {
+	color: honeydew;
+}
+
+footer a:hover {
+	color: honeydew;
+}
+
+.row {
+	max-width: 100%;
+	margin-right: 0;
+	margin-left: 0;
+}
+
+.navbar {
+	background-color: white;
+	height: 66px;
+}
+
+.navbar-brand {
+	color: rgb(208, 17, 21) !important;
+	margin-left: 10%;
+	font-weight: bolder;
+}
+
+.navbar-brand span {
+	color: rgb(0, 113, 197);
+}
+
+.navbar-brand:hover span,
+.navbar-brand:hover {
+	color: grey !important;
+}
+
+.nav-link {
+	font-weight: 700;
+}
+
+.nav-link:hover {
+	color: grey;
+	font-weight: 700;
+}
+
+.login-signup {
+	border: 1px solid grey;
+	border-radius: 6px;
+	font-size: small;
+	margin-right: 10%;
+	color: rgba(0, 0, 0, 0.5);
+}
+
+.navbar-collapse {
+	z-index: 1;
+}
+
+@media (max-width: 575px) {
+	.nav-link {
+		border-bottom: 1px solid grey;
+		margin-bottom: 6px;
+		margin-left: 30px;
+	}
+
+	.nav-resp {
+		background-color: white;
+	}
+
+	.login-signup {
+		color: rgba(0, 0, 0, 0.5);
+		font-weight: 700;
+		border: none;
+		font-size: medium;
+		padding: 8px 0;
+		margin-bottom: 6px;
+	}
+
+	.login-signup:hover {
+		color: grey;
+		font-weight: 700;
+	}
+
+	.carousel-c {
+		display: none;
+	}
+}
+
+.navbar-loggedin {
+	float: right;
+	color: cornflowerblue;
+	font-weight: 700;
+	margin-left: auto;
+	margin-right: 6%;
+}
+
+.navbar-loggedin a:hover {
+	text-decoration: none;
+	color: grey;
+}
+
+.dropbtn {
+	background-color: white;
+	padding: 16px;
+	font-size: 16px;
+	border: none;
+}
+
+.dropdown {
+	position: relative;
+	display: inline-block;
+}
+
+.dropdown-content {
+	display: none;
+	position: absolute;
+	background-color: #f1f1f1;
+	min-width: 160px;
+	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+	z-index: 1;
+}
+
+.dropdown-content a {
+	color: black;
+	padding: 12px 16px;
+	text-decoration: none;
+	display: block;
+}
+
+.dropdown-content a:hover {
+	background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+	display: block;
+}
+
+.dropdown:hover .dropbtn {
+	background-color: #3e8e41;
+}
+
+/* Style the sidenav links and the dropdown button */
+.sidenav a,
+.dropdown-btn {
+	padding: 6px 8px 6px 16px;
+	text-decoration: none;
+
+	color: #818181;
+	display: block;
+	border: none;
+	background: none;
+	width: 100%;
+	text-align: left;
+	cursor: pointer;
+	outline: none;
+}
+
+/* On mouse-over */
+.sidenav a:hover,
+.dropdown-btn:hover {
+	color: black;
+}
+
+/* Add an active class to the active dropdown button */
+
+/* Dropdown container (hidden by default). Optional: add a lighter background color and some left padding to change the design of the dropdown content */
+
+/* Optional: Style the caret down icon */
+.fa-caret-down {
+	float: right;
+	padding-right: 8px;
+}
+
+/* Some media queries for responsiveness */
+@media screen and (max-height: 450px) {
+	.sidenav {
+		padding-top: 15px;
+	}
+	.sidenav a {
+		font-size: 18px;
+	}
+}
+.autocomplete-items {
+	position: absolute;
+	border: 1px solid #d4d4d4;
+	border-bottom: none;
+	border-top: none;
+	z-index: 99;
+	top: 100%;
+	width: 100%;
+}
+
+.autocomplete-items div {
+	padding: 6px;
+	cursor: pointer;
+	background-color: #fff;
+	border-bottom: 1px solid #d4d4d4;
+}
+
+.autocomplete-items div:hover {
+	background-color: #e9e9e9;
+}
+
+.autocomplete-active {
+	/*when navigating through the items using the arrow keys:*/
+	background-color: rgba(105, 105, 105, 0.8) !important;
+	color: #ffffff;
+}
+
+/* ----------- */
+* {
+	box-sizing: border-box;
+}
+
+.row {
+	max-width: 100%;
+	margin-right: 0;
+	margin-left: 0;
+}
+
+.search {
+	margin-left: 10%;
+	font-family: 'Times New Roman', Times, serif;
+}
+
+#loc-icon {
+	position: absolute;
+	left: 6px;
+	top: 8px;
+}
+
+#search-icon {
+	position: absolute;
+	left: 6px;
+	top: 9px;
+}
+
+.search input,
+button {
+	height: 32px;
+}
+
+.search-city {
+	width: 22%;
+}
+
+.search-main {
+	width: 50%;
+	margin: -5px;
+}
+
+.search-city input,
+.search-main input {
+	padding-left: 26px;
+}
+
+.search button {
+	padding: 0 12px;
+	background-color: white;
+	border: 1px solid rgba(0, 0, 0, 0.3);
+	margin-left: 2%;
+	margin-top: -4px;
+}
+
+.portal-card {
+	border: 1px solid rgba(0, 0, 0, 0.1);
+	border-radius: 5px;
+	margin-left: 1%;
+	margin-right: 1%;
+	font-size: 14px;
+	height: 176px;
+}
+
+.portal-card img {
+	width: 64px;
+	height: 64px;
+	opacity: 0.5;
+	margin: 6px 0;
+	float: right;
+}
+
+.portal-card-cont {
+	margin-top: 6px;
+	height: 72%;
+	width: 80%;
+}
+
+.portal-card a {
+	border-radius: 6px;
+	border: 1px solid rgba(0, 0, 0, 0.3);
+	width: 110px;
+	margin-bottom: 10px;
+	color: honeydew;
+	font-size: 14px;
+	font-weight: 800;
+}
+
+#pc-doc {
+	background-color: rgb(129, 186, 131);
+}
+
+#pc-med {
+	background-color: rgb(227, 138, 132);
+	height: 32px;
+}
+
+#pc-hosp {
+	background-color: rgb(165, 133, 189);
+}
+
+#pc-doc:hover {
+	background-color: grey;
+}
+
+#pc-med:hover {
+	background-color: grey;
+}
+
+#pc-hosp:hover {
+	background-color: grey;
+}
+
+.article-text {
+	text-justify: auto;
+	font-size: 14px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	word-wrap: break-word;
+	max-height: 110px;
+}
+
+.card {
+	border: 0;
+}
+
+.card-body {
+	padding-left: 0;
+	padding-right: 0;
+}
+
+.loader {
+	border: 16px solid #f3f3f3;
+	border-radius: 50%;
+	border-top: 16px solid rgba(0, 0, 0, 0.3);
+	width: 120px;
+	height: 120px;
+	animation: spin 2s linear infinite;
+	position: absolute;
+	left: 50%;
+	top: 60px;
+	margin-left: -60px;
+}
+
+@keyframes spin {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+.carousel-indicators li {
+	background-color: rgba(0, 0, 0, 0.1);
+}
+
+.car-text-1 {
+	position: absolute;
+	top: 16%;
+	left: 36%;
+}
+
+.car-text-head {
+	font-size: xx-large;
+	font-weight: bolder;
+	font-family: sans-serif;
+	color: rgb(64, 63, 69);
+}
+
+.car-text-1 ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.car-text-1 ul li {
+	display: inline-block;
+	font-size: medium;
+	font-family: sans-serif;
+	color: grey;
+}
+
+.car-text-desc {
+	font-size: medium;
+	font-family: sans-serif;
+	color: grey;
+}
+
+.car-button-1 {
+	border: 2px solid rgb(111, 106, 133);
+	background-color: inherit;
+	color: rgb(111, 106, 133);
+	border-radius: 6px;
+	margin-top: 28px;
+}
+
+.car-button-2 {
+	border: 2px solid rgb(201, 154, 151);
+	color: rgb(201, 154, 151);
+	background-color: inherit;
+	border-radius: 6px;
+	margin-top: 28px;
+}
+
+.car-button-3 {
+	border: 2px solid rgb(149, 172, 190);
+	color: rgb(149, 172, 190);
+	background-color: inherit;
+	border-radius: 6px;
+	margin-top: 28px;
+}
+
+.car-logo {
+	position: absolute;
+	bottom: 44px;
+	left: 12%;
+	font-weight: 600;
+}
+
+.car-text-2 {
+	position: absolute;
+	top: 16%;
+	left: 10%;
+}
+
+#slideout {
+	position: fixed;
+	top: 220px;
+	right: 0;
+	z-index: 5;
+}
+
+#ambIcon {
+	width: 200px;
+	transition: width 1s;
+	border: solid black 1px;
+	border-radius: 6px;
+	padding: 6px;
+	position: absolute;
+	right: -154px;
+	transition: 1s;
+}
+
+#ambIcon:hover {
+	width: 200px;
+	position: relative;
+	right: -10px;
+}
+
+#ambIcon a {
+	border: none;
+	background-color: rgb(9, 165, 222);
+	color: white;
+	font-weight: bold;
+	border-radius: 6px;
+	font-size: 14px;
+	padding: 6px 12px;
+}
+
+/*-------------  */
+html,
+body,
+header,
+.carousel {
+	height: 60vh;
+}
+
+@media (max-width: 740px) {
+	html,
+	body,
+	header,
+	.carousel {
+		height: 100vh;
+	}
+}
+
+@media (min-width: 800px) and (max-width: 850px) {
+	html,
+	body,
+	header,
+	.carousel {
+		height: 100vh;
+	}
+}
+.view,
+body,
+html {
+	height: 100%;
+}
+.carousel {
+	height: 50%;
+}
+.carousel .carousel-inner,
+.carousel .carousel-inner .active,
+.carousel .carousel-inner .carousel-item {
+	height: 100%;
+}
+@media (max-width: 776px) {
+	.carousel {
+		height: 100%;
+	}
+}
+.page-footer {
+	background-color: #929fba;
+}
+
+/* Only for snippet */
+.double-nav .breadcrumb-dn {
+	color: #fff;
+}

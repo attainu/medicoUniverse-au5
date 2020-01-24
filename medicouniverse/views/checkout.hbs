@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.10.1/css/mdb.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="./css/products.css">
+    <link rel="stylesheet" type="text/css" href="./css/plus.css">
+</head>
+
+<body>
+    <div class="container-flex">
+
+
+        <nav class="navbar navbar-expand-sm navbar-light">
+            <a class="navbar-brand" href="/">Medico<span>Universe</span></a>
+
+
+            <button class="navbar-toggler float-right p-1" type="button" data-toggle="collapse"
+                data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse nav-resp" id="navbarSupportedContent">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/about">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/mission">Mission</a>
+                    </li>
+                </ul>
+                {{#if req.sesion.user}}
+
+
+                <a class="nav-link login-signup " href="/user/signin">Hello Guest</a>
+                {{else}}
+                <span class="nav-link login-signup "><a href="#">Hello
+                        <strong>{{session.user.email}}</strong>
+                    </a>
+                </span>
+                {{/if}}
+
+                <span>
+                    <ul class="navbar-nav mx-auto">
+                        <li class="nav-item">
+                            <a class="nav-link waves-effect" href="/shoppingCart">
+                                <span class="badge red z-depth-1 mr-1"> {{session.cart.totalQty}} </span>
+                                <i class="fas fa-shopping-cart"></i>
+                                <span class="clearfix d-none d-sm-inline-block"> Cart </span>
+                            </a>
+                        </li>
+                    </ul>
+                </span>
+            </div>
+        </nav>
+
+        <div class="container mt-5">
+            <!--Section: Content-->
+            <section class="dark-grey-text">
+                <div class="card">
+                    <div class="card-body">
+                        <!--Grid row-->
+                        <div class="row">
+                            <!--Grid column-->
+                            <div class="col-lg-8">
+                                <!-- Pills navs -->
+                                <ul class="nav md-pills nav-justified pills-primary font-weight-bold">
+                                    <li class="nav-item">
+                                        <a class="nav-link active" data-toggle="tab" href="#tabCheckoutBilling123"
+                                            role="tab">1. Billing</a>
+                                    </li>
+
+                                    <li class="nav-item">
+                                        <a class="nav-link" data-toggle="tab" href="#tabCheckoutPayment123"
+                                            role="tab">3. Payment</a>
+                                    </li>
+                                </ul>
+                                <!-- Pills panels -->
+                                <div class="tab-content pt-4">
+                                    <!--Panel 1-->
+                                    <div class="tab-pane fade in show active" id="tabCheckoutBilling123"
+                                        role="tabpanel">
+                                        <!--Card content-->
+                                        <form class="text-center" style="color: #757575;" method="POST"
+                                            enctype="multipart/form-data" action="">
+                                            <!--Grid row-->
+                                            <div class="row">
+                                                <!--Grid column-->
+                                                <div class="col-md-6 mb-4">
+                                                    <!--address-->
+                                                    <label for="address" class=" ">Shipping Address</label>
+                                                    <input type="text" id="address" name="address"
+                                                        class="form-control mb-4" placeholder="1234 Main St">
+                                                    <!--address-2-->
+                                                </div>
+
+
+                                            </div>
+
+
+                                            <label for="email" class="">Email (optional)</label>
+                                            <input type="text" id="email" name="email" class="form-control mb-4"
+                                                placeholder="email@gmail.com">
+                                            <!--firstName-->
+                                            <label for="firstName" class="">Name</label>
+                                            <input type="text" id="firstName" name="cardName" class="form-control">
+                                            <label for="address-2" class="">Address 2 (optional)</label>
+                                            <input type="text" id="address-2" class="form-control mb-4"
+                                                placeholder="Apartment or suite">
+                                            <input type="text" id="address-2" name="cardNumber"
+                                                class="form-control mb-4" placeholder="Card Number">
+                                            <!--Grid row-->
+
+                                            <!--Grid row-->
+                                            <hr>
+
+                                            <div class="text-center">
+                                                <a href="" class="btn btn-default btn-rounded mb-4" data-toggle="modal"
+                                                    data-target="#modalContactForm">
+                                                    Click for Card Details</a>
+                                            </div>
+                                            <button type="submit">save</button>
+                                            {{!-- <button class="btn btn-primary btn-lg btn-block" type="submit">Enter For
+                                                Card Details
+                                            </button> --}}
+                                        </form>
+                                    </div>
+
+                                    <!--/.Panel 3-->
+                                </div>
+                                <!-- Pills panels -->
+                            </div>
+                            <!--Grid column-->
+                            <!--Grid column-->
+                            <div class="col-lg-4 mb-4">
+                                <button class="btn btn-primary btn-lg btn-block" type="submit">Place order</button>
+                                <!--Card-->
+                                <div class="card z-depth-0 border border-light rounded-0">
+                                    <!--Card content-->
+                                    <div class="card-body">
+                                        <h4 class="mb-4 mt-1 h5 text-center font-weight-bold">Summary</h4>
+                                        <hr>
+                                        <dl class="row">
+                                            <dd class="col-sm-8 font-weight-bold">
+                                                Total Items :
+                                            </dd>
+                                            <dd class="col-sm-4">
+                                                ₹{{session.cart.totalQty}}
+                                            </dd>
+                                        </dl>
+                                        <hr>
+
+                                        <dl class="row">
+                                            <dt class="col-sm-8">
+                                                Total Amount
+                                            </dt>
+                                            <dt class="col-sm-4">
+                                                {{total}}
+                                            </dt>
+                                        </dl>
+                                    </div>
+                                </div>
+                                <!--/.Card-->
+                            </div>
+                            <!--Grid column-->
+                        </div>
+                        <!--Grid row-->
+                    </div>
+                </div>
+            </section>
+            <!--Section: Content-->
+        </div>
+
+
+
+        <footer class="mt-4">
+            <div style="height: 20px;"></div>
+            <div class="row">
+                <div class="col-lg-3 col-md-3 col-sm-12 ml-5">
+                    <h4>Contact Us</h4>
+                    <p>BHIVE Workspace, L-148, 5th Main Rd,
+                        <br> Sector 6, HSR Layout,<br> Bengaluru, Karnataka 560102</p>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-12 ml-5">
+                    <h5>For patients</h5>
+                    <ul>
+                        <li><a href="#">Search for Doctors</a></li>
+                        <li><a href="#">Search for Hospitals</a></li>
+                        <li><a href="#">Order Medicine</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div style="height: 20px;"></div>
+        </footer>
+    </div>
+
+    <div class="tab-pane fade" id="tabCheckoutPayment123" role="tabpanel">
+        <div class="modal fade" id="modalContactForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header text-center">
+                        <h4 class="modal-title w-100 font-weight-bold">Write to us</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body mx-3">
+                        <div class="md-form mb-5">
+                            <i class="fas fa-user prefix grey-text"></i>
+                            <input type="text" id="form34" class="form-control validate">
+                            <label data-error="wrong" data-success="right" for="form34">Your name</label>
+                        </div>
+
+                        <div class="md-form mb-5">
+                            <i class="fas fa-envelope prefix grey-text"></i>
+                            <input type="email" id="form29" class="form-control validate">
+                            <label data-error="wrong" data-success="right" for="form29">Your email</label>
+                        </div>
+
+                        <div class="md-form mb-5">
+                            <i class="fas fa-tag prefix grey-text"></i>
+                            <input type="text" id="form32" class="form-control validate">
+                            <label data-error="wrong" data-success="right" for="form32">Subject</label>
+                        </div>
+
+                        <div class="md-form">
+                            <i class="fas fa-pencil prefix grey-text"></i>
+                            <textarea type="text" id="form8" class="md-textarea form-control" rows="4"></textarea>
+                            <label data-error="wrong" data-success="right" for="form8">Your message</label>
+                        </div>
+
+                    </div>
+                    <div class="modal-footer d-flex justify-content-center">
+                        <button class="btn btn-unique">Send <i class="fas fa-paper-plane-o ml-1"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a href="#" class="float ca" id="menu-share">
+        <i class="fa fa-share my-float"></i>
+    </a>
+    <ul class="cul">
+        <li class="cli"><a class="ca" href="/hospitalsearch">
+                <i class="fas fa-clinic-medical my-float "></i>
+            </a></li>
+        <li class="cli"><a class="ca" href="/bookingDoctors">
+                <i class="fas fa-user-md my-float"></i>
+                <i class="fas fa-user-nurse my-float"></i>
+            </a></li>
+        <li class="cli"><a class="ca" href="/pharmacy">
+                <i class="fas fa-prescription-bottle-alt my-float "></i>
+            </a></li>
+        <li class="cli"><a class="ca" href="/ambulance_booking">
+                <i class="fas fa-ambulance my-float "></i>
+            </a></li>
+    </ul>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.10.1/js/mdb.min.js"></script>
+    <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+    <script type="text/javascript" src="javascripts/checkout.js"></script>
+    <script src="./js/products.js"></script>
+</body>
+
+</html>

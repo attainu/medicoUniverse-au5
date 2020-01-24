@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {{!-- MDB --}}
+    <!-- Material Design Bootstrap -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.12.0/css/mdb.min.css" rel="stylesheet">
+    {{!-- Font Awesome --> --}}
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+
+    {{!-- default --}}
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" href="../css/hospitalstyle.css">
+    <link rel="stylesheet" href="./css/plus.css">
+    <title>hospitals</title>
+</head>
+
+<body>
+    <header class="">
+        <nav class="navbar navbar-expand-sm navbar-light">
+            <a class="navbar-brand" href="/">Medico<span>Universe</span></a>
+
+            {{#if user}}
+            <div class="navbar-loggedin">
+                <img src="{{user.image}}" onerror="this.src = './image/default_profile_pic.png'" width="36px"
+                    height="36px">
+                <a href="/dashboard" class="ml-2">{{user.name}}</a>
+            </div>
+            {{else}}
+            <button class="navbar-toggler float-right p-1" type="button" data-toggle="collapse"
+                data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse nav-resp" id="navbarSupportedContent">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/about">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/mission">Mission</a>
+                    </li>
+                </ul>
+                <a class="nav-link login-signup " href="/user/login">Hello {{session.user.email}}</a>
+            </div>
+            {{/if}}
+        </nav>
+    </header>
+    <section>
+        <div class="container-fluid pt-3">
+            <div class="row">
+                <div class="col-xl-4 col-md-4 col-sm-4">
+                    <form action="/storeddata" method="POST" class="form-inline">
+                        <input class="form-control mr-1" type="text" id="hospitalsearch" placeholder="Search hospitals"
+                            aria-label="Search" name="searchbox" required>
+                        <button class="btn" type="submit">
+                            <svg height='33px' width='40px' version="1.1" id="Layer_1"
+                                xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+                                y="0px" viewBox="0 0 497.8 497.8" style="enable-background:new 0 0 497.8 497.8;"
+                                xml:space="preserve">
+                                <circle style="fill:#08476B;" cx="156.8" cy="168.8" r="137.6" />
+                                <rect x="299.54" y="251.799"
+                                    transform="matrix(-0.7072 0.7071 -0.7071 -0.7072 768.4462 318.1378)"
+                                    style="fill:#960253;" width="37.602" height="132.808" />
+                                <polyline style="fill:#6D0041;" points="257.6,284 284,257.6 378.4,351.2 " />
+                                <path style="fill:#195F8E;" d="M488.8,446.4c12,12,12,30.4,0,42.4l0,0c-12,12-30.4,12-42.4,0L332.8,375.2c-12-12-12-30.4,0-42.4l0,0
+	c12-12,30.4-12,42.4,0L488.8,446.4z" />
+                                <path style="fill:#08476B;"
+                                    d="M332.8,332.8L332.8,332.8c12-12,30.4-12,42.4,0l113.6,113.6c12,12,12,30.4,0,42.4l0,0" />
+                                <path style="fill:#C61867;" d="M48,48c-64,64-64,168,0,232s168,64,232,0s64-168,0-232S112-16,48,48z M252,252
+	c-48,48-126.4,48-175.2,0c-48-48-48-126.4,0-175.2c48-48,126.4-48,175.2,0C300,124.8,300,203.2,252,252z" />
+                                <path style="fill:#EAEAEA;"
+                                    d="M284.8,160.8c-18.4-40-65.6-71.2-120.8-71.2S61.6,120.8,43.2,160.8H284.8z" />
+                                <path style="fill:#C4C4C4;"
+                                    d="M43.2,160.8c18.4,48,65.6,71.2,120.8,71.2s102.4-23.2,120.8-71.2H43.2z" />
+                                <circle style="fill:#0AA06E;" cx="164" cy="164" r="63.2" />
+                                <path style="fill:#007C56;"
+                                    d="M164,100.8c35.2,0,63.2,28,63.2,63.2s-28,63.2-63.2,63.2" />
+                                <circle style="fill:#5E6664;" cx="164" cy="164" r="28" />
+                                <path style="fill:#2F423F;"
+                                    d="M184,144c11.2,11.2,11.2,28.8,0,39.2c-11.2,11.2-28.8,11.2-39.2,0" />
+                                <g>
+                                    <circle style="fill:#FFFFFF;" cx="146.4" cy="144" r="14.4" />
+                                    <circle style="fill:#FFFFFF;" cx="184" cy="182.4" r="6.4" />
+                                </g>
+                            </svg>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            {{#if hname}}
+            <div class="conatiner">
+                <div class="card bg-dark text-white">
+                    <img src="https://bookinghealth.info/uploads/clinics/gallery/m/5880-patient-room-single-room-1280x780.jpg"
+                        class="card-img" alt="...">
+                    <div class="card-img-overlay">
+                        <h5 class="card-title display-3 font-italic" style="font-size:4rem"><b>{{hname}}</b></h5>
+                        <p class="card-text">
+                            <h2 style="">{{address}}</h2>
+                        </p>
+                        <p class="card-text">
+                            <h4 style="">{{phoneNumber}}</h4>
+                        </p>
+                        <button type="button" class="btn btn-primary mt-1" data-toggle="modal"
+                            data-target="#exampleModal" data-whatever="@mdo">Book
+                            appointment</button>
+                    </div>
+                </div>
+            </div>
+            {{/if}}
+            <hr>
+            <h3 class="text-dark">Top Hospitals</h3>
+            <div class="row p-3" style="background-color:f0fff0;">
+                <div class="col-xl-12 col-sm-12">
+                    <div id="inam" class="carousel slide" data-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="card mr-3 bg-dark text-white ml-5" style="width: 14.8rem;">
+                                            <img src="http://www.medwayindia.com/uploads/gallery_images/big_1487919599_indraprastha_apollo.jpg"
+                                                class="card-img-top" alt="...">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Indraprastha Apollo Hospital</h5>
+                                                <a href="#" class="card-link"><svg width=30px height=25px version="1.1"
+                                                        id="Capa_1" xmlns="http://www.w3.org/2000/svg"
+                                                        xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                                        viewBox="0 0 58 58" style="enable-background:new 0 0 58 58;"
+                                                        xml:space="preserve">
+                                                        <ellipse style="fill:#23A24D;" cx="29" cy="50" rx="29" ry="8" />
+                                                        <path style="fill:#03fff2;" d="M41.676,5.324L41.676,5.324c-7.098-7.098-18.607-7.098-25.706,0h0
+	                                                C9.574,11.72,8.855,23.763,14.282,31l14.541,21l14.541-21C48.792,23.763,48.072,11.72,41.676,5.324z M29,24c-3.314,0-6-2.686-6-6
+	                                                s2.686-6,6-6s6,2.686,6,6S32.314,24,29,24z" /></a><span>Mathura Rd,
+                                                    Pocket B, Sarita Vihar, New Delhi, Delhi 110076</span>
+                                                <button type="button" class="btn btn-block btn-primary mt-1"
+                                                    data-toggle="modal" data-target="#exampleModal">Book
+                                                    appointment</button>
+                                            </div>
+                                        </div>
+                                        <div class="card mr-3 bg-dark text-white ml-3" style="width: 14.8rem;">
+                                            <img src="https://i.ytimg.com/vi/hCB5tLaFYqs/hqdefault.jpg"
+                                                class="card-img-top" alt="...">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Lilavati Hospital and Research Center</h5>
+                                                <a href="#" class="card-link"><svg width=30px height=25px version="1.1"
+                                                        id="Capa_1" xmlns="http://www.w3.org/2000/svg"
+                                                        xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                                        viewBox="0 0 58 58" style="enable-background:new 0 0 58 58;"
+                                                        xml:space="preserve">
+                                                        <ellipse style="fill:#23A24D;" cx="29" cy="50" rx="29" ry="8" />
+                                                        <path style="fill:#03fff2;" d="M41.676,5.324L41.676,5.324c-7.098-7.098-18.607-7.098-25.706,0h0
+	                                                C9.574,11.72,8.855,23.763,14.282,31l14.541,21l14.541-21C48.792,23.763,48.072,11.72,41.676,5.324z M29,24c-3.314,0-6-2.686-6-6
+	                                                s2.686-6,6-6s6,2.686,6,6S32.314,24,29,24z" /></a><span>Lilavati
+                                                    Hospital, A-791, Bandra Reclamation Rd, Bandra West, Mumbai,
+                                                    Maharashtra 400050</span>
+                                                <button type="button" class="btn btn-block btn-primary mt-1"
+                                                    data-toggle="modal" data-target="#exampleModal">Book
+                                                    appointment</button>
+                                            </div>
+                                        </div>
+                                        <div class="card mr-3 bg-dark text-white ml-3" style="width: 14.8rem;">
+                                            <img src="http://medicaldialogues.in/wp-content/uploads/2016/06/fortis-gurgaon.jpg"
+                                                class="card-img-top" alt="...">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Fortis Hospital</h5>
+                                                <a href="#" class="card-link"><svg width=30px height=25px version="1.1"
+                                                        id="Capa_1" xmlns="http://www.w3.org/2000/svg"
+                                                        xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                                        viewBox="0 0 58 58" style="enable-background:new 0 0 58 58;"
+                                                        xml:space="preserve">
+                                                        <ellipse style="fill:#23A24D;" cx="29" cy="50" rx="29" ry="8" />
+                                                        <path style="fill:#03fff2;" d="M41.676,5.324L41.676,5.324c-7.098-7.098-18.607-7.098-25.706,0h0
+	                                                C9.574,11.72,8.855,23.763,14.282,31l14.541,21l14.541-21C48.792,23.763,48.072,11.72,41.676,5.324z M29,24c-3.314,0-6-2.686-6-6
+	                                                s2.686-6,6-6s6,2.686,6,6S32.314,24,29,24z" /></a><span>Mulund Goregaon
+                                                    Link Rd, Nahur West, Mulund West, Mumbai, Maharashtra 400078</span>
+                                                <button type="button" class="btn btn-block btn-primary mt-1"
+                                                    data-toggle="modal" data-target="#exampleModal">Book
+                                                    appointment</button>
+                                            </div>
+                                        </div>
+                                        <div class="card mr-3 bg-dark text-white ml-3" style="width: 14.8rem;">
+                                            <img src="http://healthtechnology.in/wp-content/uploads/2016/11/Jaslok-Hospital-Research-Centre.jpg"
+                                                class="card-img-top" alt="...">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Jaslok Hospital & Research Centre</h5>
+                                                <a href="#" class="card-link"><svg width=30px height=25px version="1.1"
+                                                        id="Capa_1" xmlns="http://www.w3.org/2000/svg"
+                                                        xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                                        viewBox="0 0 58 58" style="enable-background:new 0 0 58 58;"
+                                                        xml:space="preserve">
+                                                        <ellipse style="fill:#23A24D;" cx="29" cy="50" rx="29" ry="8" />
+                                                        <path style="fill:#03fff2;" d="M41.676,5.324L41.676,5.324c-7.098-7.098-18.607-7.098-25.706,0h0
+	                                                C9.574,11.72,8.855,23.763,14.282,31l14.541,21l14.541-21C48.792,23.763,48.072,11.72,41.676,5.324z M29,24c-3.314,0-6-2.686-6-6
+	                                                s2.686-6,6-6s6,2.686,6,6S32.314,24,29,24z" /></a><span>15, Pedder Rd,
+                                                    IT Colony, Cumballa Hill, Mumbai, Maharashtra 400026</span>
+                                                <button type="button" class="btn btn-block btn-primary mt-1"
+                                                    data-toggle="modal" data-target="#exampleModal">Book
+                                                    appointment</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="card mr-3 bg-dark text-white ml-5" style="width: 14.8rem;">
+                                            <img src="https://freeclues.com/blog/wp-content/uploads/2017/12/blk-super-speciality-hospital-pusa-road-delhi-dermatologists-47boko1.jpg"
+                                                class="card-img-top" alt="...">
+                                            <div class="card-body">
+                                                <h5 class="card-title">BLK Super Speciality Hospital</h5>
+                                                <a href="#" class="card-link"><svg width=30px height=25px version="1.1"
+                                                        id="Capa_1" xmlns="http://www.w3.org/2000/svg"
+                                                        xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                                        viewBox="0 0 58 58" style="enable-background:new 0 0 58 58;"
+                                                        xml:space="preserve">
+                                                        <ellipse style="fill:#23A24D;" cx="29" cy="50" rx="29" ry="8" />
+                                                        <path style="fill:#03fff2;" d="M41.676,5.324L41.676,5.324c-7.098-7.098-18.607-7.098-25.706,0h0
+	                                                C9.574,11.72,8.855,23.763,14.282,31l14.541,21l14.541-21C48.792,23.763,48.072,11.72,41.676,5.324z M29,24c-3.314,0-6-2.686-6-6
+	                                                s2.686-6,6-6s6,2.686,6,6S32.314,24,29,24z" /></a><span>Pusa Rd, Radha
+                                                    Soami Satsang, Rajendra Place, New Delhi, Delhi 110005</span>
+                                                <button type="button" class="btn btn-block btn-primary mt-1"
+                                                    data-toggle="modal" data-target="#exampleModal">Book
+                                                    appointment</button>
+                                            </div>
+                                        </div>
+                                        <div class="card mr-3 bg-dark text-white ml-3" style="width: 14.8rem;">
+                                            <img src="https://qph.fs.quoracdn.net/main-qimg-bff74851df3dc5ab2831dd0248cfff86"
+                                                class="card-img-top" alt="...">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Manipal Hospital</h5>
+                                                <a href="#" class="card-link"><svg width=30px height=25px version="1.1"
+                                                        id="Capa_1" xmlns="http://www.w3.org/2000/svg"
+                                                        xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                                        viewBox="0 0 58 58" style="enable-background:new 0 0 58 58;"
+                                                        xml:space="preserve">
+                                                        <ellipse style="fill:#23A24D;" cx="29" cy="50" rx="29" ry="8" />
+                                                        <path style="fill:#03fff2;" d="M41.676,5.324L41.676,5.324c-7.098-7.098-18.607-7.098-25.706,0h0
+	                                                C9.574,11.72,8.855,23.763,14.282,31l14.541,21l14.541-21C48.792,23.763,48.072,11.72,41.676,5.324z M29,24c-3.314,0-6-2.686-6-6
+	                                                s2.686-6,6-6s6,2.686,6,6S32.314,24,29,24z" /></a><span>105/106 D
+                                                    Building, Sryain Kanal, Agarwal Market, Agarwal Market, Mumbai,
+                                                    Maharashtra 400057</span>
+                                                <button type="button" class="btn btn-block btn-primary mt-1"
+                                                    data-toggle="modal" data-target="#exampleModal">Book
+                                                    appointment</button>
+                                            </div>
+                                        </div>
+                                        <div class="card mr-3 bg-dark text-white ml-3" style="width: 14.8rem;">
+                                            <img src="http://jobsdeer.com/wp-content/uploads/2017/06/rsz_all-indian-institute-of-medical-scince.jpg"
+                                                class="card-img-top" alt="...">
+                                            <div class="card-body">
+                                                <h5 class="card-title">AIIMS</h5>
+                                                <a href="#" class="card-link"><svg width=30px height=25px version="1.1"
+                                                        id="Capa_1" xmlns="http://www.w3.org/2000/svg"
+                                                        xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                                        viewBox="0 0 58 58" style="enable-background:new 0 0 58 58;"
+                                                        xml:space="preserve">
+                                                        <ellipse style="fill:#23A24D;" cx="29" cy="50" rx="29" ry="8" />
+                                                        <path style="fill:#03fff2;" d="M41.676,5.324L41.676,5.324c-7.098-7.098-18.607-7.098-25.706,0h0
+	                                                C9.574,11.72,8.855,23.763,14.282,31l14.541,21l14.541-21C48.792,23.763,48.072,11.72,41.676,5.324z M29,24c-3.314,0-6-2.686-6-6
+	                                                s2.686-6,6-6s6,2.686,6,6S32.314,24,29,24z" /></a><span>Sri Aurobindo
+                                                    Marg, Ansari Nagar, Ansari Nagar East, New Delhi, Delhi
+                                                    110029</span>
+                                                <button type="button" class="btn btn-block btn-primary mt-1"
+                                                    data-toggle="modal" data-target="#exampleModal">Book
+                                                    appointment</button>
+                                            </div>
+                                        </div>
+                                        <div class="card mr-3 bg-dark text-white ml-3" style="width: 14.8rem;">
+                                            <img src="https://i.ytimg.com/vi/TfM8OAjseqI/hqdefault.jpg"
+                                                class="card-img-top" alt="...">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Saifee Hospital</h5>
+                                                <a href="#" class="card-link"><svg width=30px height=25px version="1.1"
+                                                        id="Capa_1" xmlns="http://www.w3.org/2000/svg"
+                                                        xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                                        viewBox="0 0 58 58" style="enable-background:new 0 0 58 58;"
+                                                        xml:space="preserve">
+                                                        <ellipse style="fill:#23A24D;" cx="29" cy="50" rx="29" ry="8" />
+                                                        <path style="fill:#03fff2;" d="M41.676,5.324L41.676,5.324c-7.098-7.098-18.607-7.098-25.706,0h0
+	                                                C9.574,11.72,8.855,23.763,14.282,31l14.541,21l14.541-21C48.792,23.763,48.072,11.72,41.676,5.324z M29,24c-3.314,0-6-2.686-6-6
+	                                                s2.686-6,6-6s6,2.686,6,6S32.314,24,29,24z" /></a><span>15/17, Maharshi
+                                                    Karve Rd, Charni Road East, Opera House, Girgaon, Mumbai,
+                                                    Maharashtra 400004</span>
+                                                <button type="button" class="btn btn-block btn-primary mt-1"
+                                                    data-toggle="modal" data-target="#exampleModal">Book
+                                                    appointment</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#inam" class="carousel-control-prev text-info" data-slide="prev">
+                        <span class="carousel-control-prev-icon"></span>
+                    </a>
+                    <a href="#inam" class="carousel-control-next text-info" data-slide="next">
+                        <span class="carousel-control-next-icon"></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="container-fluid">
+        <section class="randomCards">
+            <h2>Health Tips</h2>
+            <div class="card-columns">
+                <div class="card shadow-lg">
+                    <img src="https://english.cdn.zeenews.com/sites/default/files/styles/zm_700x400/public/2019/08/07/809699-eat-2834549340.jpg"
+                        class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Eat more plant-based foods for better heart health</h5>
+                        <p class="card-text">Study shows eating a larger proportion of plant-based foods and a smaller
+                            proportion of animal-based foods may help reduce your risk of having a heart attack, stroke
+                            or
+                            other type of cardiovascular.</p>
+                    </div>
+                </div>
+                <div class="card p-3 shadow-lg">
+                    <blockquote class="blockquote mb-0 card-body">
+                        <p>Processed junk foods have been engineered to trigger your pleasure centers, so they trick
+                            your
+                            brain into overeating — even promoting food addiction in some people</p>
+                        <footer class="blockquote-footer">
+                            <small class="text-muted">
+                                Healthline<cite title="Source Title"></cite>
+                            </small>
+                        </footer>
+                    </blockquote>
+                </div>
+                <div class="card shadow-lg">
+                    <img src="https://english.cdn.zeenews.com/sites/default/files/styles/zm_700x400/public/2018/07/21/705723-exercise-pixabay.jpg"
+                        class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Daily exercise may cut heart attack risk even in polluted areas: Study
+                        </h5>
+                        <p class="card-text">Moderate cycling for four or more hours per week cut risk for recurrent
+                            heart
+                            attack by 31 per cent.
+                        </p>
+                        <p class="card-text"><small class="text-muted">Jul 21, 2018, 17:47 PM IST</small></p>
+                    </div>
+                </div>
+                <div class="card bg-light text-dark text-center p-3 shadow-lg">
+                    <blockquote class="blockquote mb-0">
+                        <p>High calorie diet causes brain health to decline faster: Study</p>
+                        <footer class="blockquote-footer text-white">
+                            <small>
+                                14:57 PM IST<cite title="Source Title">Jun 13, 2019</cite>
+                            </small>
+                        </footer>
+                    </blockquote>
+                </div>
+                <div class="card text-center shadow-lg">
+                    <div class="card-body">
+                        <h5 class="card-title">SUMMARY</h5>
+                        <p class="card-text">Do your best to stay motivated and focused while you adapt to a healthy
+                            lifestyle. It takes 66 days to make a new habit, on average..</p>
+                        <p class="card-text"><small class="text-muted">Healthline</small></p>
+                    </div>
+                </div>
+                <div class="card shadow">
+                    <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.caremountmedical.com%2Fwp-content%2Fuploads%2F2018%2F12%2FHow-Healthy-Eating-Prevents-Disease.png&f=1&nofb=1"
+                        class="card-img-top" alt="...">
+                </div>
+                <div class="card p-3 text-right shadow-lg">
+                    <blockquote class="blockquote mb-0">
+                        <p>Lung Injuries from Vaping Top 2,600, But Fewer Cases Being Reported</p>
+                        <footer class="blockquote-footer">
+                            <small class="text-muted">
+                                Youth vaping is on the <cite title="Source Title">rise</cite>
+                            </small>
+                        </footer>
+                    </blockquote>
+                </div>
+                <div class="card shadow-lg">
+                    <div class="card-body">
+                        <h5 class="card-title">Minimize your sugar intake</h5>
+                        <p class="card-text">Added sugar intake is linked to numerous ailments, including obesity, type
+                            2
+                            diabetes, heart disease, and many forms of cancer.</p>
+                        <p class="card-text"><small class="text-muted">Healthline</small></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <article>
+        <div class="container-fluid">
+            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img height="600rem"
+                            src="https://www.quotemaster.org/images/a9/a988a922e42af8d34811f67550f8d1f9.png"
+                            class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img height="600rem"
+                            src="https://cdn.shortpixel.ai/client/q_glossy,ret_img,w_700/https://discovercorps.com/wp-content/uploads/2017/03/Quotes-About-Volunteering-%E2%80%9CAs-you-grow-older-you-will-discover-that-you-have-two-hands-%E2%80%94-one-for-helping-yourself-the-other-for-helping-others.%E2%80%9D.png"
+                            class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img height="600rem"
+                            src="https://discovercorps.com/wp-content/uploads/2017/03/Quotes-About-Volunteering-%E2%80%9CLife%E2%80%99s-most-persistent-and-urgent-question-is-What-are-you-doing-for-others-%E2%80%9D.png"
+                            class="d-block w-100" alt="...">
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </div>
+    </article>
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Appointment Form</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form action="/patientdata" method="POST" name="register">
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col">
+                                    <label for="Name">Patient Name</label>
+                                    <input id="patientname" type="text" class="form-control" placeholder="Name"
+                                        name="patientname" required>
+                                </div>
+                                <div class="col">
+                                    <label for="Age">Patient Age</label>
+                                    <input id="patientage" type="number" class="form-control" placeholder="Age"
+                                        name="patientage" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="formGroupExampleInput2">Patient Problem</label>
+                            <textarea id="patientproblem" class="form-control" placeholder="Ex-Headaches"
+                                name="patientproblem" required></textarea>
+                        </div>
+                        <label for="formGroupExampleInput2">Mobile Number</label>
+                        <input class="form-control" type="tel" placeholder="Please enter with your country code"
+                            name="no" minlength=12 maxlength=12 id="telnumber" required>
+                        <button id="validmodal" type="submit" class="btn btn-primary mt-1">Get Appointment</button>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <section class="forsomething">
+        <div class="conainer-fluid shadow-lg p-3 mb-5 bg-white mt-3 rounded">
+            <h3 class="d-flex justify-content-center display-4 mb-4"><b>Why Choose Medico Universe?</b></h3>
+            <div class="container-fluid d-flex justify-content-between">
+                <div class="text-center">
+                    <svg height=7rem width=7rem version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 480.007 480.007"
+                        style="enable-background:new 0 0 480.007 480.007;" xml:space="preserve">
+                        <g>
+                            <g>
+                                <path d="M479.426,267.581c-3.547-24.574-22.852-43.879-47.426-47.426v-14.544c0-40.128-30.504-72.8-68-72.8
+			c-36.416,0-66.904,31.68-68,70.624h0.464l-0.464,0.08v157.656c0,50.4-37.68,91.328-84,91.328s-84-40.984-84-91.328v-13.656
+			c11.6,0,24-8.408,24-32v-20.12c51.344-13.128,88-57.216,88-107.2v-16.68h-16l-0.336-104.12
+			c-0.116-19.273-13.946-35.729-32.912-39.16c-4.091-12.533-17.568-19.377-30.102-15.285c-12.533,4.091-19.377,17.568-15.285,30.102
+			c4.091,12.533,17.568,19.377,30.102,15.285c6.711-2.191,12.108-7.24,14.741-13.79c10.249,2.916,17.349,12.24,17.432,22.896
+			L208,171.515h-16v16.912c-0.638,27.827-19.294,52.009-46.048,59.688c-14.315,4.542-29.685,4.542-44,0
+			C75.229,240.41,56.615,216.232,56,188.427v-16.912H32v-104c0.046-10.813,7.318-20.261,17.76-23.072
+			c4.869,12.395,18.864,18.495,31.259,13.626S99.514,39.204,94.645,26.81S75.78,8.315,63.386,13.184
+			c-6.716,2.639-11.898,8.146-14.122,15.011C30.091,31.471,16.053,48.064,16,67.515v104H0v16.64c0,50.04,36.68,94.144,88,107.24
+			v20.12c0,23.592,12.4,32,24,32v13.656c0,59.2,44.856,107.328,100,107.328s100-48.184,100-107.328V203.899
+			c0.8-30.36,24.144-55.064,52-55.064c28.672,0,52,25.472,52,56.8v14.52c-30.611,4.418-51.844,32.815-47.426,63.426
+			s32.815,51.844,63.426,47.426S483.844,298.191,479.426,267.581z M168,43.515c-4.418,0-8-3.582-8-8s3.582-8,8-8s8,3.582,8,8
+			S172.418,43.515,168,43.515z M72,27.515c4.418,0,8,3.582,8,8s-3.582,8-8,8s-8-3.582-8-8S67.582,27.515,72,27.515z M16,188.155
+			v-0.64h24v0.912c0.6,34.771,23.733,65.116,57.104,74.904c17.487,5.537,36.257,5.537,53.744,0
+			c33.387-9.775,56.541-40.121,57.152-74.904v-0.912h16v0.64c0,44.504-34.304,83.664-81.6,93.136
+			c-11.106,2.224-22.482,2.782-33.752,1.656c-3.71-0.36-7.398-0.918-11.048-1.672C50.304,271.819,16,232.659,16,188.155z
+			 M112,331.515c-7.2,0-8-11.2-8-16v-16.976c0.64,0.08,1.296,0.112,1.944,0.176c0.8,0.088,1.6,0.152,2.4,0.224
+			c3.784,0.336,7.6,0.56,11.448,0.568h0.4c3.84,0,7.648-0.232,11.408-0.568c0.8-0.072,1.648-0.136,2.472-0.224
+			c0.632-0.072,1.288-0.096,1.92-0.176v16.976c0,4.8-0.8,16-8,16H112z M424,315.515c-22.091,0-40-17.909-40-40
+			c0-22.091,17.909-40,40-40c22.091,0,40,17.909,40,40C463.974,297.596,446.08,315.489,424,315.515z" />
+                            </g>
+                        </g>
+                        <strong>
+                            <h4><i>More experience</i></h4>
+                        </strong>
+                        <p>Every year, more than a million people come to Medico Universe for care. Our highly
+                            specialized
+                            experts are deeply experienced in treating complex conditions.</p>
+                </div>
+                <div class="text-center">
+                    <svg height=7rem width=7rem version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512"
+                        style="enable-background:new 0 0 512 512;" xml:space="preserve">
+                        <g>
+                            <g>
+                                <circle cx="179.2" cy="102.4" r="102.4" />
+                            </g>
+                        </g>
+                        <g>
+                            <g>
+                                <path d="M263.68,250.88c-25.6-12.8-53.76-20.48-84.48-20.48C79.36,230.4,0,309.76,0,409.6h207.36
+			C194.56,348.16,227.84,284.16,263.68,250.88z" />
+                            </g>
+                        </g>
+                        <g>
+                            <g>
+                                <path d="M384,256c-71.68,0-128,56.32-128,128s56.32,128,128,128s128-56.32,128-128S455.68,256,384,256z M440.32,376.32l-51.2,51.2
+			c-10.24,10.24-25.6,10.24-35.84,0l-25.6-25.6c-10.24-10.24-10.24-25.6,0-35.84s25.6-10.24,35.84,0l7.68,7.68l33.28-33.28
+			c10.24-10.24,25.6-10.24,35.84,0S450.56,366.08,440.32,376.32z" />
+                            </g>
+                        </g>
+                        <strong>
+                            <h4><i>The right answers</i></h4>
+                        </strong>
+                        <p>Getting effective treatment depends on identifying the right problem. In a recent study, 88
+                            percent of patients who came to Medico Universe for a second opinion received a new or
+                            refined
+                            diagnosis.</p>
+                </div>
+                <div class="text-center">
+                    <svg height=7rem width=6rem id="Capa_1" enable-background="new 0 0 515.556 515.556" height="512"
+                        viewBox="0 0 515.556 515.556" width="512" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="m257.778 0c-142.137 0-257.778 115.641-257.778 257.778s115.641 257.778 257.778 257.778 257.778-115.641 257.778-257.778-115.642-257.778-257.778-257.778zm128.889 290h-96.667v96.667h-64.444v-96.667h-96.667v-64.444h96.667v-96.667h64.444v96.667h96.667z" />
+                    </svg>
+                    <strong>
+                        <h4><i>Seamless care</i></h4>
+                    </strong>
+                    <p>At Medico Universe, every aspect of your care is coordinated and teams of experts work together
+                        to
+                        provide exactly the care you need. What might take months elsewhere can often be done in days
+                        here.</p>
+                </div>
+                <div class="text-center">
+                    <svg height=7rem width=6rem xmlns="http://www.w3.org/2000/svg" height="511pt" version="1.1"
+                        viewBox="-33 1 511 511.999" width="511pt">
+                        <g id="surface1">
+                            <path
+                                d="M 237.816406 0 C 124.082031 0 31.394531 91.835938 30.03125 205.253906 L 5.292969 277.40625 C -1.5 297.226562 -1.054688 314.671875 6.515625 325.273438 C 11.054688 331.625 18.058594 335.265625 25.738281 335.265625 L 30.015625 335.265625 L 30.015625 360.433594 C 30.015625 390.851562 54.765625 415.597656 85.183594 415.597656 C 99.0625 415.597656 110.351562 426.890625 110.351562 440.765625 L 110.351562 456.832031 C 110.351562 487.25 135.097656 512 165.515625 512 L 277.984375 512 C 308.402344 512 333.152344 487.25 333.152344 456.832031 L 333.152344 392.449219 C 365.011719 375.984375 392.074219 351.578125 411.820312 321.40625 C 433.929688 287.621094 445.621094 248.339844 445.621094 207.796875 C 445.617188 93.21875 352.398438 0 237.816406 0 Z M 360.753906 193.289062 L 310.167969 242.601562 L 321.96875 311.414062 C 322.214844 312.488281 322.347656 313.613281 322.347656 314.765625 C 322.347656 323.035156 315.652344 329.742188 307.382812 329.765625 C 307.363281 329.765625 307.34375 329.765625 307.324219 329.765625 C 304.9375 329.765625 302.539062 329.195312 300.347656 328.039062 L 237.816406 295.167969 L 175.289062 328.039062 C 170.234375 330.695312 164.109375 330.257812 159.492188 326.898438 C 154.875 323.542969 152.558594 317.855469 153.523438 312.226562 L 165.464844 242.601562 L 114.882812 193.289062 C 110.792969 189.304688 109.320312 183.34375 111.085938 177.910156 C 112.851562 172.480469 117.542969 168.523438 123.195312 167.703125 L 193.101562 157.546875 L 224.367188 94.199219 C 226.890625 89.078125 232.105469 85.835938 237.816406 85.835938 C 243.527344 85.835938 248.742188 89.078125 251.269531 94.199219 L 282.535156 157.546875 L 352.441406 167.703125 C 358.089844 168.523438 362.785156 172.480469 364.550781 177.910156 C 366.3125 183.34375 364.84375 189.304688 360.753906 193.289062 Z M 360.753906 193.289062 "
+                                style=" stroke:none;fill-rule:nonzero;fill:rgb(0%,0%,0%);fill-opacity:1;" />
+                        </g>
+                    </svg>
+                    <strong>
+                        <h4><i>Unparalleled expertise</i></h4>
+                    </strong>
+                    <p>Medico Universe experts are some of the best in the world. In the U.S. News & World Report
+                        rankings
+                        of top hospitals, Medico Universe is consistently ranked among the top hospitals in the nation.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="mt-4">
+        <div style="height: 20px;"></div>
+        <div class="row">
+            <div class="col-lg-3 col-md-3 col-sm-12 ml-5">
+                <h4>Contact Us</h4>
+                <p>BHIVE Workspace, L-148, 5th Main Rd,
+                    <br> Sector 6, HSR Layout,<br> Bengaluru, Karnataka 560102</p>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-12 ml-5">
+                <h5>For patients</h5>
+                <ul>
+                    <li><a href="#">Search for Doctors</a></li>
+                    <li><a href="#">Search for Hospitals</a></li>
+                    <li><a href="#">Order Medicine</a></li>
+                </ul>
+            </div>
+        </div>
+        <div style="height: 20px;"></div>
+    </footer>
+    <a href="#" class="float ca" id="menu-share">
+        <i class="fa fa-share my-float"></i>
+    </a>
+    <ul class="cul">
+        <li class="cli"><a class="ca" href="/hospitalsearch">
+                <i class="fas fa-clinic-medical my-float "></i>
+            </a></li>
+        <li class="cli"><a class="ca" href="/bookingDoctors">
+                <i class="fas fa-user-md my-float"></i>
+                <i class="fas fa-user-nurse my-float"></i>
+            </a></li>
+        <li class="cli"><a class="ca" href="/pharmacy">
+                <i class="fas fa-prescription-bottle-alt my-float "></i>
+            </a></li>
+        <li class="cli"><a class="ca" href="/ambulance_booking">
+                <i class="fas fa-ambulance my-float "></i>
+            </a></li>
+    </ul>
+    {{!-- default --}}
+    <script src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    {{!-- MDB --}}
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.12.0/js/mdb.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.15.1/jquery.valid"></script>
+    <script src="../js/hospital.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,141 @@
+#map_canvas {
+	height: 600px;
+}
+html {
+	height: 100%;
+}
+
+#error-msg {
+	color: red;
+}
+/* #start-btn {
+	border-radius: 0;
+	border: none;
+	color: white;
+	margin: 20px 0;
+	background-color: blue;
+	height: 30px;
+	width: 70px;
+} */
+#ambulance_details {
+	display: none;
+}
+body {
+	margin: 0;
+	padding: 0;
+	background-color: honeydew;
+}
+hr {
+	margin: 0;
+}
+
+footer {
+	background-color: rgb(40, 50, 140);
+	color: honeydew;
+	font-family: raleway;
+}
+
+footer ul {
+	list-style: none;
+	margin: 0;
+}
+
+footer a {
+	color: honeydew;
+}
+
+footer a:hover {
+	color: honeydew;
+}
+
+.row {
+	max-width: 100%;
+	margin-right: 0;
+	margin-left: 0;
+}
+
+.navbar {
+	background-color: white;
+	height: 66px;
+}
+
+.navbar-brand {
+	color: rgb(208, 17, 21) !important;
+	margin-left: 10%;
+	font-weight: bolder;
+}
+
+.navbar-brand span {
+	color: rgb(0, 113, 197);
+}
+
+.navbar-brand:hover span,
+.navbar-brand:hover {
+	color: grey !important;
+}
+
+.nav-link {
+	font-weight: 700;
+}
+
+.nav-link:hover {
+	color: grey;
+	font-weight: 700;
+}
+
+.login-signup {
+	border: 1px solid grey;
+	border-radius: 6px;
+	font-size: small;
+	margin-right: 10%;
+	color: rgba(0, 0, 0, 0.5);
+}
+
+.navbar-collapse {
+	z-index: 1;
+}
+
+@media (max-width: 575px) {
+	.nav-link {
+		border-bottom: 1px solid grey;
+		margin-bottom: 6px;
+		margin-left: 30px;
+	}
+
+	.nav-resp {
+		background-color: white;
+	}
+
+	.login-signup {
+		color: rgba(0, 0, 0, 0.5);
+		font-weight: 700;
+		border: none;
+		font-size: medium;
+		padding: 8px 0;
+		margin-bottom: 6px;
+	}
+
+	.login-signup:hover {
+		color: grey;
+		font-weight: 700;
+	}
+
+	.carousel-c {
+		display: none;
+	}
+}
+
+.navbar-loggedin {
+	float: right;
+	color: cornflowerblue;
+	font-weight: 700;
+	margin-left: auto;
+	margin-right: 6%;
+}
+
+.navbar-loggedin a:hover {
+	text-decoration: none;
+	color: grey;
+}
+/* ///// */
+
