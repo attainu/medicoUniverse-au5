@@ -34,6 +34,7 @@ router.get('/products', pharmacyController.products);
 router.get('/addProducts', pharmacyController.addProducts);
 router.get('/addToCart/:id', pharmacyController.addToCart);
 router.post('/addProducts', pharmacyController.postAddProducts);
+router.get('/reduce/:id',pharmacyController.reduce)
 router.post('/user/signup', pharmacyController.userSignuppost);
 router.post('/user/signin', pharmacyController.userSigninpost);
 router.get('/shoppingCart', pharmacyController.shoppingCartget);

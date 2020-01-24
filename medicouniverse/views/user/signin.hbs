@@ -18,18 +18,13 @@
         crossorigin="anonymous"></script>
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="../public/css/login_style.css">
 </head>
 
 <body style="background-color:honeydew">
     <nav class="navbar navbar-expand-sm navbar-light">
         <a class="navbar-brand" href="/">Medico<span>Universe</span></a>
-        {{#if user}}
-        <div class="navbar-loggedin">
-
-            <a href="/dashboard" class="ml-2">{{user.name}}</a>
-        </div>
-        {{else}}
         <button class="navbar-toggler float-right p-1" type="button" data-toggle="collapse"
             data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
             aria-label="Toggle navigation">
@@ -38,25 +33,39 @@
         <div class="collapse navbar-collapse nav-resp" id="navbarSupportedContent">
             <ul class="navbar-nav mx-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="/about">About Us</a>
+                    <a class="nav-link" href="/medicoUniverse/about">About Us</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/mission">Mission</a>
+                    <a class="nav-link" href="/medicoUniverse/mission">Mission</a>
                 </li>
             </ul>
-            <a class="nav-link login-signup " href="/user/signin">Hello {{session.user.email}}</a>
+            {{#if session.user}}
+            <div class="dropdown">
+                <a class="nav-link font-weight-bold login-signup w-100" id="dropdownMenu1-1" data-toggle="dropdown" href="">
+                    Hello {{session.user.email}}
+                </a>
+                <div class="dropdown-menu dropdown-primary" id="your-custom-id">
+                    <a class="dropdown-item mdb-dropdownLink-1  " href="/profile">Profile</a>
+                    <a class="dropdown-item mdb-dropdownLink-1 " href="/logout">Logout</a>
+                </div>
+            </div>
+            {{else}}
+            <div>
+                <a class="nav-link login-signup w-100" href="/user/signin">Hello Guest</a>
+            </div>
+            {{/if}}
         </div>
-        {{/if}}
     </nav>
+    <hr>
     <div class="row">
-{{#if invalidUser}}
-        <div id="alert" class="alert alert-danger alert-dismissible fade show" role="alert">
-        <strong>Invalid Username or Password !!!</strong>
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-        </button>
-        </div>
-        {{/if}}
+        {{#if invalidUser}}
+            <div id="alert" class="alert alert-danger alert-dismissible fade show" role="alert">
+            <strong>Invalid Username or Password !!!</strong>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            </div>
+            {{/if}}
     </div>
         
     <div class="container">
@@ -92,7 +101,6 @@
                         {{#if invalidPsd}}
                         <div class="alert alert-danger">
                            <strong>Invalid Username or Password !!!</strong> <br>
-                                   Please re-enter and try again.
                             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
@@ -102,8 +110,7 @@
                     <button type="submit" class="btn btn-outline-info mb-3"
                         style="border-bottom-right-radius: 20px; border-top-left-radius: 20px;"><strong>login</strong></button>
                     <div><span class="mt-2">Not registered ? <a href="/user/signup"><strong>Click here</strong></a> to
-                            sign
-                            up.</span> </div>
+                            signup.</span> </div>
                 </form>
                 
 
@@ -125,6 +132,31 @@
                     <li><a href="#">Search for Hospitals</a></li>
                     <li><a href="#">Order Medicine</a></li>
                 </ul>
+            </div>
+            <div class="col-lg-4 col-md-3 col-sm-12 ml-5 mt-2 ">
+                <style>
+                    .fa {
+                        text-align: center;
+                    }
+
+                    .fa:hover {
+                        opacity: 0.7;
+                        text-decoration: none;
+                    }
+                    .size{
+                        font-size: 30px;
+                        margin: 0 8px;
+                        
+                    }
+                </style>
+                <div class="mt-4">
+                    <a href="#" class="fa fa-facebook size"></a>
+                    <a href="#" class="fa fa-twitter size"></a>
+                    <a href="#" class="fa fa-linkedin size"></a>
+                    <a href="#" class="fa fa-instagram size"></a>
+                    <a href="#" class="fa fa-youtube size"></a>
+                </div>
+                
             </div>
         </div>
         <div style="height: 20px;"></div>

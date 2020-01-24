@@ -16,6 +16,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
     <!-- Material Design Bootstrap -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.10.1/css/mdb.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="./css/products.css">
     <link rel="stylesheet" type="text/css" href="./css/plus.css">
     <link rel="stylesheet" type="text/scss" href="./css/animation.css">
@@ -24,35 +25,40 @@
 
 <body>
     <div class="container-flex">
-
-
-        <nav class="navbar navbar-expand-sm navbar-light">
-            <a class="navbar-brand" href="/medicoUniverse">Medico<span>Universe</span></a>
-
-            {{#if userDb}}
-            <div class="navbar-loggedin">
-
-                <a href="/dashboard" class="ml-2">{{user.name}}</a>
+<nav class="navbar navbar-expand-sm navbar-light">
+        <a class="navbar-brand" href="/">Medico<span>Universe</span></a>
+        <button class="navbar-toggler float-right p-1" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse nav-resp" id="navbarSupportedContent">
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/medicoUniverse/about">About Us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/medicoUniverse/mission">Mission</a>
+                </li>
+            </ul>
+            {{#if session.user}}
+            <div class="dropdown">
+                <a class="nav-link font-weight-bold login-signup w-100" id="dropdownMenu1-1" data-toggle="dropdown" href="">
+                    Hello {{session.user.email}}
+                </a>
+                <div class="dropdown-menu dropdown-primary" id="your-custom-id">
+                    <a class="dropdown-item mdb-dropdownLink-1  " href="/profile">Profile</a>
+                    <a class="dropdown-item mdb-dropdownLink-1 " href="/logout">Logout</a>
+                </div>
             </div>
             {{else}}
-            <button class="navbar-toggler float-right p-1" type="button" data-toggle="collapse"
-                data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse nav-resp" id="navbarSupportedContent">
-                <ul class="navbar-nav mx-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="/medicoUniverse/about">About Us</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/medicoUniverse/mission">Mission</a>
-                    </li>
-                </ul>
-                {{!-- <a class="nav-link login-signup " href="/user/signin">Login/SignUp</a> --}}
+            <div>
+                <a class="nav-link login-signup w-100" href="/user/signin">Hello Guest</a>
             </div>
             {{/if}}
-        </nav>
+        </div>
+    </nav>
+    <hr>
 
         <div class="container mt-2 ">
             <div class="row">
@@ -233,12 +239,12 @@
                                             <div class="u-p-t--10 u-position--relative ">
                                                 <div
                                                     class="heading-epsilon m-product-details text-charcoal-grey-two u-p-l--10 u-p-r--10">
-                                                    <div class="m-product__title text-center ">HORLICKS OATS REFILL 1KG
+                                                    <div class="m-product__title text-center ">Intex Kids Baby Bath tub
                                                     </div>
                                                     <div class="u-p-t--10 ">
                                                         <div
                                                             class="u-display--inline-block heading-gamma-bold text-charcoal-grey-two text-center">
-                                                            <span><strong class="text-dark ml-2">₹ 199.00</strong>
+                                                            <span><strong class="text-dark ml-2">₹ 599.00</strong>
                                                             </span>
                                                         </div>
                                                         <span
@@ -266,16 +272,17 @@
                                             </div>
                                             <div class="u-p-t--10 u-position--relative">
                                                 <div class="heading-epsilon m-product-details u-p-l--10 u-p-r--10">
-                                                    <div class="m-product__title text-center">COMBIFLAME 500MG TABLET
+                                                    <div class="m-product__title text-center">Johnson Baby Oil
                                                     </div>
                                                     <div class="u-p-t--10 ">
                                                         <div
                                                             class="u-display--inline-block heading-gamma-bold text-center ">
                                                             <span
-                                                                class="text-dark ml-2 "><strong>₹20.00</strong></span><span
+                                                                class="text-dark ml-2 "><strong>₹310.00</strong></span><span
                                                                 class="ml-2"><strong><strike class="text-dark"
-                                                                        style="font-size: smaller;">₹28.00</strike></strong></span><span
-                                                                class="text-success ml-3" style="font-size: small;">28%
+                                                                        style="font-size: smaller;">₹350.00</strike></strong></span><span
+                                                                class="text-success ml-3"
+                                                                style="font-size: small;">11.4%
                                                                 off</span>
                                                         </div><span
                                                             class="text-true-green u-p-l--5 heading-zeta u-text--bold"></span>
@@ -302,16 +309,18 @@
                                             <div class="u-p-t--10 u-position--relative">
                                                 <div
                                                     class="heading-epsilon m-product-details tHORLICKS OATS REFILL 1KGext-charcoal-grey-two u-p-l--10 u-p-r--10">
-                                                    <div class="m-product__title text-center">D-Protin Powder Chocolate
-                                                        500 g</div>
+                                                    <div class="m-product__title text-center">Baby Bath Tub upto 3 years
+                                                        old
+                                                    </div>
                                                     <div class="u-p-t--10 ">
                                                         <div
                                                             class="u-display--inline-block heading-gamma-bold text-center ">
                                                             <span
-                                                                class="text-dark ml-2 "><strong>₹462.00</strong></span><span
+                                                                class="text-dark ml-2 "><strong>₹999</strong></span><span
                                                                 class="ml-2"><strong><strike class="text-dark"
-                                                                        style="font-size: smaller;">₹578.00</strike></strong></span><span
-                                                                class="text-success ml-3" style="font-size: small;">28%
+                                                                        style="font-size: smaller;">₹721.28</strike></strong></span><span
+                                                                class="text-success ml-3"
+                                                                style="font-size: small;">27.8%
                                                                 off</span>
                                                         </div><span
                                                             class="text-true-green u-p-l--5 heading-zeta u-text--bold"></span>
@@ -337,8 +346,7 @@
                             <div class="col-md-4">
                                 <div class="card mb-2">
                                     <div class="m-product-wrapper ">
-                                        <a class="u-a--disable-style"
-                                            href="/health-products/horlicks-oats-refill-1-kg-13677/p" target="_blank">
+                                        <a class="u-a--disable-style" href="/products" target="_blank">
                                             <div class="m-product__image-wrapper u-p-b--5 u-p-t--5 u-text--center"><img
                                                     class="u-img-fit--height u-b-center ml-5"
                                                     alt="GLAXOSMITHKLINE CONSUMER HEALTHCARE LTD HORLICKS OATS REFILL 1KG 1KG HEALTH FOODS"
@@ -348,16 +356,17 @@
                                             <div class=" u-p-t--10 u-position--relative">
                                                 <div
                                                     class="heading-epsilon m-product-details text-charcoal-grey-two u-p-l--10 u-p-r--10">
-                                                    <div class="m-product__title text-center">Melatonin sleeping pils
+                                                    <div class="m-product__title text-center">Dove Baby care
                                                     </div>
                                                     <div class="u-p-t--10 ">
                                                         <div
                                                             class="u-display--inline-block heading-gamma-bold text-center ">
                                                             <span
-                                                                class="text-dark ml-2 "><strong>₹462.00</strong></span><span
+                                                                class="text-dark ml-2 "><strong>₹310.00</strong></span><span
                                                                 class="ml-2"><strong><strike class="text-dark"
-                                                                        style="font-size: smaller;">₹578.00</strike></strong></span><span
-                                                                class="text-success ml-3" style="font-size: small;">28%
+                                                                        style="font-size: smaller;">₹309.00</strike></strong></span><span
+                                                                class="text-success ml-3"
+                                                                style="font-size: small;">0.32%
                                                                 off</span>
                                                         </div><span
                                                             class="text-true-green u-p-l--5 heading-zeta u-text--bold"></span>
@@ -373,8 +382,7 @@
                             <div class="col-md-4">
                                 <div class="card mb-2">
                                     <div class="m-product-wrapper ">
-                                        <a class="u-a--disable-style"
-                                            href="/health-products/horlicks-oats-refill-1-kg-13677/p" target="_blank">
+                                        <a class="u-a--disable-style" href="/products" target="_blank">
                                             <div class="m-product__image-wrapper u-p-b--5 u-p-t--5 u-text--center"><img
                                                     class="u-img-fit--height u-b-center ml-5"
                                                     alt="GLAXOSMITHKLINE CONSUMER HEALTHCARE LTD HORLICKS OATS REFILL 1KG 1KG HEALTH FOODS"
@@ -384,15 +392,15 @@
                                             <div class="u-p-t--10 u-position--relative">
                                                 <div
                                                     class="heading-epsilon m-product-details text-charcoal-grey-two u-p-l--10 u-p-r--10">
-                                                    <div class="m-product__title text-center">PARACITAMOL TABLET 500MG
+                                                    <div class="m-product__title text-center">Bath Care Kit
                                                     </div>
                                                     <div class="u-p-t--10 ">
                                                         <div
                                                             class="u-display--inline-block heading-gamma-bold text-center ">
                                                             <span
-                                                                class="text-dark ml-2 "><strong>₹80.00</strong></span><span
+                                                                class="text-dark ml-2 "><strong>₹719.00</strong></span><span
                                                                 class="ml-2"><strong><strike class="text-dark"
-                                                                        style="font-size: smaller;">₹100.00</strike></strong></span><span
+                                                                        style="font-size: smaller;">₹575.00</strike></strong></span><span
                                                                 class="text-success ml-3" style="font-size: small;">20%
                                                                 off</span>
                                                         </div><span
@@ -410,8 +418,7 @@
                             <div class="col-md-4">
                                 <div class="card mb-2">
                                     <div class="m-product-wrapper ">
-                                        <a class="u-a--disable-style"
-                                            href="/health-products/horlicks-oats-refill-1-kg-13677/p" target="_blank">
+                                        <a class="u-a--disable-style" href="/products" target="_blank">
                                             <div class="m-product__image-wrapper u-p-b--5 u-p-t--5 u-text--center"><img
                                                     class="u-img-fit--height u-b-center ml-5"
                                                     alt="GLAXOSMITHKLINE CONSUMER HEALTHCARE LTD HORLICKS OATS REFILL 1KG 1KG HEALTH FOODS"
@@ -421,16 +428,16 @@
                                             <div class="u-p-t--10 u-position--relative">
                                                 <div
                                                     class="heading-epsilon m-product-details text-charcoal-grey-two u-p-l--10 u-p-r--10">
-                                                    <div class="m-product__title text-center">PARSLEY ANTI AGING CERAM
+                                                    <div class="m-product__title text-center">Johnsan and Johnsan Kit
                                                     </div>
                                                     <div class="u-p-t--10 ">
                                                         <div
                                                             class="u-display--inline-block heading-gamma-bold text-center ">
                                                             <span
-                                                                class="text-dark ml-2 "><strong>₹499.00</strong></span><span
+                                                                class="text-dark ml-2 "><strong>₹550.00</strong></span><span
                                                                 class="ml-2"><strong><strike class="text-dark"
-                                                                        style="font-size: smaller;">₹549.00</strike></strong></span><span
-                                                                class="text-success ml-3" style="font-size: small;">10%
+                                                                        style="font-size: smaller;">₹510.00</strike></strong></span><span
+                                                                class="text-success ml-3" style="font-size: small;">7.2%
                                                                 off</span>
                                                         </div><span
                                                             class="text-true-green u-p-l--5 heading-zeta u-text--bold"></span>
@@ -492,25 +499,51 @@
 
         <hr size="30">
 
-        <footer class="mt-4">
-            <div style="height: 20px;"></div>
-            <div class="row">
-                <div class="col-lg-3 col-md-3 col-sm-12 ml-5">
-                    <h4>Contact Us</h4>
-                    <p>BHIVE Workspace, L-148, 5th Main Rd,
-                        <br> Sector 6, HSR Layout,<br> Bengaluru, Karnataka 560102</p>
-                </div>
-                <div class="col-lg-3 col-md-3 col-sm-12 ml-5">
-                    <h5>For patients</h5>
-                    <ul>
-                        <li><a href="#">Search for Doctors</a></li>
-                        <li><a href="#">Search for Hospitals</a></li>
-                        <li><a href="#">Order Medicine</a></li>
-                    </ul>
-                </div>
+        <footer>
+        <div style="height: 20px;"></div>
+        <div class="row">
+            <div class="col-lg-3 col-md-3 col-sm-12 ml-5">
+                <h4>Contact Us</h4>
+                <p>BHIVE Workspace, L-148, 5th Main Rd,
+                    <br> Sector 6, HSR Layout,<br> Bengaluru, Karnataka 560102</p>
             </div>
-            <div style="height: 20px;"></div>
-        </footer>
+            <div class="col-lg-3 col-md-3 col-sm-12 ml-5">
+                <h5>For patients</h5>
+                <ul>
+                    <li><a href="#">Search for Doctors</a></li>
+                    <li><a href="#">Search for Hospitals</a></li>
+                    <li><a href="#">Order Medicine</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-4 col-md-3 col-sm-12 ml-5 mt-2 ">
+                <style>
+                    .fa {
+                        text-align: center;
+                    }
+
+                    .fa:hover {
+                        opacity: 0.7;
+                        text-decoration: none;
+                    }
+                    .size{
+                        font-size: 30px;
+                        margin: 0 8px;
+                        
+                    }
+                </style>
+                <div class="mt-4">
+                    <a href="#" class="fa fa-facebook size"></a>
+                    <a href="#" class="fa fa-twitter size"></a>
+                    <a href="#" class="fa fa-linkedin size"></a>
+                    <a href="#" class="fa fa-instagram size"></a>
+                    <a href="#" class="fa fa-youtube size"></a>
+                </div>
+                
+            </div>
+        </div>
+        <div style="height: 20px;"></div>
+
+    </footer>
     </div>
     <a href="#" class="float ca" id="menu-share">
         <i class="fa fa-share my-float"></i>
@@ -532,7 +565,7 @@
     </ul>
 
     {{!-- ---- --}}
-    
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"

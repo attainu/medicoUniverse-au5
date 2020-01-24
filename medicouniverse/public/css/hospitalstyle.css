@@ -132,3 +132,15 @@ footer a:hover {
 	text-decoration: none;
 	color: grey;
 }
+body {
+	padding: 25px;
+	background-color: white;
+	
+	font-size: 25px;
+}
+
+
+.dark-mode {
+	background-color: black;
+	color: white;
+}

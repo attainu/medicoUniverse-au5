@@ -10,38 +10,47 @@
     integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" type="text/css" href="./css/booking.doctors.css">
   <link rel="stylesheet" type="text/css" href="./css/plus.css">
+  
 </head>
 
 <body>
   <nav class="navbar navbar-expand-sm navbar-light">
-    <a class="navbar-brand" href="/">Medico<span>Universe</span></a>
-
-    {{#if user}}
-    <div class="navbar-loggedin">
-      <img src="{{user.image}}" onerror="this.src = './image/default_profile_pic.png'" width="32px" height="32px">
-      <a href="/dashboard" class="ml-2">{{session.user.email}}</a>
-    </div>
-    {{else}}
-    <button class="navbar-toggler float-right p-1" type="button" data-toggle="collapse"
-      data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-      aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse nav-resp" id="navbarSupportedContent">
-      <ul class="navbar-nav mx-auto">
-        <li class="nav-item">
-          <a class="nav-link" href="/medicoUniverse/about">About Us</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/medicoUniverse/mission">Mission</a>
-        </li>
-      </ul>
-      <a class="nav-link login-signup " href="/user/signin">Hello {{session.user.email}}!</a>
-    </div>
-    {{/if}}
-  </nav>
+        <a class="navbar-brand" href="/">Medico<span>Universe</span></a>
+        <button class="navbar-toggler float-right p-1" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse nav-resp" id="navbarSupportedContent">
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/medicoUniverse/about">About Us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/medicoUniverse/mission">Mission</a>
+                </li>
+            </ul>
+            {{#if session.user}}
+            <div class="dropdown">
+                <a class="nav-link font-weight-bold login-signup w-100" id="dropdownMenu1-1" data-toggle="dropdown" href="">
+                    Hello {{session.user.email}}
+                </a>
+                <div class="dropdown-menu dropdown-primary" id="your-custom-id">
+                    <a class="dropdown-item mdb-dropdownLink-1  " href="/profile">Profile</a>
+                    <a class="dropdown-item mdb-dropdownLink-1 " href="/logout">Logout</a>
+                </div>
+            </div>
+            {{else}}
+            <div>
+                <a class="nav-link login-signup w-100" href="/user/signin">Hello Guest</a>
+            </div>
+            {{/if}}
+        </div>
+    </nav>
+    <hr>
   <div class="jumbotron">
     <h1 id="pName"><strong>Medico<span>Universe</span><sup>+</sup></strong></h1>
     <h3 id="info"><strong>Book Your Appointments here</strong></h3>
@@ -74,7 +83,7 @@
   </div>
 
   <h4><strong>Here are some results matching your requirements</strong></h4>
-  <div class="content">
+  <div class="content" style="min-height: 340px;">
     {{#each doctors}}
     <section>
       <div id="resultDisplay">
@@ -120,7 +129,7 @@
         <div class="modal-dialog modal-dialog-centered" role="document">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="modalLongTitle"><strong>Confirm Booking !!!</strong></h5>
+              <h5 class="modal-title" id="modalLongTitle"><strong>Confirm Booking</strong></h5>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
@@ -138,16 +147,18 @@
                 </div>
                 <div class="form-group">
                   <label>Select your preferred time for visit</label>
-                  <select multiple class="form-control" name="preferredTime" id="exampleFormControlSelect2" required>
-                    <option>Now</option>
-                    <option>Before 9 am</option>
-                    <option>9 AM - 11 AM</option>
-                    <option>11 AM - 1 PM</option>
-                    <option>1 PM -3 PM</option>
-                    <option>3 PM - 5 PM</option>
-                    <option>5 PM - 7 PM</option>
-                    <option>After 7</option>
-                  </select>
+                    <select class="form-control" id="select">
+                      <option  value="Now">Now</option>
+                      <option  value="Before 8 AM">Before 8 AM</option>
+                      <option  value="8-10 AM">8-10 AM</option>
+                      <option  value="10-12 PM">10-12 PM</option>
+                      <option  value="12-2 PM">12-2 PM</option>
+                      <option  value="2-4 PM">2-4 PM</option>
+                      <option  value="4-6 PM">4-6 PM</option>
+                      <option  value="6-8 PM">6-8 PM</option>
+                      <option  value="After 8 PM">After 8 PM</option>
+                   </select>
+                   </button>
                 </div>
                 <div class="form-group">
                   <label>Address</label>
@@ -158,7 +169,6 @@
                   <button id="submitDetails" type="submit" onclick="displayDt()"
                     class="btn btn-outline-success">Save</button>
                 </div>
-
             </div>
             </form>
             <div class="modal-footer">
@@ -191,22 +201,50 @@
     </section>
   </div>
   <footer>
-    <div class="h-25"></div>
-    <div class="row">
-      <div class="col-3 ml-5">
-        <h4>Contact Us</h4>
-        <p>BHIVE Workspace, L-148, 5th Main Rd,<br> Sector 6, HSR Layout,<br> Bengaluru, Karnataka 560102</p>
-      </div>
-      <div class="col-3">
-        <h5>For patients</h5>
-        <ul>
-          <li><a href="#">Search for Doctors</a></li>
-          <li><a href="#">Search for Hospitals</a></li>
-          <li><a href="#">Order Medicine</a></li>
-        </ul>
-      </div>
-    </div>
-  </footer>
+        <div style="height: 20px;"></div>
+        <div class="row">
+            <div class="col-lg-3 col-md-3 col-sm-12 ml-5">
+                <h4>Contact Us</h4>
+                <p>BHIVE Workspace, L-148, 5th Main Rd,
+                    <br> Sector 6, HSR Layout,<br> Bengaluru, Karnataka 560102</p>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-12 ml-5">
+                <h5>For patients</h5>
+                <ul>
+                    <li><a href="#">Search for Doctors</a></li>
+                    <li><a href="#">Search for Hospitals</a></li>
+                    <li><a href="#">Order Medicine</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-4 col-md-3 col-sm-12 ml-5 mt-2 ">
+                <style>
+                    .fa {
+                        text-align: center;
+                    }
+
+                    .fa:hover {
+                        opacity: 0.7;
+                        text-decoration: none;
+                    }
+                    .size{
+                        font-size: 30px;
+                        margin: 0 8px;
+                        
+                    }
+                </style>
+                <div class="mt-4">
+                    <a href="#" class="fa fa-facebook size"></a>
+                    <a href="#" class="fa fa-twitter size"></a>
+                    <a href="#" class="fa fa-linkedin size"></a>
+                    <a href="#" class="fa fa-instagram size"></a>
+                    <a href="#" class="fa fa-youtube size"></a>
+                </div>
+                
+            </div>
+        </div>
+        <div style="height: 20px;"></div>
+
+    </footer>
   <a href="#" class="float ca" id="menu-share">
     <i class="fa fa-share my-float"></i>
   </a>
