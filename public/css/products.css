@@ -535,3 +535,10 @@ html {
 .double-nav .breadcrumb-dn {
 	color: #fff;
 }
+#toper{
+	
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	
+}

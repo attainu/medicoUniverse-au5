@@ -43,21 +43,22 @@
                         <a class="nav-link" href="/mission">Mission</a>
                     </li>
                 </ul>
-                 {{#if session.user}}
-            <div class="dropdown">
-                <a class="nav-link font-weight-bold login-signup" id="dropdownMenu1-1" data-toggle="dropdown" href="">
-                    Hello {{session.user.email}}
-                </a>
-                <div class="dropdown-menu dropdown-primary" id="your-custom-id">
-                    <a class="dropdown-item mdb-dropdownLink-1  " href="/profile">Profile</a>
-                    <a class="dropdown-item mdb-dropdownLink-1 " href="/logout">Logout</a>
+                {{#if session.user}}
+                <div class="dropdown">
+                    <a class="nav-link font-weight-bold login-signup" id="dropdownMenu1-1" data-toggle="dropdown"
+                        href="">
+                        Hello {{session.user.email}}
+                    </a>
+                    <div class="dropdown-menu dropdown-primary" id="your-custom-id">
+                        <a class="dropdown-item mdb-dropdownLink-1  " href="/profile">Profile</a>
+                        <a class="dropdown-item mdb-dropdownLink-1 " href="/logout">Logout</a>
+                    </div>
                 </div>
-            </div>
-            {{else}}
-            <div>
-                <a class="nav-link login-signup " href="/user/signin">Hello Guest</a>
-            </div>
-            {{/if}}
+                {{else}}
+                <div>
+                    <a class="nav-link login-signup " href="/user/signin">Hello Guest</a>
+                </div>
+                {{/if}}
 
                 <span>
                     <ul class="navbar-nav mx-auto">
@@ -109,7 +110,7 @@
                                                     <!--address-->
                                                     <label for="address" class=" ">Shipping Address</label>
                                                     <input type="text" id="address" name="address"
-                                                        class="form-control mb-4" placeholder="1234 Main St">
+                                                        class="form-control mb-4" placeholder="1234 Main St" required>
                                                     <!--address-2-->
                                                 </div>
 
@@ -118,27 +119,28 @@
 
 
                                             <label for="email" class="">Email (optional)</label>
-                                            <input type="text" id="email" name="email" class="form-control mb-4"
-                                                placeholder="email@gmail.com">
+                                            <input type="email" id="email" name="email" class="form-control mb-4"
+                                                placeholder="email@gmail.com" required>
                                             <!--firstName-->
                                             <label for="firstName" class="">Name</label>
-                                            <input type="text" id="firstName" name="cardName" class="form-control">
-                                            <label for="address-2" class="">Address 2 (optional)</label>
-                                            <input type="text" id="address-2" class="form-control mb-4"
-                                                placeholder="Apartment or suite">
-                                            <input type="text" id="address-2" name="cardNumber"
-                                                class="form-control mb-4" placeholder="Card Number">
+                                            <input type="text" id="firstName" name="cardName" class="form-control"
+                                                required>
+                                            <label for="address-2" class="">Contact Number</label>
+                                            <input type="number" maxlength="10" minlength="10" id="address-2"
+                                                class="form-control mb-4" placeholder="Contact No" required>
+                                            <input type="tel" maxlength="12" minlength="12" id="address-2"
+                                                name="cardNumber" class="form-control mb-4" placeholder="Card Number"
+                                                required>
                                             <!--Grid row-->
 
                                             <!--Grid row-->
                                             <hr>
 
                                             <div class="text-center">
-                                                <a href="" class="btn btn-default btn-rounded mb-4" data-toggle="modal"
-                                                    data-target="#modalContactForm">
-                                                    Click for Card Details</a>
+                                                <button href="" class="btn btn-default btn-rounded mb-4" type="submit">
+                                                    Place Your Order</button>
                                             </div>
-                                            <button type="submit">save</button>
+                                            {{!-- <button type="submit">save</button> --}}
                                             {{!-- <button class="btn btn-primary btn-lg btn-block" type="submit">Enter For
                                                 Card Details
                                             </button> --}}
@@ -152,7 +154,7 @@
                             <!--Grid column-->
                             <!--Grid column-->
                             <div class="col-lg-4 mb-4">
-                                <button class="btn btn-primary btn-lg btn-block" type="submit">Place order</button>
+                                <button class="btn btn-info  btn-block" type="submit">Place order</button>
                                 <!--Card-->
                                 <div class="card z-depth-0 border border-light rounded-0">
                                     <!--Card content-->
@@ -164,7 +166,7 @@
                                                 Total Items :
                                             </dd>
                                             <dd class="col-sm-4">
-                                                ₹{{session.cart.totalQty}}
+                                                {{session.cart.totalQty}}
                                             </dd>
                                         </dl>
                                         <hr>
@@ -174,7 +176,7 @@
                                                 Total Amount
                                             </dt>
                                             <dt class="col-sm-4">
-                                                {{total}}
+                                                ₹ {{total}}
                                             </dt>
                                         </dl>
                                     </div>
@@ -192,97 +194,55 @@
 
 
 
-        <footer>
-        <div style="height: 20px;"></div>
-        <div class="row">
-            <div class="col-lg-3 col-md-3 col-sm-12 ml-5">
-                <h4>Contact Us</h4>
-                <p>BHIVE Workspace, L-148, 5th Main Rd,
-                    <br> Sector 6, HSR Layout,<br> Bengaluru, Karnataka 560102</p>
-            </div>
-            <div class="col-lg-3 col-md-3 col-sm-12 ml-5">
-                <h5>For patients</h5>
-                <ul>
-                    <li><a href="#">Search for Doctors</a></li>
-                    <li><a href="#">Search for Hospitals</a></li>
-                    <li><a href="#">Order Medicine</a></li>
-                </ul>
-            </div>
-            <div class="col-lg-4 col-md-3 col-sm-12 ml-5 mt-2 ">
-                <style>
-                    .fa {
-                        text-align: center;
-                    }
-
-                    .fa:hover {
-                        opacity: 0.7;
-                        text-decoration: none;
-                    }
-                    .size{
-                        font-size: 30px;
-                        margin: 0 8px;
-                        
-                    }
-                </style>
-                <div class="mt-4">
-                    <a href="#" class="fa fa-facebook size"></a>
-                    <a href="#" class="fa fa-twitter size"></a>
-                    <a href="#" class="fa fa-linkedin size"></a>
-                    <a href="#" class="fa fa-instagram size"></a>
-                    <a href="#" class="fa fa-youtube size"></a>
+        <footer id="toper">
+            <div style="height: 20px;"></div>
+            <div class="row">
+                <div class="col-lg-3 col-md-3 col-sm-12 ml-5">
+                    <h4>Contact Us</h4>
+                    <p>BHIVE Workspace, L-148, 5th Main Rd,
+                        <br> Sector 6, HSR Layout,<br> Bengaluru, Karnataka 560102</p>
                 </div>
-                
-            </div>
-        </div>
-        <div style="height: 20px;"></div>
+                <div class="col-lg-3 col-md-3 col-sm-12 ml-5">
+                    <h5>For patients</h5>
+                    <ul>
+                        <li><a href="#">Search for Doctors</a></li>
+                        <li><a href="#">Search for Hospitals</a></li>
+                        <li><a href="#">Order Medicine</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-md-3 col-sm-12 ml-5 mt-2 ">
+                    <style>
+                        .fa {
+                            text-align: center;
+                        }
 
-    </footer>
-    </div>
+                        .fa:hover {
+                            opacity: 0.7;
+                            text-decoration: none;
+                        }
 
-    <div class="tab-pane fade" id="tabCheckoutPayment123" role="tabpanel">
-        <div class="modal fade" id="modalContactForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-            aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header text-center">
-                        <h4 class="modal-title w-100 font-weight-bold">Write to us</h4>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
+                        .size {
+                            font-size: 30px;
+                            margin: 0 8px;
+
+                        }
+                    </style>
+                    <div class="mt-4">
+                        <a href="#" class="fa fa-facebook size"></a>
+                        <a href="#" class="fa fa-twitter size"></a>
+                        <a href="#" class="fa fa-linkedin size"></a>
+                        <a href="#" class="fa fa-instagram size"></a>
+                        <a href="#" class="fa fa-youtube size"></a>
                     </div>
-                    <div class="modal-body mx-3">
-                        <div class="md-form mb-5">
-                            <i class="fas fa-user prefix grey-text"></i>
-                            <input type="text" id="form34" class="form-control validate">
-                            <label data-error="wrong" data-success="right" for="form34">Your name</label>
-                        </div>
 
-                        <div class="md-form mb-5">
-                            <i class="fas fa-envelope prefix grey-text"></i>
-                            <input type="email" id="form29" class="form-control validate">
-                            <label data-error="wrong" data-success="right" for="form29">Your email</label>
-                        </div>
-
-                        <div class="md-form mb-5">
-                            <i class="fas fa-tag prefix grey-text"></i>
-                            <input type="text" id="form32" class="form-control validate">
-                            <label data-error="wrong" data-success="right" for="form32">Subject</label>
-                        </div>
-
-                        <div class="md-form">
-                            <i class="fas fa-pencil prefix grey-text"></i>
-                            <textarea type="text" id="form8" class="md-textarea form-control" rows="4"></textarea>
-                            <label data-error="wrong" data-success="right" for="form8">Your message</label>
-                        </div>
-
-                    </div>
-                    <div class="modal-footer d-flex justify-content-center">
-                        <button class="btn btn-unique">Send <i class="fas fa-paper-plane-o ml-1"></i></button>
-                    </div>
                 </div>
             </div>
-        </div>
+            <div style="height: 20px;"></div>
+
+        </footer>
     </div>
+
+
     <a href="#" class="float ca" id="menu-share">
         <i class="fa fa-share my-float"></i>
     </a>
@@ -290,7 +250,7 @@
         <li class="cli"><a class="ca" href="/hospitalsearch">
                 <i class="fas fa-clinic-medical my-float "></i>
             </a></li>
-        <li class="cli"><a class="ca" href="/bookingDoctors">
+        <li class="cli"><a class="ca" href="/bookingo_doctors">
                 <i class="fas fa-user-md my-float"></i>
                 <i class="fas fa-user-nurse my-float"></i>
             </a></li>
@@ -301,6 +261,46 @@
                 <i class="fas fa-ambulance my-float "></i>
             </a></li>
     </ul>
+
+    <!-- Central Modal Medium Success -->
+    <div class="modal fade" id="centralModalSuccess" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-notify modal-success" role="document">
+            <!--Content-->
+            <div class="modal-content">
+                <!--Header-->
+                <div class="modal-header">
+                    <p class="heading lead">Modal Success</p>
+
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true" class="white-text">&times;</span>
+                    </button>
+                </div>
+
+                <!--Body-->
+                <div class="modal-body">
+                    <div class="text-center">
+                        <i class="fas fa-check fa-4x mb-3 animated rotateIn"></i>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit iusto nulla aperiam
+                            blanditiis
+                            ad consequatur in dolores culpa, dignissimos, eius non possimus fugiat. Esse ratione fuga,
+                            enim,
+                            ab officiis totam.</p>
+                    </div>
+                </div>
+
+                <!--Footer-->
+                <div class="modal-footer justify-content-center">
+                    <a type="button" class="btn btn-success">Get it now <i class="far fa-gem ml-1 text-white"></i></a>
+                    <a type="button" class="btn btn-outline-success waves-effect" data-dismiss="modal">No, thanks</a>
+                </div>
+            </div>
+            <!--/.Content-->
+        </div>
+    </div>
+    <!-- Central Modal Medium Success-->
+
+
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"

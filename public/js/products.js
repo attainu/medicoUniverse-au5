@@ -21,6 +21,8 @@ for (i = 0; i < dropdown.length; i++) {
 	});
 }
 
+
+
 $(document).ready(function() {
 	$(window).scroll(function() {
 		if ($(this).scrollTop() > 100) {
@@ -33,7 +35,7 @@ $(document).ready(function() {
 	$('.babybath').click(function() {
 		$('html, body').animate(
 			{
-				scrollTop: 500
+				scrollTop: -10%
 			},
 			600
 		);

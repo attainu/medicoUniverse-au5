@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const Cart = require('../model/cart');
-const flash = require('connect-flash')
+const flash = require('connect-flash');
 
 var medicineDb = require('../model/pharmacy.model');
 var userDb = require('../model/user');
@@ -26,7 +26,6 @@ const redirectHomepage = (req, res, next) => {
 	}
 };
 
-
 router.get('/user/signup', pharmacyController.userSignupget);
 router.get('/user/signin', pharmacyController.userSigninget);
 router.get('/pharmacy', pharmacyController.pharmacy);
@@ -34,7 +33,8 @@ router.get('/products', pharmacyController.products);
 router.get('/addProducts', pharmacyController.addProducts);
 router.get('/addToCart/:id', pharmacyController.addToCart);
 router.post('/addProducts', pharmacyController.postAddProducts);
-router.get('/reduce/:id',pharmacyController.reduce)
+router.get('/reduce/:id', pharmacyController.reduce);
+router.get('/remove/:id', pharmacyController.remove);
 router.post('/user/signup', pharmacyController.userSignuppost);
 router.post('/user/signin', pharmacyController.userSigninpost);
 router.get('/shoppingCart', pharmacyController.shoppingCartget);
@@ -43,6 +43,6 @@ router.post('/checkout', redirectLogin, pharmacyController.checkoutpost);
 router.get('/placedOrder', redirectLogin, pharmacyController.placedOrderget);
 router.post('/placedOrder', redirectLogin, pharmacyController.placedOrderpost);
 router.get('/profile', redirectLogin, pharmacyController.profileget);
-router.get('/logout', redirectLogin , pharmacyController.logout);
+router.get('/logout', redirectLogin, pharmacyController.logout);
 
 module.exports = router;

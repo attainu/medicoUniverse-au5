@@ -250,6 +250,16 @@ pharmacyController.reduce = (req, res) => {
 	req.session.cart = cart;
 	res.redirect('/shoppingCart');
 };
+pharmacyController.remove = (req, res) => {
+	var productId = req.params.id;
+	var cart = new Cart(req.session.cart ? req.session.cart : {});
+
+	cart.removeAll(productId);
+	req.session.cart = cart;
+	res.redirect('/shoppingCart');
+};
+
+
 pharmacyController.shoppingCartget = (req, res, next) => {
 	if (!req.session.cart) {
 		return res.render('shoppingCart', { products: null });
