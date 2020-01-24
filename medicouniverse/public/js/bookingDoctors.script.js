@@ -19,11 +19,41 @@
 //     $(".cancelBttn").hide()
 // })
     
+$('#submitDetails').on("click" , function(){
+    console.log('button clicked')
+     var pName = $("#pname").val()
+     var pPhone = $("#pPhone").val()
+     var select = $("#select").val()
+     var add = $("#add").val()
+     $("#newModalForm").validate({
+        rules: {
+          pName: "required",
+          pPhone: { required: true , minlength: 10},
+          select : "required",
+          add: "required"
+        },
+        messages: {
+          pName: {
+            required: "Please enter some data",
+          },
+          pPhone: {
+            required: "Please enter some data",
+            minlength: "Your data must be at least 10 characters"
+          },
+          select: {
+            required: "Please enter some data",
+          },
+          add: {
+            required: "Please enter some data",
+          },
+          action: "Please provide some data"
+        }
+      });
+})
 
 
 $("#findBtn").on("click" , function(){
 
-  
     var bookBtn = document.getElementsByClassName("bookBttn") 
     console.log(bookBtn.id)
 })

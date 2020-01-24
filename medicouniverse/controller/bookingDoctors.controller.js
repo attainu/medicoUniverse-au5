@@ -22,23 +22,26 @@ bookingController.open = function(req,res){
 }
 
 bookingController.bookNow = function(req , res){
-
+console.log(req.session.user.email)
    var patientsName = req.body.patientsName
    var patientsMobile = req.body.patientsMobile
    var preferredTime = req.body.preferredTime
    var patientsAddress = req.body.patientsAddress
-
+   var person = req.session.user.email
+  
    
-
    const patients = {
       
       patientsName : patientsName,
       patientsMobile : patientsMobile,
       preferredTime : preferredTime,
-      patientsAddress : patientsAddress
-
+      patientsAddress : patientsAddress,
+      person : person,
+     
    }
-   
+
+   console.log(patients)
+
    mongoose.model('patients').insertMany(patients, function(err, results){
             console.log('Data Saved successfully into the database')
            res.render("bookingDoctorsSuccess.hbs")

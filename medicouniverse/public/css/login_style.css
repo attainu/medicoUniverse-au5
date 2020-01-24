@@ -65,6 +65,8 @@ footer a:hover{
     z-index: 1;
 }
 
+
+
 @media (max-width: 575px){
     .nav-link {
         border-bottom: 1px solid grey;
@@ -108,8 +110,8 @@ footer a:hover{
     color: grey;
 }
 .container{
-    margin-top: 70px;
-    margin-bottom: 100px;
+    margin-top: 20px;
+    margin-bottom: 70px;
     display: flex;
     justify-content: center;
     flex-direction: row;
@@ -120,22 +122,30 @@ footer a:hover{
    border-bottom-left-radius: 20px;
    border-top-right-radius: 20px;
 }
+
 #imageDiv{
    border-bottom-left-radius: 20px;
 }
+
 #loginDiv{
-    padding: 50px;
+    padding: 40px;
     background-color: #bce4ff;
     background-image: linear-gradient(315deg, #bce4ff 0%, #83eaf1 74%);
-
-
     border-top-right-radius: 20px;
 }
 img{
     border-bottom-left-radius: 20px;
 }
 #mainImg{
-    height: 750px;
+    height: 550px;
+}
+#alert{
+
+    display: flex;
+    justify-content: start;
+    padding:20px;
+    margin: 10px 450px 10px ;
+    width: 400px;
 }
 
 @media (max-width: 900px){
@@ -147,6 +157,14 @@ img{
    box-shadow:none;
    margin: 5px;
 }
+
+#alert{
+    display: flex;
+    justify-content: start;
+    padding:20px;
+    margin: 10px 10px 10px 10px ;
+    width: 95%;
+}
 #imageDiv{
    border-bottom-left-radius: 20px;
    display: none;
@@ -155,14 +173,13 @@ img{
     width: fit-content;
     padding: 20px;
     background-color:#e3f2fd;
-   
     border-top-right-radius: 20px;
     border-bottom-left-radius: 20px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.6), 0 6px 20px 0 rgba(0, 0, 0, 0.29);
     display: flex;
     justify-content: center;
     flex-direction: column;
-     background-color: #bce4ff;
+    background-color: #bce4ff;
     background-image: linear-gradient(315deg, #bce4ff 0%, #83eaf1 74%);
 }
 #mainImg{
