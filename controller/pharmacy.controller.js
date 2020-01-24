@@ -341,7 +341,7 @@ pharmacyController.profileget = (req, res, next) => {
 			result
 		) {
 			if (err) throw err;
-
+			console.log(result)
 			// saved!
 			mongoose
 				.model('patients')
@@ -358,6 +358,12 @@ pharmacyController.profileget = (req, res, next) => {
 		});
 	});
 };
+pharmacyController.deleteAppoitmnet = (req,res,next) =>{
+	hospitalmodel.patient.findOneAndRemove({_id:req.query.id}, function(err,daa){
+		if(err) throw err
+		res.redirect("/profile")
+  });
+} 
 
 
 

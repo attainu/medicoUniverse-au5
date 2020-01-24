@@ -46,4 +46,5 @@ router.get('/profile', redirectLogin, pharmacyController.profileget);
 router.get('/logout', redirectLogin , pharmacyController.logout);
 router.get('/profile/cancel' , pharmacyController.cancel)
 
+router.post('/deleteAppoitment',redirectLogin,pharmacyController.deleteAppoitmnet);
 module.exports = router;

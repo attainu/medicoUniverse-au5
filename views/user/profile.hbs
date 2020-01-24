@@ -23,39 +23,40 @@
 <body>
     <div class="container-flex">
         <nav class="navbar navbar-expand-sm navbar-light">
-        <a class="navbar-brand" href="/">Medico<span>Universe</span></a>
-        <button class="navbar-toggler float-right p-1" type="button" data-toggle="collapse"
-            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-            aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse nav-resp" id="navbarSupportedContent">
-            <ul class="navbar-nav mx-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="/medicoUniverse/about">About Us</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/medicoUniverse/mission">Mission</a>
-                </li>
-            </ul>
-            {{#if session.user}}
-            <div class="dropdown">
-                <a class="nav-link font-weight-bold login-signup" id="dropdownMenu1-1" data-toggle="dropdown" href="">
-                    Hello {{session.user.email}}
-                </a>
-                <div class="dropdown-menu dropdown-primary" id="your-custom-id">
-                    <a class="dropdown-item mdb-dropdownLink-1  " href="/profile">Profile</a>
-                    <a class="dropdown-item mdb-dropdownLink-1 " href="/logout">Logout</a>
+            <a class="navbar-brand" href="/">Medico<span>Universe</span></a>
+            <button class="navbar-toggler float-right p-1" type="button" data-toggle="collapse"
+                data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse nav-resp" id="navbarSupportedContent">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/medicoUniverse/about">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/medicoUniverse/mission">Mission</a>
+                    </li>
+                </ul>
+                {{#if session.user}}
+                <div class="dropdown">
+                    <a class="nav-link font-weight-bold login-signup" id="dropdownMenu1-1" data-toggle="dropdown"
+                        href="">
+                        Hello {{session.user.email}}
+                    </a>
+                    <div class="dropdown-menu dropdown-primary" id="your-custom-id">
+                        <a class="dropdown-item mdb-dropdownLink-1  " href="/profile">Profile</a>
+                        <a class="dropdown-item mdb-dropdownLink-1 " href="/logout">Logout</a>
+                    </div>
                 </div>
+                {{else}}
+                <div>
+                    <a class="nav-link login-signup " href="/user/signin">Hello Guest</a>
+                </div>
+                {{/if}}
             </div>
-            {{else}}
-            <div>
-                <a class="nav-link login-signup " href="/user/signin">Hello Guest</a>
-            </div>
-            {{/if}}
-        </div>
-    </nav>
-    <hr>
+        </nav>
+        <hr>
         <div class="container mt-2 ">
             <div class="row">
                 <div class="col">
@@ -158,6 +159,7 @@
                             <div class="card-body card-body-cascade">
                                 <div class="card-body">
                                     <div class="card-body ">
+<<<<<<< HEAD
                                         <table class="table table-striped">
                                             <thead>
                                                 <th>
@@ -198,6 +200,48 @@
 
                                                 
                                    </div>
+=======
+
+                                        <li class="list-group-item border-0 " style="background-color:honeydew">
+                                            <div class="row">
+                                                <div class="col">
+                                                    <strong>Name</strong>
+                                                    <hr>
+                                                </div>
+                                                <div class="col">
+                                                    <span class="card-body"><strong>Contact</strong></span>
+                                                    <hr>
+                                                </div>
+                                                <div class="col">
+                                                    <span class="card-body"><strong>Time</strong></span>
+                                                    <hr>
+                                                </div>
+                                                <div class="col">
+                                                    <span class="card-body"><strong>address</strong></span>
+                                                    <hr>
+                                                </div>
+                                            </div>
+                                            {{#each patients}}
+                                            <div class="row">
+                                                <div class="col">
+                                                    {{this.patientsName}}
+                                                </div>
+                                                <div class="col">
+                                                    <span class="card-body">{{this.patientsMobile}}</span>
+                                                </div>
+                                                <div class="col">
+                                                    <span class="card-body">{{this.preferredTime}}</span>
+                                                </div>
+                                                <div class="col">
+                                                    <span class="card-body">{{this.patientsAddress}}</span>
+                                                </div>
+                                            </div>
+                                            {{/each}}
+                                        </li>
+
+                                    </div>
+
+>>>>>>> 62b1c9f34dd9f997ecd6e0dd630d9bf86111b618
                                 </div>
                                 <hr>
                             </div>
@@ -245,8 +289,12 @@
                                                 <div class="col">
                                                     <span class="card-body"><strong>Ph.no</strong></span>
                                                 </div>
+                                                <div class="col">
+                                                    <span class="card-body"><strong></strong></span>
+                                                </div>
                                             </div>
                                             {{#each patient}}
+                                            <form action="/deleteAppoitment?id={{this._id}}" method="POST">
                                             <div class="row">
                                                 <div class="col">
                                                     {{this.patient}}
@@ -260,7 +308,11 @@
                                                 <div class="col">
                                                     <span class="card-body">{{this.no}}</span>
                                                 </div>
+                                                <div class="col">
+                                                    <span class="card-body"><button class="btn btn-outline-danger" type="submit">Cancel</button></span>
+                                                </div>
                                             </div>
+                                            </form>
                                             {{/each}}
                                         </li>
                                     </div>
