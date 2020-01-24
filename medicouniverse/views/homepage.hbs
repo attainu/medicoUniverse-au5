@@ -47,31 +47,31 @@
 
     </nav>
     <hr>
-    <section class="row no-gutters">
+      {{!-- <section class="row no-gutters">
         <div class="search col-lg-8 col-md-8 col-sm-12 col-10 my-3">
-            <form action="/booking_doctors" method="GET">
+            <form>
                 <div class="search-city position-relative d-inline-block">
                     <img src="./image/location.svg" width="16px" height="16px" id="loc-icon">
-                    <input type="text" placeholder="City" name="city" id="cities" class="w-100" autocomplete="off"
-                        required>
-                    <input type="hidden" name="type" value="Doctors">
+                    <input type="text" placeholder="City" name="pincode" id="cities" class="w-100">
                 </div>
                 <div class="search-main position-relative d-inline-block">
                     <img src="./image/search.svg" width="16px" height="16px" id="search-icon">
                     <input type="text" placeholder="Search for Doctors" name="mainsearch" id="mainsearch" class="w-100"
-                        autocomplete="off" required>
+                        autocomplete="off">
                 </div>
 
-                <div id="slideout">
-                    <div class="d-inline-block" id="ambIcon">
-                        <img src="./image/ambulance_icon.png" width="36px" height="36px">
-                        <a href="/ambulance_booking" class="ml-2 btn peach-gradient"> Book Ambulance</a>
-
-
-                    </div>
-                </div>
-    </section>
-    <section class="container carousel-c">
+                <button type="submit">Search</button>
+            </form>
+        </div>
+    <div id="slideout">
+        <div class="d-inline-block" id="ambIcon">
+            <img src="./image/ambulance_icon.png" width="36px" height="36px">
+            <button type="button" class="ml-2">Book ambulance</button>
+            
+        </div>
+    </div>
+    </section> --}}
+    <section class="container carousel-c mt-2">
         <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">
                 <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -199,7 +199,7 @@
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script src="./js/homepage.js"></script>
-    <script src="./js/homepage_autocomplete.js"></script>
+    <script src="../public/js/homepage_autocomplete.js"></script>
 </body>
 
 </html>
