@@ -16,6 +16,7 @@
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
     <link rel="stylesheet" href="../css/hospitalstyle.css">
+    <link rel="stylesheet" href="./css/plus.css">
     <title>hospitals</title>
 </head>
 
@@ -310,7 +311,7 @@
         <section class="randomCards">
             <h2>Health Tips</h2>
             <div class="card-columns">
-                <div class="card">
+                <div class="card shadow-lg">
                     <img src="https://english.cdn.zeenews.com/sites/default/files/styles/zm_700x400/public/2019/08/07/809699-eat-2834549340.jpg"
                         class="card-img-top" alt="...">
                     <div class="card-body">
@@ -321,7 +322,7 @@
                             other type of cardiovascular.</p>
                     </div>
                 </div>
-                <div class="card p-3">
+                <div class="card p-3 shadow-lg">
                     <blockquote class="blockquote mb-0 card-body">
                         <p>Processed junk foods have been engineered to trigger your pleasure centers, so they trick
                             your
@@ -333,7 +334,7 @@
                         </footer>
                     </blockquote>
                 </div>
-                <div class="card">
+                <div class="card shadow-lg">
                     <img src="https://english.cdn.zeenews.com/sites/default/files/styles/zm_700x400/public/2018/07/21/705723-exercise-pixabay.jpg"
                         class="card-img-top" alt="...">
                     <div class="card-body">
@@ -346,7 +347,7 @@
                         <p class="card-text"><small class="text-muted">Jul 21, 2018, 17:47 PM IST</small></p>
                     </div>
                 </div>
-                <div class="card bg-light text-dark text-center p-3">
+                <div class="card bg-light text-dark text-center p-3 shadow-lg">
                     <blockquote class="blockquote mb-0">
                         <p>High calorie diet causes brain health to decline faster: Study</p>
                         <footer class="blockquote-footer text-white">
@@ -356,7 +357,7 @@
                         </footer>
                     </blockquote>
                 </div>
-                <div class="card text-center">
+                <div class="card text-center shadow-lg">
                     <div class="card-body">
                         <h5 class="card-title">SUMMARY</h5>
                         <p class="card-text">Do your best to stay motivated and focused while you adapt to a healthy
@@ -364,11 +365,11 @@
                         <p class="card-text"><small class="text-muted">Healthline</small></p>
                     </div>
                 </div>
-                <div class="card">
+                <div class="card shadow">
                     <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.caremountmedical.com%2Fwp-content%2Fuploads%2F2018%2F12%2FHow-Healthy-Eating-Prevents-Disease.png&f=1&nofb=1"
                         class="card-img-top" alt="...">
                 </div>
-                <div class="card p-3 text-right">
+                <div class="card p-3 text-right shadow-lg">
                     <blockquote class="blockquote mb-0">
                         <p>Lung Injuries from Vaping Top 2,600, But Fewer Cases Being Reported</p>
                         <footer class="blockquote-footer">
@@ -378,7 +379,7 @@
                         </footer>
                     </blockquote>
                 </div>
-                <div class="card">
+                <div class="card shadow-lg">
                     <div class="card-body">
                         <h5 class="card-title">Minimize your sugar intake</h5>
                         <p class="card-text">Added sugar intake is linked to numerous ailments, including obesity, type
@@ -437,7 +438,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form action="/patientdata" method="POST">
+                    <form action="/patientdata" method="POST" name="register">
                         <div class="form-group">
                             <div class="row">
                                 <div class="col">
@@ -458,9 +459,9 @@
                                 name="patientproblem" required></textarea>
                         </div>
                         <label for="formGroupExampleInput2">Mobile Number</label>
-                        <input class="form-control" type="number" placeholder="Please enter with your country code"
-                            name="no" required>
-                        <button type="submit" class="btn btn-primary mt-1">Get Appointment</button>
+                        <input class="form-control" type="tel" placeholder="Please enter with your country code"
+                            name="no" minlength=12 maxlength=12 id="telnumber" required>
+                        <button id="validmodal" type="submit" class="btn btn-primary mt-1">Get Appointment</button>
                     </form>
                 </div>
                 <div class="modal-footer">
@@ -469,6 +470,109 @@
             </div>
         </div>
     </div>
+    <section class="forsomething">
+        <div class="conainer-fluid shadow-lg p-3 mb-5 bg-white mt-3 rounded">
+            <h3 class="d-flex justify-content-center display-4 mb-4"><b>Why Choose Medico Universe?</b></h3>
+            <div class="container-fluid d-flex justify-content-between">
+                <div class="text-center">
+                    <svg height=7rem width=7rem version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 480.007 480.007"
+                        style="enable-background:new 0 0 480.007 480.007;" xml:space="preserve">
+                        <g>
+                            <g>
+                                <path d="M479.426,267.581c-3.547-24.574-22.852-43.879-47.426-47.426v-14.544c0-40.128-30.504-72.8-68-72.8
+			c-36.416,0-66.904,31.68-68,70.624h0.464l-0.464,0.08v157.656c0,50.4-37.68,91.328-84,91.328s-84-40.984-84-91.328v-13.656
+			c11.6,0,24-8.408,24-32v-20.12c51.344-13.128,88-57.216,88-107.2v-16.68h-16l-0.336-104.12
+			c-0.116-19.273-13.946-35.729-32.912-39.16c-4.091-12.533-17.568-19.377-30.102-15.285c-12.533,4.091-19.377,17.568-15.285,30.102
+			c4.091,12.533,17.568,19.377,30.102,15.285c6.711-2.191,12.108-7.24,14.741-13.79c10.249,2.916,17.349,12.24,17.432,22.896
+			L208,171.515h-16v16.912c-0.638,27.827-19.294,52.009-46.048,59.688c-14.315,4.542-29.685,4.542-44,0
+			C75.229,240.41,56.615,216.232,56,188.427v-16.912H32v-104c0.046-10.813,7.318-20.261,17.76-23.072
+			c4.869,12.395,18.864,18.495,31.259,13.626S99.514,39.204,94.645,26.81S75.78,8.315,63.386,13.184
+			c-6.716,2.639-11.898,8.146-14.122,15.011C30.091,31.471,16.053,48.064,16,67.515v104H0v16.64c0,50.04,36.68,94.144,88,107.24
+			v20.12c0,23.592,12.4,32,24,32v13.656c0,59.2,44.856,107.328,100,107.328s100-48.184,100-107.328V203.899
+			c0.8-30.36,24.144-55.064,52-55.064c28.672,0,52,25.472,52,56.8v14.52c-30.611,4.418-51.844,32.815-47.426,63.426
+			s32.815,51.844,63.426,47.426S483.844,298.191,479.426,267.581z M168,43.515c-4.418,0-8-3.582-8-8s3.582-8,8-8s8,3.582,8,8
+			S172.418,43.515,168,43.515z M72,27.515c4.418,0,8,3.582,8,8s-3.582,8-8,8s-8-3.582-8-8S67.582,27.515,72,27.515z M16,188.155
+			v-0.64h24v0.912c0.6,34.771,23.733,65.116,57.104,74.904c17.487,5.537,36.257,5.537,53.744,0
+			c33.387-9.775,56.541-40.121,57.152-74.904v-0.912h16v0.64c0,44.504-34.304,83.664-81.6,93.136
+			c-11.106,2.224-22.482,2.782-33.752,1.656c-3.71-0.36-7.398-0.918-11.048-1.672C50.304,271.819,16,232.659,16,188.155z
+			 M112,331.515c-7.2,0-8-11.2-8-16v-16.976c0.64,0.08,1.296,0.112,1.944,0.176c0.8,0.088,1.6,0.152,2.4,0.224
+			c3.784,0.336,7.6,0.56,11.448,0.568h0.4c3.84,0,7.648-0.232,11.408-0.568c0.8-0.072,1.648-0.136,2.472-0.224
+			c0.632-0.072,1.288-0.096,1.92-0.176v16.976c0,4.8-0.8,16-8,16H112z M424,315.515c-22.091,0-40-17.909-40-40
+			c0-22.091,17.909-40,40-40c22.091,0,40,17.909,40,40C463.974,297.596,446.08,315.489,424,315.515z" />
+                            </g>
+                        </g>
+                        <strong>
+                            <h4><i>More experience</i></h4>
+                        </strong>
+                        <p>Every year, more than a million people come to Medico Universe for care. Our highly
+                            specialized
+                            experts are deeply experienced in treating complex conditions.</p>
+                </div>
+                <div class="text-center">
+                    <svg height=7rem width=7rem version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512"
+                        style="enable-background:new 0 0 512 512;" xml:space="preserve">
+                        <g>
+                            <g>
+                                <circle cx="179.2" cy="102.4" r="102.4" />
+                            </g>
+                        </g>
+                        <g>
+                            <g>
+                                <path d="M263.68,250.88c-25.6-12.8-53.76-20.48-84.48-20.48C79.36,230.4,0,309.76,0,409.6h207.36
+			C194.56,348.16,227.84,284.16,263.68,250.88z" />
+                            </g>
+                        </g>
+                        <g>
+                            <g>
+                                <path d="M384,256c-71.68,0-128,56.32-128,128s56.32,128,128,128s128-56.32,128-128S455.68,256,384,256z M440.32,376.32l-51.2,51.2
+			c-10.24,10.24-25.6,10.24-35.84,0l-25.6-25.6c-10.24-10.24-10.24-25.6,0-35.84s25.6-10.24,35.84,0l7.68,7.68l33.28-33.28
+			c10.24-10.24,25.6-10.24,35.84,0S450.56,366.08,440.32,376.32z" />
+                            </g>
+                        </g>
+                        <strong>
+                            <h4><i>The right answers</i></h4>
+                        </strong>
+                        <p>Getting effective treatment depends on identifying the right problem. In a recent study, 88
+                            percent of patients who came to Medico Universe for a second opinion received a new or
+                            refined
+                            diagnosis.</p>
+                </div>
+                <div class="text-center">
+                    <svg height=7rem width=6rem id="Capa_1" enable-background="new 0 0 515.556 515.556" height="512"
+                        viewBox="0 0 515.556 515.556" width="512" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="m257.778 0c-142.137 0-257.778 115.641-257.778 257.778s115.641 257.778 257.778 257.778 257.778-115.641 257.778-257.778-115.642-257.778-257.778-257.778zm128.889 290h-96.667v96.667h-64.444v-96.667h-96.667v-64.444h96.667v-96.667h64.444v96.667h96.667z" />
+                    </svg>
+                    <strong>
+                        <h4><i>Seamless care</i></h4>
+                    </strong>
+                    <p>At Medico Universe, every aspect of your care is coordinated and teams of experts work together
+                        to
+                        provide exactly the care you need. What might take months elsewhere can often be done in days
+                        here.</p>
+                </div>
+                <div class="text-center">
+                    <svg height=7rem width=6rem xmlns="http://www.w3.org/2000/svg" height="511pt" version="1.1"
+                        viewBox="-33 1 511 511.999" width="511pt">
+                        <g id="surface1">
+                            <path
+                                d="M 237.816406 0 C 124.082031 0 31.394531 91.835938 30.03125 205.253906 L 5.292969 277.40625 C -1.5 297.226562 -1.054688 314.671875 6.515625 325.273438 C 11.054688 331.625 18.058594 335.265625 25.738281 335.265625 L 30.015625 335.265625 L 30.015625 360.433594 C 30.015625 390.851562 54.765625 415.597656 85.183594 415.597656 C 99.0625 415.597656 110.351562 426.890625 110.351562 440.765625 L 110.351562 456.832031 C 110.351562 487.25 135.097656 512 165.515625 512 L 277.984375 512 C 308.402344 512 333.152344 487.25 333.152344 456.832031 L 333.152344 392.449219 C 365.011719 375.984375 392.074219 351.578125 411.820312 321.40625 C 433.929688 287.621094 445.621094 248.339844 445.621094 207.796875 C 445.617188 93.21875 352.398438 0 237.816406 0 Z M 360.753906 193.289062 L 310.167969 242.601562 L 321.96875 311.414062 C 322.214844 312.488281 322.347656 313.613281 322.347656 314.765625 C 322.347656 323.035156 315.652344 329.742188 307.382812 329.765625 C 307.363281 329.765625 307.34375 329.765625 307.324219 329.765625 C 304.9375 329.765625 302.539062 329.195312 300.347656 328.039062 L 237.816406 295.167969 L 175.289062 328.039062 C 170.234375 330.695312 164.109375 330.257812 159.492188 326.898438 C 154.875 323.542969 152.558594 317.855469 153.523438 312.226562 L 165.464844 242.601562 L 114.882812 193.289062 C 110.792969 189.304688 109.320312 183.34375 111.085938 177.910156 C 112.851562 172.480469 117.542969 168.523438 123.195312 167.703125 L 193.101562 157.546875 L 224.367188 94.199219 C 226.890625 89.078125 232.105469 85.835938 237.816406 85.835938 C 243.527344 85.835938 248.742188 89.078125 251.269531 94.199219 L 282.535156 157.546875 L 352.441406 167.703125 C 358.089844 168.523438 362.785156 172.480469 364.550781 177.910156 C 366.3125 183.34375 364.84375 189.304688 360.753906 193.289062 Z M 360.753906 193.289062 "
+                                style=" stroke:none;fill-rule:nonzero;fill:rgb(0%,0%,0%);fill-opacity:1;" />
+                        </g>
+                    </svg>
+                    <strong>
+                        <h4><i>Unparalleled expertise</i></h4>
+                    </strong>
+                    <p>Medico Universe experts are some of the best in the world. In the U.S. News & World Report
+                        rankings
+                        of top hospitals, Medico Universe is consistently ranked among the top hospitals in the nation.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
     <footer class="mt-4">
         <div style="height: 20px;"></div>
         <div class="row">
@@ -488,6 +592,24 @@
         </div>
         <div style="height: 20px;"></div>
     </footer>
+    <a href="#" class="float ca" id="menu-share">
+        <i class="fa fa-share my-float"></i>
+    </a>
+    <ul class="cul">
+        <li class="cli"><a class="ca" href="/hospitalsearch">
+                <i class="fas fa-clinic-medical my-float "></i>
+            </a></li>
+        <li class="cli"><a class="ca" href="/bookingDoctors">
+                <i class="fas fa-user-md my-float"></i>
+                <i class="fas fa-user-nurse my-float"></i>
+            </a></li>
+        <li class="cli"><a class="ca" href="/pharmacy">
+                <i class="fas fa-prescription-bottle-alt my-float "></i>
+            </a></li>
+        <li class="cli"><a class="ca" href="/ambulance_booking">
+                <i class="fas fa-ambulance my-float "></i>
+            </a></li>
+    </ul>
     {{!-- default --}}
     <script src="https://code.jquery.com/jquery-3.4.1.js"
         integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
@@ -506,7 +628,7 @@
     <!-- MDB core JavaScript -->
     <script type="text/javascript"
         src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.12.0/js/mdb.min.js"></script>
-
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.15.1/jquery.valid"></script>
     <script src="../js/hospital.js"></script>
 </body>
 

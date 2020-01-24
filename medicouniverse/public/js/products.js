@@ -1,3 +1,11 @@
+new WOW().init();
+$(document).ready(() => {
+	// SideNav Initialization
+	$('.button-collapse').sideNav();
+
+	new WOW().init();
+});
+
 var dropdown = document.getElementsByClassName('dropdown-btn');
 var i;
 
@@ -25,7 +33,7 @@ $(document).ready(function() {
 	$('.babybath').click(function() {
 		$('html, body').animate(
 			{
-				scrollTop: 85
+				scrollTop: 500
 			},
 			600
 		);
@@ -63,7 +71,7 @@ $(document).ready(function() {
 	$('.hairCare').click(function() {
 		$('html, body').animate(
 			{
-				scrollTop: 1050
+				scrollTop: 1400
 			},
 			600
 		);
@@ -82,7 +90,7 @@ $(document).ready(function() {
 	$('.lipcare').click(function() {
 		$('html, body').animate(
 			{
-				scrollTop: 1300
+				scrollTop: 1800
 			},
 			600
 		);
@@ -139,7 +147,7 @@ $(document).ready(function() {
 	$('.skinsuppliments').click(function() {
 		$('html, body').animate(
 			{
-				scrollTop: 2500
+				scrollTop: 2700
 			},
 			600
 		);
@@ -158,7 +166,7 @@ $(document).ready(function() {
 	$('.patangali').click(function() {
 		$('html, body').animate(
 			{
-				scrollTop: 3000
+				scrollTop: 3200
 			},
 			600
 		);
@@ -196,7 +204,26 @@ $(document).ready(function() {
 	$('.massgainer').click(function() {
 		$('html, body').animate(
 			{
-				scrollTop: 3700
+				scrollTop: 4000
+			},
+			600
+		);
+		return false;
+	});
+});
+$(document).ready(function() {
+	$(window).scroll(function() {
+		if ($(this).scrollTop() > 100) {
+			$('.scrollup').fadeIn();
+		} else {
+			$('.scrollup').fadeOut();
+		}
+	});
+
+	$('.devices').click(function() {
+		$('html, body').animate(
+			{
+				scrollTop: 4800
 			},
 			600
 		);
@@ -215,7 +242,7 @@ $(document).ready(function() {
 	$('.exercise').click(function() {
 		$('html, body').animate(
 			{
-				scrollTop: 4700
+				scrollTop: 5100
 			},
 			600
 		);

@@ -17,6 +17,7 @@
     <!-- Material Design Bootstrap -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.10.1/css/mdb.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="./css/products.css">
+    <link rel="stylesheet" type="text/css" href="./css/plus.css">
 </head>
 
 <body>
@@ -243,12 +244,10 @@
                             <div class="card-body card-body-cascade">
                                 <div class="card-body">
                                     <div class="card-body ">
-                                        {{#if patient}}
-
                                         <li class="list-group-item border-0 " style="background-color:honeydew">
                                             <div class="row">
                                                 <div class="col">
-                                                   <strong>Name</strong>
+                                                    <strong>Name</strong>
                                                 </div>
                                                 <div class="col">
                                                     <span class="card-body"><strong>Problem</strong></span>
@@ -260,22 +259,23 @@
                                                     <span class="card-body"><strong>Ph.no</strong></span>
                                                 </div>
                                             </div>
+                                            {{#each patient}}
                                             <div class="row">
                                                 <div class="col">
-                                                    {{patient.patient}}
+                                                    {{this.patient}}
                                                 </div>
                                                 <div class="col">
-                                                    <span class="card-body">{{patient.problem}}</span>
+                                                    <span class="card-body">{{this.problem}}</span>
                                                 </div>
                                                 <div class="col">
-                                                    <span class="card-body">{{patient.age}}</span>
+                                                    <span class="card-body">{{this.age}}</span>
                                                 </div>
                                                 <div class="col">
-                                                    <span class="card-body">{{patient.no}}</span>
+                                                    <span class="card-body">{{this.no}}</span>
                                                 </div>
                                             </div>
+                                            {{/each}}
                                         </li>
-                                        {{/if}}
                                     </div>
 
                                 </div>
@@ -285,8 +285,9 @@
 
                                     </div>
                                     <div class="col">
-                                        <div class="panel-footer"><strong>Total Price:
-                                                ₹{{this.cart.totalPrice}}</strong> </div>
+                                        {{#if pricehospital}}
+                                        <div class="panel-footer"><strong>Total Price:{{pricehospital}}</strong></div>
+                                        {{/if}}
                                     </div>
                                 </div>
 
@@ -329,6 +330,24 @@
             <div style="height: 20px;"></div>
         </footer>
     </div>
+    <a href="#" class="float ca" id="menu-share">
+        <i class="fa fa-share my-float"></i>
+    </a>
+    <ul class="cul">
+        <li class="cli"><a class="ca" href="/hospitalsearch">
+                <i class="fas fa-clinic-medical my-float "></i>
+            </a></li>
+        <li class="cli"><a class="ca" href="/bookingDoctors">
+                <i class="fas fa-user-md my-float"></i>
+                <i class="fas fa-user-nurse my-float"></i>
+            </a></li>
+        <li class="cli"><a class="ca" href="/pharmacy">
+                <i class="fas fa-prescription-bottle-alt my-float "></i>
+            </a></li>
+        <li class="cli"><a class="ca" href="/ambulance_booking">
+                <i class="fas fa-ambulance my-float "></i>
+            </a></li>
+    </ul>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"

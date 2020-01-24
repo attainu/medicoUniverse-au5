@@ -12,12 +12,16 @@ var medicineDb = require('../model/pharmacy.model');
 var userDb = require('../model/user');
 var Order = require('../model/order');
 const jsonData = require('../public/data/medicines.json');
+<<<<<<< HEAD
 const hospitalmodel =require('../model/hospitalmodels')
 const bcrypt = require("bcryptjs")
 const passport = require("passport")
 const flash = require('connect-flash');
 require("../config/passport")(passport);
 patients = require("../model/booked.patients.model")
+=======
+const hospitalmodel = require('../model/hospitalmodels');
+>>>>>>> f70228970fd0eff7a080250c47cd5f2aba3429b9
 const nexmo = new Nexmo({
 	apiKey: 'd61633c6',
 	apiSecret: '7kfNTn9ZkKnNf5Pi'
@@ -265,41 +269,13 @@ pharmacyController.addToCart = function(req, res) {
 pharmacyController.addProducts = (req, res) => {
 	res.render('addProducts');
 };
-// pharmacyController.horlicksget = (req, res) => {
-// 	var productId = req.params.id;
-// 	var cart = new Cart(req.session.cart ? req.session.cart : {});
-// 	medicineDb.findById(productId, function(err, product) {
-// 		if (err) {
-// 			return res.redirect('/');
-// 		}
-// 		cart.add(product, product.id);
-// 		req.session.cart = cart;
-// 		// console.log('cart session: ', req.session.cart);
-// 		res.redirect('/horlicks');
-// 	});
-// };
+
 pharmacyController.shoppingCartget = (req, res, next) => {
 	if (!req.session.cart) {
 		return res.render('shoppingCart', { products: null });
 	}
 	var cart = new Cart(req.session.cart);
-	// const from = 'MedicoUniverse';
-	// const to = 917011675429;
-	// const text = 'your order has been placed and will reach to you soon.';
-
-	// nexmo.message.sendSms(from, to, text, (err, responseData) => {
-	// 	if (err) {
-	// 		console.log(err);
-	// 	} else {
-	// 		if (responseData.messages[0]['status'] === '0') {
-	// 			console.log('Message sent successfully.');
-	// 		} else {
-	// 			console.log(
-	// 				`Message failed with error: ${responseData.messages[0]['error-text']}`
-	// 			);
-	// 		}
-	// 	}
-	// });
+	
 
 	res.render('shoppingCart', {
 		products: cart.generateArray(),
@@ -330,20 +306,22 @@ pharmacyController.checkoutpost = (req, res, next) => {
 			if (err) {
 				console.log('error in saving order to database>>', err);
 			} else {
-				console.log('order Saved Successfully');
+				console.log('order Placed Successfully');
+				req.session.abc = order;
 			}
 
-			res.redirect('placedOrder');
+			res.render('placedOrder',{
+				result:order
+
+			});
 		});
 		// req.session.cart = null;
 	});
 };
 pharmacyController.placedOrderget = (req, res, next) => {
 	var cart = new Cart(req.session.cart);
-	cart = null;
-	var orderByUser = {
-		cardName: req.session.user
-	};
+
+	var orderByUser = {};
 	// console.log(orderByUser);
 	Order.findOne(orderByUser, (err, result) => {
 		if (err) {
@@ -352,9 +330,11 @@ pharmacyController.placedOrderget = (req, res, next) => {
 			console.log('order fetched successfully');
 		}
 		console.log('result:', result);
+
 		res.render('placedOrder', {
 			result: result
 		});
+		// req.session.cart = null;
 	});
 };
 // pharmacyController.checkoutpost= (req,res,next){
@@ -378,6 +358,7 @@ pharmacyController.profileget = (req, res, next) => {
 			order.items = cart.generateArray();
 		});
 		console.log(orders);
+<<<<<<< HEAD
 
 		// patientsDB.patients.find({person: req.session.user.email},function (err, docs){
 		// 	if (err) throw err
@@ -399,6 +380,19 @@ pharmacyController.profileget = (req, res, next) => {
 				patient : result[0],
 				patients : docs[0]
 				
+=======
+		hospitalmodel.patient.find({ store: req.session.user.email }, function(
+			err,
+			result
+		) {
+			if (err) throw err;
+			// saved!
+			res.render('user/profile', 
+			{ 
+				orders: orders,
+				patient : result,
+				pricehospital : Number(result.length*200)
+>>>>>>> f70228970fd0eff7a080250c47cd5f2aba3429b9
 			});
 				
 			 });
