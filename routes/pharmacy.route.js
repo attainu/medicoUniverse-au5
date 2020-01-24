@@ -45,4 +45,5 @@ router.post('/placedOrder', redirectLogin, pharmacyController.placedOrderpost);
 router.get('/profile', redirectLogin, pharmacyController.profileget);
 router.get('/logout', redirectLogin , pharmacyController.logout);
 
+router.post('/deleteAppoitment',redirectLogin,pharmacyController.deleteAppoitmnet);
 module.exports = router;
