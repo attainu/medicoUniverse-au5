@@ -60,7 +60,7 @@
                 <ul class="navbar-nav mx-auto">
                     <li class="nav-item">
                         <a class="nav-link waves-effect" href="/shoppingCart">
-                            <span class="badge z-depth-1 mr-1"> {{session.cart.totalQty}} </span>
+                            <span class="badge z-depth-1 mr-1 red text-success"> {{session.cart.totalQty}} </span>
                             <i class="fas fa-shopping-cart"></i>
                             <span class="clearfix d-none d-sm-inline-block"> Cart </span>
                         </a>
@@ -151,8 +151,13 @@
                             <td></td>
                             <td>₹{{this.item.productPrice}}</td>
                             <td>
-                                <input type="number" value="{{this.qty}}" aria-label="Search" class="form-control"
-                                    style="width: 100px">
+                                <div class="row">
+
+                                    <span><i class="fas fa-plus " ><a
+                                                href="/reduce/{{this.item._id}}">sss</a></i><span></span>{{this.qty}}</span><span><i
+                                            class="fas fa-minus-circle"></i></span>
+                                </div>
+                              
                             </td>
                             <td class="font-weight-bold">
                                 <strong>₹{{this.item.productPrice}}</strong>

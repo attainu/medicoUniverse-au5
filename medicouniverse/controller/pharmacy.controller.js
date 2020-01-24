@@ -59,7 +59,7 @@ pharmacyController.userSigninpost = (req, res, next) => {
 			} else {
 				req.session.user = data;
 				console.log(req.session.user);
-				res.redirect('/profile');
+				res.redirect('/');
 			}
 		});
 
@@ -242,6 +242,14 @@ pharmacyController.addProducts = (req, res) => {
 	res.render('addProducts');
 };
 
+pharmacyController.reduce = (req, res) => {
+	var productId = req.params.id;
+	var cart = new Cart(req.session.cart ? req.session.cart : {});
+
+	cart.reduceByOne(productId);
+	req.session.cart = cart;
+	res.redirect('/shoppingCart');
+};
 pharmacyController.shoppingCartget = (req, res, next) => {
 	if (!req.session.cart) {
 		return res.render('shoppingCart', { products: null });
@@ -328,27 +336,29 @@ pharmacyController.profileget = (req, res, next) => {
 			order.items = cart.generateArray();
 		});
 		console.log(orders);
-		hospitalmodel.patient.find({store : req.session.user.email}, function (err, result) {
-			if (err) throw err
+		hospitalmodel.patient.find({ store: req.session.user.email }, function(
+			err,
+			result
+		) {
+			if (err) throw err;
 
 			// saved!
-			mongoose.model('patients').find({person: req.session.user.email}, function (err, docs) {
-				if (err) throw err
-				console.log("data in db : " , docs)
-				res.render('user/profile', 
-			{ 
-				orders: orders,
-				patient : result,
-				patients : docs,
-				pricehospital : Number(result.length*200)
-				
-			});	
-			});
+			mongoose
+				.model('patients')
+				.find({ person: req.session.user.email }, function(err, docs) {
+					if (err) throw err;
+					console.log('data in db : ', docs);
+					res.render('user/profile', {
+						orders: orders,
+						patient: result,
+						patients: docs,
+						pricehospital: Number(result.length * 200)
+					});
+				});
 		});
 	});
-};		
-		
-				
+};
+
 pharmacyController.logout = (req, res) => {
 	req.session.destroy(function(err) {
 		console.log('successfully destryoyed');

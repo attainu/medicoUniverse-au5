@@ -42,21 +42,21 @@
             <div class="collapse navbar-collapse nav-resp " id="navbarSupportedContent">
                 <ul class="navbar-nav mx-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="/medicoUniverse/about">About Us</a>
+                        <a class="nav-link text-muted" href="/medicoUniverse/about">About Us</a>
                     </li>
                     <li class="nav-item ">
-                        <a class="nav-link " href="//medicoUniverse/mission">Mission</a>
+                        <a class="nav-link text-muted " href="//medicoUniverse/mission">Mission</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link " href="/user/signin">Login/SignUp</a>
+                        <a class="nav-link text-muted" href="/user/signin">Login/SignUp</a>
                     </li>
 
                     <li class="nav-item dropdown">
                         <!--Dropdown primary-->
                         <div class="dropdown">
                             <!--Trigger-->
-                            <a class="nav-link font-weight-bold " id="dropdownMenu1-1" data-toggle="dropdown"
+                            <a class="nav-link font-weight-bold text-muted " id="dropdownMenu1-1" data-toggle="dropdown"
                                 href="">
                                 User Management
                             </a>
@@ -82,87 +82,7 @@
             </div>
             {{/if}}
         </nav>
-        {{!-- 
-        <div class=" nav navbar-expand-sm  card-intro blue-gradient">
-
-            <div class="card-body white-text rgba-black-light text-center">
-
-                <!--Grid row-->
-                <div class="row d-flex ">
-
-                    <!--Grid column-->
-                    <div class="col">
-
-                        <a class="mb-2 text-white" href="/booking_doctors">
-                            Doctors
-                        </a>
-
-
-
-                    </div>
-                    <div class="col">
-                        <div class="card"></div>
-                        <a class="mb-2 text-white" href="/pharmacy">
-                            Pharmacy
-                        </a>
-
-
-
-                    </div>
-                    <div class="col">
-
-                        <a class="mb-2 text-white" href="/hospitalsearch">
-                            Hospitals
-                        </a>
-
-
-
-                    </div>
-                    <div class="col">
-
-                        <a class="mb-2 text-white" href="/ambulance_booking">
-                            Ambulance
-                        </a>
-
-
-
-                    </div>
-                    <!--Grid column-->
-
-                </div>
-                <!--Grid row-->
-
-            </div>
-
-        </div>
-        <!-- Intro --> --}}
-        {{!-- <nav class="navbar navbar-expand-lg card-intro blue-gradient">
-            <button class="navbar-toggler text-white" type="button" data-toggle="collapse"
-                data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <a class="navbar-brand" href="#">Sections</a>
-
-            <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
-                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                    <li class="nav-item active m-5">
-                        <a class="nav-link" href="#">Doctors <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item m-5">
-                        <a class="nav-link" href="#">Hospital</a>
-                    </li>
-                    <li class="nav-item m-5">
-                        <a class="nav-link" href="#">Pharmacy</a>
-                    </li>
-                    <li class="nav-item m-5">
-                        <a class="nav-link " href="#" tabindex="-1" aria-disabled="true">Ambulance</a>
-                    </li>
-                </ul>
-
-            </div>
-        </nav> --}}
-
+       
 
         <div class="container-flex m-3">
 
@@ -172,7 +92,7 @@
                 <div class="col-md-6 col-lg-4 mb-4">
 
                     <!--Card-->
-                    <div class="card" style="background-color: #2E2E2E;">
+                    <div class="card" id="locationCard" style="background-color: #2E2E2E;">
 
                         <!-- Material input -->
 
@@ -202,7 +122,7 @@
                                     data-target="#modalLoginAvatar">Book Now
                                 </a>
                                 <button type="button" onclick="showdrivercard()" id="driverCard"
-                                    class="btn btn-primary " data-toggle="modal" data-target="#fullHeightModalRight">
+                                    class="btn btn-info " data-toggle="modal" data-target="#fullHeightModalRight">
                                     Ambulance Info
                                 </button>
                             </div>

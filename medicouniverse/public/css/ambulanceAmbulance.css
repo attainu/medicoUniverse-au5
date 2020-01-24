@@ -62,7 +62,8 @@ footer a:hover {
 .navbar-brand {
 	color: rgb(208, 17, 21) !important;
 	margin-left: 10%;
-	font-weight: bolder;
+	font-weight: 700;
+	
 }
 
 .navbar-brand span {
@@ -138,4 +139,3 @@ footer a:hover {
 	color: grey;
 }
 /* ///// */
-
