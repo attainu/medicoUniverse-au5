@@ -12,16 +12,7 @@ var medicineDb = require('../model/pharmacy.model');
 var userDb = require('../model/user');
 var Order = require('../model/order');
 const jsonData = require('../public/data/medicines.json');
-<<<<<<< HEAD
-const hospitalmodel =require('../model/hospitalmodels')
-const bcrypt = require("bcryptjs")
-const passport = require("passport")
-const flash = require('connect-flash');
-require("../config/passport")(passport);
-patients = require("../model/booked.patients.model")
-=======
 const hospitalmodel = require('../model/hospitalmodels');
->>>>>>> f70228970fd0eff7a080250c47cd5f2aba3429b9
 const nexmo = new Nexmo({
 	apiKey: 'd61633c6',
 	apiSecret: '7kfNTn9ZkKnNf5Pi'
