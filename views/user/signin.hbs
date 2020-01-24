@@ -58,14 +58,14 @@
     </nav>
     <hr>
     <div class="row">
-{{#if invalidUser}}
-        <div id="alert" class="alert alert-danger alert-dismissible fade show" role="alert">
-        <strong>Invalid Username or Password !!!</strong>
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-        </button>
-        </div>
-        {{/if}}
+        {{#if invalidUser}}
+            <div id="alert" class="alert alert-danger alert-dismissible fade show" role="alert">
+            <strong>Invalid Username or Password !!!</strong>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            </div>
+            {{/if}}
     </div>
         
     <div class="container">
@@ -101,7 +101,6 @@
                         {{#if invalidPsd}}
                         <div class="alert alert-danger">
                            <strong>Invalid Username or Password !!!</strong> <br>
-                                   Please re-enter and try again.
                             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
@@ -111,8 +110,7 @@
                     <button type="submit" class="btn btn-outline-info mb-3"
                         style="border-bottom-right-radius: 20px; border-top-left-radius: 20px;"><strong>login</strong></button>
                     <div><span class="mt-2">Not registered ? <a href="/user/signup"><strong>Click here</strong></a> to
-                            sign
-                            up.</span> </div>
+                            signup.</span> </div>
                 </form>
                 
 
