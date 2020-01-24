@@ -91,30 +91,19 @@ $(".bookBttn").on("click" , function(){
     $(this).closest(".bookBttn").hide()
     $(this).next(".cancelBttn").show()
 
-  
-
 });
 
 $(".cancelBttn").on("click" , function(){
 
-
     $(this).closest(".cancelBttn").hide()
     $(this).prev(".bookBttn").show()
  
-    
-
 });
 
 $('#submitDetails').on("click" , function(){
 
     $("#modalCenter").hide()
 })
-
-
-
-
-
-
 
 function changeValue(){
     var selection = $("#service").val()
@@ -146,6 +135,5 @@ function changeValue(){
         $("#specs").html("<option value='Babysitter'>")   
     }
 }
-
 
 

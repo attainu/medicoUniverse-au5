@@ -154,7 +154,7 @@
                             <div class="card-body card-body-cascade">
                                 <div class="card-body">
                                     <div class="card-body ">
-                                        {{#if patients}}
+                                       
 
                                         <li class="list-group-item border-0 " style="background-color:honeydew">
                                             <div class="row">
@@ -174,45 +174,29 @@
                                                     <span class="card-body"><strong>address</strong></span>
                                                     <hr>
                                                 </div>
-                                                <div class="col">
-                                                    <span class="card-body"><strong>Booked on</strong></span>
-                                                    <hr>
-                                                </div>
                                             </div>
-                                            
+                                             {{#each patients}}
                                             <div class="row">
                                                 <div class="col">
-                                                    {{patients.patientsName}}
+                                                    {{this.patientsName}}
                                                 </div>
                                                 <div class="col">
-                                                    <span class="card-body">{{patients.patientsMobile}}</span>
+                                                    <span class="card-body">{{this.patientsMobile}}</span>
                                                 </div>
                                                 <div class="col">
-                                                    <span class="card-body">{{patients.preferredTime}}</span>
+                                                    <span class="card-body">{{this.preferredTime}}</span>
                                                 </div>
                                                 <div class="col">
-                                                    <span class="card-body">{{patients.patientsAddress}}</span>
-                                                </div>
-                                                <div class="col">
-                                                    <span class="card-body">{{patients.bookingDate}}</span>
+                                                    <span class="card-body">{{this.patientsAddress}}</span>
                                                 </div>
                                             </div>
+                                            {{/each}}
                                         </li>
-                                        {{/if}}
+                                     
                                     </div>
 
                                 </div>
                                 <hr>
-                                <div class="row">
-                                    <div class="col">
-
-                                    </div>
-                                    <div class="col">
-                                        <div class="panel-footer"><strong>Total Price:
-                                                ₹{{this.cart.totalPrice}}</strong> </div>
-                                    </div>
-                                </div>
-
                             </div>
                             {{!-- {{/each}} --}}
 

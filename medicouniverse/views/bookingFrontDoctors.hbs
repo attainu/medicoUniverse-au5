@@ -42,7 +42,7 @@
         {{/if}}
     </nav>
     <div class="jumbotron">
-        <h1 id="pName"><strong>Medico<span>Universe</span><sup>+</sup></strong></h1>
+        <h1 id="pName"><strong>Medico<span>Universe</span></strong></h1>
         <h3 id="info"><strong>Book Your Appointments here</strong></h3>
         <form action="/appointment" method="POST" class="form-inline">
             <input class="form-control" list="places" name="city" placeholder="Select City" value="{{city}}" required>
@@ -80,41 +80,43 @@
     <section>
         <div id="feature1">
             <div id="imageDiv">
-                <img src="https://www.m3india.in/assets/jima/survey-mr/survey_doctor-060dcedbc5d887666142d12d6bf05ceb89f03d66e66a245908f150c6710c611c.png"
-                    width="225px" height="auto" alt="">
+                <img src="../public/images/doctorsetc.jpg"
+                    width="300px" height="250px"  style="border-radius: 15px;" alt="">
             </div>
+            <div class="col-1"></div>
             <div id="detailList">
-                <h4>Book Doctors,Therapists,Nurses <br> and babysitters</h4>
+                <h3 >Book Doctors,Therapists,Nurses <br> and Babysitters</h3>
                 <ul class="mt-5">
-                    <li><img src="public/images/correct.svg" width="18px" height="auto" alt=""> 100% Verified Doctors
-                    </li>
-                    <li><img src="public/images/correct.svg" width="18px" height="auto" alt=""> Bookings available
-                        anytime from everywhere.</li>
-                    <li><img src="public/images/correct.svg" width="18px" height="auto" alt=""> Appointments with the
-                        best doctors in your city</li>
-                    <li><img src="public/images/correct.svg" width="18px" height="auto" alt=""> All the services are
-                        available at affordable fees. </li>
+                    <h6><li><img src="public/images/correct.svg" width="18px" height="auto" alt="">  100% Verified Doctors
+                    </li></h6>
+                    <h6><li><img src="public/images/correct.svg" width="18px" height="auto" alt=""> Bookings available
+                        anytime from everywhere.</li></h6>
+                    <h6><li><img src="public/images/correct.svg" width="18px" height="auto" alt=""> Appointments with the
+                        best doctors in your city</li></h6>
+                   <h6> <li><img src="public/images/correct.svg" width="18px" height="auto" alt=""> All the services are
+                        available at affordable costs. </li></h6>
                 </ul>
 
-                <a href="/booking_doctors" class="btn btn-info">Book</a>
+                <a href="/booking_doctors" class="btn btn-info offset-2">Book Now</a>
             </div>
         </div>
     </section>
     <section>
         <div id="feature2">
             <div id="imageDiv">
-                <img src="https://images.unsplash.com/photo-1542736667-069246bdbc6d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80"
-                    width="225px" height="250" alt="">
+                <img src="../public/images/medicine.jpg"
+                    width="300px" height="250px"  style="border-radius: 15px;" alt="">
             </div>
+            <div class="col-1"></div>
             <div id="detailList">
-                <h2>Order Medicine</h2>
+                <h2 >Order Medicine</h2>
                 <ul class="mt-5">
-                    <li> <img src="public/images/correct.svg" width="18px" height="auto" alt=""> Order Medicines at
-                        discounted prices. </li>
-                    <li> <img src="public/images/correct.svg" width="18px" height="auto" alt=""> Get your medicines
-                        delivered at your doorstep.</li>
-                    <li> <img src="public/images/correct.svg" width="18px" height="auto" alt=""> All the order
-                        Dispatched with in 12 hours. </li>
+                  <h6><li> <img src="public/images/correct.svg" width="18px" height="auto" alt=""> Order Medicines at
+                        discounted prices.</li></h6> 
+                    <h6><li> <img src="public/images/correct.svg" width="18px" height="auto" alt=""> Get your medicines
+                        delivered at your doorstep.</li></h6>
+                    <h6><li> <img src="public/images/correct.svg" width="18px" height="auto" alt=""> All the order
+                        Dispatched with in 12 hours. </li></h6>
                 </ul>
                 {{!-- <button class="btn btn-info offset-2"> Order Now</button> --}}
                 <a href="/pharmacy" class="btn btn-info offset-2">Order Now</a>
@@ -124,21 +126,44 @@
     <section>
         <div id="feature1">
             <div id="imageDiv">
-                <img src="https://static.toiimg.com/thumb/msid-66127205,imgsize-865075,width-400,resizemode-4/66127205.jpg"
-                    width="300px" height="250" alt="">
+                <img src="../public/images/ambulance.jpg"
+                    width="300px" height="250px" style="border-radius: 15px;" alt="">
             </div>
+            <div class="col-1"></div>
             <div id="detailList">
-                <h2>Book Ambulance</h2>
+                <h2 >Book Ambulance</h2>
                 <ul class="mt-5">
-                    <li><img src="public/images/correct.svg" width="18px" height="auto" alt=""> Book an ambulance and
-                        track it on its way.</li>
-                    <li><img src="public/images/correct.svg" width="18px" height="auto" alt=""> Real time location
-                        tracking.</li>
-                    <li><img src="public/images/correct.svg" width="18px" height="auto" alt=""> Always on time service.
-                    </li>
+                    <h6><li><img src="public/images/correct.svg" width="18px" height="auto" alt=""> Book an ambulance and
+                        track it on its way.</li></h6>
+                    <h6><li><img src="public/images/correct.svg" width="18px" height="auto" alt=""> Real time location
+                        tracking.</li></h6>
+                    <h6><li><img src="public/images/correct.svg" width="18px" height="auto" alt=""> Always on time service.
+                    </li></h6>
                 </ul>
 
-                <a href="/ambulance_booking" class="btn btn-info">Book Ambulance</a>
+                <a href="/ambulance_booking" class="btn btn-info offset-2">Book Ambulance</a>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div id="feature1">
+            <div id="imageDiv">
+                <img src="../public/images/hospital.png"
+                    width="300px" height="250px" style="border-radius: 15px;" alt="">
+            </div>
+            <div class="col-1"></div>
+            <div id="detailList">
+                <h2 >Appointments at hospitals</h2>
+                <ul class="mt-5">
+                    <h6><li><img src="public/images/correct.svg" width="18px" height="auto" alt=""> Search Some of the best hospitals in your city </li></h6>
+                    <h6><li><img src="public/images/correct.svg" width="18px" height="auto" alt=""> Book an appointment with best 
+                        doctors at the hospitals. </li></h6>
+                    <h6><li><img src="public/images/correct.svg" width="18px" height="auto" alt=""> Get a message on your phone once the 
+                        booking is done. 
+                    </li></h6>
+                </ul>
+
+                <a href="/ambulance_booking" class="btn btn-info offset-2">Book Now</a>
             </div>
         </div>
     </section>
@@ -153,9 +178,9 @@
             <div class="col-lg-3 col-md-3 col-sm-12 ml-5">
                 <h5>For patients</h5>
                 <ul>
-                    <li><a href="#">Search for Doctors</a></li>
-                    <li><a href="#">Search for Hospitals</a></li>
-                    <li><a href="#">Order Medicine</a></li>
+                    <h6><li><a href="#">Search for Doctors</a></li></h6>
+                   <h6><li><a href="#">Search for Hospitals</a></li></h6> 
+                    <h6><li><a href="#">Order Medicine</a></li></h6>
                 </ul>
             </div>
         </div>

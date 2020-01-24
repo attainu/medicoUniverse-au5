@@ -186,7 +186,7 @@ sup {
 	border-top-left-radius: 25px;
 	border-bottom-right-radius: 25px;
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-	padding: 100px;
+	padding: 70px;
 	margin: 20px 100px 20px 100px;
 }
 #feature2 {
@@ -196,7 +196,7 @@ sup {
 	border-top-left-radius: 25px;
 	border-bottom-right-radius: 25px;
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-	padding: 100px;
+	padding: 70px;
 	margin: 20px 100px 20px 100px;
 }
 #feature3 {
@@ -206,22 +206,25 @@ sup {
 	border-top-left-radius: 25px;
 	border-bottom-right-radius: 25px;
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-	padding: 100px;
+	padding: 70px;
 	margin: 20px 100px 20px 100px;
 }
 
 #imageDiv {
+	
 	flex: 1;
 	padding: 10px;
 }
 
 #detailList {
+	
 	flex: 2;
 	padding: 10px;
 }
 
 @media (max-width: 800px) {
 	#feature1 {
+		
 		flex-direction: column;
 		justify-content: center;
 		margin: 10px;
@@ -244,7 +247,10 @@ sup {
 	}
 	#imageDiv {
 		width: 50px;
-	}
+		display: flex;
+		justify-content: end;
+		 	
+}
 	#detailList {
 		width: fit-content;
 	}
@@ -389,3 +395,14 @@ footer a:hover {
 	text-decoration: none;
 	color: grey;
 }
+
+.custom-select {
+	position: relative;
+	font-family: Arial;
+  }
+  
+  .custom-select select {
+	display: none; /*hide original SELECT element:*/
+  }
+  
+ 

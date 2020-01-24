@@ -16,33 +16,6 @@
   <nav class="navbar navbar-expand-sm navbar-light">
     <a class="navbar-brand" href="/">Medico<span>Universe</span></a>
 
-<<<<<<< HEAD
-        {{#if user}}
-        <div class="navbar-loggedin">
-            <img src="{{user.image}}" onerror="this.src = './image/default_profile_pic.png'" width="32px" height="32px">
-            <a href="/dashboard" class="ml-2">{{session.user.email}}</a>
-        </div>
-        {{else}}
-        <button class="navbar-toggler float-right p-1" type="button" data-toggle="collapse"
-            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-            aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse nav-resp" id="navbarSupportedContent">
-            <ul class="navbar-nav mx-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="/medicoUniverse/about">About Us</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/medicoUniverse/mission">Mission</a>
-                </li>
-            </ul>
-            <a class="nav-link login-signup " href="/user/signin">Hello {{session.user.email}}!</a>
-            <a class="btn btn-outline-warning " href="/profile">View Profile</a>
-        </div>
-        {{/if}}
-    </nav>
-=======
     {{#if user}}
     <div class="navbar-loggedin">
       <img src="{{user.image}}" onerror="this.src = './image/default_profile_pic.png'" width="32px" height="32px">
@@ -67,9 +40,8 @@
     </div>
     {{/if}}
   </nav>
->>>>>>> f70228970fd0eff7a080250c47cd5f2aba3429b9
   <div class="jumbotron">
-    <h1 id="pName"><strong>Medico<span>Universe</span><sup>+</sup></strong></h1>
+    <h1 id="pName"><strong>Medico<span>Universe</span></strong></h1>
     <h3 id="info"><strong>Book Your Appointments here</strong></h3>
     <form action="/appointment" method="POST" class="form-inline">
       <input class="form-control" list="places" name="city" placeholder="Select Cities" required>
@@ -99,33 +71,6 @@
     </form>
   </div>
   <section>
-<<<<<<< HEAD
-    <div id="alertBN" >
-      <div id="alertBN2"class="alert alert-success" role="alert"  >
-      <div>
-        <h4 class="alert-heading">Booking Successfull !!!</h4>
-         <hr>
-      </div>
-      <div>
-      <p>We have received your request. We will get back to you for confirmation of further details.
-          You will receive a call from our customer service regarding that. 
-        </p>
-      <ul>
-        <h5>Booking received </h5>
-        <li><strong>On Date : {{session.user.email}}</strong><span id="date"></span></li>
-        <li><strong>On Time : </strong><span id="time"></span></li>
-      </div>
-      <div>
-           <h5>Thank You, Team <h1 id="pName"><strong>Medico<span>Universe</span></strong></h1></h5>
-      </div>
-      <div>
-       <a class="btn btn-outline-warning " href="/profile">View Profile</a>
-      </div>
-    
-  
-</div>
-</div>
-=======
     <div class="col-6 offset-3 mt-4" style="padding: 60px; ">
       <div class="alert alert-success" role="alert" style="padding: 30px 60px 60px 60px;">
         <h4 class="alert-heading">Booking Successfull !!!</h4>
@@ -133,16 +78,9 @@
         <p>We have received your request. We will get back to you for confirmation of further details.
           You will receive a call from our customer service regarding that.
         </p>
-        <ul>
-          <h5>Booking received </h5>
-          <li><strong>On Date : {{session.user.email}}</strong><span id="date"></span></li>
-          <li><strong>On Time : </strong><span id="time"></span></li>
-        </ul>
-        <h5>Thank You, Team <h1 id="pName"><strong>Medico<span>Universe</span></strong></h1>
-        </h5>
+         Team Medico Universe Thanks You for using our services
       </div>
     </div>
->>>>>>> f70228970fd0eff7a080250c47cd5f2aba3429b9
   </section>
   <footer>
     <div style="height: 20px;"></div>
@@ -190,7 +128,7 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
     integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
     crossorigin="anonymous"></script>
-  <script src="../public/javascript/bookingDoctors.script.js"></script>
+  <script src="../public/js/bookingDoctors.script.js"></script>
 </body>
 
 </html>
