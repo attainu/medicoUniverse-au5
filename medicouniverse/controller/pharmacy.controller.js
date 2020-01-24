@@ -13,10 +13,7 @@ var userDb = require('../model/user');
 var Order = require('../model/order');
 const jsonData = require('../public/data/medicines.json');
 const hospitalmodel = require('../model/hospitalmodels');
-<<<<<<< HEAD
-=======
 patients = require("../model/booked.patients.model")
->>>>>>> a62b9123304fae5d48430eccc8a8471715f015f3
 const nexmo = new Nexmo({
 	apiKey: 'd61633c6',
 	apiSecret: '7kfNTn9ZkKnNf5Pi'
@@ -353,19 +350,6 @@ pharmacyController.profileget = (req, res, next) => {
 			order.items = cart.generateArray();
 		});
 		console.log(orders);
-<<<<<<< HEAD
-
-		// patientsDB.patients.find({person: req.session.user.email},function (err, docs){
-		// 	if (err) throw err
-		// 	console.log(docs)
-
-			
-		// })
-
-		hospitalmodel.patient.find({store : req.session.user.email}, function (err, result) {
-			if (err) throw err
-=======
->>>>>>> a62b9123304fae5d48430eccc8a8471715f015f3
 
 		hospitalmodel.patient.find({ store: req.session.user.email }, function(err,result) {
 			if (err) throw err;
@@ -374,51 +358,13 @@ pharmacyController.profileget = (req, res, next) => {
 			mongoose.model('patients').find({person: req.session.user.email}, function (err, docs) {
 				if (err) throw err
 				console.log("data in db : " , docs)
-<<<<<<< HEAD
-				res.render('user/profile', 
-			{ 
-				orders: orders,
-				patient : result,
-				patients : docs[0],
-				pricehospital : Number(result.length*200)
-				
-			});	
-			});
-		});
-	});
-};
-// pharmacyController.babybathget = (req, res, next) => {
-// 	var data = {};
-// 	babybath.find({}, (err, result) => {
-// 		if (err) {
-// 			console.log('Error in finding data');
-// 		} else {
-// 			data.result = result;
-// 		}
-// 		console.log(result);
-// 		res.render('babybath', {
-// 			baby: data.result
-// 		});
-// 	});
-// };
-
-// pharmacyController.userdataget = (req, res, next) => {
-// 	medicineDb.insertMany(jsonData, (err, jsonData) => {
-// 		if (err) {
-// 			console.log('error in data');
-// 		}
-// 		res.send(jsonData);
-// 	});
-// };
-=======
 			
 			res.render('user/profile', 
 			{ 
 				orders: orders,
 				patient : result,
 				pricehospital : Number(result.length*200),
-				patients : patients
-
+				patients : docs
 			});
 				
 		});
@@ -438,5 +384,4 @@ pharmacyController.logout = (req, res, next) => {
 }
 
 
->>>>>>> a62b9123304fae5d48430eccc8a8471715f015f3
 module.exports = pharmacyController;
