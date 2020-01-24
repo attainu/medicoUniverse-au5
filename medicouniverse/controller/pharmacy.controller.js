@@ -362,7 +362,7 @@ pharmacyController.profileget = (req, res, next) => {
 pharmacyController.logout = (req, res) => {
 	req.session.destroy(function(err) {
 		console.log('successfully destryoyed');
-		req.redirect('/');
+		res.redirect('/');
 	});
 };
 module.exports = pharmacyController;

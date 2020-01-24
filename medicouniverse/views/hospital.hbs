@@ -15,8 +15,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
-    <link rel="stylesheet" href="dark-mode.css">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="../css/hospitalstyle.css">
     <link rel="stylesheet" href="./css/plus.css">
     <title>hospitals</title>
@@ -25,33 +24,39 @@
 <body>
     <header class="">
         <nav class="navbar navbar-expand-sm navbar-light">
-            <a class="navbar-brand" href="/">Medico<span>Universe</span></a>
-
-            {{#if user}}
-            <div class="navbar-loggedin">
-                <img src="{{user.image}}" onerror="this.src = './image/default_profile_pic.png'" width="36px"
-                    height="36px">
-                <a href="/dashboard" class="ml-2">{{user.name}}</a>
+        <a class="navbar-brand" href="/">Medico<span>Universe</span></a>
+        <button class="navbar-toggler float-right p-1" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse nav-resp" id="navbarSupportedContent">
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/medicoUniverse/about">About Us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/medicoUniverse/mission">Mission</a>
+                </li>
+            </ul>
+            {{#if session.user}}
+            <div class="dropdown">
+                <a class="nav-link font-weight-bold login-signup w-100" id="dropdownMenu1-1" data-toggle="dropdown" href="">
+                    Hello {{session.user.email}}
+                </a>
+                <div class="dropdown-menu dropdown-primary" id="your-custom-id">
+                    <a class="dropdown-item mdb-dropdownLink-1  " href="/profile">Profile</a>
+                    <a class="dropdown-item mdb-dropdownLink-1 " href="/logout">Logout</a>
+                </div>
             </div>
             {{else}}
-            <button class="navbar-toggler float-right p-1" type="button" data-toggle="collapse"
-                data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse nav-resp" id="navbarSupportedContent">
-                <ul class="navbar-nav mx-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="/about">About Us</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/mission">Mission</a>
-                    </li>
-                </ul>
-                <a class="nav-link login-signup " href="/user/login">Hello {{session.user.email}}</a>
+            <div>
+                <a class="nav-link login-signup w-100" href="/user/signin">Hello Guest</a>
             </div>
             {{/if}}
-        </nav>
+        </div>
+    </nav>
+    <hr>
     </header>
     <section>
         <div class="container-fluid pt-3">
@@ -575,7 +580,7 @@
             </div>
         </div>
     </section>
-    <footer class="mt-4">
+    <footer>
         <div style="height: 20px;"></div>
         <div class="row">
             <div class="col-lg-3 col-md-3 col-sm-12 ml-5">
@@ -591,8 +596,34 @@
                     <li><a href="#">Order Medicine</a></li>
                 </ul>
             </div>
+            <div class="col-lg-4 col-md-3 col-sm-12 ml-5 mt-2 ">
+                <style>
+                    .fa {
+                        text-align: center;
+                    }
+
+                    .fa:hover {
+                        opacity: 0.7;
+                        text-decoration: none;
+                    }
+                    .size{
+                        font-size: 30px;
+                        margin: 0 8px;
+                        
+                    }
+                </style>
+                <div class="mt-4">
+                    <a href="#" class="fa fa-facebook size"></a>
+                    <a href="#" class="fa fa-twitter size"></a>
+                    <a href="#" class="fa fa-linkedin size"></a>
+                    <a href="#" class="fa fa-instagram size"></a>
+                    <a href="#" class="fa fa-youtube size"></a>
+                </div>
+                
+            </div>
         </div>
         <div style="height: 20px;"></div>
+
     </footer>
     <a href="#" class="float ca" id="menu-share">
         <i class="fa fa-share my-float"></i>
