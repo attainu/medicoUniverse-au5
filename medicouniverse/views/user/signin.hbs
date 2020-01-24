@@ -16,6 +16,8 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
     <link rel="stylesheet" href="../public/css/login_style.css">
 </head>
 
@@ -24,7 +26,7 @@
         <a class="navbar-brand" href="/">Medico<span>Universe</span></a>
         {{#if user}}
         <div class="navbar-loggedin">
-            
+
             <a href="/dashboard" class="ml-2">{{user.name}}</a>
         </div>
         {{else}}
@@ -113,6 +115,7 @@
         </div>
         <div style="height: 20px;"></div>
     </footer>
+
 </body>
 
 </html>

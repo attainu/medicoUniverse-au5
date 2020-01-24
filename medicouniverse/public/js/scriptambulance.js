@@ -62,6 +62,7 @@ $(document).ready(function() {
 });
 
 $(document).ready(function() {
+	$('#driverCard').hide();
 	$('#confirmBooking').click(function() {
 		$('#start').val('');
 		$('#end').val('');
@@ -321,3 +322,8 @@ function startAnimation(index) {
 }
 
 $('#your-custom-id').mdbDropSearch();
+
+function showdrivercard() {
+	$('#btnDiv').html('<button>Save</button>');
+	console.log('button clicked');
+}

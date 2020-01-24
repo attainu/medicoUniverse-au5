@@ -9,6 +9,8 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
     <link rel="stylesheet" href="/css/products.css">
     <link rel="stylesheet" href="./css/plus.css">
     {{!-- <link rel="stylesheet" href="./css/headerFooter.css">
@@ -45,7 +47,7 @@
     <hr>
     <section class="row no-gutters">
         <div class="search col-lg-8 col-md-8 col-sm-12 col-10 my-3">
-            <form action="/booking_doctors" method="GET">
+            {{!-- <form action="/booking_doctors" method="GET">
                 <div class="search-city position-relative d-inline-block">
                     <img src="./image/location.svg" width="16px" height="16px" id="loc-icon">
                     <input type="text" placeholder="City" name="city" id="cities" class="w-100" autocomplete="off"
@@ -57,15 +59,16 @@
                     <input type="text" placeholder="Search for Doctors" name="mainsearch" id="mainsearch" class="w-100"
                         autocomplete="off" required>
                 </div>
+            </form> --}}
+        </div>
+        <div id="slideout">
+            <div class="d-inline-block" id="ambIcon">
+                <img src="./image/ambulance_icon.png" width="36px" height="36px">
+                <a href="/ambulance_booking" class="ml-2 btn peach-gradient"> Book Ambulance</a>
 
-                <div id="slideout">
-                    <div class="d-inline-block" id="ambIcon">
-                        <img src="./image/ambulance_icon.png" width="36px" height="36px">
-                        <a href="/ambulance_booking" class="ml-2 btn peach-gradient"> Book Ambulance</a>
 
-
-                    </div>
-                </div>
+            </div>
+        </div>
     </section>
     <section class="container carousel-c">
         <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">

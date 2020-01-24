@@ -149,7 +149,6 @@ pharmacyController.shoppingCartget = (req, res, next) => {
 		return res.render('shoppingCart', { products: null });
 	}
 	var cart = new Cart(req.session.cart);
-	
 
 	res.render('shoppingCart', {
 		products: cart.generateArray(),
@@ -184,12 +183,11 @@ pharmacyController.checkoutpost = (req, res, next) => {
 				req.session.abc = order;
 			}
 
-			res.render('placedOrder',{
-				result:order
-
+			res.render('placedOrder', {
+				result: order
 			});
+			req.session.cart = null;
 		});
-		// req.session.cart = null;
 	});
 };
 pharmacyController.placedOrderget = (req, res, next) => {
@@ -218,6 +216,7 @@ pharmacyController.placedOrderget = (req, res, next) => {
 // 	}
 // }
 pharmacyController.placedOrderpost = (req, res, next) => {
+	req.session.cart = null;
 	res.render('placedOrder');
 };
 
@@ -238,11 +237,10 @@ pharmacyController.profileget = (req, res, next) => {
 		) {
 			if (err) throw err;
 			// saved!
-			res.render('user/profile', 
-			{ 
+			res.render('user/profile', {
 				orders: orders,
-				patient : result,
-				pricehospital : Number(result.length*200)
+				patient: result,
+				pricehospital: Number(result.length * 200)
 			});
 		});
 	});
