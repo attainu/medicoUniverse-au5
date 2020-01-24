@@ -317,7 +317,6 @@ pharmacyController.placedOrderpost = (req, res, next) => {
 	req.session.cart = null;
 	res.render('placedOrder');
 };
-
 pharmacyController.profileget = (req, res, next) => {
 	Order.find({ user: req.session.user }, function(err, orders) {
 		if (err) {
@@ -329,29 +328,27 @@ pharmacyController.profileget = (req, res, next) => {
 			order.items = cart.generateArray();
 		});
 		console.log(orders);
+		hospitalmodel.patient.find({store : req.session.user.email}, function (err, result) {
+			if (err) throw err
 
-		// patientsDB.patients.find({person: req.session.user.email},function (err, docs){
-		// 	if (err) throw err
-		// 	console.log(docs)
-
-		// })
-
+			// saved!
 			mongoose.model('patients').find({person: req.session.user.email}, function (err, docs) {
 				if (err) throw err
 				console.log("data in db : " , docs)
-			
-			res.render('user/profile', 
+				res.render('user/profile', 
 			{ 
 				orders: orders,
 				patient : result,
-				pricehospital : Number(result.length*200),
-				patients : docs
-			});
+				patients : docs,
+				pricehospital : Number(result.length*200)
 				
+			});	
+			});
 		});
 	});
-};
-
+};		
+		
+				
 pharmacyController.logout = (req, res) => {
 	req.session.destroy(function(err) {
 		console.log('successfully destryoyed');
