@@ -349,7 +349,6 @@ pharmacyController.profileget = (req, res, next) => {
 			order.items = cart.generateArray();
 		});
 		console.log(orders);
-<<<<<<< HEAD
 
 		// patientsDB.patients.find({person: req.session.user.email},function (err, docs){
 		// 	if (err) throw err
@@ -368,31 +367,15 @@ pharmacyController.profileget = (req, res, next) => {
 				res.render('user/profile', 
 			{ 
 				orders: orders,
-				patient : result[0],
-				patients : docs[0]
-				
-=======
-		hospitalmodel.patient.find({ store: req.session.user.email }, function(
-			err,
-			result
-		) {
-			if (err) throw err;
-			// saved!
-			res.render('user/profile', 
-			{ 
-				orders: orders,
 				patient : result,
+				patients : docs[0],
 				pricehospital : Number(result.length*200)
->>>>>>> f70228970fd0eff7a080250c47cd5f2aba3429b9
-			});
 				
-			 });
-			
-			
+			});	
+			});
 		});
 	});
 };
-
 // pharmacyController.babybathget = (req, res, next) => {
 // 	var data = {};
 // 	babybath.find({}, (err, result) => {
