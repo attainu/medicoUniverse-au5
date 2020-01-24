@@ -22,36 +22,40 @@
 
 <body>
     <div class="container-flex">
-
-
         <nav class="navbar navbar-expand-sm navbar-light">
-            <a class="navbar-brand" href="/">Medico<span>Universe</span></a>
-
-            {{#if user}}
-            <div class="navbar-loggedin">
-                <img src="{{user.image}}" onerror="this.src = './image/default_profile_pic.png'" width="36px"
-                    height="36px">
-                <a href="/dashboard" class="ml-2">{{user.name}}</a>
+        <a class="navbar-brand" href="/">Medico<span>Universe</span></a>
+        <button class="navbar-toggler float-right p-1" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse nav-resp" id="navbarSupportedContent">
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/medicoUniverse/about">About Us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/medicoUniverse/mission">Mission</a>
+                </li>
+            </ul>
+            {{#if session.user}}
+            <div class="dropdown">
+                <a class="nav-link font-weight-bold login-signup" id="dropdownMenu1-1" data-toggle="dropdown" href="">
+                    Hello {{session.user.email}}
+                </a>
+                <div class="dropdown-menu dropdown-primary" id="your-custom-id">
+                    <a class="dropdown-item mdb-dropdownLink-1  " href="/profile">Profile</a>
+                    <a class="dropdown-item mdb-dropdownLink-1 " href="/logout">Logout</a>
+                </div>
             </div>
             {{else}}
-            <button class="navbar-toggler float-right p-1" type="button" data-toggle="collapse"
-                data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse nav-resp" id="navbarSupportedContent">
-                <ul class="navbar-nav mx-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="/about">About Us</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/mission">Mission</a>
-                    </li>
-                </ul>
-                <a class="nav-link login-signup " href="/login">Login/SignUp</a>
+            <div>
+                <a class="nav-link login-signup " href="/user/signin">Hello Guest</a>
             </div>
             {{/if}}
-        </nav>
+        </div>
+    </nav>
+    <hr>
         <div class="container mt-2 ">
             <div class="row">
                 <div class="col">
@@ -138,7 +142,7 @@
                     <!-- Card Regular -->
                 </div>
                 <div class="col">
-                   <div class="card card-cascade">
+                    <div class="card card-cascade">
 
                         <!-- Card image -->
 
@@ -154,13 +158,12 @@
                             <div class="card-body card-body-cascade">
                                 <div class="card-body">
                                     <div class="card-body ">
-                                       
-
+                                        
                                         <li class="list-group-item border-0 " style="background-color:honeydew">
                                             <div class="row">
                                                 <div class="col">
-                                                   <strong>Name</strong>
-                                                   <hr>
+                                                    <strong>Name</strong>
+                                                    <hr>
                                                 </div>
                                                 <div class="col">
                                                     <span class="card-body"><strong>Contact</strong></span>
@@ -175,7 +178,7 @@
                                                     <hr>
                                                 </div>
                                             </div>
-                                             {{#each patients}}
+                                            {{#each patients}}
                                             <div class="row">
                                                 <div class="col">
                                                     {{this.patientsName}}
@@ -189,10 +192,11 @@
                                                 <div class="col">
                                                     <span class="card-body">{{this.patientsAddress}}</span>
                                                 </div>
+                                               
                                             </div>
                                             {{/each}}
                                         </li>
-                                     
+                                        
                                     </div>
 
                                 </div>
@@ -294,7 +298,7 @@
 
         </div>
 
-        <footer class="mt-4">
+        <footer class="mt-4 d-none">
             <div style="height: 20px;"></div>
             <div class="row">
                 <div class="col-lg-3 col-md-3 col-sm-12 ml-5">

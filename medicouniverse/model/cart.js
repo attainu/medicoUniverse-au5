@@ -17,6 +17,14 @@ module.exports = function Cart(oldCart) {
 		this.totalQty++;
 		this.totalPrice += storedItem.price;
 	};
+
+	this.reduceByOne = function() {
+		this.items[id].qty--;
+		this.items[id].productPrice -= this.items[id].item.productPrice;
+		this.totalQty--
+		this.totalPrice -= this.items[id].item.productPrice
+	};
+
 	this.generateArray = function() {
 		var arr = [];
 		for (var id in this.items) {

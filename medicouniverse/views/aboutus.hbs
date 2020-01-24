@@ -9,6 +9,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="/css/products.css">
     <title>About Us</title>
 </head>
@@ -30,7 +31,21 @@
                     <a class="nav-link" href="/medicoUniverse/mission">Mission</a>
                 </li>
             </ul>
-            <a class="nav-link login-signup " href="/user/signin">Login/SignUp</a>
+            {{#if session.user}}
+            <div class="dropdown">
+                <a class="nav-link font-weight-bold login-signup" id="dropdownMenu1-1" data-toggle="dropdown" href="">
+                    Hello {{session.user.email}}
+                </a>
+                <div class="dropdown-menu dropdown-primary" id="your-custom-id">
+                    <a class="dropdown-item mdb-dropdownLink-1  " href="/profile">Profile</a>
+                    <a class="dropdown-item mdb-dropdownLink-1 " href="/logout">Logout</a>
+                </div>
+            </div>
+            {{else}}
+            <div>
+                <a class="nav-link login-signup " href="/user/signin">Hello Guest</a>
+            </div>
+            {{/if}}
         </div>
     </nav>
     <hr>
@@ -65,6 +80,31 @@
                     <li><a href="#">Search for Hospitals</a></li>
                     <li><a href="#">Order Medicine</a></li>
                 </ul>
+            </div>
+            <div class="col-lg-4 col-md-3 col-sm-12 ml-5 mt-2 ">
+                <style>
+                    .fa {
+                        text-align: center;
+                    }
+
+                    .fa:hover {
+                        opacity: 0.7;
+                        text-decoration: none;
+                    }
+                    .size{
+                        font-size: 30px;
+                        margin: 0 8px;
+                        
+                    }
+                </style>
+                <div class="mt-4">
+                    <a href="#" class="fa fa-facebook size"></a>
+                    <a href="#" class="fa fa-twitter size"></a>
+                    <a href="#" class="fa fa-linkedin size"></a>
+                    <a href="#" class="fa fa-instagram size"></a>
+                    <a href="#" class="fa fa-youtube size"></a>
+                </div>
+                
             </div>
         </div>
         <div style="height: 20px;"></div>

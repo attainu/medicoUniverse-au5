@@ -19,22 +19,6 @@ window.initialize = initialize;
 window.setRoutes = setRoutes;
 var searchInput = 'start';
 var searchOutput = 'end';
-//-------------------------------------------------
-// function initRoute() {
-// 	var myLatLng = { lat: -25.363, lng: 131.044 };
-
-// 	var map = new google.maps.Map(document.getElementById('map'), {
-// 		zoom: 4,
-// 		center: myLatLng
-// 	});
-
-// 	var marker = new google.maps.Marker({
-// 		position: myLatLng,
-// 		map: map,
-// 		title: 'Hello World!'
-// 	});
-// }
-//---------------------
 
 $(document).ready(function() {
 	var autocomplete;
@@ -62,9 +46,12 @@ $(document).ready(function() {
 });
 
 $(document).ready(function() {
+	$('#driverCard').hide();
 	$('#confirmBooking').click(function() {
-		$('#start').val('');
-		$('#end').val('');
+		// $('#start').val('');
+		// $('#end').val('');
+		$('#bookNow').hide();
+		$('#driverCard').show();
 		$('#modalLoginAvatar').modal('hide');
 	});
 });
@@ -82,6 +69,19 @@ function toggleButton() {
 	);
 }
 function ambulanceDetails() {
+	// function toggleButton1() {
+	// 	document.getElementById('confirmBooking').addEventListener(
+	// 		'click',
+	// 		function(event) {
+	// 			if (event.target.value === 'Confirm Booking') {
+	// 				event.target.value = 'Please Wait';
+	// 			} else {
+	// 				event.target.value = 'Confirm Booking';
+	// 			}
+	// 		},
+	// 		false
+	// 	);
+	// }
 	$('#bookAmbulance').click(function() {
 		toggleError('');
 		var startVal = document.getElementById('start').value;
