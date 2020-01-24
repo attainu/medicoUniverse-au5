@@ -50,6 +50,50 @@
         </div>
         {{/if}}
     </nav>
+    <div class="row">
+        {{#if invalidlength}}
+        <div id="alert" class="alert alert-danger alert-dismissible fade show">
+            Mobile Number has to be 10 digits long !!!
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        {{/if}}
+        {{#if mismatch}}
+        <div id="alert" class="alert alert-danger alert-dismissible fade show">
+            <strong>Entered passwords doesn't match !!!</strong> 
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        {{/if}}
+        {{#if invalidPasslength}}
+        <div id="alert" class="alert alert-danger alert-dismissible fade show">
+            Password has to be minimum 8 characters long !!!
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        {{/if}}
+    
+        {{#if invalidEmail}}
+        <div id="alert" class="alert alert-danger alert-dismissible fade show">
+            This Email is Already registered !!!
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        {{/if}}
+    
+        {{#if success}}
+        <div id="alert" class="alert alert-success alert-dismissible fade show">
+            <strong>Registered Successfully !!! </strong><br> please go to login page to login.
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        {{/if}}
+    </div>
     <div class="container">
         <div class="row" id="row">
             <div id="imageDiv">
@@ -63,92 +107,40 @@
                     <div id="signupText">
                         <h1><strong>Signup</strong></h1>
                     </div>
-
                 </div>
                 <hr>
                 <form action="/user/signup" method="POST" enctype="multipart/form-data">
-
                     <div class="form-group">
-                        <label><strong>Full Name<sup style="color: red;"> *</sup> </strong></label>
+                        <label><strong>Full Name </strong></label>
                         <input type="text" class="form-control"
                             style="border-bottom-right-radius: 20px; border-top-left-radius: 20px;" name="username"
                             placeholder="Enter Fullname" required>
                     </div>
                     <div class="form-group">
-                        <label><strong> Email<sup style="color: red;"> *</sup></strong></label>
+                        <label><strong> Email</strong></label>
                         <input type="email" class="form-control"
                             style="border-bottom-right-radius: 20px; border-top-left-radius: 20px;" name="email"
                             id="exampleInputPassword1" placeholder="Enter email" required>
                     </div>
                     <div class="form-group">
-                        <label><strong> Mobile <sup style="color: red;"> *</sup></strong></label>
+                        <label><strong> Mobile </strong></label>
                         <input type="number" class="form-control"
                             style="border-bottom-right-radius: 20px; border-top-left-radius: 20px;" name="mobile"
                             id="exampleInputPassword1" placeholder="Enter phone number" minlength="10" maxlength="10"
                             required>
                     </div>
                     <div class="form-group">
-                        <label><strong>Password<sup style="color: red;"> *</sup></strong></label>
+                        <label><strong>Password</strong></label>
                         <input type="password" class="form-control"
                             style="border-bottom-right-radius: 20px; border-top-left-radius: 20px;" name="password"
                             id="exampleInputPassword1" placeholder="Enter password" minlength="8" required>
                     </div>
                     <div class="form-group">
-                        <label><strong>Confirm Password<sup style="color: red;"> *</sup></strong></label>
+                        <label><strong>Confirm Password</strong></label>
                         <input type="password" class="form-control"
                             style="border-bottom-right-radius: 20px; border-top-left-radius: 20px;"
                             name="confirm_password" id="exampleInputPassword1" placeholder="Re-enter password"
                             minlength=8 required>
-                    </div>
-                    <div class="form-group">
-                        {{#if mismatch}}
-                        <div class="alert alert-danger alert-dismissible fade show">
-                            Password mismatch !!!
-                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        {{/if}}
-                    </div>
-                    <div class="form-group">
-                        {{#if invalidlength}}
-                        <div class="alert alert-danger alert-dismissible fade show">
-                            Mobile Number has to be 10 digits long !!!
-                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        {{/if}}
-                    </div>
-                    <div class="form-group">
-                        {{#if invalidPasslength}}
-                        <div class="alert alert-danger alert-dismissible fade show">
-                            Password has to be minimum 8 characters long !!!
-                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        {{/if}}
-                    </div>
-                    <div class="form-group">
-                        {{#if invalidEmail}}
-                        <div class="alert alert-danger alert-dismissible fade show">
-                            This Email is Already registered !!!
-                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        {{/if}}
-                    </div>
-                    <div class="form-group">
-                        {{#if success}}
-                        <div class="alert alert-success alert-dismissible fade show">
-                            <strong>Registered Successfully !!! </strong><br> please go to login page to login.
-                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        {{/if}}
                     </div>
                     <button type="submit" class="btn btn-outline-info mb-3 ml-auto mr-auto"
                         style="border-bottom-right-radius: 20px; border-top-left-radius: 20px;"><strong>signup</strong></button>
@@ -179,5 +171,4 @@
     </footer>
    
 </body>
-
 </html>

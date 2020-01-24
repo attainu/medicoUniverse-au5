@@ -138,7 +138,95 @@
                     <!-- Card Regular -->
                 </div>
                 <div class="col">
-                    xvfxf
+                   <div class="card card-cascade">
+
+                        <!-- Card image -->
+
+
+                        <!-- Card content -->
+                        <div class="card-body card-body-cascade text-center">
+
+                            <!-- Title -->
+                            <h4 class="card-title"><strong>Doctors's Appointment</strong></h4>
+                            <hr>
+                            <!-- Subtitle -->
+                            {{!-- {{#each orders }} --}}
+                            <div class="card-body card-body-cascade">
+                                <div class="card-body">
+                                    <div class="card-body ">
+                                        {{#if patients}}
+
+                                        <li class="list-group-item border-0 " style="background-color:honeydew">
+                                            <div class="row">
+                                                <div class="col">
+                                                   <strong>Name</strong>
+                                                   <hr>
+                                                </div>
+                                                <div class="col">
+                                                    <span class="card-body"><strong>Contact</strong></span>
+                                                    <hr>
+                                                </div>
+                                                <div class="col">
+                                                    <span class="card-body"><strong>Time</strong></span>
+                                                    <hr>
+                                                </div>
+                                                <div class="col">
+                                                    <span class="card-body"><strong>address</strong></span>
+                                                    <hr>
+                                                </div>
+                                                <div class="col">
+                                                    <span class="card-body"><strong>Booked on</strong></span>
+                                                    <hr>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="row">
+                                                <div class="col">
+                                                    {{patients.patientsName}}
+                                                </div>
+                                                <div class="col">
+                                                    <span class="card-body">{{patients.patientsMobile}}</span>
+                                                </div>
+                                                <div class="col">
+                                                    <span class="card-body">{{patients.preferredTime}}</span>
+                                                </div>
+                                                <div class="col">
+                                                    <span class="card-body">{{patients.patientsAddress}}</span>
+                                                </div>
+                                                <div class="col">
+                                                    <span class="card-body">{{patients.bookingDate}}</span>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        {{/if}}
+                                    </div>
+
+                                </div>
+                                <hr>
+                                <div class="row">
+                                    <div class="col">
+
+                                    </div>
+                                    <div class="col">
+                                        <div class="panel-footer"><strong>Total Price:
+                                                ₹{{this.cart.totalPrice}}</strong> </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            {{!-- {{/each}} --}}
+
+
+                            <!-- Facebook -->
+                            <a type="button" class="btn-floating btn-small btn-fb"><i class="fab fa-facebook-f"></i></a>
+                            <!-- Twitter -->
+                            <a type="button" class="btn-floating btn-small btn-tw"><i class="fab fa-twitter"></i></a>
+                            <!-- Google + -->
+                            <a type="button" class="btn-floating btn-small btn-dribbble"><i
+                                    class="fab fa-dribbble"></i></a>
+
+                        </div>
+                    </div>
                 </div>
                 <div class="col">
                     <div class="card card-cascade">
