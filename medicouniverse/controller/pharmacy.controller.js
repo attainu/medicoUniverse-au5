@@ -359,6 +359,22 @@ pharmacyController.profileget = (req, res, next) => {
 	});
 };
 
+
+
+pharmacyController.cancel = (req,res) => {
+ 
+	var id = req.body.id
+	
+	mongoose.model('patients').findOneAndRemove(id, function(err){
+		console.log(id)
+		 res.redirect("/profile")
+		 
+	});
+
+}
+
+
+
 pharmacyController.logout = (req, res) => {
 	req.session.destroy(function(err) {
 		console.log('successfully destryoyed');

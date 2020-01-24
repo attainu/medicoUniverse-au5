@@ -158,47 +158,46 @@
                             <div class="card-body card-body-cascade">
                                 <div class="card-body">
                                     <div class="card-body ">
-                                        
-                                        <li class="list-group-item border-0 " style="background-color:honeydew">
-                                            <div class="row">
-                                                <div class="col">
-                                                    <strong>Name</strong>
-                                                    <hr>
-                                                </div>
-                                                <div class="col">
-                                                    <span class="card-body"><strong>Contact</strong></span>
-                                                    <hr>
-                                                </div>
-                                                <div class="col">
-                                                    <span class="card-body"><strong>Time</strong></span>
-                                                    <hr>
-                                                </div>
-                                                <div class="col">
-                                                    <span class="card-body"><strong>address</strong></span>
-                                                    <hr>
-                                                </div>
-                                            </div>
-                                            {{#each patients}}
-                                            <div class="row">
-                                                <div class="col">
-                                                    {{this.patientsName}}
-                                                </div>
-                                                <div class="col">
-                                                    <span class="card-body">{{this.patientsMobile}}</span>
-                                                </div>
-                                                <div class="col">
-                                                    <span class="card-body">{{this.preferredTime}}</span>
-                                                </div>
-                                                <div class="col">
-                                                    <span class="card-body">{{this.patientsAddress}}</span>
-                                                </div>
-                                               
-                                            </div>
-                                            {{/each}}
-                                        </li>
-                                        
-                                    </div>
+                                        <table class="table table-striped">
+                                            <thead>
+                                                <th>
+                                                    Name 
+                                                </th>
+                                                <th>
+                                                    Phone
+                                                </th>
+                                                <th>
+                                                    Time
+                                                </th>
+                                                <th>
+                                                    Address
+                                                </th>
+                                                </thead>
+                                            <tbody>
+                                                {{#each patients}}
+                                                <tr>
+                                                    <td>
+                                                        {{this.patientsName}}
+                                                    </td>
+                                                    <td>
+                                                        {{this.patientsMobile}}
+                                                    </td>
+                                                    <td>
+                                                        {{this.preferredTime}}
+                                                    </td>
+                                                    <td>
+                                                        {{this.patientsAddress}}
+                                                    </td>
+                                                    <td>
+                                                        <a class="btn btn-outline-danger" href="profile/cancel">Cancel Booking</a>
+                                                    </td>
+                                                    {{/each}}
+                                                </tr>
+                                            </tbody>
+                                        </table>
 
+                                                
+                                   </div>
                                 </div>
                                 <hr>
                             </div>
