@@ -13,7 +13,7 @@ $('#hospitalsearch').focus(function () {
     var auto = [];
     $.ajax({
         type: "GET",
-        url: "http://localhost:5050/json",
+        url: "/json",
         data: "JSON",
         success: function (response) {
             response.forEach(element => {
