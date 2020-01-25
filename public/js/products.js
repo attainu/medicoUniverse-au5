@@ -276,3 +276,7 @@ $(document).ready(function() {
 // 	$.removeCookie('connect.sid');
 // 	location.reload();
 // });
+// Material Select Initialization
+$(document).ready(function() {
+	$('.mdb-select').material_select();
+});

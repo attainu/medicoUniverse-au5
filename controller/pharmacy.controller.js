@@ -51,14 +51,14 @@ pharmacyController.userSigninpost = (req, res, next) => {
 			// mobile: fields.mobile[0],
 			password: fields.password[0]
 		};
-		console.log('userr : ', userr);
+		// console.log('userr : ', userr);
 		userDb.findOne(userr, (err, data) => {
 			if (err || !data) {
 				console.log('invalid User');
 				res.redirect('/user/signin?invalidUser=true');
 			} else {
 				req.session.user = data;
-				console.log(req.session.user);
+				// console.log(req.session.user);
 				res.redirect('/');
 			}
 		});
@@ -124,7 +124,7 @@ pharmacyController.userSignuppost = (req, res, next) => {
 			password: fields.password[0]
 		};
 
-		console.log(user);
+		// console.log(user);
 
 		// var user = {
 		// 	name: fields.username[0],
@@ -132,7 +132,7 @@ pharmacyController.userSignuppost = (req, res, next) => {
 		// 	mobile: fields.mobile[0],
 		// 	password: fields.password[0]
 		// };
-		console.log(user);
+		// console.log(user);
 
 		if (password !== confirm_password) {
 			console.log('Hey, your password and confirm password are mismatching');
@@ -259,7 +259,6 @@ pharmacyController.remove = (req, res) => {
 	res.redirect('/shoppingCart');
 };
 
-
 pharmacyController.shoppingCartget = (req, res, next) => {
 	if (!req.session.cart) {
 		return res.render('shoppingCart', { products: null });
@@ -317,7 +316,7 @@ pharmacyController.placedOrderget = (req, res, next) => {
 		} else {
 			console.log('order fetched successfully');
 		}
-		console.log('result:', result);
+		// console.log('result:', result);
 
 		res.render('placedOrder', {
 			result: result
@@ -345,13 +344,13 @@ pharmacyController.profileget = (req, res, next) => {
 			cart = new Cart(order.cart);
 			order.items = cart.generateArray();
 		});
-		console.log(orders);
+		// console.log(orders);
 		hospitalmodel.patient.find({ store: req.session.user.email }, function(
 			err,
 			result
 		) {
 			if (err) throw err;
-			console.log(result)
+			// console.log(result)
 			// saved!
 			mongoose
 				.model('patients')
@@ -368,28 +367,24 @@ pharmacyController.profileget = (req, res, next) => {
 		});
 	});
 };
-pharmacyController.deleteAppoitmnet = (req,res,next) =>{
-	hospitalmodel.patient.findOneAndRemove({_id:req.query.id}, function(err,daa){
-		if(err) throw err
-		res.redirect("/profile")
-  });
-} 
-
-
-
-pharmacyController.cancel = (req,res) => {
- 
-	var id = req.body.id
-	
-	mongoose.model('patients').findOneAndRemove(id, function(err){
-		console.log(id)
-		 res.redirect("/profile")
-		 
+pharmacyController.deleteAppoitmnet = (req, res, next) => {
+	hospitalmodel.patient.findOneAndRemove({ _id: req.query.id }, function(
+		err,
+		daa
+	) {
+		if (err) throw err;
+		res.redirect('/profile');
 	});
+};
 
-}
+pharmacyController.cancel = (req, res) => {
+	var id = req.body.id;
 
-
+	mongoose.model('patients').findOneAndRemove(id, function(err) {
+		console.log(id);
+		res.redirect('/profile');
+	});
+};
 
 pharmacyController.logout = (req, res) => {
 	req.session.destroy(function(err) {
