@@ -42,7 +42,7 @@ console.log(req.session.user.email)
 
    console.log(patients)
 
-   mongoose.model('patients').insertOne( patients, function(err, results){
+   mongoose.model('patients').insertMany( patients, function(err, results){
          console.log('Data Saved successfully into the database')
          res.render("bookingDoctorsSuccess.hbs")
    });

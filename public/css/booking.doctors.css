@@ -107,14 +107,12 @@ span {
 h4 {
 	margin-top: 15px;
 	text-align: center;
-	
 }
 
 .form-inline {
 	display: flex;
 	flex-flow: row wrap;
 	align-items: center;
-	
 }
 
 .form-inline input {
@@ -211,20 +209,17 @@ sup {
 }
 
 #imageDiv {
-	
 	flex: 1;
 	padding: 10px;
 }
 
 #detailList {
-	
 	flex: 2;
 	padding: 10px;
 }
 
 @media (max-width: 800px) {
 	#feature1 {
-		
 		flex-direction: column;
 		justify-content: center;
 		margin: 10px;
@@ -246,11 +241,9 @@ sup {
 		width: fit-content;
 	}
 	#imageDiv {
-		width: 50px;
 		display: flex;
 		justify-content: end;
-		 	
-}
+	}
 	#detailList {
 		width: fit-content;
 	}
@@ -333,11 +326,10 @@ footer a:hover {
 	z-index: 1;
 }
 
-#alertBN2{
+#alertBN2 {
 	padding: 60px 60px 60px 60px;
-	;
 }
-#alertBN{
+#alertBN {
 	padding: 60px;
 	margin-left: 20%;
 	margin-right: 20%;
@@ -372,15 +364,13 @@ footer a:hover {
 		display: none;
 	}
 
-    #alertBN2{
+	#alertBN2 {
 		padding: 5px 5px 5px 5px;
-		
 	}
-	#alertBN{
+	#alertBN {
 		padding: 6px;
-		margin:5px 5px 5px 5px;
+		margin: 5px 5px 5px 5px;
 	}
-
 }
 
 .navbar-loggedin {
@@ -399,10 +389,8 @@ footer a:hover {
 .custom-select {
 	position: relative;
 	font-family: Arial;
-  }
-  
-  .custom-select select {
+}
+
+.custom-select select {
 	display: none; /*hide original SELECT element:*/
-  }
-  
- 
+}

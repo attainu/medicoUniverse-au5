@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" type="text/css" href="./css/booking.doctors.css">
   <link rel="stylesheet" type="text/css" href="./css/plus.css">
+
   
 </head>
 
@@ -94,22 +95,23 @@
           </div>
           <div id="flex2">
             <ul>
-              <li style="color:green;">
+             
+             <h6> <li style="color:green;">
                 <h3><img src="public/images/hospital.svg" width="22px" height="auto" alt=""><strong>
                     {{this.name}}</strong></h3>
-              </li>
+              </li></h6>
               <hr>
-              <li> <img src="public/images/placeholder.svg" width="18px" height="auto" alt=""> <strong>
-                  {{this.address}}</strong> </li>
-              <li style="color: blue;">
+              <h6><li> <img src="public/images/placeholder.svg" width="18px" height="auto" alt=""> <strong>
+                  {{this.address}}</strong> </li></h6>
+              <h6><li style="color: dodgerblue;">
                 <strong><img src="public/images/money.svg" width="18px" height="auto" alt=""> ₹ {{this.fees}}</strong>
-              </li>
-              <li>
+              </li></h6>
+              <h6><li>
                 <img src="public/images/telephone.svg" width="18px" height="auto" alt=""><strong>
-                  {{this.phone}}</strong> </li>
-              <li>
+                  {{this.phone}}</strong> </li></h6>
+              <h6><li>
                 <img src="public/images/user-experience.svg" width="18px" height="auto" alt=""><strong>
-                  {{this.experience}} years experience</strong></li>
+                  {{this.experience}} years experience</strong></li></h6>
             </ul>
           </div>
           <div id="flex3">
@@ -136,6 +138,7 @@
             </div>
             <div class="modal-body">
               <form action="/bookNow" method="POST">
+              <input type="hidden" value="{{_id}}" name="id">
                 <div class="form-group">
                   <label>Patients Name</label>
                   <input type="text" class="form-control" name="patientsName" placeholder="Enter Full Name" required>
@@ -147,7 +150,7 @@
                 </div>
                 <div class="form-group">
                   <label>Select your preferred time for visit</label>
-                    <select class="form-control" id="select">
+                    <select class="form-control" id="select" name="preferredTime">
                       <option  value="Now">Now</option>
                       <option  value="Before 8 AM">Before 8 AM</option>
                       <option  value="8-10 AM">8-10 AM</option>
@@ -274,5 +277,4 @@
     crossorigin="anonymous"></script>
   <script src="../public/js/bookingDoctors.script.js"></script>
 </body>
-
 </html>

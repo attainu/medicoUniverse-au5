@@ -23,39 +23,40 @@
 <body>
     <div class="container-flex">
         <nav class="navbar navbar-expand-sm navbar-light">
-        <a class="navbar-brand" href="/">Medico<span>Universe</span></a>
-        <button class="navbar-toggler float-right p-1" type="button" data-toggle="collapse"
-            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-            aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse nav-resp" id="navbarSupportedContent">
-            <ul class="navbar-nav mx-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="/medicoUniverse/about">About Us</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/medicoUniverse/mission">Mission</a>
-                </li>
-            </ul>
-            {{#if session.user}}
-            <div class="dropdown">
-                <a class="nav-link font-weight-bold login-signup" id="dropdownMenu1-1" data-toggle="dropdown" href="">
-                    Hello {{session.user.email}}
-                </a>
-                <div class="dropdown-menu dropdown-primary" id="your-custom-id">
-                    <a class="dropdown-item mdb-dropdownLink-1  " href="/profile">Profile</a>
-                    <a class="dropdown-item mdb-dropdownLink-1 " href="/logout">Logout</a>
+            <a class="navbar-brand" href="/">Medico<span>Universe</span></a>
+            <button class="navbar-toggler float-right p-1" type="button" data-toggle="collapse"
+                data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse nav-resp" id="navbarSupportedContent">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/medicoUniverse/about">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/medicoUniverse/mission">Mission</a>
+                    </li>
+                </ul>
+                {{#if session.user}}
+                <div class="dropdown">
+                    <a class="nav-link font-weight-bold login-signup" id="dropdownMenu1-1" data-toggle="dropdown"
+                        href="">
+                        Hello {{session.user.email}}
+                    </a>
+                    <div class="dropdown-menu dropdown-primary" id="your-custom-id">
+                        <a class="dropdown-item mdb-dropdownLink-1  " href="/profile">Profile</a>
+                        <a class="dropdown-item mdb-dropdownLink-1 " href="/logout">Logout</a>
+                    </div>
                 </div>
+                {{else}}
+                <div>
+                    <a class="nav-link login-signup " href="/user/signin">Hello Guest</a>
+                </div>
+                {{/if}}
             </div>
-            {{else}}
-            <div>
-                <a class="nav-link login-signup " href="/user/signin">Hello Guest</a>
-            </div>
-            {{/if}}
-        </div>
-    </nav>
-    <hr>
+        </nav>
+        <hr>
         <div class="container mt-2 ">
             <div class="row">
                 <div class="col">
@@ -73,228 +74,299 @@
 
             </div>
         </div>
-        <div class="container-flex">
-            <div class="row">
-                <div class="col">
-                    <!-- Card Regular -->
-                    <div class="card card-cascade">
-
-                        <!-- Card image -->
+        <div class="container mt-5">
 
 
-                        <!-- Card content -->
-                        <div class="card-body card-body-cascade text-center">
+            <!--Section: Content-->
+            <section class="dark-grey-text">
 
-                            <!-- Title -->
-                            <h4 class="card-title"><strong>My Orders</strong></h4>
-                            <!-- Subtitle -->
-                            <h6 class="font-weight-bold indigo-text py-2">Hello {{orders.item.cardName}}!! Here is your
-                                order
-                                history</h6>
-                            {{#each orders }}
-                            <div class="card-body card-body-cascade">
-                                <div class="card-body">
-                                    <div class="card-body ">
-                                        {{#each this.items}}
+                <div class="card">
+                    <div class="card-body">
 
-                                        <li class="list-group-item border-0 " style="background-color:honeydew">
-                                            <div class="row">
-                                                <div class="col">
-                                                    {{this.item.productName}}
+                        <!--Grid row-->
+                        <div class="row">
+
+                            <!--Grid column-->
+                            <div class="col-lg-12">
+
+                                <!-- Pills navs -->
+                                <ul class="nav md-pills nav-justified pills-primary font-weight-bol mdb-select" >
+                                    <li class="nav-item">
+                                        <a class="nav-link active" data-toggle="tab" href="#tabCheckoutBilling123"
+                                            role="tab"> Pharmacy Orders</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" data-toggle="tab" href="#tabCheckoutAddons123" role="tab">
+                                            Doctors Bookings</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" data-toggle="tab" href="#tabCheckoutPayment123"
+                                            role="tab"> Hospital Appointment</a>
+                                    </li>
+                                </ul>
+
+                                <!-- Pills panels -->
+                                <div class="tab-content pt-4">
+
+                                    <!--Panel 1-->
+                                    <div class="tab-pane fade in show active" id="tabCheckoutBilling123"
+                                        role="tabpanel">
+
+                                        <div class="card-body card-body-cascade text-center">
+
+                                            <!-- Title -->
+                                            <h4 class="card-title"><strong>My Orders</strong></h4>
+                                            <!-- Subtitle -->
+                                            <h6 class="font-weight-bold indigo-text py-2">Hello
+                                                {{orders.item.cardName}}!! Here is your
+                                                order
+                                                history</h6>
+                                            {{#each orders }}
+                                            <div class="card-body card-body-cascade">
+                                                <div class="card-body">
+                                                    <div class="card-body ">
+                                                        {{#each this.items}}
+
+                                                        <li class="list-group-item border-0 "
+                                                            style="background-color:honeydew">
+                                                            <div class="row">
+                                                                <div class="col">
+                                                                    {{this.item.productName}}
+                                                                </div>
+                                                                <div class="col">
+                                                                    <span
+                                                                        class="badge badge-primary">{{this.qty}}</span>
+                                                                </div>
+                                                                <div class="col">
+                                                                    <span class="card-body">₹{{this.price}}</span>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                        {{/each}}
+                                                    </div>
+
                                                 </div>
-                                                <div class="col">
-                                                    <span class="badge badge-primary">{{this.qty}}</span>
-                                                </div>
-                                                <div class="col">
-                                                    <span class="card-body">₹{{this.price}}</span>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        {{/each}}
-                                    </div>
+                                                <hr>
+                                                <div class="row">
+                                                    <div class="col">
 
-                                </div>
-                                <hr>
-                                <div class="row">
-                                    <div class="col">
-
-                                    </div>
-                                    <div class="col">
-                                        <div class="panel-footer"><strong>Total Price:
-                                                ₹{{this.cart.totalPrice}}</strong> </div>
-                                    </div>
-                                </div>
-
-                            </div>
-                            {{/each}}
-
-
-                            <!-- Facebook -->
-                            <a type="button" class="btn-floating btn-small btn-fb"><i class="fab fa-facebook-f"></i></a>
-                            <!-- Twitter -->
-                            <a type="button" class="btn-floating btn-small btn-tw"><i class="fab fa-twitter"></i></a>
-                            <!-- Google + -->
-                            <a type="button" class="btn-floating btn-small btn-dribbble"><i
-                                    class="fab fa-dribbble"></i></a>
-
-                        </div>
-                    </div>
-                    <!-- Card Regular -->
-                </div>
-                <div class="col">
-                    <div class="card card-cascade">
-
-                        <!-- Card image -->
-
-
-                        <!-- Card content -->
-                        <div class="card-body card-body-cascade text-center">
-
-                            <!-- Title -->
-                            <h4 class="card-title"><strong>Doctors's Appointment</strong></h4>
-                            <hr>
-                            <!-- Subtitle -->
-                            {{!-- {{#each orders }} --}}
-                            <div class="card-body card-body-cascade">
-                                <div class="card-body">
-                                    <div class="card-body ">
-                                        
-                                        <li class="list-group-item border-0 " style="background-color:honeydew">
-                                            <div class="row">
-                                                <div class="col">
-                                                    <strong>Name</strong>
-                                                    <hr>
+                                                    </div>
+                                                    <div class="col">
+                                                        <div class="panel-footer"><strong>Total Price:
+                                                                ₹{{this.cart.totalPrice}}</strong> </div>
+                                                    </div>
                                                 </div>
-                                                <div class="col">
-                                                    <span class="card-body"><strong>Contact</strong></span>
-                                                    <hr>
-                                                </div>
-                                                <div class="col">
-                                                    <span class="card-body"><strong>Time</strong></span>
-                                                    <hr>
-                                                </div>
-                                                <div class="col">
-                                                    <span class="card-body"><strong>address</strong></span>
-                                                    <hr>
-                                                </div>
-                                            </div>
-                                            {{#each patients}}
-                                            <div class="row">
-                                                <div class="col">
-                                                    {{this.patientsName}}
-                                                </div>
-                                                <div class="col">
-                                                    <span class="card-body">{{this.patientsMobile}}</span>
-                                                </div>
-                                                <div class="col">
-                                                    <span class="card-body">{{this.preferredTime}}</span>
-                                                </div>
-                                                <div class="col">
-                                                    <span class="card-body">{{this.patientsAddress}}</span>
-                                                </div>
-                                               
+
                                             </div>
                                             {{/each}}
-                                        </li>
-                                        
+
+
+                                            <!-- Facebook -->
+                                            <a type="button" class="btn-floating btn-small btn-fb"><i
+                                                    class="fab fa-facebook-f"></i></a>
+                                            <!-- Twitter -->
+                                            <a type="button" class="btn-floating btn-small btn-tw"><i
+                                                    class="fab fa-twitter"></i></a>
+                                            <!-- Google + -->
+                                            <a type="button" class="btn-floating btn-small btn-dribbble"><i
+                                                    class="fab fa-dribbble"></i></a>
+
+                                        </div>
                                     </div>
+                                    <!--/.Panel 1-->
+
+                                    <!--Panel 2-->
+                                    <div class="tab-pane fade" id="tabCheckoutAddons123" role="tabpanel">
+
+                                        <div class="card-body card-body-cascade text-center">
+
+                                            <!-- Title -->
+                                            <h4 class="card-title"><strong>Doctors Bookings</strong></h4>
+                                            <hr>
+                                            <!-- Subtitle -->
+
+                                            <div class="card-body card-body-cascade">
+                                                <div class="card-body">
+                                                    <div class="card-body ">
+                                                        <table class="table table-striped">
+                                                            <thead>
+                                                                <th>
+                                                                    Name
+                                                                </th>
+                                                                <th>
+                                                                    Phone
+                                                                </th>
+                                                                <th>
+                                                                    Time
+                                                                </th>
+                                                                <th>
+                                                                    Address
+                                                                </th>
+                                                            </thead>
+                                                            <tbody>
+                                                                {{#each patients}}
+                                                                <tr>
+                                                                    <td>
+                                                                        {{this.patientsName}}
+                                                                    </td>
+                                                                    <td>
+                                                                        {{this.patientsMobile}}
+                                                                    </td>
+                                                                    <td>
+                                                                        {{this.preferredTime}}
+                                                                    </td>
+                                                                    <td>
+                                                                        {{this.patientsAddress}}
+                                                                    </td>
+                                                                    <td>
+                                                                        <a class="btn btn-outline-danger"
+                                                                            href="profile/cancel">Cancel Booking</a>
+                                                                    </td>
+                                                                    {{/each}}
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+
+
+                                                    </div>
+                                                </div>
+                                                <hr>
+                                            </div>
+
+
+
+                                            <!-- Facebook -->
+                                            <a type="button" class="btn-floating btn-small btn-fb"><i
+                                                    class="fab fa-facebook-f"></i></a>
+                                            <!-- Twitter -->
+                                            <a type="button" class="btn-floating btn-small btn-tw"><i
+                                                    class="fab fa-twitter"></i></a>
+                                            <!-- Google + -->
+                                            <a type="button" class="btn-floating btn-small btn-dribbble"><i
+                                                    class="fab fa-dribbble"></i></a>
+
+                                        </div>
+
+                                        <hr class="mb-5">
+
+
+                                        <!--Grid row-->
+
+
+
+                                    </div>
+                                    <!--/.Panel 2-->
+
+                                    <!--Panel 3-->
+                                    <div class="tab-pane fade" id="tabCheckoutPayment123" role="tabpanel">
+                                        <div class="card-body card-body-cascade text-center">
+
+                                            <!-- Title -->
+                                            <h4 class="card-title"><strong>Hospital appoitments</strong></h4>
+                                            <!-- Subtitle -->
+                                            {{!-- {{#each orders }} --}}
+                                            <div class="card-body card-body-cascade">
+                                                <div class="card-body">
+                                                    <div class="card-body ">
+                                                        <li class="list-group-item border-0 "
+                                                            style="background-color:honeydew">
+                                                            <div class="row">
+                                                                <div class="col">
+                                                                    <strong>Name</strong>
+                                                                </div>
+                                                                <div class="col">
+                                                                    <span
+                                                                        class="card-body"><strong>Problem</strong></span>
+                                                                </div>
+                                                                <div class="col">
+                                                                    <span class="card-body"><strong>Age</strong></span>
+                                                                </div>
+                                                                <div class="col">
+                                                                    <span
+                                                                        class="card-body"><strong>Ph.no</strong></span>
+                                                                </div>
+                                                                <div class="col">
+                                                                    <span class="card-body"><strong></strong></span>
+                                                                </div>
+                                                            </div>
+                                                            {{#each patient}}
+                                                            <form action="/deleteAppoitment?id={{this._id}}"
+                                                                method="POST">
+                                                                <div class="row">
+                                                                    <div class="col">
+                                                                        {{this.patient}}
+                                                                    </div>
+                                                                    <div class="col">
+                                                                        <span class="card-body">{{this.problem}}</span>
+                                                                    </div>
+                                                                    <div class="col">
+                                                                        <span class="card-body">{{this.age}}</span>
+                                                                    </div>
+                                                                    <div class="col">
+                                                                        <span class="card-body">{{this.no}}</span>
+                                                                    </div>
+                                                                    <div class="col">
+                                                                        <span class="card-body"><button
+                                                                                class="btn btn-outline-danger"
+                                                                                type="submit">Cancel</button></span>
+                                                                    </div>
+                                                                </div>
+                                                            </form>
+                                                            {{/each}}
+                                                        </li>
+                                                    </div>
+
+                                                </div>
+                                                <hr>
+                                                <div class="row">
+                                                    <div class="col">
+
+                                                    </div>
+                                                    <div class="col">
+                                                        {{#if pricehospital}}
+                                                        <div class="panel-footer"><strong>Total
+                                                                Price:{{pricehospital}}</strong></div>
+                                                        {{/if}}
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                            {{!-- {{/each}} --}}
+
+
+                                            <!-- Facebook -->
+                                            <a type="button" class="btn-floating btn-small btn-fb"><i
+                                                    class="fab fa-facebook-f"></i></a>
+                                            <!-- Twitter -->
+                                            <a type="button" class="btn-floating btn-small btn-tw"><i
+                                                    class="fab fa-twitter"></i></a>
+                                            <!-- Google + -->
+                                            <a type="button" class="btn-floating btn-small btn-dribbble"><i
+                                                    class="fab fa-dribbble"></i></a>
+
+                                        </div>
+
+                                    </div>
+                                    <!--/.Panel 3-->
 
                                 </div>
-                                <hr>
+                                <!-- Pills panels -->
+
+
                             </div>
-                            {{!-- {{/each}} --}}
+                            <!--Grid column-->
 
-
-                            <!-- Facebook -->
-                            <a type="button" class="btn-floating btn-small btn-fb"><i class="fab fa-facebook-f"></i></a>
-                            <!-- Twitter -->
-                            <a type="button" class="btn-floating btn-small btn-tw"><i class="fab fa-twitter"></i></a>
-                            <!-- Google + -->
-                            <a type="button" class="btn-floating btn-small btn-dribbble"><i
-                                    class="fab fa-dribbble"></i></a>
+                            <!--Grid column-->
 
                         </div>
+                        <!--Grid row-->
+
                     </div>
                 </div>
-                <div class="col">
-                    <div class="card card-cascade">
 
-                        <!-- Card image -->
+            </section>
+            <!--Section: Content-->
 
-
-                        <!-- Card content -->
-                        <div class="card-body card-body-cascade text-center">
-
-                            <!-- Title -->
-                            <h4 class="card-title"><strong>Hospital appoitments</strong></h4>
-                            <!-- Subtitle -->
-                            {{!-- {{#each orders }} --}}
-                            <div class="card-body card-body-cascade">
-                                <div class="card-body">
-                                    <div class="card-body ">
-                                        <li class="list-group-item border-0 " style="background-color:honeydew">
-                                            <div class="row">
-                                                <div class="col">
-                                                    <strong>Name</strong>
-                                                </div>
-                                                <div class="col">
-                                                    <span class="card-body"><strong>Problem</strong></span>
-                                                </div>
-                                                <div class="col">
-                                                    <span class="card-body"><strong>Age</strong></span>
-                                                </div>
-                                                <div class="col">
-                                                    <span class="card-body"><strong>Ph.no</strong></span>
-                                                </div>
-                                            </div>
-                                            {{#each patient}}
-                                            <div class="row">
-                                                <div class="col">
-                                                    {{this.patient}}
-                                                </div>
-                                                <div class="col">
-                                                    <span class="card-body">{{this.problem}}</span>
-                                                </div>
-                                                <div class="col">
-                                                    <span class="card-body">{{this.age}}</span>
-                                                </div>
-                                                <div class="col">
-                                                    <span class="card-body">{{this.no}}</span>
-                                                </div>
-                                            </div>
-                                            {{/each}}
-                                        </li>
-                                    </div>
-
-                                </div>
-                                <hr>
-                                <div class="row">
-                                    <div class="col">
-
-                                    </div>
-                                    <div class="col">
-                                        {{#if pricehospital}}
-                                        <div class="panel-footer"><strong>Total Price:{{pricehospital}}</strong></div>
-                                        {{/if}}
-                                    </div>
-                                </div>
-
-                            </div>
-                            {{!-- {{/each}} --}}
-
-
-                            <!-- Facebook -->
-                            <a type="button" class="btn-floating btn-small btn-fb"><i class="fab fa-facebook-f"></i></a>
-                            <!-- Twitter -->
-                            <a type="button" class="btn-floating btn-small btn-tw"><i class="fab fa-twitter"></i></a>
-                            <!-- Google + -->
-                            <a type="button" class="btn-floating btn-small btn-dribbble"><i
-                                    class="fab fa-dribbble"></i></a>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
 
         </div>
 
@@ -325,7 +397,7 @@
         <li class="cli"><a class="ca" href="/hospitalsearch">
                 <i class="fas fa-clinic-medical my-float "></i>
             </a></li>
-        <li class="cli"><a class="ca" href="/bookingDoctors">
+        <li class="cli"><a class="ca" href="/booking_doctors">
                 <i class="fas fa-user-md my-float"></i>
                 <i class="fas fa-user-nurse my-float"></i>
             </a></li>

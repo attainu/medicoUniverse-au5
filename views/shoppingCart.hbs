@@ -43,7 +43,7 @@
                 </li>
 
             </ul>
-             {{#if session.user}}
+            {{#if session.user}}
             <div class="dropdown">
                 <a class="nav-link font-weight-bold login-signup" id="dropdownMenu1-1" data-toggle="dropdown" href="">
                     Hello {{session.user.email}}
@@ -158,19 +158,21 @@
                             <td>
                                 <div class="row">
 
-                                    <span><i class="fas fa-plus " ><a
-                                                href="/reduce/{{this.item._id}}">sss</a></i><span></span>{{this.qty}}</span><span><i
-                                            class="fas fa-minus-circle"></i></span>
+                                    <a href="/reduce/{{this.item._id}}"><i class="fas fa-minus-circle ml-1"></i></a>
+                                    <span style="font-weight: bold;"> {{this.qty}}</span>
                                 </div>
-                              
+
                             </td>
                             <td class="font-weight-bold">
                                 <strong>₹{{this.item.productPrice}}</strong>
                             </td>
                             <td>
-                                <button type="button" class="btn btn-sm btn-primary" data-toggle="tooltip"
+                                {{!-- <button type="button" class="btn btn-sm btn-primary" data-toggle="tooltip"
                                     data-placement="top" title="Remove item">X
-                                </button>
+                                </button> --}}
+
+                                <a class="badge badge-pill badge-default" href="/remove/{{this.item._id}}">Remove
+                                    All</a>
                             </td>
                         </tr>
                         {{/each}}
@@ -189,12 +191,24 @@
                             <td colspan="3" class="text-right">
                                 <a href="/checkout" class="btn btn-info">Proceed to order</a>
                             </td>
+                            <td colspan="3" class="text-right">
+                                <a href="/products" class="btn btn-info">Back to products</a>
+                            </td>
                         </tr>
                         <!-- /.First row -->
                         {{else}}
-                        <div class="card-body card-body-cascade text-center">
-                            <span class="font-weight-bold text-center">No Items</span>
+                        <div class="card-body" style="height:400px">
+                            <div class="card-body card-body-cascade text-center">
+                                <div class="card-title">
+                                    <span class="font-weight-bolder text-center" style="font-size: larger;">No
+                                        Items</span>
+                                </div>
+
+                            </div>
+                            <a href="/products" class="btn btn-info text-center" style="float: bottom-right; margin-left:44%">
+                                products</a>
                         </div>
+
                         {{/if}}
 
                     </tbody>
@@ -214,8 +228,8 @@
 
 
 
-    <footer>
-        <div style="height: 20px;"></div>
+    <footer id="toper">
+        <div style="height: 20px; "></div>
         <div class="row">
             <div class="col-lg-3 col-md-3 col-sm-12 ml-5">
                 <h4>Contact Us</h4>
@@ -240,10 +254,11 @@
                         opacity: 0.7;
                         text-decoration: none;
                     }
-                    .size{
+
+                    .size {
                         font-size: 30px;
                         margin: 0 8px;
-                        
+
                     }
                 </style>
                 <div class="mt-4">
@@ -253,20 +268,24 @@
                     <a href="#" class="fa fa-instagram size"></a>
                     <a href="#" class="fa fa-youtube size"></a>
                 </div>
-                
+
             </div>
         </div>
         <div style="height: 20px;"></div>
 
     </footer>
+
+
+
     <a href="#" class="float ca" id="menu-share">
         <i class="fa fa-share my-float"></i>
     </a>
     <ul class="cul">
+        
         <li class="cli"><a class="ca" href="/hospitalsearch">
                 <i class="fas fa-clinic-medical my-float "></i>
             </a></li>
-        <li class="cli"><a class="ca" href="/bookingDoctors">
+        <li class="cli"><a class="ca" href="/booking_doctors">
                 <i class="fas fa-user-md my-float"></i>
                 <i class="fas fa-user-nurse my-float"></i>
             </a></li>

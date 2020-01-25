@@ -18,11 +18,19 @@ module.exports = function Cart(oldCart) {
 		this.totalPrice += storedItem.price;
 	};
 
-	this.reduceByOne = function() {
+	this.reduceByOne = function(id) {
 		this.items[id].qty--;
 		this.items[id].productPrice -= this.items[id].item.productPrice;
-		this.totalQty--
-		this.totalPrice -= this.items[id].item.productPrice
+		this.totalQty--;
+		this.totalPrice -= this.items[id].item.productPrice;
+		if (this.items[id].qty <= 0) {
+			delete this.items[id];
+		}
+	};
+	this.removeAll = function(id) {
+		this.totalQty -= this.items[id].qty;
+		this.totalPrice -= this.items[id].item.productPrice;
+		delete this.items[id];
 	};
 
 	this.generateArray = function() {

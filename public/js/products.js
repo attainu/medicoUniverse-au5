@@ -21,6 +21,8 @@ for (i = 0; i < dropdown.length; i++) {
 	});
 }
 
+
+
 $(document).ready(function() {
 	$(window).scroll(function() {
 		if ($(this).scrollTop() > 100) {
@@ -274,3 +276,7 @@ $(document).ready(function() {
 // 	$.removeCookie('connect.sid');
 // 	location.reload();
 // });
+// Material Select Initialization
+$(document).ready(function() {
+	$('.mdb-select').material_select();
+});

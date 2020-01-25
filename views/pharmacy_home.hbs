@@ -25,57 +25,43 @@
 
 <body>
     <div class="container-flex">
-<nav class="navbar navbar-expand-sm navbar-light">
-        <a class="navbar-brand" href="/">Medico<span>Universe</span></a>
-        <button class="navbar-toggler float-right p-1" type="button" data-toggle="collapse"
-            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-            aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse nav-resp" id="navbarSupportedContent">
-            <ul class="navbar-nav mx-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="/medicoUniverse/about">About Us</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/medicoUniverse/mission">Mission</a>
-                </li>
-            </ul>
-            {{#if session.user}}
-            <div class="dropdown">
-                <a class="nav-link font-weight-bold login-signup w-100" id="dropdownMenu1-1" data-toggle="dropdown" href="">
-                    Hello {{session.user.email}}
-                </a>
-                <div class="dropdown-menu dropdown-primary" id="your-custom-id">
-                    <a class="dropdown-item mdb-dropdownLink-1  " href="/profile">Profile</a>
-                    <a class="dropdown-item mdb-dropdownLink-1 " href="/logout">Logout</a>
+        <nav class="navbar navbar-expand-sm navbar-light">
+            <a class="navbar-brand" href="/">Medico<span>Universe</span></a>
+            <button class="navbar-toggler float-right p-1" type="button" data-toggle="collapse"
+                data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse nav-resp" id="navbarSupportedContent">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/medicoUniverse/about">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/medicoUniverse/mission">Mission</a>
+                    </li>
+                </ul>
+                {{#if session.user}}
+                <div class="dropdown">
+                    <a class="nav-link font-weight-bold login-signup w-100" id="dropdownMenu1-1" data-toggle="dropdown"
+                        href="">
+                        Hello {{session.user.email}}
+                    </a>
+                    <div class="dropdown-menu dropdown-primary" id="your-custom-id">
+                        <a class="dropdown-item mdb-dropdownLink-1  " href="/profile">Profile</a>
+                        <a class="dropdown-item mdb-dropdownLink-1 " href="/logout">Logout</a>
+                    </div>
                 </div>
+                {{else}}
+                <div>
+                    <a class="nav-link login-signup w-100" href="/user/signin">Hello Guest</a>
+                </div>
+                {{/if}}
             </div>
-            {{else}}
-            <div>
-                <a class="nav-link login-signup w-100" href="/user/signin">Hello Guest</a>
-            </div>
-            {{/if}}
-        </div>
-    </nav>
-    <hr>
+        </nav>
+        <hr>
 
-        <div class="container mt-2 ">
-            <div class="row">
-                <div class="col">
-                    <form class="form-inline">
-                        <i class="fas fa-search mr-2" aria-hidden="true"></i>
-                        <input class=" form-control" type="text"
-                            placeholder="Search for medicines, health products and more" aria-label="Search">
-                    </form>
-                </div>
-                <div class="col">
-                    <a href="#" class="btn btn-default float-right"><span><i class="fas fa-shopping-cart"></i></span>
-                        VIEW CART</a>
-                </div>
 
-            </div>
-        </div>
         <div class="container-flex m-3">
             <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
                 <div class="carousel-inner">
@@ -264,7 +250,7 @@
                             <div class="col-md-4">
                                 <div class="card mb-2">
                                     <div class="m-product-wrapper ">
-                                        <a class="u-a--disable-style" href="/products" target="_blank">
+                                        <a class="u-a--disable-style" href="/products" target="">
                                             <div class="m-product__image-wrapper u-p-b--5 u-p-t--5 u-text--center"><img
                                                     class="u-img-fit--height u-b-center ml-5"
                                                     alt="GLAXOSMITHKLINE CONSUMER HEALTHCARE LTD HORLICKS OATS REFILL 1KG 1KG HEALTH FOODS"
@@ -299,7 +285,7 @@
                             <div class="col-md-4">
                                 <div class="card mb-2">
                                     <div class="m-product-wrapper ">
-                                        <a class="u-a--disable-style" href="/products" target="_blank">
+                                        <a class="u-a--disable-style" href="/products" target="">
                                             <div class="m-product__image-wrapper u-p-b--5 u-p-t--5 u-text--center"><img
                                                     class="u-img-fit--height u-b-center ml-5"
                                                     alt="GLAXOSMITHKLINE CONSUMER HEALTHCARE LTD HORLICKS OATS REFILL 1KG 1KG HEALTH FOODS"
@@ -346,7 +332,7 @@
                             <div class="col-md-4">
                                 <div class="card mb-2">
                                     <div class="m-product-wrapper ">
-                                        <a class="u-a--disable-style" href="/products" target="_blank">
+                                        <a class="u-a--disable-style" href="/products" target="">
                                             <div class="m-product__image-wrapper u-p-b--5 u-p-t--5 u-text--center"><img
                                                     class="u-img-fit--height u-b-center ml-5"
                                                     alt="GLAXOSMITHKLINE CONSUMER HEALTHCARE LTD HORLICKS OATS REFILL 1KG 1KG HEALTH FOODS"
@@ -382,7 +368,7 @@
                             <div class="col-md-4">
                                 <div class="card mb-2">
                                     <div class="m-product-wrapper ">
-                                        <a class="u-a--disable-style" href="/products" target="_blank">
+                                        <a class="u-a--disable-style" href="/products" target="">
                                             <div class="m-product__image-wrapper u-p-b--5 u-p-t--5 u-text--center"><img
                                                     class="u-img-fit--height u-b-center ml-5"
                                                     alt="GLAXOSMITHKLINE CONSUMER HEALTHCARE LTD HORLICKS OATS REFILL 1KG 1KG HEALTH FOODS"
@@ -418,7 +404,7 @@
                             <div class="col-md-4">
                                 <div class="card mb-2">
                                     <div class="m-product-wrapper ">
-                                        <a class="u-a--disable-style" href="/products" target="_blank">
+                                        <a class="u-a--disable-style" href="/products" target="">
                                             <div class="m-product__image-wrapper u-p-b--5 u-p-t--5 u-text--center"><img
                                                     class="u-img-fit--height u-b-center ml-5"
                                                     alt="GLAXOSMITHKLINE CONSUMER HEALTHCARE LTD HORLICKS OATS REFILL 1KG 1KG HEALTH FOODS"
@@ -483,7 +469,7 @@
                             medicate. Talk to an expert. Consult a doctor within a 2 minutes.</div>
                     </div>
                     <img
-                        src="https://res.cloudinary.com/dps7y8nd7/image/upload/v1579151561/chat_with_doctors_bt6aum.png">
+                        src="https://res.cloudinary.com/dps7y8nd7/image/upload/v1579928019/doc_qrgfab.png">
                 </div>
                 <div class="col-md-6">
                     <div class="u-p-v--20">
@@ -492,58 +478,59 @@
                             style="color: rgb(75, 56, 247);">Tired of waiting in
                             a queue? Too weak to go down and buy medicines?</div>
                     </div>
-                    <img src="https://res.cloudinary.com/dps7y8nd7/image/upload/v1579151561/home_delivery_psjgkw.png">
+                    <img src="https://res.cloudinary.com/dps7y8nd7/image/upload/v1579928019/doc1_asxand.png">
                 </div>
             </div>
         </div>
 
         <hr size="30">
 
-        <footer>
-        <div style="height: 20px;"></div>
-        <div class="row">
-            <div class="col-lg-3 col-md-3 col-sm-12 ml-5">
-                <h4>Contact Us</h4>
-                <p>BHIVE Workspace, L-148, 5th Main Rd,
-                    <br> Sector 6, HSR Layout,<br> Bengaluru, Karnataka 560102</p>
-            </div>
-            <div class="col-lg-3 col-md-3 col-sm-12 ml-5">
-                <h5>For patients</h5>
-                <ul>
-                    <li><a href="#">Search for Doctors</a></li>
-                    <li><a href="#">Search for Hospitals</a></li>
-                    <li><a href="#">Order Medicine</a></li>
-                </ul>
-            </div>
-            <div class="col-lg-4 col-md-3 col-sm-12 ml-5 mt-2 ">
-                <style>
-                    .fa {
-                        text-align: center;
-                    }
-
-                    .fa:hover {
-                        opacity: 0.7;
-                        text-decoration: none;
-                    }
-                    .size{
-                        font-size: 30px;
-                        margin: 0 8px;
-                        
-                    }
-                </style>
-                <div class="mt-4">
-                    <a href="#" class="fa fa-facebook size"></a>
-                    <a href="#" class="fa fa-twitter size"></a>
-                    <a href="#" class="fa fa-linkedin size"></a>
-                    <a href="#" class="fa fa-instagram size"></a>
-                    <a href="#" class="fa fa-youtube size"></a>
+        <footer class=" mt-3">
+            <div style="height: 20px;"></div>
+            <div class="row">
+                <div class="col-lg-3 col-md-3 col-sm-12 ml-5">
+                    <h4>Contact Us</h4>
+                    <p>BHIVE Workspace, L-148, 5th Main Rd,
+                        <br> Sector 6, HSR Layout,<br> Bengaluru, Karnataka 560102</p>
                 </div>
-                
-            </div>
-        </div>
-        <div style="height: 20px;"></div>
+                <div class="col-lg-3 col-md-3 col-sm-12 ml-5">
+                    <h5>For patients</h5>
+                    <ul>
+                        <li><a href="#">Search for Doctors</a></li>
+                        <li><a href="#">Search for Hospitals</a></li>
+                        <li><a href="#">Order Medicine</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-md-3 col-sm-12 ml-5 mt-2 ">
+                    <style>
+                        .fa {
+                            text-align: center;
+                        }
 
-    </footer>
+                        .fa:hover {
+                            opacity: 0.7;
+                            text-decoration: none;
+                        }
+
+                        .size {
+                            font-size: 30px;
+                            margin: 0 8px;
+
+                        }
+                    </style>
+                    <div class="mt-4">
+                        <a href="#" class="fa fa-facebook size"></a>
+                        <a href="#" class="fa fa-twitter size"></a>
+                        <a href="#" class="fa fa-linkedin size"></a>
+                        <a href="#" class="fa fa-instagram size"></a>
+                        <a href="#" class="fa fa-youtube size"></a>
+                    </div>
+
+                </div>
+            </div>
+            <div style="height: 20px;"></div>
+
+        </footer>
     </div>
     <a href="#" class="float ca" id="menu-share">
         <i class="fa fa-share my-float"></i>
@@ -552,7 +539,7 @@
         <li class="cli"><a class="ca" href="/hospitalsearch">
                 <i class="fas fa-clinic-medical my-float "></i>
             </a></li>
-        <li class="cli"><a class="ca" href="/bookingDoctors">
+        <li class="cli"><a class="ca" href="/booking_doctors">
                 <i class="fas fa-user-md my-float"></i>
                 <i class="fas fa-user-nurse my-float"></i>
             </a></li>

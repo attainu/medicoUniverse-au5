@@ -54,6 +54,18 @@
                 <a class="nav-link login-signup w-100" href="/user/signin">Hello Guest</a>
             </div>
             {{/if}}
+
+            <span>
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="nav-link waves-effect" href="/shoppingCart">
+                            <span class="badge z-depth-1 mr-1 red text-success"> {{session.cart.totalQty}} </span>
+                            <i class="fas fa-shopping-cart"></i>
+                            <span class="clearfix d-none d-sm-inline-block"> Cart </span>
+                        </a>
+                    </li>
+                </ul>
+            </span>
         </div>
     </nav>
     <hr>
@@ -181,8 +193,8 @@
                                 <button class="dropbtn" style="background-color: honeydew;">Baby Care <span><i
                                             class="fas fa-angle-down"></i></span></button>
                                 <div class="dropdown-content" style="background-color: honeydew;">
-                                    <a href="#" class="babybath">Baby Bath</a>
-                                    <a href="#" class="babyDipers">Diapers and wipes</a>
+                                    <a href="" class="babybath">Baby Bath</a>
+                                    <a href="" class="babyDipers">Diapers and wipes</a>
 
                                 </div>
                             </div>
@@ -269,7 +281,7 @@
                             <!--Card content-->
                             <div class="card-body text-center">
                                 <!--Category & Title-->
-                                <a href="" class="grey-text">
+                                <a href="#" class="grey-text">
                                     <h5>{{this.subCategory}}</h5>
                                 </a>
                                 <h5>
@@ -303,7 +315,7 @@
             <!--Section: Products v.3-->
 
             <!--Pagination-->
-            <nav class="d-flex justify-content-center wow fadeIn">
+            {{!-- <nav class="d-flex justify-content-center wow fadeIn">
                 <ul class="pagination pg-blue">
 
                     <!--Arrow left-->
@@ -339,13 +351,13 @@
                         </a>
                     </li>
                 </ul>
-            </nav>
+            </nav> --}}
             <!--Pagination-->
 
         </div>
     </main>
 
-    <footer class="mt-4">
+    <footer id="toper" class="mt-4">
         <div style="height: 20px;"></div>
         <div class="row">
             <div class="col-lg-3 col-md-3 col-sm-12 ml-5">
@@ -398,7 +410,7 @@
         <li class="cli"><a class="ca" href="/hospitalsearch">
                 <i class="fas fa-clinic-medical my-float "></i>
             </a></li>
-        <li class="cli"><a class="ca" href="/bookingDoctors">
+        <li class="cli"><a class="ca" href="/booking_doctors">
                 <i class="fas fa-user-md my-float"></i>
                 <i class="fas fa-user-nurse my-float"></i>
             </a></li>

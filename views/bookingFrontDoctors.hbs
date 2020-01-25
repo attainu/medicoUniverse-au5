@@ -13,6 +13,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="./css/booking.doctors.css">
     <link rel="stylesheet" href="./css/plus.css">
+
+    
 </head>
 
 <body>
@@ -35,7 +37,8 @@
             </ul>
             {{#if session.user}}
             <div class="dropdown">
-                <a class="nav-link font-weight-bold login-signup w-100" id="dropdownMenu1-1" data-toggle="dropdown" href="">
+                <a class="nav-link font-weight-bold login-signup w-100" id="dropdownMenu1-1" data-toggle="dropdown"
+                    href="">
                     Hello {{session.user.email}}
                 </a>
                 <div class="dropdown-menu dropdown-primary" id="your-custom-id">
@@ -82,8 +85,8 @@
                 </datalist>
                 </button>
             </div>
-
-            <button type="submit" id="findBtn"><strong>Find</strong></button>
+             
+           <button class="btn btn-info" type="submit" id="findBtn"><strong>Search</strong></button>
         </form>
 
     </div>
@@ -203,10 +206,11 @@
                         opacity: 0.7;
                         text-decoration: none;
                     }
-                    .size{
+
+                    .size {
                         font-size: 30px;
                         margin: 0 8px;
-                        
+
                     }
                 </style>
                 <div class="mt-4">
@@ -216,7 +220,7 @@
                     <a href="#" class="fa fa-instagram size"></a>
                     <a href="#" class="fa fa-youtube size"></a>
                 </div>
-                
+
             </div>
         </div>
         <div style="height: 20px;"></div>
@@ -229,7 +233,7 @@
         <li class="cli"><a class="ca" href="/hospitalsearch">
                 <i class="fas fa-clinic-medical my-float "></i>
             </a></li>
-        <li class="cli"><a class="ca" href="/bookingDoctors">
+        <li class="cli"><a class="ca" href="/booking_doctors">
                 <i class="fas fa-user-md my-float"></i>
                 <i class="fas fa-user-nurse my-float"></i>
             </a></li>
