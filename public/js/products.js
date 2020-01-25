@@ -35,7 +35,7 @@ $(document).ready(function() {
 	$('.babybath').click(function() {
 		$('html, body').animate(
 			{
-				scrollTop: -10%
+				scrollTop: 500
 			},
 			600
 		);

@@ -197,9 +197,18 @@
                         </tr>
                         <!-- /.First row -->
                         {{else}}
-                        <div class="card-body card-body-cascade text-center">
-                            <span class="font-weight-bold text-center">No Items</span>
+                        <div class="card-body" style="height:400px">
+                            <div class="card-body card-body-cascade text-center">
+                                <div class="card-title">
+                                    <span class="font-weight-bolder text-center" style="font-size: larger;">No
+                                        Items</span>
+                                </div>
+
+                            </div>
+                            <a href="/products" class="btn btn-info text-center" style="float: bottom-right; margin-left:44%">
+                                products</a>
                         </div>
+
                         {{/if}}
 
                     </tbody>
@@ -272,6 +281,7 @@
         <i class="fa fa-share my-float"></i>
     </a>
     <ul class="cul">
+        
         <li class="cli"><a class="ca" href="/hospitalsearch">
                 <i class="fas fa-clinic-medical my-float "></i>
             </a></li>
